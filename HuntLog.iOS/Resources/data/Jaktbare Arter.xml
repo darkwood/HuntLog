@@ -1,0 +1,872 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Tore Mørkved</Author>
+  <LastAuthor>Tore Mørkved</LastAuthor>
+  <Created>2011-05-14T12:54:42Z</Created>
+  <LastSaved>2011-05-14T13:18:23Z</LastSaved>
+  <Company>Bennett AS</Company>
+  <Version>12.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>16440</WindowHeight>
+  <WindowWidth>24800</WindowWidth>
+  <WindowTopX>-20</WindowTopX>
+  <WindowTopY>-20</WindowTopY>
+  <ActiveSheet>2</ActiveSheet>
+  <Date1904/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="s26">
+   <NumberFormat ss:Format="0"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Arter">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="58" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="284.0"/>
+   <Column ss:Index="4" ss:StyleID="s25" ss:AutoFitWidth="0" ss:Width="264.0"/>
+   <Row ss:Height="39.0">
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String">Toppskarv</Data></Cell>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Finnmark, Troms, Nordland og Nord-Trøndelag fylker samt kommunene Osen, Roan, Åfjord, Bjugn, Ørland og Rissa i Sør-Trøndelag fylke</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.10.</Data></Cell>
+    <Cell><Data ss:Type="String"> 30.11.</Data></Cell>
+   </Row>
+   <Row ss:Height="39.0">
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String">Storskarv </Data></Cell>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Møre og Romsdal og Sør-Trøndelag fylker unntatt kommunene Osen, Roan, Åfjord, Bjugn, Ørland og Rissa.</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.10.</Data></Cell>
+    <Cell><Data ss:Type="String"> 30.11.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kortnebbgås</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med de unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String">10.08</Data></Cell>
+    <Cell><Data ss:Type="String">23.12</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String">Grågås</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med de unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String">10.08</Data></Cell>
+    <Cell><Data ss:Type="String">23.12</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String">Stokkand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String">Krikkand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String">Brunnakke</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String">Toppand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String">Havelle</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">10.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kvinand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">11.0</Data></Cell>
+    <Cell><Data ss:Type="String">Siland</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">12.0</Data></Cell>
+    <Cell><Data ss:Type="String">Svartand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Østfold, Akershus, Oslo, Vestfold, Buskerud, Telemark, Aust-Agder og Vest-Agder fylker</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">13.0</Data></Cell>
+    <Cell><Data ss:Type="String">Laksand</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">14.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ærfugl</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Østfold, Vestfold, Buskerud, Telemark, Aust-Agder og Vest-Agder fylker</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.10.</Data></Cell>
+    <Cell><Data ss:Type="String"> 30.11.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">15.0</Data></Cell>
+    <Cell><Data ss:Type="String">Jerpe</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="String">Orrfugl</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">17.0</Data></Cell>
+    <Cell><Data ss:Type="String">Storfugl</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">18.0</Data></Cell>
+    <Cell><Data ss:Type="String">Lirype</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">19.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fjellrype</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+    <Cell><Data ss:Type="String">Heilo</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med unntak av Rogaland fylke hvor arten er fredet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.10.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">21.0</Data></Cell>
+    <Cell><Data ss:Type="String">Enkeltbekkasin</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.10.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">22.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rugde</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">23.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fiskemåke</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">24.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gråmåke</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">25.0</Data></Cell>
+    <Cell><Data ss:Type="String">Svartbak</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">26.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ringdue</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med unntak av Troms og Finnmark fylker hvor arten er fredet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">27.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gråtrost</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">28.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rødvingetrost</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">29.0</Data></Cell>
+    <Cell><Data ss:Type="String">Nøtteskrike</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med unntak av Nordland, Troms og Finnmark fylker hvor arten er fredet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">30.0</Data></Cell>
+    <Cell><Data ss:Type="String">Skjære</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">31.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kråke</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.07.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ravn</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">33.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hare</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">34.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ekorn</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.11.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.03.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">35.0</Data></Cell>
+    <Cell><Data ss:Type="String">Bever</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String"> I de kommuner hvor det er åpnet for adgang til beverjakt</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.10.</Data></Cell>
+    <Cell><Data ss:Type="String"> 30.04.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">36.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rødrev</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.07.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.04.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">37.0</Data></Cell>
+    <Cell><Data ss:Type="String">Røyskatt</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">38.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mår</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.11.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">39.0</Data></Cell>
+    <Cell><Data ss:Type="String">Grevling</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.01.</Data></Cell>
+   </Row>
+   <Row ss:Height="78.0">
+    <Cell><Data ss:Type="Number">40.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gaupe</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet - Jakt er kun tillatt i de områder der rovviltnemnden/direktoratet har fastsatt kvote eller tillatt kvotefri jakt på gaupe (jf. forskrift 18. mars 2005 nr. 242 om forvaltning av rovvilt). Rovviltnemnden kan fastsette en kortere jakttid dersom særlige forhold tilsier det.</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.02.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">41.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hjort</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String"> I de kommuner hvor det er åpnet adgang til hjortejakt</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.11.</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">42.0</Data></Cell>
+    <Cell><Data ss:Type="String">Elg</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String"> I de kommuner hvor det er åpnet for adgang til elgjakt</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">43.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rådyr</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String"> I de kommuner hvor det er åpnet adgang til rådyrjakt</Data></Cell>
+    <Cell><Data ss:Type="String"> 25.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">44.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villrein</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet (alle villreinområder)</Data></Cell>
+    <Cell><Data ss:Type="String"> 20.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 30.09.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">45.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kanadagås</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med de unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String">10.08</Data></Cell>
+    <Cell><Data ss:Type="String">23.12</Data></Cell>
+   </Row>
+   <Row ss:Height="26.0">
+    <Cell><Data ss:Type="Number">46.0</Data></Cell>
+    <Cell><Data ss:Type="String">Stripegås</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet med det unntak som nevnes nedenfor</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">47.0</Data></Cell>
+    <Cell><Data ss:Type="String">Knoppand (moskusand)</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">48.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mandarinand</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">49.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fasan</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.10.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.10.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">50.0</Data></Cell>
+    <Cell><Data ss:Type="String">Sørhare</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 10.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 28.02./29.02.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">51.0</Data></Cell>
+    <Cell><Data ss:Type="String">Viltlevende kanin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">52.0</Data></Cell>
+    <Cell><Data ss:Type="String">Beverrotte</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 21.08.</Data></Cell>
+    <Cell><Data ss:Type="String"> 15.05.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">53.0</Data></Cell>
+    <Cell><Data ss:Type="String">Bisamrotte</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.04.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">54.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mårhund</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.04.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">55.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villmink</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.04.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">56.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villsvin</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 01.04.</Data></Cell>
+    <Cell><Data ss:Type="String"> 31.03.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">57.0</Data></Cell>
+    <Cell><Data ss:Type="String">Dåhjort</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String"> Hele landet</Data></Cell>
+    <Cell><Data ss:Type="String"> 25.09.</Data></Cell>
+    <Cell><Data ss:Type="String"> 23.12.</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">58.0</Data></Cell>
+    <Cell><Data ss:Type="String">Muflon</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.0"/>
+    <Footer x:Margin="0.0"/>
+    <PageMargins x:Left="0.787401575" x:Right="0.787401575"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>10</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>100</PageLayoutZoom>
+   <TopRowVisible>28</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>44</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Grupper">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="9" x:FullColumns="1"
+   x:FullRows="1">
+   <Row>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String">Skarver</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String">Andefugler</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hønsefugler</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String">Vadere og måker</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String">Spurvefugler</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String">Haredtr</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rovdyr</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hjortevilt</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fremmede/introduserte arter</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.0"/>
+    <Footer x:Margin="0.0"/>
+    <PageMargins x:Left="0.787401575" x:Right="0.787401575"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>10</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <ShowPageLayoutZoom/>
+   <PageLayoutZoom>100</PageLayoutZoom>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R9C2</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="For eksport">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="58" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:StyleID="s26" ss:AutoFitWidth="0"/>
+   <Column ss:Index="3" ss:StyleID="s26" ss:AutoFitWidth="0"/>
+   <Row>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+    <Cell><Data ss:Type="String">Toppskarv</Data></Cell>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+    <Cell><Data ss:Type="String">Storskarv</Data></Cell>
+    <Cell><Data ss:Type="Number">1.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kortnebbgås</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+    <Cell><Data ss:Type="String">Grågås</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+    <Cell><Data ss:Type="String">Stokkand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+    <Cell><Data ss:Type="String">Krikkand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+    <Cell><Data ss:Type="String">Brunnakke</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+    <Cell><Data ss:Type="String">Toppand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+    <Cell><Data ss:Type="String">Havelle</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">10.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kvinand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">11.0</Data></Cell>
+    <Cell><Data ss:Type="String">Siland</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">12.0</Data></Cell>
+    <Cell><Data ss:Type="String">Svartand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">13.0</Data></Cell>
+    <Cell><Data ss:Type="String">Laksand</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">14.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ærfugl</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">15.0</Data></Cell>
+    <Cell><Data ss:Type="String">Jerpe</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">16.0</Data></Cell>
+    <Cell><Data ss:Type="String">Orrfugl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">17.0</Data></Cell>
+    <Cell><Data ss:Type="String">Storfugl</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">18.0</Data></Cell>
+    <Cell><Data ss:Type="String">Lirype</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">19.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fjellrype</Data></Cell>
+    <Cell><Data ss:Type="Number">3.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+    <Cell><Data ss:Type="String">Heilo</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">21.0</Data></Cell>
+    <Cell><Data ss:Type="String">Enkeltbekkasin</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">22.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rugde</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">23.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fiskemåke</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">24.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gråmåke</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">25.0</Data></Cell>
+    <Cell><Data ss:Type="String">Svartbak</Data></Cell>
+    <Cell><Data ss:Type="Number">4.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">26.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ringdue</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">27.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gråtrost</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">28.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rødvingetrost</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">29.0</Data></Cell>
+    <Cell><Data ss:Type="String">Nøtteskrike</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">30.0</Data></Cell>
+    <Cell><Data ss:Type="String">Skjære</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">31.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kråke</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">32.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ravn</Data></Cell>
+    <Cell><Data ss:Type="Number">5.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">33.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hare</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">34.0</Data></Cell>
+    <Cell><Data ss:Type="String">Ekorn</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">35.0</Data></Cell>
+    <Cell><Data ss:Type="String">Bever</Data></Cell>
+    <Cell><Data ss:Type="Number">6.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">36.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rødrev</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">37.0</Data></Cell>
+    <Cell><Data ss:Type="String">Røyskatt</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">38.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mår</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">39.0</Data></Cell>
+    <Cell><Data ss:Type="String">Grevling</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">40.0</Data></Cell>
+    <Cell><Data ss:Type="String">Gaupe</Data></Cell>
+    <Cell><Data ss:Type="Number">7.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">41.0</Data></Cell>
+    <Cell><Data ss:Type="String">Hjort</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">42.0</Data></Cell>
+    <Cell><Data ss:Type="String">Elg</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">43.0</Data></Cell>
+    <Cell><Data ss:Type="String">Rådyr</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">44.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villrein</Data></Cell>
+    <Cell><Data ss:Type="Number">8.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">45.0</Data></Cell>
+    <Cell><Data ss:Type="String">Kanadagås</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">46.0</Data></Cell>
+    <Cell><Data ss:Type="String">Stripegås</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">47.0</Data></Cell>
+    <Cell><Data ss:Type="String">Knoppand (moskusand)</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">48.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mandarinand</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">49.0</Data></Cell>
+    <Cell><Data ss:Type="String">Fasan</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">50.0</Data></Cell>
+    <Cell><Data ss:Type="String">Sørhare</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">51.0</Data></Cell>
+    <Cell><Data ss:Type="String">Viltlevende kanin</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">52.0</Data></Cell>
+    <Cell><Data ss:Type="String">Beverrotte</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">53.0</Data></Cell>
+    <Cell><Data ss:Type="String">Bisamrotte</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">54.0</Data></Cell>
+    <Cell><Data ss:Type="String">Mårhund</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">55.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villmink</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">56.0</Data></Cell>
+    <Cell><Data ss:Type="String">Villsvin</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">57.0</Data></Cell>
+    <Cell><Data ss:Type="String">Dåhjort</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">58.0</Data></Cell>
+    <Cell><Data ss:Type="String">Muflon</Data></Cell>
+    <Cell><Data ss:Type="Number">9.0</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.0"/>
+    <Footer x:Margin="0.0"/>
+    <PageMargins x:Left="0.787401575" x:Right="0.787401575"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>10</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <ShowPageLayoutZoom/>
+   <PageLayoutZoom>100</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>C1</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

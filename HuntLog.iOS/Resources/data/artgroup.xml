@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArtGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ArtGroup>
+	  <ID>1</ID>
+	   <Navn>Skarver</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>2</ID>
+	   <Navn>Andefugler</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>3</ID>
+	   <Navn>Hønsefugler</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>4</ID>
+	   <Navn>Vadere og Måker</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>5</ID>
+	   <Navn>Spurvefugler</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>6</ID>
+	   <Navn>Haredyr</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>7</ID>
+	   <Navn>Rovdyr</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>8</ID>
+	   <Navn>Hjortevilt</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>9</ID>
+	   <Navn>Fremmede/introduserte arter</Navn>
+	</ArtGroup>
+</ArrayOfArtGroup>

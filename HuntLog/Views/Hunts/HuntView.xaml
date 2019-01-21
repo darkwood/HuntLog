@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.Views.Hunts.HuntView"
+            xmlns:Converters="clr-namespace:HuntLog.Views.Converters"
+            Title="{Binding Title}">
+    
+    <ContentPage.Content>
+       <Grid>
+            <ActivityIndicator IsRunning="true" 
+                               IsVisible="{Binding IsBusy}" 
+                               HorizontalOptions="Fill" 
+                               VerticalOptions="Fill"
+                               Opacity="0.8" 
+                               Color="White"
+                               BackgroundColor="Black"/>
+            
+             <StackLayout Margin="20">
+            
+                <Label Text ="Sted" />
+                <Label Text="{Binding Location}"  />
+                <Label Text="Dato fra" />
+                <Label Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" />
+                <Label Text="Dato til" />
+                <Label Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
+                
+            </StackLayout>
+        </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>
