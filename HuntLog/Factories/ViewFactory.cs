@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using Autofac;
 using HuntLog.ViewModels;
 using Xamarin.Forms;
+using LightInject;
 
 namespace HuntLog.Factories
 {
     public class ViewFactory : IViewFactory
     {
         private readonly IDictionary<Type, Type> _map = new Dictionary<Type, Type>();
-        private readonly IComponentContext _componentContext;
+        private readonly IServiceFactory _serviceFactory;
 
-        public ViewFactory(IComponentContext componentContext)
+        public ViewFactory(IServiceFactory serviceFactory)
         {
-            _componentContext = componentContext;
+            _serviceFactory = serviceFactory;
         }
 
         public void Register<TViewModel, TView>()
@@ -32,10 +33,10 @@ namespace HuntLog.Factories
         public Page Resolve<TViewModel>(out TViewModel viewModel, Action<TViewModel> setStateAction = null)
             where TViewModel : class, IViewModel
         {
-            viewModel = _componentContext.Resolve<TViewModel>();
+            viewModel = _serviceFactory.GetInstance<TViewModel>();
 
             var viewType = _map[typeof(TViewModel)];
-            var view = _componentContext.Resolve(viewType) as Page;
+            var view = _serviceFactory.GetInstance(viewType) as Page;
 
             view.BindingContext = viewModel;
             return view;
@@ -45,7 +46,7 @@ namespace HuntLog.Factories
             where TViewModel : class, IViewModel
         {
             var viewType = _map[typeof(TViewModel)];
-            var view = _componentContext.Resolve(viewType) as Page;
+            var view = _serviceFactory.GetInstance(viewType) as Page;
             view.BindingContext = viewModel;
             return view;
         }

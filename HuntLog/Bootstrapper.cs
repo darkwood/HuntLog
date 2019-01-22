@@ -3,6 +3,7 @@ using Autofac;
 using HuntLog.Factories;
 using HuntLog.ViewModels.Hunts;
 using HuntLog.Views.Hunts;
+using LightInject;
 using Xamarin.Forms;
 
 namespace HuntLog
@@ -18,12 +19,14 @@ namespace HuntLog
 
         public void Run()
         {
+            var containerOptions = new ContainerOptions() { EnablePropertyInjection = false };
+            var container = new ServiceContainer(containerOptions);
+            container.RegisterFrom<CompositionRoot>();
+
+
             var builder = new ContainerBuilder();
+            var viewFactory = container.GetInstance<IViewFactory>();
 
-            builder.RegisterModule<AppModule>();
-
-            var container = builder.Build();
-            var viewFactory = container.Resolve<IViewFactory>();
 
             RegisterViews(viewFactory);
 
@@ -36,10 +39,10 @@ namespace HuntLog
             viewFactory.Register<HuntViewModel, HuntView>();
         }
 
-        protected void ConfigureApplication(IContainer container)
+        protected void ConfigureApplication(IServiceFactory container)
         {
             // set main page
-            var viewFactory = container.Resolve<IViewFactory>();
+            var viewFactory = container.GetInstance<IViewFactory>();
             var mainPage = viewFactory.Resolve<HuntsViewModel>();
             var navigationPage = new NavigationPage(mainPage);
 
