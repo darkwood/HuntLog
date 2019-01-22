@@ -16,8 +16,7 @@ namespace HuntLog
             builder.RegisterType<Navigator>().As<INavigator>().SingleInstance();
             builder.Register<INavigation>(context => Application.Current.MainPage.Navigation).SingleInstance();
             builder.RegisterType<HuntService>().As<IHuntService>().SingleInstance();
-
-
+            
             //ViewModels
             builder.RegisterType<HuntViewModel>();
             builder.RegisterType<HuntListItemViewModel>();

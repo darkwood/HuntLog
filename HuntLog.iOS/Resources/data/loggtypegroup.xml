@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLoggTypeGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <LoggTypeGroup>
+	  <ID>1</ID>
+	   <Navn>Generelt</Navn>
+	</LoggTypeGroup>
+	<LoggTypeGroup>
+	  <ID>2</ID>
+	   <Navn>Storvilt</Navn>
+	</LoggTypeGroup>
+</ArrayOfLoggTypeGroup>

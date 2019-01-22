@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfJeger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfJeger xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Jeger>
+    <ID>1</ID>
+    <Firstname>Tore</Firstname>
+    <Lastname>Mørkved</Lastname>
+    <Email>tore.morkved@gmail.com</Email>
+    <Phone>95156270</Phone>
+    <IsMe>true</IsMe>    
+  </Jeger>
+  <Jeger>
+    <ID>2</ID>
+    <Firstname>Arne</Firstname>
+    <Lastname>Bjarneson</Lastname>
+    <Email>arne.bjarne@test.com</Email>
+    <Phone>89513549</Phone>
+    <IsMe>false</IsMe>    
+  </Jeger>
   <Jeger>
     <ID>3</ID>
-    <Fornavn>Tore</Fornavn>
-    <Etternavn>Mørkved</Etternavn>
-    <Email />
-    <Phone />
-    <ImagePath />
-    <IsMe>false</IsMe>
+    <Firstname>Jens</Firstname>
+    <Lastname>Testesn</Lastname>
+    <Email>test@test.com</Email>
+    <Phone>89513549</Phone>
+    <IsMe>false</IsMe>    
   </Jeger>
 </ArrayOfJeger>
