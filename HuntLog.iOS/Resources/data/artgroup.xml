@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <ArtGroup>
+    	<ID>100</ID>
+    	<Navn>{navn her defineres i språkoppsettet}</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>3</ID>
+	   <Navn>Hønsefugler</Navn>
+	</ArtGroup>
+	<ArtGroup>
+	  <ID>8</ID>
+	   <Navn>Hjortevilt</Navn>
+	</ArtGroup>
+	<ArtGroup>
 	  <ID>1</ID>
 	   <Navn>Skarver</Navn>
 	</ArtGroup>
 	<ArtGroup>
 	  <ID>2</ID>
 	   <Navn>Andefugler</Navn>
-	</ArtGroup>
-	<ArtGroup>
-	  <ID>3</ID>
-	   <Navn>Hønsefugler</Navn>
 	</ArtGroup>
 	<ArtGroup>
 	  <ID>4</ID>
@@ -27,10 +35,6 @@
 	<ArtGroup>
 	  <ID>7</ID>
 	   <Navn>Rovdyr</Navn>
-	</ArtGroup>
-	<ArtGroup>
-	  <ID>8</ID>
-	   <Navn>Hjortevilt</Navn>
 	</ArtGroup>
 	<ArtGroup>
 	  <ID>9</ID>

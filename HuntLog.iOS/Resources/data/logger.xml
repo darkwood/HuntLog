@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfLogg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfLogg xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Logg>
     <ID>1</ID>
     <Treff>1</Treff>
     <Skudd>2</Skudd>
-    <Dato>2011-07-24T19:13:24.977277+02:00</Dato>
-    <ArtId>2</ArtId>
-    <JegerId>3</JegerId>
+    <Sett>6</Sett>
+    <Dato>2017-02-24T09:30:51.897373+00:00</Dato>
+    <ArtId>18</ArtId>
+    <JegerId>1</JegerId>
+    <DogId>0</DogId>
     <JaktId>1</JaktId>
-    <Latitude>60.3035868</Latitude>
-    <Longitude>5.2857098</Longitude>
-    <ImagePath>/Users/torem/Library/Application Support/iPhone Simulator/4.3/Applications/23F9E6F3-45CA-4BD6-A878-649236D2D348/Documents/jaktlogg_1.jpg</ImagePath>
-    <Gender />
+    <Latitude />
+    <Longitude />
     <Notes />
+    <Gender />
     <Weather />
+    <Age />
+    <WeaponType />
+    <Weight>0</Weight>
+    <ButchWeight>0</ButchWeight>
+    <Tags>0</Tags>
   </Logg>
 </ArrayOfLogg>

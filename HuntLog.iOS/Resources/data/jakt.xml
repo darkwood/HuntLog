@@ -1,33 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfJakt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfJakt xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Jakt>
     <ID>1</ID>
-    <Sted>Levanger</Sted>
-    <DatoFra>2011-07-24T18:56:08.148941+02:00</DatoFra>
-    <DatoTil>2011-07-24T18:56:08.148947+02:00</DatoTil>
+    <Sted>Tverlandet</Sted>
+    <DatoFra>2017-02-24T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2017-02-24T09:30:43.814301+00:00</DatoTil>
     <JegerIds>
-      <int>3</int>
+      <int>1</int>
+	  <int>2</int>
     </JegerIds>
-    <ImagePath>/Users/torem/Library/Application Support/iPhone Simulator/4.3/Applications/23F9E6F3-45CA-4BD6-A878-649236D2D348/Documents/jakt_1.jpg</ImagePath>
+    <DogIds>
+		<int>1</int>
+		<int>2</int>
+	</DogIds>
+    <Latitude>67.3500983333333</Latitude>
+    <Longitude>14.8666</Longitude>
   </Jakt>
-   <Jakt>
+  <Jakt>
     <ID>2</ID>
-    <Sted>Høylandet</Sted>
-    <DatoFra>2011-07-24T18:56:08.148941+02:00</DatoFra>
-    <DatoTil>2011-07-24T18:56:08.148947+02:00</DatoTil>
+    <Sted>Levanger</Sted>
+    <DatoFra>2017-01-24T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2017-01-26T09:30:43.814301+00:00</DatoTil>
     <JegerIds>
-      <int>3</int>
+      <int>1</int>
     </JegerIds>
-    <ImagePath>/Users/torem/Library/Application Support/iPhone Simulator/4.3/Applications/23F9E6F3-45CA-4BD6-A878-649236D2D348/Documents/jakt_1.jpg</ImagePath>
+    <DogIds>
+		<int>1</int>		
+	</DogIds>
+    <Latitude>67.4</Latitude>
+    <Longitude>14.7666</Longitude>
   </Jakt>
-   <Jakt>
+  <Jakt>
     <ID>3</ID>
-    <Sted>Trondheim</Sted>
-    <DatoFra>2011-07-24T18:56:08.148941+02:00</DatoFra>
-    <DatoTil>2011-07-24T18:56:08.148947+02:00</DatoTil>
+    <Sted>Bodø</Sted>
+    <DatoFra>2016-11-20T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2016-11-24T09:30:43.814301+00:00</DatoTil>
     <JegerIds>
-      <int>3</int>
+      <int>1</int>
+	  <int>2</int>
     </JegerIds>
-    <ImagePath>/Users/torem/Library/Application Support/iPhone Simulator/4.3/Applications/23F9E6F3-45CA-4BD6-A878-649236D2D348/Documents/jakt_1.jpg</ImagePath>
+    <DogIds>
+		<int>1</int>
+		<int>2</int>
+	</DogIds>
+    <Latitude>67.350053333</Latitude>
+    <Longitude>14.8666</Longitude>
+  </Jakt>
+  <Jakt>
+    <ID>4</ID>
+    <Sted>Tverlandet</Sted>
+    <DatoFra>2016-09-15T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2016-09-22T09:30:43.814301+00:00</DatoTil>
+    <JegerIds>
+      <int>1</int>
+    </JegerIds>
+    <DogIds>
+		<int>1</int>
+	</DogIds>
+    <Latitude>66.3500983333333</Latitude>
+    <Longitude>14.1666</Longitude>
+  </Jakt>
+  <Jakt>
+    <ID>5</ID>
+    <Sted>Tverlandet</Sted>
+    <DatoFra>2016-09-09T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2016-09-09T09:30:43.814301+00:00</DatoTil>
+    <JegerIds>
+      <int>1</int>
+	  <int>2</int>
+    </JegerIds>
+    <DogIds>
+		<int>1</int>
+		<int>2</int>
+	</DogIds>
+    <Latitude>67.3505983333333</Latitude>
+    <Longitude>13.8666</Longitude>
+  </Jakt>
+  <Jakt>
+    <ID>6</ID>
+    <Sted>Mørkved</Sted>
+    <DatoFra>2015-02-24T09:30:43.814285+00:00</DatoFra>
+    <DatoTil>2015-02-24T09:30:43.814301+00:00</DatoTil>
+    <JegerIds>
+      <int>1</int>
+    </JegerIds>
+    <DogIds />
+    <Latitude>67.4500983333333</Latitude>
+    <Longitude>14.8566</Longitude>
   </Jakt>
 </ArrayOfJakt>

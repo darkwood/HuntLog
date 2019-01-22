@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Dog>
+    <ID>1</ID>
+    <Navn>Rexy</Navn>
+    <Rase>Hund</Rase>
+    <Lisensnummer>1234564657</Lisensnummer>    
+  </Dog>
+   <Dog>
+    <ID>2</ID>
+    <Navn>Pia</Navn>
+    <Rase>Gordonsetter</Rase>
+    <Lisensnummer>23549563</Lisensnummer>    
+  </Dog>
+</ArrayOfDog>
