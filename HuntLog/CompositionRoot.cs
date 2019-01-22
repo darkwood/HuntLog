@@ -1,6 +1,5 @@
 ﻿using System;
 using LightInject;
-using HuntLog.Factories;
 using HuntLog.Services;
 using HuntLog.ViewModels.Hunts;
 using HuntLog.Views.Hunts;
@@ -12,13 +11,13 @@ namespace HuntLog
     {       
         public void Compose(IServiceRegistry serviceRegistry)
         {
-            serviceRegistry.RegisterSingleton<IViewFactory>(f => new ViewFactory(f))
-                .RegisterSingleton<INavigator, Navigator>()
+
+                serviceRegistry.RegisterSingleton<INavigator>(f => new Navigator(f.GetInstance<Lazy<INavigation>>(), f))
                 .RegisterSingleton<INavigation>(f => Application.Current.MainPage.Navigation)
                 .RegisterSingleton<IHuntService, HuntService>()
                 .Register<HuntViewModel>()
                 .Register<HuntListItemViewModel>()
-                .Register<HuntsViewModel>()
+                .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
                 .Register<HuntView>()
                 .Register<HuntsView>();
         }

@@ -11,12 +11,12 @@ namespace HuntLog.ViewModels.Hunts
     {
         private readonly IHuntService _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
-        private IEnumerable<HuntListItemViewModel> m_huntListItemViewModel;
+        private IEnumerable<HuntListItemViewModel> m_huntListItemViewModels;
 
-        public IEnumerable<HuntListItemViewModel> HuntListItemViewModel
+        public IEnumerable<HuntListItemViewModel> HuntListItemViewModels
         {
-            get { return m_huntListItemViewModel; }
-            set { SetProperty(ref m_huntListItemViewModel, value); }
+            get { return m_huntListItemViewModels; }
+            set { SetProperty(ref m_huntListItemViewModels, value); }
         }
 
         private bool _dataLoaded;
@@ -25,10 +25,11 @@ namespace HuntLog.ViewModels.Hunts
             get => _dataLoaded; set => SetProperty(ref _dataLoaded, value);
         }
 
-        public async Task Initialize()
+        public async Task InitializeAsync()
         {
             await FetchHuntData();
         }
+            
 
         public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory)
         {
@@ -41,7 +42,7 @@ namespace HuntLog.ViewModels.Hunts
         {
             var hunts = await _huntService.GetHunts();
             DataLoaded = true;
-            HuntListItemViewModel = hunts.Select(x =>
+            HuntListItemViewModels = hunts.Select(x =>
                 {
                     var item = _huntListItemViewModelFactory();
                     item.Initialize(x);

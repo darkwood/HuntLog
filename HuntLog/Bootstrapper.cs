@@ -1,6 +1,5 @@
-﻿using System;
-using Autofac;
-using HuntLog.Factories;
+﻿using System.Threading.Tasks;
+using HuntLog.Services;
 using HuntLog.ViewModels.Hunts;
 using HuntLog.Views.Hunts;
 using LightInject;
@@ -17,36 +16,30 @@ namespace HuntLog
             _application = application;
         }
 
-        public void Run()
+        public async Task Run()
         {
             var containerOptions = new ContainerOptions() { EnablePropertyInjection = false };
             var container = new ServiceContainer(containerOptions);
             container.RegisterFrom<CompositionRoot>();
 
+            RegisterViews(container.GetInstance<INavigator>());
 
-            var builder = new ContainerBuilder();
-            var viewFactory = container.GetInstance<IViewFactory>();
-
-
-            RegisterViews(viewFactory);
-
-            ConfigureApplication(container);
+            await ConfigureApplication(container);
         }
 
-        protected void RegisterViews(IViewFactory viewFactory)
+        protected void RegisterViews(INavigator viewFactory)
         {
             viewFactory.Register<HuntsViewModel, HuntsView>();
             viewFactory.Register<HuntViewModel, HuntView>();
         }
 
-        protected void ConfigureApplication(IServiceFactory container)
+        protected async Task ConfigureApplication(IServiceFactory container)
         {
-            // set main page
-            var viewFactory = container.GetInstance<IViewFactory>();
-            var mainPage = viewFactory.Resolve<HuntsViewModel>();
+            var huntsViewModel = container.GetInstance<HuntsViewModel>();
+            var mainPage = new HuntsView(huntsViewModel);
             var navigationPage = new NavigationPage(mainPage);
-
             _application.MainPage = navigationPage;
+            await huntsViewModel.InitializeAsync();
         }
     }
 }

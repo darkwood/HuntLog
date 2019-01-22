@@ -1,5 +1,4 @@
-﻿using Autofac;
-using HuntLog.Services;
+﻿using HuntLog.Services;
 using HuntLog.ViewModels.Hunts;
 using HuntLog.Views.Hunts;
 using Xamarin.Forms;
@@ -13,13 +12,13 @@ namespace HuntLog
         public App()
         {
             InitializeComponent();
-            var bootstrapper = new Bootstrapper(this);
-            bootstrapper.Run();
+           
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
-            // Handle when your app starts
+            var bootstrapper = new Bootstrapper(this);
+            await bootstrapper.Run();
         }
 
         protected override void OnSleep()
