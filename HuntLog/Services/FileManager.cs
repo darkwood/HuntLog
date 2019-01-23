@@ -8,11 +8,11 @@ using HuntLog.Interfaces;
 
 namespace HuntLog.Services
 {
-    public static class FileService
+    public static class FileManager
     {
         public static void SaveToLocalStorage<T>(this T objToSerialize, string filename)
         {
-            if (filename.ToLower().EndsWith(".json"))
+            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
             {
                 var jsonString = JsonConvert.SerializeObject(objToSerialize);
                 DependencyService.Get<IFileUtility>().Save(filename, jsonString);
@@ -34,7 +34,7 @@ namespace HuntLog.Services
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
             // 1 read json
-            if (filename.EndsWith(".json") && Exists(filename))
+            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
             {
                 var jsonString = DependencyService.Get<IFileUtility>().Load(filename);
 
@@ -88,7 +88,12 @@ namespace HuntLog.Services
         public static void CopyToAppFolder(string file)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream(assembly.GetName().Name + ".Xml." + file);
+            string[] resources = assembly.GetManifestResourceNames();
+            foreach (string resource in resources)
+            {
+
+            }
+                Stream stream = assembly.GetManifestResourceStream(assembly.GetName().Name + ".Xml." + file);
 
             using (var reader = new StreamReader(stream))
             {

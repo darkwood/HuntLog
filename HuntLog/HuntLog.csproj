@@ -23,6 +23,7 @@
     <Folder Include="ViewModels\Hunts\" />
     <Folder Include="Views\Hunts\" />
     <Folder Include="Views\Converters\" />
+    <Folder Include="Xml\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -41,5 +42,31 @@
       <DependentUpon>..\Views\HuntView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xml\arter.xml" />
+    <None Remove="Xml\artgroup.xml" />
+    <None Remove="Xml\dogs.xml" />
+    <None Remove="Xml\jakt.xml" />
+    <None Remove="Xml\jegere.xml" />
+    <None Remove="Xml\logger.xml" />
+    <None Remove="Xml\loggtypegroup.xml" />
+    <None Remove="Xml\loggtyper.xml" />
+    <None Remove="Xml\myspecies.xml" />
+    <None Remove="Xml\selectedartids.xml" />
+    <None Remove="Xml\Jaktbare Arter.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\arter.xml" />
+    <EmbeddedResource Include="Xml\artgroup.xml" />
+    <EmbeddedResource Include="Xml\dogs.xml" />
+    <EmbeddedResource Include="Xml\jakt.xml" />
+    <EmbeddedResource Include="Xml\jegere.xml" />
+    <EmbeddedResource Include="Xml\logger.xml" />
+    <EmbeddedResource Include="Xml\loggtypegroup.xml" />
+    <EmbeddedResource Include="Xml\loggtyper.xml" />
+    <EmbeddedResource Include="Xml\myspecies.xml" />
+    <EmbeddedResource Include="Xml\selectedartids.xml" />
+    <EmbeddedResource Include="Xml\Jaktbare Arter.xml" />
   </ItemGroup>
 </Project>

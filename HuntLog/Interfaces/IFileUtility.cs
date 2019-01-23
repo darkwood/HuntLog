@@ -2,7 +2,7 @@
 
 namespace HuntLog.Interfaces
 {
-    interface IFileUtility
+    public interface IFileUtility
     {
         void Save(string filename, string text);
         string SaveImage(string filename, byte[] imageData);

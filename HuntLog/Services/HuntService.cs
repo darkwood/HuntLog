@@ -21,7 +21,7 @@ namespace HuntLog.Services
     public class HuntService : IHuntService
     {
 
-        private const int _delay = 2000;
+        private const int _delay = 500;
         private List<Hunt> _hunts;
         public async Task<Hunt> GetHunt(string id)
         {
@@ -35,26 +35,16 @@ namespace HuntLog.Services
             {
                 await Task.Delay(_delay);
 
-                //using (var stream = await FileSystem.OpenAppPackageFileAsync("data/jakt.xml"))
-                //{
-                //    using (var reader = new StreamReader(stream))
-                //    {
-                //        //var fileContents = await reader.ReadToEndAsync();
-                //        //if (!string.IsNullOrWhiteSpace(fileContents)) 
-                //        //{
-                //            XmlSerializer serializer = new XmlSerializer(typeof(List<Hunt>));
-                //            _hunts = (List<Hunt>) serializer.Deserialize(reader);
-                //            //_hunts = JsonConvert.DeserializeObject<List<Hunt>>(fileContents);
-                //        //}
-                //    }
-                //}
 
-                _hunts = new List<Hunt>
-                {
-                    new Hunt { ID = "1", Sted = "Jonsvatnet", DatoFra = DateTime.Now },
-                    new Hunt { ID = "2",  Sted = "Bymarka", DatoFra = DateTime.Now.AddDays(-10) },
-                    new Hunt { ID = "3",  Sted = "Levanger", DatoFra = DateTime.Now.AddMonths(-3) }
-                };
+                //FileManager.CopyToAppFolder("jakt.xml");
+                _hunts = FileManager.LoadFromLocalStorage<List<Hunt>>("jakt.xml");
+
+                //_hunts = new List<Hunt>
+                //{
+                //    new Hunt { ID = "1", Sted = "Jonsvatnet", DatoFra = DateTime.Now },
+                //    new Hunt { ID = "2",  Sted = "Bymarka", DatoFra = DateTime.Now.AddDays(-10) },
+                //    new Hunt { ID = "3",  Sted = "Levanger", DatoFra = DateTime.Now.AddMonths(-3) }
+                //};
             }
             return _hunts.OrderByDescending(x => x.DatoFra);
         }

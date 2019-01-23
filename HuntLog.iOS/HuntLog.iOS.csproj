@@ -95,6 +95,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IO\FileUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -163,24 +164,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <BundleResource Include="Resources\data\arter.xml" />
-    <BundleResource Include="Resources\data\artgroup.xml" />
-    <BundleResource Include="Resources\data\jakt.xml" />
-    <BundleResource Include="Resources\data\Jaktbare Arter.xml" />
-    <BundleResource Include="Resources\data\jegere.xml" />
-    <BundleResource Include="Resources\data\logger.xml" />
-    <BundleResource Include="Resources\data\selectedartids.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\data\dogs.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\data\loggtypegroup.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\data\loggtyper.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\data\myspecies.xml" />
+    <Folder Include="IO\" />
   </ItemGroup>
 </Project>
