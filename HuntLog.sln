@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.iOS", "HuntLog.iOS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.UITests", "HuntLog.UITests\HuntLog.UITests.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuntLog", "HuntLog\HuntLog.csproj", "{76B2A5BE-E368-445C-9F00-7C88C78B827F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog", "HuntLog\HuntLog.csproj", "{76B2A5BE-E368-445C-9F00-7C88C78B827F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

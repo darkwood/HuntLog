@@ -29,7 +29,7 @@ namespace HuntLog.ViewModels.Hunts
         {
             await FetchHuntData();
         }
-            
+
 
         public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory)
         {

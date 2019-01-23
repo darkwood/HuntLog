@@ -69,6 +69,5 @@
     <EmbeddedResource Include="Xml\loggtyper.xml" />
     <EmbeddedResource Include="Xml\myspecies.xml" />
     <EmbeddedResource Include="Xml\selectedartids.xml" />
-    <EmbeddedResource Include="Xml\Jaktbare Arter.xml" />
   </ItemGroup>
 </Project>

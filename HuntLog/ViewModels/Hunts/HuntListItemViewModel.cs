@@ -9,7 +9,7 @@ namespace HuntLog.ViewModels.Hunts
     public class HuntListItemViewModel : ViewModelBase
     {
         private readonly INavigator _navigator;
-        private Hunt _huntDataModel { get; set; }
+        private Jakt _huntDataModel { get; set; }
 
         public ICommand ShowHuntCommand { get; set; }
         public string Detail { get; set; }
@@ -19,7 +19,7 @@ namespace HuntLog.ViewModels.Hunts
             ShowHuntCommand = new Command(async () => await ShowHunt());
         }
 
-        public void Initialize(Hunt hunt)
+        public void Initialize(Jakt hunt)
         {
             _huntDataModel = hunt;
 

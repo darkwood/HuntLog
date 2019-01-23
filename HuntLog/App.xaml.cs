@@ -12,7 +12,7 @@ namespace HuntLog
         public App()
         {
             InitializeComponent();
-           
+            InitializeDummyData();
         }
 
         protected async override void OnStart()
@@ -20,6 +20,24 @@ namespace HuntLog
             var bootstrapper = new Bootstrapper(this);
             await bootstrapper.Run();
         }
+
+        private void InitializeDummyData()
+        {
+            if (!FileManager.Exists("jakt.xml"))
+            {
+                FileManager.CopyToAppFolder("arter.xml");
+                FileManager.CopyToAppFolder("artgroup.xml");
+                FileManager.CopyToAppFolder("dogs.xml");
+                FileManager.CopyToAppFolder("jakt.xml");
+                FileManager.CopyToAppFolder("jegere.xml");
+                FileManager.CopyToAppFolder("logger.xml");
+                FileManager.CopyToAppFolder("loggtypegroup.xml");
+                FileManager.CopyToAppFolder("loggtyper.xml");
+                FileManager.CopyToAppFolder("myspecies.xml");
+                FileManager.CopyToAppFolder("selectedartids.xml");
+            }
+        }
+
 
         protected override void OnSleep()
         {

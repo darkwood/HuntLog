@@ -9,7 +9,7 @@ namespace HuntLog.ViewModels.Hunts
     {
         private readonly IHuntService _huntService;
 
-        private Hunt _huntDataModel = new Hunt();
+        private Jakt _huntDataModel = new Jakt();
 
         public string Location
         {
@@ -49,7 +49,7 @@ namespace HuntLog.ViewModels.Hunts
         }
 
 
-        public async Task InitializeAsync(Hunt hunt)
+        public async Task InitializeAsync(Jakt hunt)
         {
             IsBusy = true;
             {
