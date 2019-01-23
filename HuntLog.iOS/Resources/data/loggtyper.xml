@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLoggType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LoggType>
+	  <Key>Weather</Key>
+	   <Navn>Vær</Navn>
+	   <Beskrivelse>Værforhold, enkel tekst</Beskrivelse>
+	   <GroupId>1</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>Gender</Key>
+	   <Navn>Kjønn</Navn>
+	   <Beskrivelse>Hukjønn eller hankjønn</Beskrivelse>
+	   <GroupId>1</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>WeaponType</Key>
+	   <Navn>Våpentype</Navn>
+	   <Beskrivelse>Hvis du bruker ulike våpen</Beskrivelse>
+	   <GroupId>1</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>Age</Key>
+	   <Navn>Alder, storvilt</Navn>
+	   <Beskrivelse>Aldersgruppe på storvilt.</Beskrivelse>
+	   <GroupId>2</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>Weight</Key>
+	   <Navn>Vekt</Navn>
+	   <Beskrivelse>Vekt i kilo</Beskrivelse>
+	   <GroupId>2</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>Tags</Key>
+	   <Navn>Tagger</Navn>
+	   <Beskrivelse>Antall tagger på gevir</Beskrivelse>
+	   <GroupId>2</GroupId>
+	</LoggType>
+	<LoggType>
+	  <Key>ButchWeight</Key>
+	   <Navn>Slaktevekt</Navn>
+	   <Beskrivelse>Vekt på slaktet dyr</Beskrivelse>
+	   <GroupId>2</GroupId>
+	</LoggType>
+</ArrayOfLoggType>

@@ -13,11 +13,15 @@ namespace HuntLog.ViewModels.Hunts
 
         public ICommand ShowHuntCommand { get; set; }
         public string Detail { get; set; }
-        public HuntListItemViewModel(Hunt hunt, INavigator navigator)
+        public HuntListItemViewModel(INavigator navigator)
         {
-            _huntDataModel = hunt;
             _navigator = navigator;
             ShowHuntCommand = new Command(async () => await ShowHunt());
+        }
+
+        public void Initialize(Hunt hunt)
+        {
+            _huntDataModel = hunt;
 
             Title = hunt.Sted;
             Detail = hunt.DatoFra.ToShortDateString();
@@ -25,7 +29,7 @@ namespace HuntLog.ViewModels.Hunts
 
         private async Task ShowHunt()
         {
-            await _navigator.PushAsync<HuntViewModel>(_huntDataModel);
+            await _navigator.PushAsync<HuntViewModel>(afterNavigate: async (arg) => await arg.InitializeAsync(_huntDataModel));
         }
     }
 }

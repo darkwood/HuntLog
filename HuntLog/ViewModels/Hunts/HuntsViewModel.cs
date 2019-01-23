@@ -10,13 +10,13 @@ namespace HuntLog.ViewModels.Hunts
     public class HuntsViewModel : ViewModelBase
     {
         private readonly IHuntService _huntService;
-        private readonly Func<Hunt, HuntListItemViewModel> _huntViewModelFactory;
-        private IEnumerable<HuntListItemViewModel> _huntViewModels;
+        private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
+        private IEnumerable<HuntListItemViewModel> m_huntListItemViewModels;
 
-        public IEnumerable<HuntListItemViewModel> HuntViewModels
+        public IEnumerable<HuntListItemViewModel> HuntListItemViewModels
         {
-            get { return _huntViewModels; }
-            set { SetProperty(ref _huntViewModels, value); }
+            get { return m_huntListItemViewModels; }
+            set { SetProperty(ref m_huntListItemViewModels, value); }
         }
 
         private bool _dataLoaded;
@@ -25,16 +25,16 @@ namespace HuntLog.ViewModels.Hunts
             get => _dataLoaded; set => SetProperty(ref _dataLoaded, value);
         }
 
-        public async Task Initialize()
+        public async Task InitializeAsync()
         {
             await FetchHuntData();
         }
+            
 
-        public HuntsViewModel(IHuntService huntService,
-                Func<Hunt, HuntListItemViewModel> huntViewModelFactory)
+        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory)
         {
             _huntService = huntService;
-            _huntViewModelFactory = huntViewModelFactory;
+            _huntListItemViewModelFactory = huntListItemViewModelFactory;
             Title = "Hunts";
         }
 
@@ -42,7 +42,12 @@ namespace HuntLog.ViewModels.Hunts
         {
             var hunts = await _huntService.GetHunts();
             DataLoaded = true;
-            HuntViewModels = hunts.Select(x => _huntViewModelFactory(x))
+            HuntListItemViewModels = hunts.Select(x =>
+                {
+                    var item = _huntListItemViewModelFactory();
+                    item.Initialize(x);
+                    return item;
+                })
                 .ToList();
         }
     }

@@ -49,19 +49,16 @@ namespace HuntLog.ViewModels.Hunts
         }
 
 
-        public override async Task InitializeAsync(object initData)
+        public async Task InitializeAsync(Hunt hunt)
         {
             IsBusy = true;
-            if (initData is Hunt)
             {
                 await Task.Delay(1000);
-                _huntDataModel = initData as Hunt;
+                _huntDataModel = hunt;
                 OnPropertyChanged(nameof(Location));
                 IsBusy = false;
             }
-
-            await base.InitializeAsync(initData);
-        }
+}
 
         private void Save()
         {

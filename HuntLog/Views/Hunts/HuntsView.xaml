@@ -8,9 +8,9 @@
     <ContentPage.Content>
         <Grid>
            
-            <ActivityIndicator IsRunning="true" IsEnabled="true" IsVisible="{Binding DataLoaded, Converter={Converters:InverseBoolConverter}}" />
+<!--            <ActivityIndicator IsRunning="true" IsEnabled="true" IsVisible="{Binding DataLoaded, Converter={Converters:InverseBoolConverter}}" />-->
             
-            <ListView ItemsSource="{Binding HuntViewModels}" IsVisible="{Binding DataLoaded}">
+            <ListView ItemsSource="{Binding HuntListItemViewModels}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ShowHuntCommand}"/>

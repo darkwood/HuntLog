@@ -161,9 +161,7 @@
       <Name>HuntLog</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BundleResource Include="Resources\data\arter.xml" />
     <BundleResource Include="Resources\data\artgroup.xml" />
@@ -172,5 +170,17 @@
     <BundleResource Include="Resources\data\jegere.xml" />
     <BundleResource Include="Resources\data\logger.xml" />
     <BundleResource Include="Resources\data\selectedartids.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\data\dogs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\data\loggtypegroup.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\data\loggtyper.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\data\myspecies.xml" />
   </ItemGroup>
 </Project>
