@@ -1,1 +1,8 @@
-﻿SQLite.Net : https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/databases
+﻿https://xamarinhelp.com/xamarin-forms-async-task-startup/
+
+
+https://xamarinforms.wordpress.com/tag/mvvm/
+
+
+
+SQLite.Net : https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/databases

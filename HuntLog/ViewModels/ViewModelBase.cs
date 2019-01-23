@@ -10,7 +10,6 @@ namespace HuntLog.ViewModels
     {
         string Title { get; set; }
         bool IsBusy { get; set; }
-        Task InitializeAsync(object initData);
     }
 
     public abstract class ViewModelBase : IViewModel
@@ -35,8 +34,6 @@ namespace HuntLog.ViewModels
             }
         }
 
-
-        public virtual async Task InitializeAsync(object initData = null) { await Task.CompletedTask; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

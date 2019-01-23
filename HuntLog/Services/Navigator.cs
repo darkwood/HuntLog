@@ -1,30 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using HuntLog.Factories;
 using HuntLog.ViewModels;
+using LightInject;
 using Xamarin.Forms;
 
 namespace HuntLog.Services
 {
-    public interface INavigator
-    {
-        Task<IViewModel> PopAsync();
-        Task<IViewModel> PopModalAsync();
-        Task PopToRootAsync();
-        Task<TViewModel> PushAsync<TViewModel>(object initData = null) where TViewModel : class, IViewModel;
-        Task<TViewModel> PushModalAsync<TViewModel>(TViewModel viewModel) where TViewModel : class, IViewModel;
-    }
 
     public class Navigator : INavigator
     {
         private readonly Lazy<INavigation> _navigation;
-        private readonly IViewFactory _viewFactory;
+        private readonly IServiceFactory serviceFactory;
+        private readonly IDictionary<Type, Type> _map = new Dictionary<Type, Type>();
 
-        public Navigator(Lazy<INavigation> navigation, IViewFactory viewFactory)
+
+        public Navigator(Lazy<INavigation> navigation, IServiceFactory serviceFactory)
         {
             _navigation = navigation;
-            _viewFactory = viewFactory;
+            this.serviceFactory = serviceFactory;
         }
+
+        public void Register<TViewModel, TView>()
+            where TViewModel : class, IViewModel
+            where TView : Page
+        {
+            _map[typeof(TViewModel)] = typeof(TView);
+        }
+
 
         private INavigation Navigation
         {
@@ -39,7 +42,7 @@ namespace HuntLog.Services
 
         public async Task<IViewModel> PopModalAsync()
         {
-            Page view = await Navigation.PopAsync();
+            var view = await Navigation.PopAsync();
             return view.BindingContext as IViewModel;
         }
 
@@ -48,24 +51,44 @@ namespace HuntLog.Services
             await Navigation.PopToRootAsync();
         }
 
-        public async Task<TViewModel> PushAsync<TViewModel>(object initData = null)
-            where TViewModel : class, IViewModel
+        public async Task<TViewModel> PushAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel
         {
-            TViewModel viewModel;
-            var view = _viewFactory.Resolve<TViewModel>(out viewModel);
-            var initTask = viewModel.InitializeAsync(initData);
-            var naviTask = Navigation.PushAsync(view);
+            var view = (Page)serviceFactory.GetInstance(_map[typeof(TViewModel)]);
+            var viewModel = (TViewModel)view.BindingContext;
 
-            await Task.WhenAll(initTask, naviTask);
+            if (beforeNavigate != null)
+            {
+                await beforeNavigate(viewModel);
+            }
+
+            await Navigation.PushAsync(view);
+
+            if (afterNavigate != null)
+            {
+                await afterNavigate(viewModel);
+            }
 
             return viewModel;
         }
 
-        public async Task<TViewModel> PushModalAsync<TViewModel>(TViewModel viewModel)
+        public async Task<TViewModel> PushModalAsync<TViewModel>(TViewModel viewModel, Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null)
             where TViewModel : class, IViewModel
         {
-            var view = _viewFactory.Resolve(viewModel);
+            var view = (Page)serviceFactory.GetInstance(_map[typeof(TViewModel)]);
+            view.BindingContext = viewModel;
+
+            if (beforeNavigate != null)
+            {
+                await beforeNavigate(viewModel);
+            }
+
             await Navigation.PushModalAsync(view);
+
+            if (afterNavigate != null)
+            {
+                await afterNavigate(viewModel);
+            }
+
             return viewModel;
         }
     }
