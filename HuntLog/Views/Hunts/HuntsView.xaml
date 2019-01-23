@@ -3,14 +3,19 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="HuntLog.Views.Hunts.HuntsView"
-    xmlns:Converters="clr-namespace:HuntLog.Views.Converters"
+    xmlns:Converters="clr-namespace:HuntLog.Converters"
     Title="{Binding Title}">
     <ContentPage.Content>
         <Grid>
            
 <!--            <ActivityIndicator IsRunning="true" IsEnabled="true" IsVisible="{Binding DataLoaded, Converter={Converters:InverseBoolConverter}}" />-->
             
-            <ListView ItemsSource="{Binding HuntListItemViewModels}">
+            <ListView 
+                ItemsSource="{Binding HuntListItemViewModels}"
+                IsGroupingEnabled="true"
+                GroupDisplayBinding="{Binding Name}"
+                GroupShortNameBinding="{Binding ShortName}"
+                >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ShowHuntCommand}"/>

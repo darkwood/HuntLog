@@ -21,8 +21,8 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModels\Hunts\" />
     <Folder Include="Views\Hunts\" />
-    <Folder Include="Views\Converters\" />
     <Folder Include="Xml\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />

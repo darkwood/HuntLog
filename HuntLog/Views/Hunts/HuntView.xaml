@@ -2,19 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.Views.Hunts.HuntView"
-            xmlns:Converters="clr-namespace:HuntLog.Views.Converters"
+            xmlns:Converters="clr-namespace:HuntLog.Converters"
             Title="{Binding Title}">
     
     <ContentPage.Content>
        <Grid>
-            <ActivityIndicator IsRunning="true" 
-                               IsVisible="{Binding IsBusy}" 
-                               HorizontalOptions="Fill" 
-                               VerticalOptions="Fill"
-                               Opacity="0.8" 
-                               Color="White"
-                               BackgroundColor="Black"/>
-            
              <StackLayout Margin="20">
             
                 <Label Text ="Sted" />

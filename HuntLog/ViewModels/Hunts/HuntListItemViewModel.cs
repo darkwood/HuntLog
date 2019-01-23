@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using HuntLog.Models;
 using HuntLog.Services;
@@ -12,7 +13,12 @@ namespace HuntLog.ViewModels.Hunts
         private Jakt _huntDataModel { get; set; }
 
         public ICommand ShowHuntCommand { get; set; }
-        public string Detail { get; set; }
+
+        public string ID => _huntDataModel.ID;
+        public string Detail => _huntDataModel.DatoFra.ToShortDateString();
+        public DateTime DateFrom => _huntDataModel.DatoFra;
+        public DateTime DateTo => _huntDataModel.DatoTil;
+
         public HuntListItemViewModel(INavigator navigator)
         {
             _navigator = navigator;
@@ -22,14 +28,12 @@ namespace HuntLog.ViewModels.Hunts
         public void Initialize(Jakt hunt)
         {
             _huntDataModel = hunt;
-
-            Title = hunt.Sted;
-            Detail = hunt.DatoFra.ToShortDateString();
+            Title = _huntDataModel.Sted;
         }
 
         private async Task ShowHunt()
         {
-            await _navigator.PushAsync<HuntViewModel>(afterNavigate: async (arg) => await arg.InitializeAsync(_huntDataModel));
+            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: async (arg) => await arg.SetState(_huntDataModel));
         }
     }
 }
