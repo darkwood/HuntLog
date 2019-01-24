@@ -141,6 +141,11 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\logo_splash_screen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_splash_screen.imageset\gevir_black%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_splash_screen.imageset\gevir_black%403x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_splash_screen.imageset\gevir_black.png" />
+    <ImageAsset Include="Assets.xcassets\logo_splash_screen.imageset\gevir_black%402x-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -149,8 +154,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.0.1</Version>
     </PackageReference>
@@ -165,5 +170,6 @@
   <ItemGroup />
   <ItemGroup>
     <Folder Include="IO\" />
+    <Folder Include="Assets.xcassets\logo_splash_screen.imageset\" />
   </ItemGroup>
 </Project>

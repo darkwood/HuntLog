@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using HuntLog.Models;
+using HuntLog.Models.ListModels;
 using HuntLog.Services;
 
 namespace HuntLog.ViewModels.Hunts
@@ -10,6 +13,8 @@ namespace HuntLog.ViewModels.Hunts
         private readonly IHuntService _huntService;
 
         private Jakt _huntDataModel { get; set; }
+
+        public ObservableCollection<CellData> Items { get; set; }
 
         public string Location
         {
@@ -51,6 +56,24 @@ namespace HuntLog.ViewModels.Hunts
         public async Task SetState(Jakt hunt)
         {
             _huntDataModel = hunt;
+            Items = new ObservableCollection<CellData>
+            {
+                new TextCellData
+                {
+                    Label = "Sted",
+                    Value = _huntDataModel.Sted,
+                },
+                new DateCellData
+                {
+                    Label = "Dato fra",
+                    Value = _huntDataModel.DatoFra.ToShortDateString(),
+                },
+                new DateCellData
+                {
+                    Label = "Dato til",
+                    Value = _huntDataModel.DatoTil.ToShortDateString(),
+                }
+            };
             OnPropertyChanged("");
             await Task.CompletedTask;
         }

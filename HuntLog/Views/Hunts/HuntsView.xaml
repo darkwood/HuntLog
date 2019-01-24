@@ -15,10 +15,24 @@
                 IsGroupingEnabled="true"
                 GroupDisplayBinding="{Binding Name}"
                 GroupShortNameBinding="{Binding ShortName}"
+                HasUnevenRows="true"
                 >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ShowHuntCommand}"/>
+                        <ImageCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ShowHuntCommand}"/>
+                        <!--<ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10"> 
+                                <ImageButton BorderWidth="1" BorderColor="Gray" Margin="10" />
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" />
+                                    <Label Text="{Binding Detail}"/>
+                                </StackLayout>
+                                <StackLayout.GestureRecognizers>
+                                     <TapGestureRecognizer Command="{Binding ShowHuntCommand}" />
+                                </StackLayout.GestureRecognizers>
+                           </StackLayout>
+                            
+                        </ViewCell>-->
                     </DataTemplate>     
                 </ListView.ItemTemplate>
             </ListView>

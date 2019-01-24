@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1029999" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="LightInject" Version="5.3.0" />
@@ -23,12 +23,15 @@
     <Folder Include="Views\Hunts\" />
     <Folder Include="Xml\" />
     <Folder Include="Converters\" />
+    <Folder Include="Models\ListModels\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
     <Compile Remove="AppModule.cs" />
     <Compile Remove="Factories\ViewFactory.cs" />
     <Compile Remove="Factories\IViewFactory.cs" />
+    <Compile Remove="Models\ListModels\CellItem %28copy%29.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />
