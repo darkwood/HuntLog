@@ -8,14 +8,21 @@ using HuntLog.Interfaces;
 
 namespace HuntLog.Services
 {
-    public static class FileManager
+    public class FileManager : IFileManager
     {
-        public static void SaveToLocalStorage<T>(this T objToSerialize, string filename)
+        private readonly IFileUtility _fileUtility;
+
+        public FileManager(IFileUtility fileUtility)
+        {
+            _fileUtility = fileUtility;
+        }
+
+        public void SaveToLocalStorage<T>(T objToSerialize, string filename)
         {
             if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
             {
                 var jsonString = JsonConvert.SerializeObject(objToSerialize);
-                DependencyService.Get<IFileUtility>().Save(filename, jsonString);
+                _fileUtility.Save(filename, jsonString);
                 return;
             }
             else
@@ -25,18 +32,18 @@ namespace HuntLog.Services
                 using (StringWriter textWriter = new StringWriter())
                 {
                     xmlSerializer.Serialize(textWriter, objToSerialize);
-                    DependencyService.Get<IFileUtility>().Save(filename, textWriter.ToString());
+                    _fileUtility.Save(filename, textWriter.ToString());
                 }
             }
         }
 
-        public static T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
+        public T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
             // 1 read json
             if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
             {
-                var jsonString = DependencyService.Get<IFileUtility>().Load(filename);
+                var jsonString = _fileUtility.Load(filename);
 
                 try
                 {
@@ -56,14 +63,14 @@ namespace HuntLog.Services
 
                 if (localFileExists)
                 {
-                    var xmlString = DependencyService.Get<IFileUtility>().Load(xmlFilename);
+                    var xmlString = _fileUtility.Load(xmlFilename);
                     try
                     {
                         using (var reader = new StringReader(xmlString))
                         {
                             XmlSerializer serializer = new XmlSerializer(typeof(T));
                             localObj = (T)serializer.Deserialize(reader);
-                            localObj.SaveToLocalStorage(filename); //Save to json format
+                            SaveToLocalStorage(localObj, filename); //Save to json format
                         }
                     }
                     catch (Exception ex)
@@ -75,43 +82,38 @@ namespace HuntLog.Services
             return localObj;
         }
 
-        public static bool Exists(string filename)
+        public bool Exists(string filename)
         {
-            return DependencyService.Get<IFileUtility>().Exists(filename);
+            return _fileUtility.Exists(filename);
         }
 
-        public static DateTime GetLastWriteTime(string filename)
+        public DateTime GetLastWriteTime(string filename)
         {
-            return DependencyService.Get<IFileUtility>().GetLastWriteTime(filename);
+            return _fileUtility.GetLastWriteTime(filename);
         }
 
-        public static void CopyToAppFolder(string file)
+        public void CopyToAppFolder(string file)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
-            string[] resources = assembly.GetManifestResourceNames();
-            foreach (string resource in resources)
-            {
-
-            }
-                Stream stream = assembly.GetManifestResourceStream(assembly.GetName().Name + ".Xml." + file);
+            Stream stream = assembly.GetManifestResourceStream(assembly.GetName().Name + ".Xml." + file);
 
             using (var reader = new StreamReader(stream))
             {
-                DependencyService.Get<IFileUtility>().Save(file, reader.ReadToEnd());
+                _fileUtility.Save(file, reader.ReadToEnd());
             }
         }
 
-        public static void Delete(string filename)
+        public void Delete(string filename)
         {
-            DependencyService.Get<IFileUtility>().Delete(filename);
+            _fileUtility.Delete(filename);
         }
 
-        public static string SaveImage(string filename, byte[] imageData)
+        public string SaveImage(string filename, byte[] imageData)
         {
-            return DependencyService.Get<IFileUtility>().SaveImage(filename, imageData);
+            return _fileUtility.SaveImage(filename, imageData);
         }
 
-        public static void Copy(string sourceFile, string destinationFile)
-        => DependencyService.Get<IFileUtility>().Copy(sourceFile, destinationFile);
+        public void Copy(string sourceFile, string destinationFile)
+        => _fileUtility.Copy(sourceFile, destinationFile);
     }
 }

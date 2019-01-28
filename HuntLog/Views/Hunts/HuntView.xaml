@@ -9,19 +9,20 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="TextCellTemplate">
-                <ViewCell>
+               <ViewCell>
                  <StackLayout HeightRequest="50" Padding="10" Orientation="Horizontal" BackgroundColor="Fuchsia">
                     <Label Text="{Binding Label}" VerticalOptions="Center" />
                     <Label Text="{Binding Value}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers><TapGestureRecognizer Command="{Binding Tapped}" /></StackLayout.GestureRecognizers>
                  </StackLayout>
                 </ViewCell>
             </DataTemplate>
             <DataTemplate x:Key="DateCellTemplate">
                 <ViewCell>
                     <StackLayout HeightRequest="50" Padding="10" Orientation="Horizontal" BackgroundColor="Yellow">
-                        <Label Text="DATE: " />
                         <Label Text="{Binding Label}" VerticalOptions="Center" />
                         <Label Text="{Binding Value}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                        <StackLayout.GestureRecognizers><TapGestureRecognizer Command="{Binding Tapped}" /></StackLayout.GestureRecognizers>
                      </StackLayout>
                 </ViewCell>
             </DataTemplate>

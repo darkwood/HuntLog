@@ -10,11 +10,8 @@ namespace HuntLog.Services
         Task<IViewModel> PopAsync();
         Task<IViewModel> PopModalAsync();
         Task PopToRootAsync();
-        Task<TViewModel> PushModalAsync<TViewModel>(TViewModel viewModel, Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null)
-            where TViewModel : class, IViewModel;
+        Task<TViewModel> PushModalAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
         Task<TViewModel> PushAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
-        void Register<TViewModel, TView>()
-            where TViewModel : class, IViewModel
-            where TView : Page;
+        void Register<TViewModel, TView>() where TViewModel : class, IViewModel where TView : Page;
     }
 }

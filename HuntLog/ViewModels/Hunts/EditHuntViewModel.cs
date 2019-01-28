@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using HuntLog.Models;
-using HuntLog.Models.ListModels;
 using HuntLog.Services;
 using Xamarin.Forms;
 
 namespace HuntLog.ViewModels.Hunts
 {
-    public class HuntViewModel : ViewModelBase
+    public class EditHuntViewModel : ViewModelBase
     {
         private readonly IHuntService _huntService;
+        private readonly INavigation _navigation;
 
         private Jakt _huntDataModel { get; set; }
 
-        public ObservableCollection<CellData> Items { get; set; }
+        public ICommand CancelCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
 
         public string Location
         {
@@ -46,33 +46,20 @@ namespace HuntLog.ViewModels.Hunts
                 OnPropertyChanged(nameof(DateTo));
             }
         }
-        public HuntViewModel(IHuntService huntService)
+        public EditHuntViewModel(IHuntService huntService, INavigation navigation)
         {
             _huntService = huntService;
+            _navigation = navigation;
+
+            SaveCommand = new Command(Save);
+            CancelCommand = new Command(() => {
+                _navigation.PopModalAsync();
+            });
         }
 
         public async Task SetState(Jakt hunt)
         {
             _huntDataModel = hunt;
-            Items = new ObservableCollection<CellData>
-            {
-                new TextCellData
-                {
-                    Label = "Sted",
-                    Value = Location,
-                    Tapped = new Command(() => {  })
-                },
-                new DateCellData
-                {
-                    Label = "Dato fra",
-                    Value = _huntDataModel.DatoFra.ToShortDateString(),
-                },
-                new DateCellData
-                {
-                    Label = "Dato til",
-                    Value = _huntDataModel.DatoTil.ToShortDateString(),
-                }
-            };
             OnPropertyChanged("");
             await Task.CompletedTask;
         }
@@ -80,6 +67,7 @@ namespace HuntLog.ViewModels.Hunts
         private void Save()
         {
             _huntService?.Save(_huntDataModel);
+            _navigation.PopModalAsync();
         }
     }
 }

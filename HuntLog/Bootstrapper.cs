@@ -23,6 +23,8 @@ namespace HuntLog
             container.RegisterFrom<CompositionRoot>();
 
             RegisterViews(container.GetInstance<INavigator>());
+            IFileManager fileManager = container.GetInstance<IFileManager>();
+            InitializeDummyData(fileManager);
 
             await ConfigureApplication(container);
         }
@@ -31,15 +33,36 @@ namespace HuntLog
         {
             viewFactory.Register<HuntsViewModel, HuntsView>();
             viewFactory.Register<HuntViewModel, HuntView>();
+            viewFactory.Register<EditHuntViewModel, EditHuntView>();
+
         }
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
-            var huntsViewModel = container.GetInstance<HuntsViewModel>();
-            var mainPage = new HuntsView(huntsViewModel);
-            var navigationPage = new NavigationPage(mainPage);
+            var mainPage = container.GetInstance<HuntsView>();
+            var huntsViewModel = (HuntsViewModel) mainPage.BindingContext;
+
+            var navigationPage = new NavigationPage(mainPage); //TODO: Register NavigationPage in container?
             _application.MainPage = navigationPage;
-            await huntsViewModel.InitializeAsync();
+            //await huntsViewModel.InitializeAsync();
+        }
+
+        private void InitializeDummyData(IFileManager fileManager)
+        {
+
+            if (!fileManager.Exists("jakt.xml"))
+            {
+                fileManager.CopyToAppFolder("arter.xml");
+                fileManager.CopyToAppFolder("artgroup.xml");
+                fileManager.CopyToAppFolder("dogs.xml");
+                fileManager.CopyToAppFolder("jakt.xml");
+                fileManager.CopyToAppFolder("jegere.xml");
+                fileManager.CopyToAppFolder("logger.xml");
+                fileManager.CopyToAppFolder("loggtypegroup.xml");
+                fileManager.CopyToAppFolder("loggtyper.xml");
+                fileManager.CopyToAppFolder("myspecies.xml");
+                fileManager.CopyToAppFolder("selectedartids.xml");
+            }
         }
     }
 }

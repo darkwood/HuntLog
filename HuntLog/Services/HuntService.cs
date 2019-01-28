@@ -17,12 +17,18 @@ namespace HuntLog.Services
         Task Save(Jakt hunt);
     }
 
-
     public class HuntService : IHuntService
     {
-
-        private const int _delay = 500;
+        private const int _delay = 0;
+        private const string _fileNameHunt = "jakt.xml";
+        private readonly IFileManager _fileManager;
         private List<Jakt> _hunts;
+
+        public HuntService(IFileManager fileManager)
+        {
+            _fileManager = fileManager;
+        }
+
         public async Task<Jakt> GetHunt(string id)
         {
             var hunts = await GetHunts();
@@ -35,7 +41,7 @@ namespace HuntLog.Services
             {
                 await Task.Delay(_delay);
 
-                _hunts = FileManager.LoadFromLocalStorage<List<Jakt>>("jakt.xml");
+                _hunts = _fileManager.LoadFromLocalStorage<List<Jakt>>(_fileNameHunt);
 
                 //_hunts = new List<Hunt>
                 //{
@@ -55,6 +61,8 @@ namespace HuntLog.Services
                 _hunts.Remove(itemToReplace);
             }
             _hunts.Add(hunt);
+
+            _fileManager.SaveToLocalStorage(_hunts, _fileNameHunt);
 
             await Task.CompletedTask;
         }
