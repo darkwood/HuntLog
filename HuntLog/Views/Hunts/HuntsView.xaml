@@ -5,6 +5,9 @@
     x:Class="HuntLog.Views.Hunts.HuntsView"
     xmlns:Converters="clr-namespace:HuntLog.Converters"
     Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding AddCommand}" Priority="1" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
            

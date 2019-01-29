@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using HuntLog.Models;
 using HuntLog.Services;
+using Xamarin.Forms;
 
 namespace HuntLog.ViewModels.Hunts
 {
@@ -24,7 +23,7 @@ namespace HuntLog.ViewModels.Hunts
     {
         private readonly IHuntService _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
-
+        private readonly INavigator _navigator;
         private ObservableCollection<HuntGroup> _huntListItemViewModels;
         public ObservableCollection<HuntGroup> HuntListItemViewModels
         {
@@ -32,17 +31,25 @@ namespace HuntLog.ViewModels.Hunts
             set { SetProperty(ref _huntListItemViewModels, value); }
         }
 
-        public async Task InitializeAsync()
-        {
-            await FetchHuntData();
-        }
+        public Command AddCommand { get; set; }
 
-
-        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory)
+        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator)
         {
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;
+            _navigator = navigator;
+            AddCommand = new Command(async () => await AddHunt());
             Title = "Jaktloggen";
+        }
+
+        private async Task AddHunt()
+        {
+            await _navigator.PushModalAsync<EditHuntViewModel>(beforeNavigate: async (arg) => await arg.SetState(new Models.Jakt()));
+        }
+
+        public async Task InitializeAsync()
+        {
+            await FetchHuntData();
         }
 
         public async Task FetchHuntData()

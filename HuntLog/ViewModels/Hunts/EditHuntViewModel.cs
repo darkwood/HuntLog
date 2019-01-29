@@ -46,11 +46,13 @@ namespace HuntLog.ViewModels.Hunts
                 OnPropertyChanged(nameof(DateTo));
             }
         }
+
+        public bool IsNew => _huntDataModel.ID == string.Empty;
+
         public EditHuntViewModel(IHuntService huntService, INavigation navigation)
         {
             _huntService = huntService;
             _navigation = navigation;
-
             SaveCommand = new Command(Save);
             CancelCommand = new Command(() => {
                 _navigation.PopModalAsync();
@@ -60,12 +62,17 @@ namespace HuntLog.ViewModels.Hunts
         public async Task SetState(Jakt hunt)
         {
             _huntDataModel = hunt;
+            Title = IsNew ? "Ny jakt" : "Rediger";
             OnPropertyChanged("");
             await Task.CompletedTask;
         }
 
         private void Save()
         {
+            if (IsNew) {
+                _huntDataModel.ID = Guid.NewGuid().ToString();
+            }
+
             _huntService?.Save(_huntDataModel);
             _navigation.PopModalAsync();
         }

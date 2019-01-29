@@ -7,8 +7,8 @@
              Title="{Binding Title}">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Avbryt" Command="{Binding CancelCommand}" />
-        <ToolbarItem Text="Lagre" Command="{Binding SaveCommand}"/>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
 
