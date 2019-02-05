@@ -6,36 +6,10 @@
              xmlns:Helpers="clr-namespace:HuntLog.Helpers"
             Title="{Binding Title}">
     
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="TextCellTemplate">
-               <ViewCell>
-                 <StackLayout HeightRequest="50" Padding="10" Orientation="Horizontal" BackgroundColor="Fuchsia">
-                    <Label Text="{Binding Label}" VerticalOptions="Center" />
-                    <Label Text="{Binding Value}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                    <StackLayout.GestureRecognizers><TapGestureRecognizer Command="{Binding Tapped}" /></StackLayout.GestureRecognizers>
-                 </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-            <DataTemplate x:Key="DateCellTemplate">
-                <ViewCell>
-                    <StackLayout HeightRequest="50" Padding="10" Orientation="Horizontal" BackgroundColor="Yellow">
-                        <Label Text="{Binding Label}" VerticalOptions="Center" />
-                        <Label Text="{Binding Value}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                        <StackLayout.GestureRecognizers><TapGestureRecognizer Command="{Binding Tapped}" /></StackLayout.GestureRecognizers>
-                     </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-            
-            <Helpers:CellTemplateSelector x:Key="CellTemplateSelector"
-                             TextCellTemplate="{StaticResource TextCellTemplate}"
-                             DateCellTemplate="{StaticResource DateCellTemplate}" />
-        </ResourceDictionary>
-     </ContentPage.Resources>
-    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         
-      <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource CellTemplateSelector}" Margin="10,0,0,0">
-        </ListView>
     </ContentPage.Content>
 </ContentPage>

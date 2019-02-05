@@ -11,7 +11,7 @@ namespace HuntLog
     {
         public App()
         {
-            InitializeComponent();
+             InitializeComponent();
         }
 
         protected async override void OnStart()

@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
 
@@ -38,13 +39,17 @@ namespace HuntLog.ViewModels.Hunts
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;
             _navigator = navigator;
-            AddCommand = new Command(async () => await AddHunt());
+            AddCommand = new Command(async () => await AddItem());
             Title = "Jaktloggen";
         }
 
-        private async Task AddHunt()
+        private async Task AddItem()
         {
-            await _navigator.PushModalAsync<EditHuntViewModel>(beforeNavigate: async (arg) => await arg.SetState(new Models.Jakt()));
+            Action<Jakt> callback = (arg) => {
+                //need to update anything?
+            };
+            await _navigator.PushModalAsync<EditHuntViewModel>(
+                    beforeNavigate: async (arg) => await arg.SetState(new Jakt(), callback));
         }
 
         public async Task InitializeAsync()

@@ -6,12 +6,12 @@
              xmlns:Helpers="clr-namespace:HuntLog.Helpers"
              Title="{Binding Title}">
     
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
         <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
-
+-->
     <ContentPage.Content>
             
         <TableView Grid.Row="1" HasUnevenRows="true" Intent="Settings">

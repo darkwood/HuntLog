@@ -5,7 +5,7 @@ namespace HuntLog.Models
 {
     public class Jakt
     {
-        public string ID { get; set; }
+        public string ID { get; set; }  
         public string Sted { get; set; }
         public DateTime DatoFra = DateTime.Now;
         public DateTime DatoTil = DateTime.Now;

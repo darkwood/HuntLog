@@ -44,7 +44,7 @@ namespace HuntLog
 
             var navigationPage = new NavigationPage(mainPage); //TODO: Register NavigationPage in container?
             _application.MainPage = navigationPage;
-            //await huntsViewModel.InitializeAsync();
+            await Task.CompletedTask;
         }
 
         private void InitializeDummyData(IFileManager fileManager)

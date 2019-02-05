@@ -11,6 +11,7 @@ namespace HuntLog.ViewModels.Hunts
     {
         private readonly IHuntService _huntService;
         private readonly INavigation _navigation;
+        private Action<Jakt> _callback;
 
         private Jakt _huntDataModel { get; set; }
 
@@ -59,8 +60,9 @@ namespace HuntLog.ViewModels.Hunts
             });
         }
 
-        public async Task SetState(Jakt hunt)
+        public async Task SetState(Jakt hunt, Action<Jakt> callback)
         {
+            _callback = callback;
             _huntDataModel = hunt;
             Title = IsNew ? "Ny jakt" : "Rediger";
             OnPropertyChanged("");
@@ -74,7 +76,9 @@ namespace HuntLog.ViewModels.Hunts
             }
 
             _huntService?.Save(_huntDataModel);
+            _callback.Invoke(_huntDataModel);
             _navigation.PopModalAsync();
+            
         }
     }
 }
