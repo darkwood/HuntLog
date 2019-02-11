@@ -2,30 +2,56 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.Views.Hunts.HuntView"
-            xmlns:Converters="clr-namespace:HuntLog.Views.Converters"
-            Title="{Binding Title}">
+             xmlns:Converters="clr-namespace:HuntLog.Converters"
+             xmlns:Controls="clr-namespace:HuntLog.Controls"
+            Title="{Binding Location}">
     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-       <Grid>
-            <ActivityIndicator IsRunning="true" 
-                               IsVisible="{Binding IsBusy}" 
-                               HorizontalOptions="Fill" 
-                               VerticalOptions="Fill"
-                               Opacity="0.8" 
-                               Color="White"
-                               BackgroundColor="Black"/>
+        <StackLayout>
+            <Grid HeightRequest="200">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding ImageSource}" Aspect="AspectFill" />
+                <Controls:ExtendedMap Grid.Column="1" x:Name="map" IsShowingUser="true" MapType="Hybrid" />
             
-             <StackLayout Margin="20">
+             <CollectionView HorizontalOptions="End" 
+                             ItemsSource="{Binding Jegere}">
+              
+            </CollectionView>
             
-                <Label Text ="Sted" />
-                <Label Text="{Binding Location}"  />
-                <Label Text="Dato fra" />
-                <Label Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" />
-                <Label Text="Dato til" />
-                <Label Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                
-            </StackLayout>
-        </Grid>
-       
+            </Grid>
+            
+            <Button 
+                BackgroundColor="SlateBlue" 
+                TextColor="White" 
+                HorizontalOptions="FillAndExpand"
+                Text="Ny loggføring" 
+            />
+            
+            
+            <ListView>
+              <ListView.ItemsSource>
+                  <x:Array Type="{x:Type x:String}">
+                    <x:String>mono</x:String>
+                    <x:String>monodroid</x:String>
+                    <x:String>monotouch</x:String>
+                    <x:String>monorail</x:String>
+                    <x:String>monodevelop</x:String>
+                    <x:String>monotone</x:String>
+                    <x:String>monopoly</x:String>
+                    <x:String>monomodal</x:String>
+                    <x:String>mononucleosis</x:String>
+                  </x:Array>
+              </ListView.ItemsSource>
+        </ListView>
+            
+            
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

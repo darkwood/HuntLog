@@ -3,7 +3,7 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace HuntLog.Views.Converters
+namespace HuntLog.Converters
 {
     public class DateTimeToShortDateConverter : IValueConverter, IMarkupExtension
     {

@@ -11,8 +11,7 @@ namespace HuntLog
     {
         public App()
         {
-            InitializeComponent();
-           
+             InitializeComponent();
         }
 
         protected async override void OnStart()
@@ -20,6 +19,7 @@ namespace HuntLog
             var bootstrapper = new Bootstrapper(this);
             await bootstrapper.Run();
         }
+
 
         protected override void OnSleep()
         {

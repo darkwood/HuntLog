@@ -5,3 +5,4 @@ https://xamarinforms.wordpress.com/tag/mvvm/
 
 
 
+SQLite.Net : https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/databases

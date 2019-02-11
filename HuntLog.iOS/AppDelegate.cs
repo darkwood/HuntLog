@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace HuntLog.iOS
 {
@@ -22,8 +23,10 @@ namespace HuntLog.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Calabash.Start();
-            global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsMaps.Init();
+            Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

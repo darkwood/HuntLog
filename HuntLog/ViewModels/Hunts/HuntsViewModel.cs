@@ -1,54 +1,88 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.Models;
 using HuntLog.Services;
+using Xamarin.Forms;
 
 namespace HuntLog.ViewModels.Hunts
 {
+    public class HuntGroup : ObservableCollection<HuntListItemViewModel>
+    {
+        public String Name { get; private set; }
+        public String ShortName { get; private set; }
+
+        public HuntGroup(String Name, String ShortName)
+        {
+            this.Name = Name;
+            this.ShortName = ShortName;
+        }
+    }
+
     public class HuntsViewModel : ViewModelBase
     {
         private readonly IHuntService _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
-        private IEnumerable<HuntListItemViewModel> m_huntListItemViewModels;
-
-        public IEnumerable<HuntListItemViewModel> HuntListItemViewModels
+        private readonly INavigator _navigator;
+        private ObservableCollection<HuntGroup> _huntListItemViewModels;
+        public ObservableCollection<HuntGroup> HuntListItemViewModels
         {
-            get { return m_huntListItemViewModels; }
-            set { SetProperty(ref m_huntListItemViewModels, value); }
+            get { return _huntListItemViewModels; }
+            set { SetProperty(ref _huntListItemViewModels, value); }
         }
 
-        private bool _dataLoaded;
-        public bool DataLoaded
+        public Command AddCommand { get; set; }
+
+        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator)
         {
-            get => _dataLoaded; set => SetProperty(ref _dataLoaded, value);
+            _huntService = huntService;
+            _huntListItemViewModelFactory = huntListItemViewModelFactory;
+            _navigator = navigator;
+            AddCommand = new Command(async () => await AddItem());
+            Title = "Jaktloggen";
+        }
+
+        private async Task AddItem()
+        {
+            Action<Jakt> callback = (arg) => {
+                //need to update anything?
+            };
+            await _navigator.PushModalAsync<EditHuntViewModel>(
+                    beforeNavigate: async (arg) => await arg.SetState(new Jakt(), callback));
         }
 
         public async Task InitializeAsync()
         {
             await FetchHuntData();
         }
-            
-
-        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory)
-        {
-            _huntService = huntService;
-            _huntListItemViewModelFactory = huntListItemViewModelFactory;
-            Title = "Hunts";
-        }
 
         public async Task FetchHuntData()
         {
+            IsBusy = true;
+
+            HuntListItemViewModels = new ObservableCollection<HuntGroup>();
             var hunts = await _huntService.GetHunts();
-            DataLoaded = true;
-            HuntListItemViewModels = hunts.Select(x =>
+
+            var huntListViewModels = hunts.Select(hunt =>
                 {
                     var item = _huntListItemViewModelFactory();
-                    item.Initialize(x);
+                    item.Initialize(hunt);
                     return item;
-                })
-                .ToList();
+                });
+
+            var groups = huntListViewModels.GroupBy(g => g.DateFrom.Year).OrderByDescending(o => o.Key);
+            foreach (var g in groups)
+            {
+                var jg = new HuntGroup(g.Key.ToString(), "");
+                foreach (var hunt in g.OrderByDescending(o => o.DateFrom))
+                {
+                    jg.Add(huntListViewModels.Single(h => h.ID == hunt.ID));
+                }
+                HuntListItemViewModels.Add(jg);
+            }
+
+            IsBusy = false;
         }
     }
 }

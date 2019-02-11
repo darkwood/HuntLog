@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.Views.Hunts.EditHuntView"
+             xmlns:Converters="clr-namespace:HuntLog.Converters"           
+             Title="{Binding Title}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+            
+        <TableView HasUnevenRows="true" Intent="Settings">
+            <TableRoot>
+                
+                <TableSection Title="">
+                    
+                    <EntryCell Label="Sted" Text="{Binding Location}" />
+                    
+                    <!--<cells:MapCell Label="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />-->
+                      
+                </TableSection>
+                
+                <TableSection Title="">
+                    <EntryCell Label="Dato fra" Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" />
+                    <EntryCell Label="Dato til" Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
+                   
+                </TableSection>
+
+                <TableSection Title="">
+                    <ViewCell>
+                        <Button Text="Slett" />
+                        <!--<Button Command="{Binding DeleteCommand}" Label="Slett jakt" sVisible="{Binding ID, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" />-->
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        
+    </ContentPage.Content>
+</ContentPage>
