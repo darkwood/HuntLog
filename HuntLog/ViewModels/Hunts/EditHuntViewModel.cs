@@ -13,7 +13,7 @@ namespace HuntLog.ViewModels.Hunts
         private readonly INavigation _navigation;
         private Action<Jakt> _callback;
 
-        private Jakt _huntDataModel { get; set; }
+        private Jakt _huntDataModel = new Jakt();
 
         public ICommand CancelCommand { get; set; }
         public ICommand SaveCommand { get; set; }
@@ -48,7 +48,7 @@ namespace HuntLog.ViewModels.Hunts
             }
         }
 
-        public bool IsNew => _huntDataModel.ID == string.Empty;
+        public bool IsNew => string.IsNullOrEmpty(_huntDataModel?.ID);
 
         public EditHuntViewModel(IHuntService huntService, INavigation navigation)
         {

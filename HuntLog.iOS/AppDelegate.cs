@@ -25,6 +25,7 @@ namespace HuntLog.iOS
         {
             Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Calabash.Start();
+            Xamarin.FormsMaps.Init();
             Forms.Init();
             LoadApplication(new App());
 

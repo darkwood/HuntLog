@@ -21,6 +21,7 @@ namespace HuntLog.Droid
             base.OnCreate(savedInstanceState);
             Forms.SetFlags("CollectionView_Experimental");
 
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

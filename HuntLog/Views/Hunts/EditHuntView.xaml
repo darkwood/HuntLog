@@ -2,19 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.Views.Hunts.EditHuntView"
-             xmlns:Converters="clr-namespace:HuntLog.Converters"
-             xmlns:Helpers="clr-namespace:HuntLog.Helpers"
+             xmlns:Converters="clr-namespace:HuntLog.Converters"           
              Title="{Binding Title}">
     
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
         <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
--->
     <ContentPage.Content>
             
-        <TableView Grid.Row="1" HasUnevenRows="true" Intent="Settings">
+        <TableView HasUnevenRows="true" Intent="Settings">
             <TableRoot>
                 
                 <TableSection Title="">
@@ -28,18 +26,13 @@
                 <TableSection Title="">
                     <EntryCell Label="Dato fra" Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" />
                     <EntryCell Label="Dato til" Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                    <EntryCell Label="Jegere" Text="{Binding HuntersText}" />
-                    <EntryCell Label="Hunder" Text="{Binding DogsText}" />
+                   
                 </TableSection>
 
                 <TableSection Title="">
-                    <EntryCell Label="Notater" Text="{Binding Notes}" />
-                </TableSection>
-        
-                <TableSection Title="">
                     <ViewCell>
                         <Button Text="Slett" />
-                        <!--<Button Command="{Binding DeleteCommand}" Label="Slett jakt"  IsVisible="{Binding ID, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" />-->
+                        <!--<Button Command="{Binding DeleteCommand}" Label="Slett jakt" sVisible="{Binding ID, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" />-->
                     </ViewCell>
                 </TableSection>
             </TableRoot>

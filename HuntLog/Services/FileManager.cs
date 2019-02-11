@@ -85,7 +85,7 @@ namespace HuntLog.Services
                             SaveToLocalStorage(localObj, filename); //Save to json format
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         //Utility.LogError(ex);
                     }
@@ -114,7 +114,6 @@ namespace HuntLog.Services
                 _fileUtility.Save(file, reader.ReadToEnd());
             }
         }
-
         public void Delete(string filename)
         {
             _fileUtility.Delete(filename);
