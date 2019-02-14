@@ -69,7 +69,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\FileUtility.cs" />
-    <Compile Include="Renderers\ContentPageRenderer.cs" />
+    <Compile Include="Renderers\ExtendedPageRenderer.cs" />
     <Compile Include="Controls\ExtendedMapRenderer.cs" />
   </ItemGroup>
   <ItemGroup>

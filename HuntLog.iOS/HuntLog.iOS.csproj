@@ -96,8 +96,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\FileUtility.cs" />
-    <Compile Include="Renderers\ContentPageRenderer.cs" />
-    <Compile Include="Controls\ExtendedMapRenderer.cs" />
+    <Compile Include="Renderers\ExtendedPageRenderer.cs" />
+    <Compile Include="Renderers\ExtendedMapRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -177,5 +177,6 @@
     <Folder Include="IO\" />
     <Folder Include="Assets.xcassets\logo_splash_screen.imageset\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

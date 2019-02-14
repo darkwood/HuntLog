@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using HuntLog.iOS.IO;
+using HuntLog.iOS.Renderers.IO;
 using HuntLog.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileUtility))]
-namespace HuntLog.iOS.IO
+namespace HuntLog.iOS.Renderers.IO
 {
     public class FileUtility : IFileUtility
     {

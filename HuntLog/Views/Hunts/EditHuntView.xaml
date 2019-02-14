@@ -17,6 +17,7 @@
                 
                 <TableSection Title="">
                     
+                    <TextCell Text="ID" Detail="{Binding ID}" />
                     <EntryCell Label="Sted" Text="{Binding Location}" />
                     
                     <!--<cells:MapCell Label="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />-->
@@ -24,15 +25,25 @@
                 </TableSection>
                 
                 <TableSection Title="">
-                    <EntryCell Label="Dato fra" Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" />
-                    <EntryCell Label="Dato til" Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                   
+                    <EntryCell Label="Dato fra" Text="{Binding DateFrom}" />
+                    <EntryCell Label="Dato til" Text="{Binding DateTo}" />
+                    <EntryCell Label="Latitude" Text="{Binding Latitude}" />
+                    <EntryCell Label="Longitude" Text="{Binding Longitude}" />
+                    <EntryCell Label="Notes" Text="{Binding Notes}" />
+                    <EntryCell Label="ImagePath" Text="{Binding ImagePath}" />
+                    
                 </TableSection>
 
                 <TableSection Title="">
                     <ViewCell>
-                        <Button Text="Slett" />
-                        <!--<Button Command="{Binding DeleteCommand}" Label="Slett jakt" sVisible="{Binding ID, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" />-->
+                        <Button 
+                            Text="Slett" 
+                            BackgroundColor="Teal" 
+                            TextColor="White"
+                            Command="{Binding DeleteCommand}"
+                            IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+                        />
+                        
                     </ViewCell>
                 </TableSection>
             </TableRoot>

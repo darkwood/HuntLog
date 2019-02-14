@@ -12,57 +12,59 @@ namespace HuntLog.Services
 {
     public interface IHuntService 
     {
-        Task<IEnumerable<Jakt>> GetHunts();
-        Task<Jakt> GetHunt(string id);
+        Task<IEnumerable<Jakt>> GetItems();
+        Task<Jakt> Get(string id);
         Task Save(Jakt hunt);
+        Task Delete(string id);
     }
 
     public class HuntService : IHuntService
     {
         private const int _delay = 0;
-        private const string _fileNameHunt = "jakt.xml";
+        private const string _dataFileName = "jakt.xml";
         private readonly IFileManager _fileManager;
-        private List<Jakt> _hunts;
+        private List<Jakt> _dtos;
 
         public HuntService(IFileManager fileManager)
         {
             _fileManager = fileManager;
         }
 
-        public async Task<Jakt> GetHunt(string id)
+        public async Task Delete(string id)
         {
-            var hunts = await GetHunts();
+            _dtos.RemoveAt(_dtos.FindIndex(x => x.ID == id));
+            _fileManager.SaveToLocalStorage(_dtos, _dataFileName);
+            await Task.CompletedTask;
+        }
+
+        public async Task<Jakt> Get(string id)
+        {
+            var hunts = await GetItems();
             return hunts.SingleOrDefault(x => x.ID == id);
         }
 
-        public async Task<IEnumerable<Jakt>> GetHunts()
+        public async Task<IEnumerable<Jakt>> GetItems()
         {
-            if (_hunts == null) 
+            if (_dtos == null) 
             {
                 await Task.Delay(_delay);
 
-                _hunts = _fileManager.LoadFromLocalStorage<List<Jakt>>(_fileNameHunt);
+                _dtos = _fileManager.LoadFromLocalStorage<List<Jakt>>(_dataFileName);
 
-                //_hunts = new List<Hunt>
-                //{
-                //    new Hunt { ID = "1", Sted = "Jonsvatnet", DatoFra = DateTime.Now },
-                //    new Hunt { ID = "2",  Sted = "Bymarka", DatoFra = DateTime.Now.AddDays(-10) },
-                //    new Hunt { ID = "3",  Sted = "Levanger", DatoFra = DateTime.Now.AddMonths(-3) }
-                //};
             }
-            return _hunts.OrderByDescending(x => x.DatoFra);
+            return _dtos.OrderByDescending(x => x.DatoFra);
         }
 
         public async Task Save(Jakt hunt)
         {
-            var itemToReplace = _hunts.SingleOrDefault(x => x.ID == hunt.ID);
+            var itemToReplace = _dtos.SingleOrDefault(x => x.ID == hunt.ID);
             if(itemToReplace != null) 
             {
-                _hunts.Remove(itemToReplace);
+                _dtos.Remove(itemToReplace);
             }
-            _hunts.Add(hunt);
+            _dtos.Add(hunt);
 
-            _fileManager.SaveToLocalStorage(_hunts, _fileNameHunt);
+            _fileManager.SaveToLocalStorage(_dtos, _dataFileName);
 
             await Task.CompletedTask;
         }

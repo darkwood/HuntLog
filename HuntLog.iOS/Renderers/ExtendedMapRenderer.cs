@@ -1,5 +1,5 @@
 ﻿using CoreGraphics;
-using HuntLog.iOS;
+using HuntLog.iOS.Renderers;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -11,7 +11,7 @@ using HuntLog.Controls;
 
 [assembly: ExportRenderer(typeof (ExtendedMap), typeof (ExtendedMapRenderer))]
 
-namespace HuntLog.iOS
+namespace HuntLog.iOS.Renderers
 {
     public class ExtendedMapRenderer : MapRenderer
     {

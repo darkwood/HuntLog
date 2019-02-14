@@ -15,6 +15,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="LightInject" Version="5.4.0" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.5.0.129452" />
+    <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" />
+    <PackageReference Include="Fody" Version="4.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -28,6 +30,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Controls\" />
     <Folder Include="Assets\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -64,6 +67,8 @@
     <None Remove="Xml\selectedartids.xml" />
     <None Remove="Xml\Jaktbare Arter.xml" />
     <None Remove="Assets\img-placeholder.jpg" />
+    <None Remove="Assets\placeholder.jpg" />
+    <None Remove="Assets\placeholder_map.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xml\arter.xml" />
@@ -77,5 +82,6 @@
     <EmbeddedResource Include="Xml\myspecies.xml" />
     <EmbeddedResource Include="Xml\selectedartids.xml" />
     <EmbeddedResource Include="Assets\placeholder.jpg" />
+    <EmbeddedResource Include="Assets\placeholder_map.png" />
   </ItemGroup>
 </Project>

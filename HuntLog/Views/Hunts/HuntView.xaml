@@ -13,16 +13,25 @@
         <StackLayout>
             <Grid HeightRequest="200">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="62*" />
+                    <ColumnDefinition Width="38*" />
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding ImageSource}" Aspect="AspectFill" />
-                <Controls:ExtendedMap Grid.Column="1" x:Name="map" IsShowingUser="true" MapType="Hybrid" />
-            
+               
+                <Image Grid.Column="1" Source="{Binding MapImageSource}" Aspect="AspectFill" />
+                
+                <Controls:ExtendedMap 
+                    Grid.Column="1" 
+                    x:Name="map" 
+                    IsShowingUser="true" 
+                    MapType="Hybrid" 
+                    IsVisible="{Binding MapIsVisible}"
+                />
+            <!--
              <CollectionView HorizontalOptions="End" 
                              ItemsSource="{Binding Jegere}">
               
-            </CollectionView>
+            </CollectionView>-->
             
             </Grid>
             

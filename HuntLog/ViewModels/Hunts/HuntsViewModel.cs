@@ -49,7 +49,7 @@ namespace HuntLog.ViewModels.Hunts
                 //need to update anything?
             };
             await _navigator.PushModalAsync<EditHuntViewModel>(
-                    beforeNavigate: async (arg) => await arg.SetState(new Jakt(), callback));
+                    beforeNavigate: async (arg) => await arg.SetState(null, callback));
         }
 
         public async Task InitializeAsync()
@@ -62,7 +62,7 @@ namespace HuntLog.ViewModels.Hunts
             IsBusy = true;
 
             HuntListItemViewModels = new ObservableCollection<HuntGroup>();
-            var hunts = await _huntService.GetHunts();
+            var hunts = await _huntService.GetItems();
 
             var huntListViewModels = hunts.Select(hunt =>
                 {

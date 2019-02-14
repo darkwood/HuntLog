@@ -11,84 +11,57 @@ using Xamarin.Forms.Maps;
 
 namespace HuntLog.ViewModels.Hunts
 {
-    public class HuntViewModel : ViewModelBase
+    public class HuntViewModel : HuntViewModelBase
     {
         private readonly IHuntService _huntService;
         private readonly INavigator _navigator;
-        private Jakt _dto { get; set; }
-
+        private Jakt _dto;
+        private ExtendedMap _map;
         public Command EditCommand { get; set; }
-
-        public string Location => _dto?.Sted;
-        public DateTime? DateFrom => _dto?.DatoFra;
-        public DateTime? DateTo => _dto?.DatoTil;
-        public ImageSource ImageSource => Utility.GetImageSource(_dto?.ImagePath);
-        public List<Jeger> Jegere { get; set; }
-        public List<Dog> Dogs { get; set; }
+        public bool MapIsVisible { get; set; }
+        public ImageSource MapImageSource => ImageSource.FromResource("HuntLog.Assets.placeholder_map.png");
 
         public HuntViewModel(IHuntService huntService, INavigator navigator)
         {
             _huntService = huntService;
             _navigator = navigator;
             EditCommand = new Command(async () => await EditItem());
-            Jegere = new List<Jeger>();
         }
 
-        public async Task OnAppearing(ExtendedMap map)
+        public void SetMap(ExtendedMap map)
         {
-            double lat;
-            double lon;
-
-            if( double.TryParse(_dto.Latitude.Replace('.', ','), out lat) && 
-                double.TryParse(_dto.Longitude.Replace('.', ','), out lon))
-            {
-                //var addressQuery = "Høylandet";
-
-                //var positions = (await(new Geocoder()).GetPositionsForAddressAsync(addressQuery)).ToList();
-                //if (!positions.Any())
-                //return;
-
-                //var position = positions.First();
-                var position = new Position(lat, lon);
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(position,
-                        Distance.FromMeters(1000)));
-                map.Pins.Add(new Pin
-                {
-                    Label = Location,
-                    Position = position,
-                    Address = DateFrom?.ToShortDateString()
-                });
-            }
-
-            await Task.CompletedTask;
+            _map = map;
         }
 
         private async Task EditItem()
         {
-            var clonedDto = ObjectCloner.Clone(_dto);
             Action<Jakt> callback = async (arg) => { await SetState(arg); };
-            await _navigator.PushModalAsync<EditHuntViewModel>(beforeNavigate: async (arg) => await arg.SetState(clonedDto, callback));
+
+            await _navigator.PushModalAsync<EditHuntViewModel>(
+                    beforeNavigate: async (arg) => 
+                        await arg.SetState(_dto, callback));
         }
 
-        public async Task SetState(Jakt hunt)
+        public async Task SetState(Jakt dto)
         {
-            _dto = hunt;
-            if (_dto.JegerIds.Any())
+            _dto = dto;
+            SetStateFromDto(_dto);
+
+            if (HasLocation)
             {
-                Jegere = _dto.JegerIds.Select(j => new Jeger
+                var position = new Position(Latitude, Longitude);
+                _map.MoveToRegion(MapSpan.FromCenterAndRadius(position,
+                        Distance.FromMeters(1000)));
+                _map.Pins.Add(new Pin
                 {
-                    ID = j.ToString(),
-                    Fornavn = "Test " + j
-                }).ToList();
+                    Label = Location,
+                    Position = position,
+                    Address = DateFrom.ToShortDateString()
+                });
+                MapIsVisible = true;
             }
 
-            OnPropertyChanged("");
             await Task.CompletedTask;
-        }
-
-        private void Save()
-        {
-            _huntService?.Save(_dto);
         }
     }
 }

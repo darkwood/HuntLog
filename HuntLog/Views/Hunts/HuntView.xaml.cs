@@ -18,13 +18,7 @@ namespace HuntLog.Views.Hunts
             BindingContext = viewModel;
             InitializeComponent();
             _viewModel = viewModel;
-        }
-
-        protected async override void OnAppearing()
-        {
-            await _viewModel.OnAppearing(map);
-            base.OnAppearing();
-
+            _viewModel.SetMap(map);
         }
     }
 }
