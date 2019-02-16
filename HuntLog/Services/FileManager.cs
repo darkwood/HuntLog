@@ -52,43 +52,23 @@ namespace HuntLog.Services
         public T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
-            // 1 read json
-            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
-            {
-                var jsonString = _fileUtility.Load(filename);
+            var localFileExists = Exists(filename);
 
+            if (localFileExists)
+            {
+                var xmlString = _fileUtility.Load(filename);
                 try
                 {
-                    localObj = JsonConvert.DeserializeObject<T>(jsonString);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message, ex);
-                    //Utils.LogError(ex);
-                }
-            }
-            else
-            {
-                //try to read from legacy xml
-                var xmlFilename = filename.Replace(".json", ".xml");
-                var localFileExists = Exists(xmlFilename);
-
-                if (localFileExists)
-                {
-                    var xmlString = _fileUtility.Load(xmlFilename);
-                    try
+                    using (var reader = new StringReader(xmlString))
                     {
-                        using (var reader = new StringReader(xmlString))
-                        {
-                            XmlSerializer serializer = new XmlSerializer(typeof(T));
-                            localObj = (T)serializer.Deserialize(reader);
-                            SaveToLocalStorage(localObj, filename); //Save to json format
-                        }
+                        XmlSerializer serializer = new XmlSerializer(typeof(T));
+                        localObj = (T)serializer.Deserialize(reader);
+                        SaveToLocalStorage(localObj, filename); //Save to json format
                     }
-                    catch (Exception)
-                    {
-                        //Utility.LogError(ex);
-                    }
+                }
+                catch (Exception)
+                {
+                    //Utility.LogError(ex);
                 }
             }
             return localObj;

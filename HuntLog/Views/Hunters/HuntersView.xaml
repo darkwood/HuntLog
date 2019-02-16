@@ -2,28 +2,23 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="HuntLog.Views.Hunts.HuntsView"
-    xmlns:Converters="clr-namespace:HuntLog.Converters"
-    Title="Jaktloggen">
-    
+    x:Class="HuntLog.Views.Hunters.HuntersView"
+    Title="Jegere">
+     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Command="{Binding AddCommand}" Priority="1" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <ListView 
-            x:Name="huntListView"
-            ItemsSource="{Binding HuntListItemViewModels}"
-            IsGroupingEnabled="true"
-            GroupDisplayBinding="{Binding Name}"
-            GroupShortNameBinding="{Binding ShortName}"
-            HasUnevenRows="true"
+            x:Name="huntersListView"
+            ItemsSource="{Binding Hunters}"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ItemTappedCommand}">
+                    <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Name}" Detail="{Binding Email}" Command="{Binding ItemTappedCommand}">
                         <ImageCell.ContextActions>
-                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntListView}}" CommandParameter="{Binding .}"
+                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntersListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" IsDestructive="True" Icon="trash" />
                             </ImageCell.ContextActions>
                     </ImageCell>

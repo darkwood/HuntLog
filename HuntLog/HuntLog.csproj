@@ -30,7 +30,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="Controls\" />
     <Folder Include="Assets\" />
-    <Folder Include="Styles\" />
+    <Folder Include="ViewModels\Hunters\" />
+    <Folder Include="Views\Hunters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />

@@ -38,8 +38,7 @@
                     <ViewCell>
                         <Button 
                             Text="Slett" 
-                            BackgroundColor="Teal" 
-                            TextColor="White"
+                            StyleClass="PrimaryButton"
                             Command="{Binding DeleteCommand}"
                             IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
                         />

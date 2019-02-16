@@ -104,6 +104,8 @@
     <Folder Include="IO\" />
     <Folder Include="Renderers\" />
     <Folder Include="Controls\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-ldpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HuntLog\HuntLog.csproj">

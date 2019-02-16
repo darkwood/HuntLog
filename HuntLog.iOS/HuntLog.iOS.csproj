@@ -178,5 +178,7 @@
     <Folder Include="Assets.xcassets\logo_splash_screen.imageset\" />
     <Folder Include="Renderers\" />
     <Folder Include="Controls\" />
+    <Folder Include="Assets.xcassets\Add.imageset\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 </Project>

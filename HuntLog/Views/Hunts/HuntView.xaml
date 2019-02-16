@@ -36,8 +36,7 @@
             </Grid>
             
             <Button 
-                BackgroundColor="SlateBlue" 
-                TextColor="White" 
+                StyleClass="PrimaryButton"
                 HorizontalOptions="FillAndExpand"
                 Text="Ny loggføring" 
             />

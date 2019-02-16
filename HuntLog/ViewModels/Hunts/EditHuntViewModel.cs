@@ -12,36 +12,27 @@ namespace HuntLog.ViewModels.Hunts
     public class EditHuntViewModel : HuntViewModelBase
     {
         private readonly IHuntService _huntService;
-        private readonly INavigation _navigation;
+        private readonly INavigator _navigator;
+        private readonly IDialogService _dialogService;
         private Action<Jakt> _callback;
 
         public ICommand CancelCommand { get; set; }
         public ICommand SaveCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
 
-        public EditHuntViewModel(IHuntService huntService, INavigation navigation)
+        public EditHuntViewModel(IHuntService huntService, INavigator navigator, IDialogService dialogService)
         {
             _huntService = huntService;
-            _navigation = navigation;
+            _navigator = navigator;
+            _dialogService = dialogService;
+
             SaveCommand = new Command(async () => await Save());
             DeleteCommand = new Command(async () => await Delete());
             CancelCommand = new Command(async () => {
-                await _navigation.PopModalAsync();
+                await _navigator.PopModalAsync();
             });
         }
 
-        public async Task OnAppearing() 
-        {
-            //var addressQuery = "Høylandet";
-            //new Geocoder().GetAddressesForPositionAsync()
-            //var positions = (await(new Geocoder()).GetPositionsForAddressAsync(addressQuery)).ToList();
-            //if (!positions.Any())
-            //return;
-
-            //var position = positions.First();
-            //var position = new Position(lat, lon);
-            await Task.CompletedTask;
-        }
         public async Task SetState(Jakt hunt, Action<Jakt> callback)
         {
             SetStateFromDto(hunt ?? CreateNewHunt());
@@ -61,10 +52,13 @@ namespace HuntLog.ViewModels.Hunts
 
         private async Task Delete()
         {
-            //TODO: Add confirm message
-            await _huntService.Delete(ID);
-            _navigation.PopModalAsync();
-            await _navigation.PopToRootAsync(false);
+            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jakta blir permanent slettet. Er du sikker?");
+            if (ok)
+            { 
+                await _huntService.Delete(ID);
+                 _navigator.PopModalAsync();
+                await _navigator.PopToRootAsync(false);
+            }
         }
 
         private async Task Save()
@@ -73,7 +67,7 @@ namespace HuntLog.ViewModels.Hunts
             await _huntService.Save(dto);
             _callback.Invoke(dto);
 
-            await _navigation.PopModalAsync();
+            await _navigator.PopModalAsync();
 
         }
     }

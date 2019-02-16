@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
 using HuntLog.Services;
+using HuntLog.ViewModels.Hunters;
 using HuntLog.ViewModels.Hunts;
+using HuntLog.Views.Hunters;
 using HuntLog.Views.Hunts;
 using LightInject;
 using Xamarin.Forms;
@@ -34,17 +36,30 @@ namespace HuntLog
             viewFactory.Register<HuntsViewModel, HuntsView>();
             viewFactory.Register<HuntViewModel, HuntView>();
             viewFactory.Register<EditHuntViewModel, EditHuntView>();
+            viewFactory.Register<HuntersViewModel, HuntersView>();
+            viewFactory.Register<HunterViewModel, HunterView>();
 
         }
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
-            var mainPage = container.GetInstance<HuntsView>();
-            var huntsViewModel = (HuntsViewModel) mainPage.BindingContext;
+            var tabbed = new TabbedPage();
+            var huntPage = CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen");
+            var hunterPage = CreateTab(container.GetInstance<HuntersView>(), "Jegere");
 
-            var navigationPage = new NavigationPage(mainPage); //TODO: Register NavigationPage in container?
-            _application.MainPage = navigationPage;
+            tabbed.Children.Add(huntPage);
+            tabbed.Children.Add(hunterPage);
+
+            _application.MainPage = tabbed;
             await Task.CompletedTask;
+        }
+
+        private static NavigationPage CreateTab(Page page, string title, string icon = null)
+        {
+            var huntPage = new NavigationPage(page);
+            huntPage.Title = title;
+            huntPage.Icon = icon;
+            return huntPage;
         }
 
         private void InitializeDummyData(IFileManager fileManager)

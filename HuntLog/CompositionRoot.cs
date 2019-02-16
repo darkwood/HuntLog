@@ -5,6 +5,8 @@ using HuntLog.ViewModels.Hunts;
 using HuntLog.Views.Hunts;
 using Xamarin.Forms;
 using HuntLog.Interfaces;
+using HuntLog.ViewModels.Hunters;
+using HuntLog.Views.Hunters;
 
 namespace HuntLog
 {
@@ -13,18 +15,27 @@ namespace HuntLog
         public void Compose(IServiceRegistry serviceRegistry)
         {
 
-                serviceRegistry.RegisterSingleton<INavigator>(f => new Navigator(f.GetInstance<Lazy<INavigation>>(), f))
-                .RegisterSingleton<INavigation>(f => Application.Current.MainPage.Navigation)
-                .RegisterSingleton<IFileUtility>(f => DependencyService.Get<IFileUtility>())
-                .RegisterSingleton<IFileManager, FileManager>()
-                .RegisterSingleton<IHuntService, HuntService>()
-                .Register<HuntViewModel>()
-                .Register<EditHuntViewModel>()
-                .Register<HuntListItemViewModel>()
-                .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
-                .Register<HuntView>()
-                .Register<EditHuntView>()
-                .Register<HuntsView>();
+            serviceRegistry
+            .RegisterSingleton<INavigator>(f => new Navigator(f.GetInstance<Lazy<TabbedPage>>(), f))
+            .RegisterSingleton<TabbedPage>(f => ((TabbedPage)Application.Current.MainPage))
+            .RegisterSingleton<IFileUtility>(f => DependencyService.Get<IFileUtility>())
+            .RegisterSingleton<IFileManager, FileManager>()
+            .RegisterSingleton<IHuntService, HuntService>()
+            .RegisterSingleton<IHunterService, HunterService>()
+            .RegisterSingleton<IDialogService, DialogService>()
+            .Register<HuntViewModel>()
+            .Register<EditHuntViewModel>()
+            .Register<HuntListItemViewModel>()
+            .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
+            .Register<HuntView>()
+            .Register<EditHuntView>()
+            .Register<HuntsView>()
+
+            .Register<HuntersViewModel>()
+            .Register<HunterViewModel>()
+            .Register<HuntersView>()
+            .Register<HunterView>();
+
         }
     }
 }

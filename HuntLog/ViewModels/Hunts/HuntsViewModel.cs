@@ -25,6 +25,7 @@ namespace HuntLog.ViewModels.Hunts
         private readonly IHuntService _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
         private readonly INavigator _navigator;
+        private readonly IDialogService _dialogService;
         private ObservableCollection<HuntGroup> _huntListItemViewModels;
         public ObservableCollection<HuntGroup> HuntListItemViewModels
         {
@@ -33,31 +34,44 @@ namespace HuntLog.ViewModels.Hunts
         }
 
         public Command AddCommand { get; set; }
-
-        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator)
+        public Command DeleteItemCommand { get; set; }
+        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService)
         {
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;
             _navigator = navigator;
+            _dialogService = dialogService;
+
             AddCommand = new Command(async () => await AddItem());
-            Title = "Jaktloggen";
+            DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
+
         }
 
         private async Task AddItem()
         {
-            Action<Jakt> callback = (arg) => {
-                //need to update anything?
+            Action<Jakt> afterSaveAction = async (hunt) => {
+                await _navigator.PushAsync<HuntViewModel>(
+                    beforeNavigate: async (vm) => await vm.SetState(hunt));
             };
             await _navigator.PushModalAsync<EditHuntViewModel>(
-                    beforeNavigate: async (arg) => await arg.SetState(null, callback));
+                    beforeNavigate: async (vm) => await vm.SetState(null, afterSaveAction));
         }
 
+        private async Task DeleteItem(object item)
+        {
+            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jakta blir permanent slettet. Er du sikker?");
+            if (ok)
+            {
+                await _huntService.Delete((item as HuntListItemViewModel).ID);
+                await FetchData();
+            }
+        }
         public async Task InitializeAsync()
         {
-            await FetchHuntData();
+            await FetchData();
         }
 
-        public async Task FetchHuntData()
+        public async Task FetchData()
         {
             IsBusy = true;
 

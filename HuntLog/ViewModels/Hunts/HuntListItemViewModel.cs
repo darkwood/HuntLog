@@ -10,19 +10,22 @@ namespace HuntLog.ViewModels.Hunts
     public class HuntListItemViewModel : ViewModelBase
     {
         private readonly INavigator _navigator;
+        private readonly IHuntService _huntService;
+
         private Jakt _huntDataModel { get; set; }
 
-        public ICommand ShowHuntCommand { get; set; }
+        public ICommand ItemTappedCommand { get; set; }
 
         public string ID => _huntDataModel.ID;
         public string Detail => _huntDataModel.DatoFra.ToShortDateString();
         public DateTime DateFrom => _huntDataModel.DatoFra;
         public DateTime DateTo => _huntDataModel.DatoTil;
 
-        public HuntListItemViewModel(INavigator navigator)
+        public HuntListItemViewModel(INavigator navigator, IHuntService huntService)
         {
             _navigator = navigator;
-            ShowHuntCommand = new Command(async () => await ShowHunt());
+            _huntService = huntService;
+            ItemTappedCommand = new Command(async () => await ShowHunt());
         }
 
         public void Initialize(Jakt hunt)
