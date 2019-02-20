@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace HuntLog.Droid
 {
@@ -23,6 +24,7 @@ namespace HuntLog.Droid
 
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
         }
     }

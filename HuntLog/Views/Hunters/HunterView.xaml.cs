@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using HuntLog.ViewModels.Hunters;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace HuntLog.Views.Hunters
 {

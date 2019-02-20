@@ -1,28 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 
 namespace HuntLog.ViewModels.Hunts
 {
     public class EditHuntViewModel : HuntViewModelBase
     {
         private readonly IHuntService _huntService;
+        private readonly IHunterService _hunterService;
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
         private Action<Jakt> _callback;
 
-        public ICommand CancelCommand { get; set; }
-        public ICommand SaveCommand { get; set; }
-        public ICommand DeleteCommand { get; set; }
+        public Command CancelCommand { get; set; }
+        public Command SaveCommand { get; set; }
+        public Command DeleteCommand { get; set; }
 
-        public EditHuntViewModel(IHuntService huntService, INavigator navigator, IDialogService dialogService)
+        public EditHuntViewModel(IHuntService huntService, IHunterService hunterService, INavigator navigator, IDialogService dialogService)
         {
             _huntService = huntService;
+            _hunterService = hunterService;
             _navigator = navigator;
             _dialogService = dialogService;
 
@@ -33,18 +33,29 @@ namespace HuntLog.ViewModels.Hunts
             });
         }
 
-        public async Task SetState(Jakt hunt, Action<Jakt> callback)
+        public async Task OnAppearing()
+        {
+            await SetHunterNames();
+        }
+
+        private async Task SetHunterNames()
+        {
+            var hunters = await _hunterService.GetItems(HunterIds);
+            HuntersNames = string.Join(", ", hunters.Select(h => h.Firstname));
+        }
+
+        public void SetState(Jakt hunt, Action<Jakt> callback)
         {
             SetStateFromDto(hunt ?? CreateNewHunt());
             Title = IsNew ? "Ny jakt" : "Rediger jakt";
             _callback = callback;
-            await Task.CompletedTask;
         }
 
         private Jakt CreateNewHunt()
         {
-            return new Jakt 
-            { 
+            return new Jakt
+            {
+                Created = DateTime.Now,
                 DatoFra = DateTime.Now,
                 DatoTil = DateTime.Now,
             };
@@ -56,8 +67,8 @@ namespace HuntLog.ViewModels.Hunts
             if (ok)
             { 
                 await _huntService.Delete(ID);
-                 _navigator.PopModalAsync();
-                await _navigator.PopToRootAsync(false);
+                await _navigator.PopModalAsync();
+                await _navigator.PopAsync();
             }
         }
 

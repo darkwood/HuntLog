@@ -31,10 +31,21 @@ namespace HuntLog.ViewModels.Hunters
             DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
         }
 
-        private async Task AddItem() { await Task.CompletedTask; }
+        private async Task AddItem() 
+        {
+            await _navigator.PushModalAsync<HunterViewModel>(
+                    beforeNavigate: (vm) => vm.SetState(null));
+        }
 
-        private async Task DeleteItem(object item) { await Task.CompletedTask; }
-
+        private async Task DeleteItem(object item)
+        {
+            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jeger blir permanent slettet. Er du sikker?");
+            if (ok)
+            {
+                await _hunterService.Delete((item as HunterViewModel).ID);
+                await FetchData();
+            }
+        }
         public async Task InitializeAsync()
         {
             await FetchData();
@@ -50,7 +61,7 @@ namespace HuntLog.ViewModels.Hunters
             foreach(var hunt in hunts) 
             {
                 var vm = _hunterViewModelFactory();
-                await vm.SetState(hunt);
+                vm.SetState(hunt);
                 Hunters.Add(vm);
             }
 

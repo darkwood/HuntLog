@@ -4,6 +4,7 @@
              x:Class="HuntLog.Views.Hunts.HuntView"
              xmlns:Converters="clr-namespace:HuntLog.Converters"
              xmlns:Controls="clr-namespace:HuntLog.Controls"
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
             Title="{Binding Location}">
     
     <ContentPage.ToolbarItems>

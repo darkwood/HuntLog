@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using HuntLog.Interfaces;
 using HuntLog.ViewModels.Hunters;
 using HuntLog.Views.Hunters;
+using HuntLog.Factories;
 
 namespace HuntLog
 {
@@ -23,6 +24,7 @@ namespace HuntLog
             .RegisterSingleton<IHuntService, HuntService>()
             .RegisterSingleton<IHunterService, HunterService>()
             .RegisterSingleton<IDialogService, DialogService>()
+            .RegisterSingleton<IHunterFactory, HunterFactory>()
             .Register<HuntViewModel>()
             .Register<EditHuntViewModel>()
             .Register<HuntListItemViewModel>()

@@ -11,6 +11,7 @@ namespace HuntLog
     public static class Utility
     {
         private static readonly string PLACEHOLDER_PHOTO = "placeholder.jpg";
+        public static Color PRIMARY_COLOR => Color.FromHex("#597a59");
 
         public static ImageSource GetImageSource(string imageFilename)
         {

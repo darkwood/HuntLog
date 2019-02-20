@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace HuntLog.Services
 {
-    public interface IHuntService 
+    public interface IHuntService
     {
         Task<IEnumerable<Jakt>> GetItems();
         Task<Jakt> Get(string id);
@@ -21,7 +21,7 @@ namespace HuntLog.Services
     public class HuntService : IHuntService
     {
         private const int _delay = 0;
-        private const string _dataFileName = "jakt.xml";
+        private const string _dataFileName = "jakt.json";
         private readonly IFileManager _fileManager;
         private List<Jakt> _dtos;
 
@@ -45,20 +45,20 @@ namespace HuntLog.Services
 
         public async Task<IEnumerable<Jakt>> GetItems()
         {
-            if (_dtos == null) 
+            if (_dtos == null)
             {
                 await Task.Delay(_delay);
 
                 _dtos = _fileManager.LoadFromLocalStorage<List<Jakt>>(_dataFileName);
 
             }
-            return _dtos.OrderByDescending(x => x.DatoFra);
+            return _dtos;
         }
 
         public async Task Save(Jakt hunt)
         {
             var itemToReplace = _dtos.SingleOrDefault(x => x.ID == hunt.ID);
-            if(itemToReplace != null) 
+            if (itemToReplace != null)
             {
                 _dtos.Remove(itemToReplace);
             }

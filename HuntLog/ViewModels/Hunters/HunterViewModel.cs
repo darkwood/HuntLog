@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
+using HuntLog.Helpers;
 
 namespace HuntLog.ViewModels.Hunters
 {
@@ -18,7 +19,9 @@ namespace HuntLog.ViewModels.Hunters
         public ObservableCollection<Jeger> Hunters { get; set; }
 
         public Command SaveCommand { get; set; }
+        public Command CancelCommand { get; set; }
         public Command ItemTappedCommand { get; set; }
+        public Command DeleteCommand { get; set; }
 
         public string ID { get; set; }
         public string Name { get; set; }
@@ -28,6 +31,7 @@ namespace HuntLog.ViewModels.Hunters
         public string Phone { get; set; }
         public ImageSource ImageSource { get; set; }
         public string ImagePath { get; set; }
+        public bool IsNew { get; set; }
 
         public HunterViewModel(IHunterService hunterService, INavigator navigator, IDialogService dialogService)
         {
@@ -36,33 +40,67 @@ namespace HuntLog.ViewModels.Hunters
             _dialogService = dialogService;
 
             SaveCommand = new Command(async () => await Save());
+            DeleteCommand = new Command(async () => await Delete());
             ItemTappedCommand = new Command(async () => await Tapped());
+            CancelCommand = new Command(async () => { await PopAsync(); });
+        }
+
+        private async Task PopAsync()
+        {
+            await _navigator.PopModalAsync();
         }
 
         private async Task Save()
         {
-            await Task.CompletedTask;
+            Jeger dto = BuildDto();
+            await _hunterService.Save(dto);
+            await PopAsync();
         }
 
         private async Task Tapped()
         {
-            await _navigator.PushAsync<HunterViewModel>(beforeNavigate: async (arg) => await arg.SetState(_dto));
+            await _navigator.PushModalAsync<HunterViewModel>(beforeNavigate: (arg) => arg.SetState(_dto));
             await Task.CompletedTask;
         }
 
-        public async Task SetState(Jeger dto)
+        private async Task Delete()
         {
-            _dto = dto;
-            ID = dto.ID;
-            Name = $"{dto.Firstname} {dto.Lastname}";
-            Email = dto.Email;
-            Firstname = dto.Firstname;
-            Lastname = dto.Lastname;
-            Phone = dto.Phone;
-            ImagePath = dto.ImagePath;
-            ImageSource = Utility.GetImageSource(dto.ImagePath);
+            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jeger blir permanent slettet. Er du sikker?");
+            if (ok)
+            {
+                await _hunterService.Delete(ID);
+                await PopAsync();
+            }
+        }
 
-            await Task.CompletedTask;
+        public void SetState(Jeger dto)
+        {
+            _dto = dto ?? new Jeger();
+            ID = _dto.ID;
+            Name = $"{_dto.Firstname} {_dto.Lastname}";
+            Email = _dto.Email;
+            Firstname = _dto.Firstname;
+            Lastname = _dto.Lastname;
+            Phone = _dto.Phone;
+            ImagePath = _dto.ImagePath;
+            ImageSource = Utility.GetImageSource(_dto.ImagePath);
+
+            IsNew = ID == null;
+            Title = ID == null ? "Ny jeger" : "Rediger jeger";
+        }
+
+        protected Jeger BuildDto()
+        {
+            return new Jeger
+            {
+                ID = ID ?? Guid.NewGuid().ToString(),
+                Created = DateTime.Now,
+                Email = Email,
+                Phone = Phone,
+                Firstname = Firstname,
+                Lastname = Lastname,
+                ImagePath = ImagePath,
+            };
         }
     }
 }

@@ -51,10 +51,10 @@ namespace HuntLog.ViewModels.Hunts
         {
             Action<Jakt> afterSaveAction = async (hunt) => {
                 await _navigator.PushAsync<HuntViewModel>(
-                    beforeNavigate: async (vm) => await vm.SetState(hunt));
+                    beforeNavigate: (vm) => vm.SetState(hunt));
             };
             await _navigator.PushModalAsync<EditHuntViewModel>(
-                    beforeNavigate: async (vm) => await vm.SetState(null, afterSaveAction));
+                    beforeNavigate: (vm) => vm.SetState(null, afterSaveAction));
         }
 
         private async Task DeleteItem(object item)

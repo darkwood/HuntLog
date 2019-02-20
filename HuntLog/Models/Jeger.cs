@@ -1,9 +1,8 @@
 ﻿using System;
 namespace HuntLog.Models
 {
-    public class Jeger
+    public class Jeger : BaseDto
     {
-        public string ID { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Email { get; set; }

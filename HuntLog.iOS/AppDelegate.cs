@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -27,6 +28,7 @@ namespace HuntLog.iOS.Renderers
             Xamarin.Calabash.Start();
             Xamarin.FormsMaps.Init();
             Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

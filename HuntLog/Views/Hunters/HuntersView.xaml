@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="HuntLog.Views.Hunters.HuntersView"
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
     Title="Jegere">
      
     <ContentPage.ToolbarItems>
@@ -13,15 +14,16 @@
         <ListView 
             x:Name="huntersListView"
             ItemsSource="{Binding Hunters}"
+            HasUnevenRows="true"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Name}" Detail="{Binding Email}" Command="{Binding ItemTappedCommand}">
-                        <ImageCell.ContextActions>
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" Text="{Binding Name}" Command="{Binding ItemTappedCommand}">
+                        <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntersListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" IsDestructive="True" Icon="trash" />
-                            </ImageCell.ContextActions>
-                    </ImageCell>
+                            </cells:ExtendedTextCell.ContextActions>
+                    </cells:ExtendedTextCell>
                 </DataTemplate>     
             </ListView.ItemTemplate>
         </ListView>

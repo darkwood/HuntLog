@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.Views.Hunts.EditHuntView"
-             xmlns:Converters="clr-namespace:HuntLog.Converters"           
+             xmlns:Converters="clr-namespace:HuntLog.Converters"       
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              Title="{Binding Title}">
     
     <ContentPage.ToolbarItems>
@@ -17,15 +18,12 @@
                 
                 <TableSection Title="">
                     
-                    <TextCell Text="ID" Detail="{Binding ID}" />
                     <EntryCell Label="Sted" Text="{Binding Location}" />
                     
-                    <!--<cells:MapCell Label="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />-->
+                    <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
                       
-                </TableSection>
-                
-                <TableSection Title="">
-                    <EntryCell Label="Dato fra" Text="{Binding DateFrom}" />
+                    <cells:ExtendedTextCell Text="Jegere" Text2="{Binding HuntersNames}" />
+                    <cells:DateCell Text="Dato fra" Text2="{Binding DateFrom}" />
                     <EntryCell Label="Dato til" Text="{Binding DateTo}" />
                     <EntryCell Label="Latitude" Text="{Binding Latitude}" />
                     <EntryCell Label="Longitude" Text="{Binding Longitude}" />

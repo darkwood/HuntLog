@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using HuntLog.Interfaces;
+using System.Xml;
 
 namespace HuntLog.Services
 {
@@ -52,23 +53,26 @@ namespace HuntLog.Services
         public T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
-            var localFileExists = Exists(filename);
-
-            if (localFileExists)
+            // 1 read json
+            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase) && Exists(filename))
             {
-                var xmlString = _fileUtility.Load(filename);
-                try
+                localObj = JsonConvert.DeserializeObject<T>(_fileUtility.Load(filename));
+            }
+            else
+            {
+                var xmlFilename = filename.Replace(".json", ".xml");
+                if (Exists(xmlFilename))
                 {
+                    var xmlString = _fileUtility.Load(xmlFilename);
+                    xmlString = xmlString.Replace("<int>", "<string>");
+                    xmlString = xmlString.Replace("</int>", "</string>");
+
                     using (var reader = new StringReader(xmlString))
                     {
                         XmlSerializer serializer = new XmlSerializer(typeof(T));
                         localObj = (T)serializer.Deserialize(reader);
                         SaveToLocalStorage(localObj, filename); //Save to json format
                     }
-                }
-                catch (Exception)
-                {
-                    //Utility.LogError(ex);
                 }
             }
             return localObj;

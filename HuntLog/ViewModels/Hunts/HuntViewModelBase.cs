@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using HuntLog.Models;
 using Xamarin.Forms;
 
@@ -11,8 +12,8 @@ namespace HuntLog.ViewModels.Hunts
         public string Location { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
-        public List<int> Hunters { get; set; }
-        public List<int> Dogs { get; set; }
+        public List<string> HunterIds { get; set; }
+        public List<string> DogIds { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string ImagePath { get; set; }
@@ -21,6 +22,7 @@ namespace HuntLog.ViewModels.Hunts
 
         public bool HasLocation => Latitude > 0 && Longitude > 0;
         public bool IsNew => string.IsNullOrEmpty(ID);
+        public string HuntersNames { get; set; }
 
         protected void SetStateFromDto(Jakt dto)
         {
@@ -28,8 +30,8 @@ namespace HuntLog.ViewModels.Hunts
             Location = dto.Sted;
             DateFrom = dto.DatoFra;
             DateTo = dto.DatoTil;
-            Hunters = dto.JegerIds;
-            Dogs = dto.DogIds;
+            HunterIds = dto.JegerIds;
+            DogIds = dto.DogIds;
             Latitude = MapStringToDouble(dto.Latitude);
             Longitude = MapStringToDouble(dto.Longitude);
             ImagePath = dto.ImagePath;
@@ -45,8 +47,8 @@ namespace HuntLog.ViewModels.Hunts
                 Sted = Location,
                 DatoFra = DateFrom,
                 DatoTil = DateTo,
-                JegerIds = Hunters,
-                DogIds = Dogs,
+                JegerIds = HunterIds,
+                DogIds = DogIds,
                 Latitude = Latitude.ToString(),
                 Longitude = Longitude.ToString(),
                 ImagePath = ImagePath,

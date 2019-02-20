@@ -63,6 +63,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>3.5.0.129452</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

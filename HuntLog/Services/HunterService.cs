@@ -13,15 +13,16 @@ namespace HuntLog.Services
     public interface IHunterService 
     {
         Task<IEnumerable<Jeger>> GetItems();
+        Task<IEnumerable<Jeger>> GetItems(List<string> hunterIds);
         Task<Jeger> Get(string id);
-        Task Save(Jeger hunt);
+        Task Save(Jeger hunter);
         Task Delete(string id);
     }
 
     public class HunterService : IHunterService
     {
         private const int _delay = 0;
-        private const string _dataFileName = "jegere.xml";
+        private const string _dataFileName = "jegere.json";
         private readonly IFileManager _fileManager;
         private List<Jeger> _dtos;
 
@@ -55,14 +56,20 @@ namespace HuntLog.Services
             return _dtos;
         }
 
-        public async Task Save(Jeger hunt)
+        public async Task<IEnumerable<Jeger>> GetItems(List<string> hunterIds)
         {
-            var itemToReplace = _dtos.SingleOrDefault(x => x.ID == hunt.ID);
+            var allHunters = await GetItems();
+            return allHunters.Where(a => hunterIds.Contains(a.ID));
+        }
+
+        public async Task Save(Jeger hunter)
+        {
+            var itemToReplace = _dtos.SingleOrDefault(x => x.ID == hunter.ID);
             if(itemToReplace != null) 
             {
                 _dtos.Remove(itemToReplace);
             }
-            _dtos.Add(hunt);
+            _dtos.Add(hunter);
 
             _fileManager.SaveToLocalStorage(_dtos, _dataFileName);
 

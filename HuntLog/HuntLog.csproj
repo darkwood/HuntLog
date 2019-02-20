@@ -17,6 +17,7 @@
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.5.0.129452" />
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" />
     <PackageReference Include="Fody" Version="4.0.2" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -32,6 +33,8 @@
     <Folder Include="Assets\" />
     <Folder Include="ViewModels\Hunters\" />
     <Folder Include="Views\Hunters\" />
+    <Folder Include="Cells\" />
+    <Folder Include="Factories\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />

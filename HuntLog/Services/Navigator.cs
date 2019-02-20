@@ -12,8 +12,8 @@ namespace HuntLog.Services
         Task<IViewModel> PopAsync();
         Task<IViewModel> PopModalAsync();
         Task PopToRootAsync(bool animate = true);
-        Task<TViewModel> PushModalAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
-        Task<TViewModel> PushAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
+        Task<TViewModel> PushModalAsync<TViewModel>(Action<TViewModel>beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
+        Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
         void Register<TViewModel, TView>() where TViewModel : class, IViewModel where TView : Page;
     }
 
@@ -60,15 +60,12 @@ namespace HuntLog.Services
             await Navigation.PopToRootAsync(animated);
         }
 
-        public async Task<TViewModel> PushAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel
+        public async Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel
         {
             var view = (Page)serviceFactory.GetInstance(_map[typeof(TViewModel)]);
             var viewModel = (TViewModel)view.BindingContext;
 
-            if (beforeNavigate != null)
-            {
-                await beforeNavigate(viewModel);
-            }
+            beforeNavigate?.Invoke(viewModel);
 
             await Navigation.PushAsync(view);
 
@@ -80,15 +77,12 @@ namespace HuntLog.Services
             return viewModel;
         }
 
-        public async Task<TViewModel> PushModalAsync<TViewModel>(Func<TViewModel, Task> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel 
+        public async Task<TViewModel> PushModalAsync<TViewModel>(Action<TViewModel> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel 
         {
             var view = (Page)serviceFactory.GetInstance(_map[typeof(TViewModel)]);
             var viewModel = (TViewModel)view.BindingContext;
 
-            if (beforeNavigate != null)
-            {
-                await beforeNavigate(viewModel);
-            }
+            beforeNavigate?.Invoke(viewModel);
 
             await Navigation.PushModalAsync(new NavigationPage(view));
 

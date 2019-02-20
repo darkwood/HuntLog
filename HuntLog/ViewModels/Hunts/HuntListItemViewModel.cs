@@ -36,7 +36,7 @@ namespace HuntLog.ViewModels.Hunts
 
         private async Task ShowHunt()
         {
-            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: async (arg) => await arg.SetState(_huntDataModel));
+            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: (arg) => arg.SetState(_huntDataModel));
         }
     }
 }

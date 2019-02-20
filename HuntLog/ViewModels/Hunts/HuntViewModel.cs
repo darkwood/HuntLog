@@ -14,6 +14,7 @@ namespace HuntLog.ViewModels.Hunts
     public class HuntViewModel : HuntViewModelBase
     {
         private readonly IHuntService _huntService;
+        private readonly IHunterService _hunterService;
         private readonly INavigator _navigator;
         private Jakt _dto;
         private ExtendedMap _map;
@@ -21,9 +22,11 @@ namespace HuntLog.ViewModels.Hunts
         public bool MapIsVisible { get; set; }
         public ImageSource MapImageSource => ImageSource.FromResource("HuntLog.Assets.placeholder_map.png");
 
-        public HuntViewModel(IHuntService huntService, INavigator navigator)
+
+        public HuntViewModel(IHuntService huntService, IHunterService hunterService, INavigator navigator)
         {
             _huntService = huntService;
+            _hunterService = hunterService;
             _navigator = navigator;
             EditCommand = new Command(async () => await EditItem());
         }
@@ -35,14 +38,14 @@ namespace HuntLog.ViewModels.Hunts
 
         private async Task EditItem()
         {
-            Action<Jakt> callback = async (arg) => { await SetState(arg); };
+            Action<Jakt> callback = (arg) => { SetState(arg); };
 
             await _navigator.PushModalAsync<EditHuntViewModel>(
-                    beforeNavigate: async (arg) => 
-                        await arg.SetState(_dto, callback));
+                    beforeNavigate: (arg) => arg.SetState(_dto, callback),
+                    afterNavigate: async (arg) => await arg.OnAppearing());
         }
 
-        public async Task SetState(Jakt dto)
+        public void SetState(Jakt dto)
         {
             _dto = dto;
             SetStateFromDto(_dto);
@@ -60,8 +63,6 @@ namespace HuntLog.ViewModels.Hunts
                 });
                 MapIsVisible = true;
             }
-
-            await Task.CompletedTask;
         }
     }
 }
