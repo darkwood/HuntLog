@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HuntLog.Interfaces;
 using Xamarin.Forms;
 
-namespace HuntLog
+namespace HuntLog.Helpers
 {
     public static class Utility
     {
@@ -15,15 +15,13 @@ namespace HuntLog
 
         public static ImageSource GetImageSource(string imageFilename)
         {
-            if (String.IsNullOrEmpty(imageFilename))
-            {
-                return ImageSource.FromResource("HuntLog.Assets."+PLACEHOLDER_PHOTO);
-            }
-            else
+            if (DependencyService.Get<IFileUtility>().Exists(imageFilename)) 
             {
                 var filepath = DependencyService.Get<IFileUtility>().GetFilePath(imageFilename);
                 return ImageSource.FromFile(filepath);
             }
+
+            return ImageSource.FromResource("HuntLog.Assets." + PLACEHOLDER_PHOTO);
         }
 
         public static string GetImageFilename(string filePath)

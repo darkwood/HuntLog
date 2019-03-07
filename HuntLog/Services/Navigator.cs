@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using HuntLog.ViewModels;
+using HuntLog.AppModule;
 using LightInject;
 using Xamarin.Forms;
 

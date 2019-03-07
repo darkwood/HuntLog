@@ -19,6 +19,7 @@ namespace HuntLog.Services
         string SaveImage(string filename, byte[] imageData);
         void Copy(string sourceFile, string destinationFile);
         void SaveToLocalStorage<T>(T objToSerialize, string filename);
+        string[] GetAllFiles();
     }
 
     public class FileManager : IFileManager
@@ -110,5 +111,10 @@ namespace HuntLog.Services
 
         public void Copy(string sourceFile, string destinationFile)
         => _fileUtility.Copy(sourceFile, destinationFile);
+
+        public string[] GetAllFiles()
+        {
+            return _fileUtility.GetAllFiles();
+        }
     }
 }

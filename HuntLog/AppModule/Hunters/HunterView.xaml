@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Hunters.HunterView"
+    xmlns:Converters="clr-namespace:HuntLog.Converters"     
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    Title="{Binding Title}">
+    
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+    <TableView Intent="Settings">
+            <TableRoot>
+                
+                <TableSection Title="">
+                    
+                    <EntryCell Label="Fornavn" Text="{Binding Firstname}" />
+                    <EntryCell Label="Etternavn" Text="{Binding Lastname}" />
+                    <cells:ExtendedTextCell Text="Bilde" Detail="{Binding ImagePath}" ImageSource="{Binding ImageSource}" Command="{Binding ImageCommand}" />
+                    <EntryCell Label="Epost" Text="{Binding Email}" Keyboard="Email" />
+                    <EntryCell Label="Mobil" Text="{Binding Phone}" Keyboard="Telephone" />
+                    
+                </TableSection>
+
+                <TableSection Title="">
+                    <ViewCell>
+                        <Button 
+                            Text="Slett" 
+                            StyleClass="PrimaryButton"
+                            Command="{Binding DeleteCommand}"
+                            IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+                        />
+                        
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        
+    </ContentPage.Content>
+</ContentPage>

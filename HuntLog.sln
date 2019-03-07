@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.iOS", "HuntLog.iOS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.UITests", "HuntLog.UITests\HuntLog.UITests.csproj", "{B19C892E-2628-4CA7-AD27-08D406A3B14B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.Android", "HuntLog.Android\HuntLog.Android.csproj", "{FED6658B-BA94-4ED6-B689-D5168DD801EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.Droid", "HuntLog.Android\HuntLog.Droid.csproj", "{FED6658B-BA94-4ED6-B689-D5168DD801EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLog.Tests", "HuntLog.Tests\HuntLog.Tests.csproj", "{3C8A5099-DF9C-45E2-909B-1BE5204A8B38}"
 EndProject

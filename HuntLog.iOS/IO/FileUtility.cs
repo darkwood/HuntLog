@@ -33,6 +33,8 @@ namespace HuntLog.iOS.Renderers.IO
 
         public bool Exists(string filename)
         {
+            if (string.IsNullOrWhiteSpace(filename)) { return false; }
+
             string filePath = GetFilePath(filename);
             return File.Exists(filePath);
         }
@@ -76,6 +78,12 @@ namespace HuntLog.iOS.Renderers.IO
             var dest = GetFilePath(destinationFile);
             new FileInfo(dest).Directory.Create();
             File.Copy(GetFilePath(sourceFile), dest);
+        }
+
+        public string[] GetAllFiles()
+        {
+            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            return Directory.GetFiles(documentsPath);
         }
     }
 }

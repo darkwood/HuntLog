@@ -1,9 +1,8 @@
 ﻿using System.Threading.Tasks;
 using HuntLog.Services;
-using HuntLog.ViewModels.Hunters;
-using HuntLog.ViewModels.Hunts;
-using HuntLog.Views.Hunters;
-using HuntLog.Views.Hunts;
+using HuntLog.AppModule.Hunters;
+using HuntLog.AppModule.Hunts;
+using HuntLog.AppModule.InputViews;
 using LightInject;
 using Xamarin.Forms;
 
@@ -38,6 +37,7 @@ namespace HuntLog
             viewFactory.Register<EditHuntViewModel, EditHuntView>();
             viewFactory.Register<HuntersViewModel, HuntersView>();
             viewFactory.Register<HunterViewModel, HunterView>();
+            viewFactory.Register<InputImageViewModel, InputImageView>();
 
         }
 

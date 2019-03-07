@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HuntLog.Models;
-using HuntLog.Services;
+﻿using HuntLog.Services;
 
 namespace HuntLog.Factories
 {
@@ -15,12 +10,12 @@ namespace HuntLog.Factories
     public class HunterFactory : IHunterFactory
     {
         private readonly IHunterService _hunterService;
+        private readonly INavigator _navigator;
 
-        public HunterFactory(IHunterService hunterService)
+        public HunterFactory(IHunterService hunterService, INavigator navigator)
         {
             _hunterService = hunterService;
+            _navigator = navigator;
         }
-
-
     }
 }

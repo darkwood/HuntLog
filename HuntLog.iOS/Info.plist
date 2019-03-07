@@ -46,5 +46,7 @@
 	<string>Tillat bruk av bildebibliotek</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Tillat bruk av mediabibliotek</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 </dict>
 </plist>

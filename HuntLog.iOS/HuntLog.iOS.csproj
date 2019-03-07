@@ -98,6 +98,7 @@
     <Compile Include="IO\FileUtility.cs" />
     <Compile Include="Renderers\ExtendedPageRenderer.cs" />
     <Compile Include="Renderers\ExtendedMapRenderer.cs" />
+    <Compile Include="Renderers\ExtendedTableViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -167,6 +168,9 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.0.0.5</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -183,5 +187,16 @@
     <Folder Include="Controls\" />
     <Folder Include="Assets.xcassets\Add.imageset\" />
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\camera%403x.png" />
+    <BundleResource Include="Resources\camera%402x.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\photos%403x.png" />
+    <BundleResource Include="Resources\photos%402x.png" />
+    <BundleResource Include="Resources\photos.png" />
+    <BundleResource Include="Resources\trash%403x.png" />
+    <BundleResource Include="Resources\trash%402x.png" />
+    <BundleResource Include="Resources\trash.png" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 ﻿using System;
 using LightInject;
 using HuntLog.Services;
-using HuntLog.ViewModels.Hunts;
-using HuntLog.Views.Hunts;
+
 using Xamarin.Forms;
 using HuntLog.Interfaces;
-using HuntLog.ViewModels.Hunters;
-using HuntLog.Views.Hunters;
+using HuntLog.AppModule.Hunters;
 using HuntLog.Factories;
+using HuntLog.AppModule.InputViews;
+using HuntLog.AppModule.Hunts;
 
 namespace HuntLog
 {
@@ -21,6 +21,7 @@ namespace HuntLog
             .RegisterSingleton<TabbedPage>(f => ((TabbedPage)Application.Current.MainPage))
             .RegisterSingleton<IFileUtility>(f => DependencyService.Get<IFileUtility>())
             .RegisterSingleton<IFileManager, FileManager>()
+            .RegisterSingleton<IMediaService, MediaService>()
             .RegisterSingleton<IHuntService, HuntService>()
             .RegisterSingleton<IHunterService, HunterService>()
             .RegisterSingleton<IDialogService, DialogService>()
@@ -36,7 +37,10 @@ namespace HuntLog
             .Register<HuntersViewModel>()
             .Register<HunterViewModel>()
             .Register<HuntersView>()
-            .Register<HunterView>();
+            .Register<HunterView>()
+
+            .Register<InputImageViewModel>()
+            .Register<InputImageView>();
 
         }
     }

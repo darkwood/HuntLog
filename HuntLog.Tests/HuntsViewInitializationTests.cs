@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using HuntLog.ViewModels.Hunts;
 using FluentAssertions;
 using Xunit;
 using LightInject;
 using Moq;
 using HuntLog.Interfaces;
 using System.IO;
+using HuntLog.AppModule.Hunts;
 
 namespace HuntLog.Tests
 {

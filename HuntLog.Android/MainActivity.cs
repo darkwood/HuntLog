@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using ImageCircle.Forms.Plugin.Droid;
+using Plugin.CurrentActivity;
 
 namespace HuntLog.Droid
 {
@@ -25,7 +26,14 @@ namespace HuntLog.Droid
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

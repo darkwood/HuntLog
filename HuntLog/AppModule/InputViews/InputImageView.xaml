@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuntLog.AppModule.InputViews.InputImageView" xmlns:Converters="clr-namespace:HuntLog.Converters" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+
+    <ContentPage.Resources>
+        <Style Class="CircleImgBtn" TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="#66FFFFFF" />
+            <Setter Property="BorderColor" Value="#000000" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="Aspect" Value="AspectFit" />
+            <Setter Property="HeightRequest" Value="80" />
+            <Setter Property="WidthRequest" Value="80" />
+            <Setter Property="CornerRadius" Value="40" />
+        </Style>
+    </ContentPage.Resources>
+    
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Ferdig" Command="{Binding DoneCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+            
+        <Grid VerticalOptions="FillAndExpand">
+            
+            <Image 
+                Source="{Binding Source}"
+                Aspect="AspectFit" />
+
+            <Grid IsVisible="{Binding IsBusy}" Padding="80" VerticalOptions="End" HorizontalOptions="Center">
+                <ActivityIndicator  IsRunning="true" IsEnabled="true"/>
+            </Grid>
+            
+            <Grid IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}" Padding="40" VerticalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton StyleClass="CircleImgBtn" Source="camera.png" Grid.Column="0" Command="{Binding CaptureCommand}" />
+                <ImageButton StyleClass="CircleImgBtn" Source="photos.png" Grid.Column="1" Command="{Binding LibraryCommand}" />
+                <ImageButton StyleClass="CircleImgBtn" Source="trash.png" Grid.Column="2" Command="{Binding DeleteCommand}" />
+                
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

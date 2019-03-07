@@ -8,7 +8,30 @@ namespace HuntLog.Cells
 {
     public class DateCell : ViewCell
     {
-        public bool ShowDateView { get; set; }
+        public static readonly BindableProperty ShowDatePickerProperty =
+            BindableProperty.Create(
+                nameof(ShowDatePicker),
+                typeof(bool),
+                typeof(DateCell),
+                false,
+                propertyChanged: (bindable, oldValue, newValue) => {
+                    ((DateCell)bindable).DatePickerView.IsVisible = (bool)newValue;
+                    ((DateCell)bindable).DatePickerView.HeightRequest = (bool)newValue ? 100 : 0;
+                    ((DateCell)bindable).ForceUpdateSize();
+                }
+            );
+
+        public bool ShowDatePicker
+        {
+            get { return (bool)GetValue(ShowDatePickerProperty); }
+            set
+            {
+                SetValue(ShowDatePickerProperty, value);
+            }
+        }
+
+        public Grid DatePickerView { get; set; }
+        /***********************************************/
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(Command), typeof(DateCell), null);
 
@@ -25,7 +48,7 @@ namespace HuntLog.Cells
                 typeof(DateCell), 
                 null,
                 propertyChanged: (bindable, oldValue, newValue) => {
-                ((DateCell)bindable).TextLabel.Text = newValue as string;
+                    ((DateCell)bindable).TextLabel.Text = newValue as string;
                 }
             );
         
@@ -73,30 +96,30 @@ namespace HuntLog.Cells
 
         private void RenderView()
         {
+            var wrapperLayout = new StackLayout();
+
             var viewLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Padding = 10,
-                MinimumHeightRequest = 60,
-                BackgroundColor = ShowDateView ? Color.Red : Color.White
+                MinimumHeightRequest = 60
             };
 
             TextLabel = new Label
             {
-                VerticalOptions = LayoutOptions.Center
+                VerticalOptions = LayoutOptions.Start
             };
             viewLayout.Children.Add(TextLabel);
 
-            Text2Label = new Label { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+            Text2Label = new Label { VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.EndAndExpand };
             viewLayout.Children.Add(Text2Label);
 
             var gestureRecognizer = new TapGestureRecognizer();
 
             gestureRecognizer.Tapped += (s, e) =>
             {
-                ShowDateView = !ShowDateView;
-                RenderView();
+                ShowDatePicker = !ShowDatePicker;
                 if (Command != null && Command.CanExecute(null))
                 {
                     Command.Execute(null);
@@ -104,8 +127,15 @@ namespace HuntLog.Cells
             };
 
             viewLayout.GestureRecognizers.Add(gestureRecognizer);
+            wrapperLayout.Children.Add(viewLayout);
 
-            View = viewLayout;
+            DatePickerView = new Grid {
+                HeightRequest = 100,
+                BackgroundColor = Color.Red,
+                IsVisible = false
+            };
+            wrapperLayout.Children.Add(DatePickerView);
+            View = wrapperLayout;
         }
     }
 }

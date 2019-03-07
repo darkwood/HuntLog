@@ -1,7 +1,4 @@
-﻿using HuntLog.Services;
-using HuntLog.ViewModels.Hunts;
-using HuntLog.Views.Hunts;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]

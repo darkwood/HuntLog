@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Hunters.HuntersView"
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    Title="Jegere">
+     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Command="{Binding AddCommand}" Priority="1" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ListView 
+            x:Name="huntersListView"
+            ItemsSource="{Binding Hunters}"
+            HasUnevenRows="true"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" Text="{Binding Name}" Command="{Binding ItemTappedCommand}">
+                        <cells:ExtendedTextCell.ContextActions>
+                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntersListView}}" CommandParameter="{Binding .}"
+                                      Text="Slett" IsDestructive="True" Icon="trash" />
+                            </cells:ExtendedTextCell.ContextActions>
+                    </cells:ExtendedTextCell>
+                </DataTemplate>     
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

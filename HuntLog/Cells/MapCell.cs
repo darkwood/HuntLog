@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using HuntLog.Controls;
+using HuntLog.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 

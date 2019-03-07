@@ -40,7 +40,7 @@
     </ProjectReference>
     <ProjectReference Include="..\HuntLog.Android\HuntLog.Android.csproj">
       <Project>{FED6658B-BA94-4ED6-B689-D5168DD801EB}</Project>
-      <Name>HuntLog.Android</Name>
+      <Name>HuntLog.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
