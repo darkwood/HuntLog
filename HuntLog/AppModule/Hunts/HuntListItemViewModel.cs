@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using HuntLog.AppModule;
+using HuntLog.Helpers;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
@@ -13,14 +14,15 @@ namespace HuntLog.AppModule.Hunts
         private readonly INavigator _navigator;
         private readonly IHuntService _huntService;
 
-        private Jakt _huntDataModel { get; set; }
+        private Jakt _dto { get; set; }
 
         public ICommand ItemTappedCommand { get; set; }
 
-        public string ID => _huntDataModel.ID;
-        public string Detail => _huntDataModel.DatoFra.ToShortDateString();
-        public DateTime DateFrom => _huntDataModel.DatoFra;
-        public DateTime DateTo => _huntDataModel.DatoTil;
+        public string ID => _dto.ID;
+        public string Detail => _dto.DatoFra.ToShortDateString();
+        public DateTime DateFrom => _dto.DatoFra;
+        public DateTime DateTo => _dto.DatoTil;
+        public ImageSource ImageSource => Utility.GetImageSource(_dto.ImagePath);
 
         public HuntListItemViewModel(INavigator navigator, IHuntService huntService)
         {
@@ -29,15 +31,15 @@ namespace HuntLog.AppModule.Hunts
             ItemTappedCommand = new Command(async () => await ShowHunt());
         }
 
-        public void Initialize(Jakt hunt)
+        public void Initialize(Jakt dto)
         {
-            _huntDataModel = hunt;
-            Title = _huntDataModel.Sted;
+            _dto = dto;
+            Title = _dto.Sted;
         }
 
         private async Task ShowHunt()
         {
-            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: (arg) => arg.SetState(_huntDataModel));
+            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: (arg) => arg.SetState(_dto));
         }
     }
 }

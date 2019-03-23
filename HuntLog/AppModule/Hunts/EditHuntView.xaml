@@ -8,32 +8,30 @@
              Title="{Binding Title}">
     
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />-->
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
         <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-            
+        
         <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">
             <TableRoot>
                 
                 <TableSection Title="">
-                    <cells:ImageHeaderCell HeightRequest="200" ImagePath="{Binding ImagePath}" Command="{Binding ImageCommand}" />
-                    <EntryCell Label="Sted" Text="{Binding Location}" />
-                    <cells:ExtendedTextCell Text="Bilde" Text2="{Binding ImagePath}" ImageSource="{Binding ImageSource}" Command="{Binding ImageCommand}" />
+                    <cells:ImageHeaderCell HeightRequest="180" Source="{Binding ImageSource}" Command="{Binding ImageCommand}" />
+                    <EntryCell Label="Tittel" Placeholder="Navn på jakta..." Text="{Binding Location}" />
+                    
                     <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
                       
-                    <cells:ExtendedTextCell Text="Jegere" Text2="{Binding HuntersNames}" />
+                    <cells:ExtendedTextCell Text="Jegere" Text2="{Binding HuntersNames}" Command="{Binding HuntersCommand}" />
                     <cells:ExtendedTextCell Text="Hunder" Text2="{Binding DogsNames}" />
-                    <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom}" />
-                     <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo}" />
-                    <EntryCell Label="Notes" Text="{Binding Notes}" />
-                    
-                </TableSection>
+                    <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                    <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
+                    <EntryCell Label="Notat" Text="{Binding Notes}" />
 
-                <TableSection Title="">
                     <ViewCell>
                         <Button 
+                            Margin="15,25"
                             Text="Slett" 
                             StyleClass="PrimaryButton"
                             Command="{Binding DeleteCommand}"

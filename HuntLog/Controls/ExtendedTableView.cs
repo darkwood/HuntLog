@@ -4,7 +4,10 @@ using Xamarin.Forms;
 namespace HuntLog.Controls
 {
     public class ExtendedTableView : TableView
-    {   
-        
+    {
+        public ExtendedTableView()
+        {
+                
+        }
     }
 }

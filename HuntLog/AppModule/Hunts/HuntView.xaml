@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="HuntLog.AppModule.Hunts.HuntView"
-             xmlns:Converters="clr-namespace:HuntLog.Converters"
-             xmlns:Controls="clr-namespace:HuntLog.Controls"
+            x:Class="HuntLog.AppModule.Hunts.HuntView"
+            xmlns:Converters="clr-namespace:HuntLog.Converters"
+            xmlns:Controls="clr-namespace:HuntLog.Controls"
+            xmlns:local="clr-namespace:HuntLog.AppModule.Hunts"
             Title="{Binding Location}" xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="{Binding ImageSource}" 
-                   HeightRequest="200"
-                    Aspect="AspectFill" />
-            
-            <Button 
-                StyleClass="PrimaryButton"
-                HorizontalOptions="FillAndExpand"
-                Text="Ny loggføring" 
-                Margin="10"
-            />
-            
-            <ListView>
+
+            <ListView Header="{Binding}">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                        
+                            <local:HuntSummaryView />
+                            
+                            <Button 
+                                StyleClass="PrimaryButton"
+                                HorizontalOptions="FillAndExpand"
+                                Text="Ny loggføring" 
+                                Margin="15"
+                            />
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
               <ListView.ItemsSource>
                   <x:Array Type="{x:Type x:String}">
                     <x:String>mono</x:String>
@@ -37,9 +42,6 @@
                   </x:Array>
               </ListView.ItemsSource>
         </ListView>
-            
-            
-        </StackLayout>
         
     </ContentPage.Content>
 </ContentPage>

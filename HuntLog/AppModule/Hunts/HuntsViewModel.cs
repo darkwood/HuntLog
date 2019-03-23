@@ -50,12 +50,11 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task AddItem()
         {
-            Action<Jakt> afterSaveAction = async (hunt) => {
-                await _navigator.PushAsync<HuntViewModel>(
-                    beforeNavigate: (vm) => vm.SetState(hunt));
-            };
-            await _navigator.PushModalAsync<EditHuntViewModel>(
-                    beforeNavigate: (vm) => vm.SetState(null, afterSaveAction));
+            Action<Jakt> callback = (arg) => {  };
+
+            await _navigator.PushAsync<EditHuntViewModel>(
+                    beforeNavigate: (vm) => vm.SetState(null, callback),
+                    afterNavigate: (vm) => vm.AfterNavigate());
         }
 
         private async Task DeleteItem(object item)
@@ -70,8 +69,6 @@ namespace HuntLog.AppModule.Hunts
         public async Task InitializeAsync()
         {
             await FetchData();
-
-            
         }
 
         public async Task FetchData()

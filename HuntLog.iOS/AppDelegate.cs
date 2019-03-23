@@ -30,7 +30,6 @@ namespace HuntLog.iOS.Renderers
             Forms.Init();
             ImageCircleRenderer.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }

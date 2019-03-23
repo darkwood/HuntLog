@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Hunts.HuntSummaryView"
+    xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentView.Content>
+        <Grid VerticalOptions="StartAndExpand"
+              BackgroundColor="Yellow"
+              HeightRequest="200">
+             <Image Source="{Binding ImageSource}"
+                     HeightRequest="200"
+                    Aspect="AspectFill" />
+            
+            <StackLayout Orientation="Vertical" 
+                         Margin="10, 5"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End">
+                <ci:CircleImage 
+                    Source="{Binding ImageSource}"
+                    BackgroundColor="White" 
+                    HorizontalOptions="Center"
+                    BorderColor="Black" 
+                    BorderThickness="1" 
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Margin="-5"
+                />
+                <Label Text="{Binding Name}"
+                       VerticalOptions="End" 
+                       HorizontalOptions="Center"
+                       FontSize="Micro"
+                       BackgroundColor="White"
+                       />
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

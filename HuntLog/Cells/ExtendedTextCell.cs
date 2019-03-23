@@ -234,7 +234,7 @@ namespace HuntLog.Cells
             {
                 Orientation=StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Padding = 10,
+                Padding = new Thickness(15, 10),
                 MinimumHeightRequest=60
             };
 
@@ -243,8 +243,8 @@ namespace HuntLog.Cells
                 BorderColor = Color.White,
                 BorderThickness = 0,
                 Aspect = Aspect.AspectFill,
-                WidthRequest = 50,
-                HeightRequest= 50,
+                WidthRequest = 40,
+                HeightRequest= 40,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 IsVisible = false

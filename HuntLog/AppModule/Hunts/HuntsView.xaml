@@ -8,7 +8,7 @@
     Title="Jaktloggen">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Command="{Binding AddCommand}" Priority="1" />
+        <ToolbarItem Icon="Add.png" Command="{Binding AddCommand}" Priority="1" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -22,7 +22,7 @@
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <cells:ExtendedTextCell Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ItemTappedCommand}">
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ItemTappedCommand}">
                         <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" IsDestructive="True" Icon="trash" />

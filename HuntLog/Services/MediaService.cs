@@ -35,16 +35,15 @@ namespace HuntLog.Services
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await _dialogService.ShowAlert("No Camera", "No camera available.");
+                await _dialogService.ShowAlert("Ingen kamera", "Kamera ikke tilgjengelig.");
                 return null;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
                 Directory = "",
                 CompressionQuality = 92,
                 PhotoSize = PhotoSize.Large,
-                AllowCropping = true,
             });
             return file;
         }
@@ -72,7 +71,7 @@ namespace HuntLog.Services
                 return null;
             }
 
-            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
             {
                 PhotoSize = PhotoSize.Large,
                 CompressionQuality = 92

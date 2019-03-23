@@ -114,7 +114,7 @@ namespace HuntLog.Cells
             {
                 Orientation=StackOrientation.Horizontal,
                 Padding = 10,
-                HeightRequest = 100
+                HeightRequest = 80
             };
 
             TextLabel = new Label{
@@ -126,9 +126,9 @@ namespace HuntLog.Cells
             MyMap = new ExtendedMap
             {
                 HorizontalOptions = LayoutOptions.EndAndExpand,
-                MapType = Xamarin.Forms.Maps.MapType.Hybrid,
-                HeightRequest = 100,
-                WidthRequest = 180,
+                MapType = MapType.Hybrid,
+                HeightRequest = 80,
+                WidthRequest = 150,
                 IsEnabled = false,
                 IsVisible = false
             };
@@ -136,7 +136,7 @@ namespace HuntLog.Cells
 
             InfoText = new Label { 
                 IsVisible = true, 
-                Text = "Velg posisjon", 
+                Text = "Sett posisjon", 
                 HorizontalOptions = LayoutOptions.EndAndExpand,
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Utility.PRIMARY_COLOR

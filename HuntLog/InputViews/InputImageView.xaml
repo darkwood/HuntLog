@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuntLog.AppModule.InputViews.InputImageView" xmlns:Converters="clr-namespace:HuntLog.Converters" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuntLog.InputViews.InputImageView" xmlns:Converters="clr-namespace:HuntLog.Converters" >
 
     <ContentPage.Resources>
         <Style Class="CircleImgBtn" TargetType="ImageButton">
@@ -31,7 +31,9 @@
                 <ActivityIndicator  IsRunning="true" IsEnabled="true"/>
             </Grid>
             
-            <Grid IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}" Padding="40" VerticalOptions="End">
+            <Grid IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}" 
+                  Padding="20" 
+                  VerticalOptions="End">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

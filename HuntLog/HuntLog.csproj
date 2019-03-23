@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,10 +34,10 @@
     <Folder Include="AppModule\" />
     <Folder Include="AppModule\Hunters\" />
     <Folder Include="AppModule\Hunts\" />
-    <Folder Include="AppModule\InputViews\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="InputViews\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -50,6 +51,7 @@
     <EmbeddedResource Remove="Views\Hunts\HuntHeaderView.xaml" />
     <EmbeddedResource Remove="Views\Widgets\InlinePickerView.xaml" />
     <EmbeddedResource Remove="Views\Fields\InputEntry.xaml" />
+    <EmbeddedResource Remove="AppModule\InputViews\InputPosition.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Hunters\HuntersView.xaml.cs">
@@ -62,6 +64,10 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Hunts\EditHuntView.xaml.cs">
       <DependentUpon>..\..\Views\Hunts\EditHuntView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="InputViews\InputImageView.xaml.cs">
+      <DependentUpon>InputImageView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

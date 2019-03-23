@@ -6,7 +6,7 @@ using Xamarin.Forms;
 using HuntLog.Interfaces;
 using HuntLog.AppModule.Hunters;
 using HuntLog.Factories;
-using HuntLog.AppModule.InputViews;
+using HuntLog.InputViews;
 using HuntLog.AppModule.Hunts;
 
 namespace HuntLog
@@ -26,21 +26,34 @@ namespace HuntLog
             .RegisterSingleton<IHunterService, HunterService>()
             .RegisterSingleton<IDialogService, DialogService>()
             .RegisterSingleton<IHunterFactory, HunterFactory>()
-            .Register<HuntViewModel>()
-            .Register<EditHuntViewModel>()
-            .Register<HuntListItemViewModel>()
+
             .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
-            .Register<HuntView>()
-            .Register<EditHuntView>()
             .Register<HuntsView>()
+            .Register<HuntListItemViewModel>()
+
+            .Register<HuntViewModel>()
+            .Register<HuntView>()
+
+            .Register<EditHuntViewModel>()
+            .Register<EditHuntView>()
 
             .Register<HuntersViewModel>()
-            .Register<HunterViewModel>()
             .Register<HuntersView>()
+
+            .Register<HunterViewModel>()
             .Register<HunterView>()
 
             .Register<InputImageViewModel>()
-            .Register<InputImageView>();
+            .Register<InputImageView>()
+
+            .Register<InputPositionViewModel>()
+            .Register<InputPositionView>()
+
+            .Register<InputDateViewModel>()
+            .Register<InputDateView>()
+
+            .Register<InputPickerViewModel>()
+            .Register<InputPickerView>();
 
         }
     }

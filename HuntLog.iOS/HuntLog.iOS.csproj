@@ -28,6 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -198,5 +199,13 @@
     <BundleResource Include="Resources\trash%403x.png" />
     <BundleResource Include="Resources\trash%402x.png" />
     <BundleResource Include="Resources\trash.png" />
+    <BundleResource Include="Resources\Add%403x.png" />
+    <BundleResource Include="Resources\Add%402x.png" />
+    <BundleResource Include="Resources\Add.png" />
+    <BundleResource Include="Resources\location%403x.png" />
+    <BundleResource Include="Resources\location%402x.png" />
+    <BundleResource Include="Resources\location.png" />
+    <BundleResource Include="Resources\checked.png" />
+    <BundleResource Include="Resources\checked_off.png" />
   </ItemGroup>
 </Project>

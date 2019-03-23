@@ -23,6 +23,7 @@ namespace HuntLog.Droid
             base.OnCreate(savedInstanceState);
             Forms.SetFlags("CollectionView_Experimental");
 
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
@@ -33,6 +34,8 @@ namespace HuntLog.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }

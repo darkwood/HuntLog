@@ -119,6 +119,18 @@
     <AndroidResource Include="Resources\drawable-mdpi\trash.png" />
     <AndroidResource Include="Resources\drawable-ldpi\trash.png" />
     <AndroidResource Include="Resources\xml\file_paths.xml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\Add.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-ldpi\location.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

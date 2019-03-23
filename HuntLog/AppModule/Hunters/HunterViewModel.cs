@@ -5,7 +5,8 @@ using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
 using HuntLog.Helpers;
-using HuntLog.AppModule.InputViews;
+using HuntLog.InputViews;
+using Plugin.Media.Abstractions;
 
 namespace HuntLog.AppModule.Hunters
 {
@@ -15,6 +16,7 @@ namespace HuntLog.AppModule.Hunters
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
         private Jeger _dto;
+        private MediaFile _mediaFile;
 
         public ObservableCollection<Jeger> Hunters { get; set; }
 
@@ -46,10 +48,34 @@ namespace HuntLog.AppModule.Hunters
             ItemTappedCommand = new Command(async () => await Tapped());
             CancelCommand = new Command(async () => { await PopAsync(); });
 
-            ImageCommand = new Command(async() => 
-            {
-                await _navigator.PushAsync<InputImageViewModel>(beforeNavigate: (arg) => { });
-            });
+            ImageCommand = new Command(async (shortcut) => await EditImage(shortcut));
+        }
+
+        private async Task EditImage(object shortcut)
+        {
+            await _navigator.PushAsync<InputImageViewModel>(
+                beforeNavigate: async (arg) =>
+                {
+                    await arg.InitializeAsync(ImageSource,
+                        completeAction: (mediaFile) =>
+                        {
+                            _mediaFile = mediaFile;
+                            ImageSource = ImageSource.FromStream(() =>
+                            {
+                                var stream = _mediaFile.GetStreamWithImageRotatedForExternalStorage();
+                                return stream;
+                            });
+                            OnPropertyChanged(nameof(ImageSource));
+                        },
+                        deleteAction: () =>
+                        {
+                            _mediaFile?.Dispose();
+                            ImageSource = null;
+                            ImagePath = string.Empty;
+                        });
+                },
+                afterNavigate: async (arg) => await arg.OnAfterNavigate(shortcut as string),
+                shortcut == null);
         }
 
         private async Task PopAsync()

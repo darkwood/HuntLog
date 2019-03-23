@@ -16,24 +16,24 @@ namespace HuntLog.Cells
             set { SetValue(CommandProperty, value); }
         }
 
-        public static readonly BindableProperty ImagePathProperty =
+        public static readonly BindableProperty SourceProperty =
             BindableProperty.Create(
-                nameof(ImagePath), 
-                typeof(string), 
+                nameof(Source), 
+                typeof(ImageSource), 
                 typeof(ImageHeaderCell), 
                 null,
                 propertyChanged: (bindable, oldValue, newValue) => {
-                    var path = newValue as string;
-                    ((ImageHeaderCell)bindable).CellImage.Source = path == null ? null : Utility.GetImageSource(path);
-                    ((ImageHeaderCell)bindable).CellImage.IsVisible = newValue != null;
-                    ((ImageHeaderCell)bindable).Buttons.IsVisible = newValue == null;
+                    var src = newValue as ImageSource;
+                    ((ImageHeaderCell)bindable).CellImage.Source = src;
+                    //((ImageHeaderCell)bindable).CellImage.IsVisible = newValue != null;
+                    ((ImageHeaderCell)bindable).Buttons.IsVisible = true;
                 }
             );
         
-        public string ImagePath
+        public string Source
         {
-            get { return (string)GetValue(ImagePathProperty); }
-            set { SetValue(ImagePathProperty, value); }
+            get { return (string)GetValue(SourceProperty); }
+            set { SetValue(SourceProperty, value); }
         }
 
         public static readonly BindableProperty HeightRequestProperty = BindableProperty.Create(
@@ -42,7 +42,8 @@ namespace HuntLog.Cells
             typeof(ImageHeaderCell), 
             "150",
             propertyChanged: (bindable, oldValue, newValue) => {
-                ((ImageHeaderCell)bindable).CellImage.HeightRequest = double.Parse(newValue as string);
+                var height = double.Parse(newValue as string);
+                ((ImageHeaderCell)bindable).View.HeightRequest = height;
             });
 
         public string HeightRequest
@@ -52,11 +53,11 @@ namespace HuntLog.Cells
         }
 
         public Image CellImage { get; private set; }
-        public Grid Buttons { get; private set; }
+        public View Buttons { get; private set; }
 
         public ImageHeaderCell()
         {
-            var viewLayout = new Grid();
+            var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
             CreateImage();
 
             Buttons = GetButtons();
@@ -76,34 +77,37 @@ namespace HuntLog.Cells
             CellImage.GestureRecognizers.Add(CreateTapGestureRecognizer());
         }
 
-        private Grid GetButtons()
+        private View GetButtons()
         {
-            var g = new Grid
+            var btnLayout = new StackLayout
             {
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                BackgroundColor = Color.LightGray
+                Orientation = StackOrientation.Horizontal,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                HorizontalOptions = LayoutOptions.EndAndExpand,
+                InputTransparent = true,
+                CascadeInputTransparent = false,
+
             };
-            g.Children.Add(CreateCircleImageButton("camera.png", "takephoto"), 0, 0);
-            g.Children.Add(CreateCircleImageButton("photos.png", "openlibrary"), 1, 0);
-            return g;
+            btnLayout.Children.Add(CreateCircleImageButton("camera.png", HuntConfig.CapturePhoto));
+            btnLayout.Children.Add(CreateCircleImageButton("photos.png", HuntConfig.OpenLibrary));
+            return btnLayout;
         }
 
         private CircleImage CreateCircleImageButton(string imagepath, string commandArg)
         {
             var img = new CircleImage
             {
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.End,
+                VerticalOptions = LayoutOptions.End,
                 BorderThickness = 2,
                 BorderColor = Color.Black,
                 FillColor = Color.FromHex("#66FFFFFF"),
                 Source = ImageSource.FromFile(imagepath),
                 Aspect = Aspect.AspectFit,
                 Opacity = 0.8,
-                HeightRequest = 80,
-                WidthRequest = 80,
-                Margin = 40,
+                HeightRequest = 60,
+                WidthRequest = 60,
+                Margin = 5,
             };
             img.GestureRecognizers.Add(CreateTapGestureRecognizer(commandArg));
             return img;

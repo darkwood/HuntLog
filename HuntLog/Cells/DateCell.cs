@@ -15,9 +15,13 @@ namespace HuntLog.Cells
                 typeof(DateCell),
                 false,
                 propertyChanged: (bindable, oldValue, newValue) => {
-                    ((DateCell)bindable).DatePickerView.IsVisible = (bool)newValue;
-                    ((DateCell)bindable).DatePickerView.HeightRequest = (bool)newValue ? 100 : 0;
-                    ((DateCell)bindable).ForceUpdateSize();
+                    var pickerView = ((DateCell)bindable).DatePickerView;
+                    var h = 200;
+                    var startHeight = (bool)newValue ? 0 : h;
+                    var endHeight = (bool)newValue ? h : 0;
+                    var animate = new Animation(d => pickerView.HeightRequest = d, startHeight, endHeight);
+                    animate.Commit(pickerView, "showPicker", 16, 400, Easing.CubicOut);
+                    //((DateCell)bindable).ForceUpdateSize();
                 }
             );
 
@@ -27,10 +31,13 @@ namespace HuntLog.Cells
             set
             {
                 SetValue(ShowDatePickerProperty, value);
+
             }
         }
 
         public Grid DatePickerView { get; set; }
+        private DatePicker _datePicker { get; set; }
+
         /***********************************************/
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(Command), typeof(DateCell), null);
@@ -61,28 +68,24 @@ namespace HuntLog.Cells
         public Label TextLabel { get; private set; }
 
 
-        public static readonly BindableProperty Text2Property = BindableProperty.Create(
-            nameof(Text2),
-            typeof(string),
+        public static readonly BindableProperty DateProperty = BindableProperty.Create(
+            nameof(Date),
+            typeof(DateTime),
             typeof(DateCell),
-            "",
+            DateTime.MinValue,
             propertyChanged: (bindable, oldValue, newValue) =>
             {
-                var text = (newValue as string);
-                if (text != null && text.Length > 30)
-                {
-                    text = text.Substring(0, 26) + "...";
-                }
-            ((DateCell)bindable).Text2Label.IsVisible = true;
-                ((DateCell)bindable).Text2Label.Text = text;
+                var date = (DateTime) newValue;
+                ((DateCell)bindable).Text2Label.IsVisible = true;
+                ((DateCell)bindable).Text2Label.Text = date.ToString();
             });
 
-        public string Text2
+        public DateTime Date
         {
-            get { return (string)GetValue(Text2Property); }
+            get { return (DateTime)GetValue(DateProperty); }
             set
             {
-                SetValue(Text2Property, value);
+                SetValue(DateProperty, value);
             }
         }
 
@@ -115,11 +118,15 @@ namespace HuntLog.Cells
             Text2Label = new Label { VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.EndAndExpand };
             viewLayout.Children.Add(Text2Label);
 
+            _datePicker = new DatePicker { IsVisible = false };
+            _datePicker.SetBinding(DatePicker.DateProperty, nameof(Date), BindingMode.TwoWay);
+            viewLayout.Children.Add(_datePicker);
+
             var gestureRecognizer = new TapGestureRecognizer();
 
             gestureRecognizer.Tapped += (s, e) =>
             {
-                ShowDatePicker = !ShowDatePicker;
+                _datePicker.Focus();
                 if (Command != null && Command.CanExecute(null))
                 {
                     Command.Execute(null);
@@ -130,11 +137,12 @@ namespace HuntLog.Cells
             wrapperLayout.Children.Add(viewLayout);
 
             DatePickerView = new Grid {
-                HeightRequest = 100,
-                BackgroundColor = Color.Red,
-                IsVisible = false
+                HeightRequest = 0,
+                BackgroundColor = Color.LightBlue
             };
-            wrapperLayout.Children.Add(DatePickerView);
+
+            wrapperLayout.Children.Add(DatePickerView); 
+
             View = wrapperLayout;
         }
     }
