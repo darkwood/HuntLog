@@ -7,7 +7,7 @@ namespace HuntLog.Controls
     {
         public ExtendedTableView()
         {
-                
+            BackgroundColor = Color.Transparent;
         }
     }
 }

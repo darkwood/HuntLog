@@ -10,6 +10,7 @@ using HuntLog.InputViews;
 using HuntLog.AppModule.Hunts;
 using HuntLog.AppModule.Logs;
 using HuntLog.Models;
+using HuntLog.Cells;
 
 namespace HuntLog
 {

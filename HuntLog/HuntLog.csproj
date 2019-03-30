@@ -102,4 +102,9 @@
     <EmbeddedResource Include="Assets\placeholder.jpg" />
     <EmbeddedResource Include="Assets\placeholder_map.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.4.0.63\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

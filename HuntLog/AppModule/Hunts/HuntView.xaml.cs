@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule.Logs;
+using HuntLog.Helpers;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
@@ -19,6 +20,12 @@ namespace HuntLog.AppModule.Hunts
             BindingContext = viewModel;
             InitializeComponent();
             _viewModel = viewModel;
+        }
+
+        protected override async void OnAppearing()
+        {
+            await _viewModel.InitializeAsync();
+            base.OnAppearing();
         }
     }
 
@@ -36,9 +43,10 @@ namespace HuntLog.AppModule.Hunts
 
         public Command EditCommand { get; set; }
         public Command AddCommand { get; set; }
-        public HuntViewModel(IBaseService<Jakt> huntService, 
-                        IBaseService<Jeger> hunterService, 
-                        INavigator navigator, 
+
+        public HuntViewModel(IBaseService<Jakt> huntService,
+                        IBaseService<Jeger> hunterService,
+                        INavigator navigator,
                         IBaseService<Logg> logService,
                         Func<LogViewModel> logItemViewModelFactory,
                         IDialogService dialogService)
@@ -68,18 +76,16 @@ namespace HuntLog.AppModule.Hunts
             SetStateFromDto(_dto);
         }
 
-        public async Task AfterNavigate() 
+        public override async Task AfterNavigate()
         {
             await FetchData();
         }
 
         private async Task AddItem()
         {
-            Action<Jakt> callback = (arg) => { };
-
             await _navigator.PushAsync<LogViewModel>(
-                    beforeNavigate: (vm) => vm.SetState(null, ID),
-                    afterNavigate: (vm) => vm.AfterNavigate());
+                    (vm) => vm.BeforeNavigate(null, ID),
+                    (vm) => vm.AfterNavigate());
         }
 
         private async Task DeleteItem(object item)
@@ -99,14 +105,31 @@ namespace HuntLog.AppModule.Hunts
             Items = new ObservableCollection<LogViewModel>();
             var items = await _logService.GetItems();
 
-            foreach(var i in items.Where(x => x.JaktId == ID).ToList())
+            foreach (var i in items.Where(x => x.JaktId == ID).ToList())
             {
                 var vm = _logItemViewModelFactory();
-                vm.SetState(i);
+                vm.BeforeNavigate(i, null);
                 Items.Add(vm);
             }
 
+            SelectedHunters = new List<InputViews.InputPickerItemViewModel>();
+            var hunters = await _hunterService.GetItems();
+            foreach(var h in hunters.Where(x => HunterIds.Any(xx => xx == x.ID)))
+            {
+                SelectedHunters.Add(new InputViews.InputPickerItemViewModel
+                {
+                    ID = h.ID,
+                    Title = h.Firstname,
+                    ImageSource = Utility.GetImageSource(h.ImagePath)
+                });
+            }
+
             IsBusy = false;
+        }
+
+        public async Task InitializeAsync()
+        {
+            await FetchData();
         }
     }
 }

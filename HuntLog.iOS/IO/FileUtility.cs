@@ -68,7 +68,7 @@ namespace HuntLog.iOS.Renderers.IO
 
         public string GetFilePath(string filename)
         {
-            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, filename);
             return filePath;
         }
@@ -82,7 +82,7 @@ namespace HuntLog.iOS.Renderers.IO
 
         public string[] GetAllFiles()
         {
-            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            var documentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             return Directory.GetFiles(documentsPath);
         }
     }

@@ -1,19 +1,33 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using HuntLog.Helpers;
+using HuntLog.InputViews;
+using HuntLog.Services;
 using ImageCircle.Forms.Plugin.Abstractions;
+using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
 namespace HuntLog.Cells
 {
     public class ImageHeaderCell : ViewCell
     {
-        public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(Command), typeof(ImageHeaderCell), null);
+        private INavigator _navigator;
 
-        public ICommand Command
+        public static readonly BindableProperty CompleteActionProperty = BindableProperty.Create(nameof(CompleteAction), typeof(Action<MediaFile>), typeof(ImageHeaderCell), null);
+
+        public Action<MediaFile> CompleteAction
         {
-            get { return (ICommand)GetValue(CommandProperty); }
-            set { SetValue(CommandProperty, value); }
+            get { return (Action<MediaFile>)GetValue(CompleteActionProperty); }
+            set { SetValue(CompleteActionProperty, value); }
+        }
+
+        public static readonly BindableProperty DeleteActionProperty = BindableProperty.Create(nameof(DeleteAction), typeof(Action), typeof(ImageHeaderCell), null);
+
+        public Action DeleteAction
+        {
+            get { return (Action)GetValue(DeleteActionProperty); }
+            set { SetValue(DeleteActionProperty, value); }
         }
 
         public static readonly BindableProperty SourceProperty =
@@ -46,6 +60,8 @@ namespace HuntLog.Cells
                 ((ImageHeaderCell)bindable).View.HeightRequest = height;
             });
 
+
+
         public string HeightRequest
         {
             get { return (string)GetValue(HeightRequestProperty); }
@@ -57,6 +73,7 @@ namespace HuntLog.Cells
 
         public ImageHeaderCell()
         {
+            _navigator = App.Navigator;
             var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
             CreateImage();
 
@@ -117,14 +134,22 @@ namespace HuntLog.Cells
         {
             var gestureRecognizer = new TapGestureRecognizer();
 
-            gestureRecognizer.Tapped += (s, e) =>
+            gestureRecognizer.Tapped += async (s, e) =>
             {
-                if (Command != null && Command.CanExecute(null))
-                {
-                    Command.Execute(commandArg);
-                }
+                await EditImage(commandArg);
             };
             return gestureRecognizer;
+        }
+
+        private async Task EditImage(object shortcut)
+        {
+            await _navigator.PushAsync<InputImageViewModel>(
+                beforeNavigate: async (arg) =>
+                {
+                    await arg.InitializeAsync(CellImage.Source, CompleteAction, DeleteAction);
+                },
+                afterNavigate: async (arg) => await arg.OnAfterNavigate(shortcut as string),
+                shortcut == null);
         }
     }
 }

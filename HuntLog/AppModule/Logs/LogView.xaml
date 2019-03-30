@@ -13,34 +13,43 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        
-        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">
-            <TableRoot>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <controls:ExtendedTableView Grid.Row="0"
+                                        HasUnevenRows="true" 
+                                        Intent="Form">
+            
+                <TableRoot>
                 
-                <TableSection Title="">
-                    <cells:ImageHeaderCell HeightRequest="180" Source="{Binding ImageSource}" Command="{Binding ImageCommand}" />
-                    <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
-                    
-                    <EntryCell Label="Antall sett" Text="{Binding Observed}" />
-                    <EntryCell Label="Antall skudd" Text="{Binding Shots}" />
-                    <EntryCell Label="Antall treff" Text="{Binding Hits}" />
-                    
-                    <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
-                    <EntryCell Label="Notat" Text="{Binding Notes}" />
-
-                    <ViewCell>
-                        <Button 
-                            Margin="15,25"
-                            Text="Slett" 
-                            StyleClass="PrimaryButton"
-                            Command="{Binding DeleteCommand}"
-                            IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
-                        />
+                    <TableSection Title="">
+                        <cells:ImageHeaderCell HeightRequest="180" Source="{Binding ImageSource}" CompleteAction="{Binding SaveImageAction}" DeleteAction="{Binding DeleteImageAction}" />
+                        <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
                         
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </controls:ExtendedTableView>
+                        <EntryCell Label="Antall sett" Text="{Binding Observed}" />
+                        <EntryCell Label="Antall skudd" Text="{Binding Shots}" />
+                        <EntryCell Label="Antall treff" Text="{Binding Hits}" />
+                        
+                        <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                        <EntryCell Label="Notat" Text="{Binding Notes}" />
+                        
+                    </TableSection>
+                </TableRoot>
+            </controls:ExtendedTableView>
+            
+            <Button Grid.Row="1"
+                    Margin="15"
+                    Text="Slett loggføring" 
+                    StyleClass="PrimaryButton"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+            />
+            
+        </Grid>
+        
         
     </ContentPage.Content>
 </ContentPage>

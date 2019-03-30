@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using HuntLog.Services;
+using Plugin.Media.Abstractions;
 
 namespace HuntLog.AppModule
 {
@@ -8,33 +11,30 @@ namespace HuntLog.AppModule
     {
         string Title { get; set; }
         bool IsBusy { get; set; }
+        MediaFile MediaFile { get; set; }
     }
 
     public abstract class ViewModelBase : IViewModel
     {
-        private string _title;
-        public virtual string Title
-        {
-            get => _title;
-            set
-            {
-                SetProperty(ref _title, value);
-            }
-        }
 
-        private bool _isBusy;
-        public bool IsBusy
-        {
-            get => _isBusy; 
-            set
-            {
-                SetProperty(ref _isBusy, value);
-            }
-        }
+        public MediaFile MediaFile { get; set; }
+        public string Title { get; set; }
+        public bool IsBusy { get; set; }
 
         public virtual async Task AfterNavigate()
         {
             await Task.CompletedTask;
+        }
+
+        public string SaveImage(string filename, IFileManager fileManager)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                MediaFile.GetStreamWithImageRotatedForExternalStorage().CopyTo(memoryStream);
+                MediaFile.Dispose();
+                fileManager.SaveImage(filename, memoryStream.ToArray());
+                return filename;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using HuntLog.AppModule;
 using HuntLog.Helpers;
+using HuntLog.InputViews;
 using HuntLog.Models;
 using Xamarin.Forms;
 
@@ -25,6 +26,7 @@ namespace HuntLog.AppModule.Hunts
         public bool IsNew => string.IsNullOrEmpty(ID);
         public string HuntersNames { get; set; }
         public string DogsNames { get; set; }
+        public List<InputPickerItemViewModel> SelectedHunters { get; set; }
 
         protected void SetStateFromDto(Jakt dto)
         {

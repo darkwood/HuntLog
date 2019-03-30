@@ -28,6 +28,8 @@ namespace HuntLog
             IFileManager fileManager = container.GetInstance<IFileManager>();
             InitializeDummyData(fileManager);
 
+            App.Navigator = container.GetInstance<INavigator>();
+
             await ConfigureApplication(container);
         }
 

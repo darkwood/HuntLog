@@ -6,33 +6,40 @@
     xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
     <ContentView.Content>
         <Grid VerticalOptions="StartAndExpand"
-              BackgroundColor="Yellow"
               HeightRequest="200">
+            
              <Image Source="{Binding ImageSource}"
                      HeightRequest="200"
                     Aspect="AspectFill" />
             
-            <StackLayout Orientation="Vertical" 
-                         Margin="10, 5"
-                        HorizontalOptions="Start"
-                        VerticalOptions="End">
-                <ci:CircleImage 
-                    Source="{Binding ImageSource}"
-                    BackgroundColor="White" 
-                    HorizontalOptions="Center"
-                    BorderColor="Black" 
-                    BorderThickness="1" 
-                    HeightRequest="50"
-                    WidthRequest="50"
-                    Margin="-5"
-                />
-                <Label Text="{Binding Name}"
-                       VerticalOptions="End" 
-                       HorizontalOptions="Center"
-                       FontSize="Micro"
-                       BackgroundColor="White"
-                       />
-            </StackLayout>
+            <CollectionView ItemsSource="{Binding SelectedHunters}">
+                 <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="Test" />
+                       <!-- <StackLayout Orientation="Vertical" 
+                                 Margin="10, 5"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End">
+                            <ci:CircleImage 
+                                Source="{Binding ImageSource}"
+                                BackgroundColor="White" 
+                                HorizontalOptions="Center"
+                                BorderColor="Black" 
+                                BorderThickness="1" 
+                                HeightRequest="50"
+                                WidthRequest="50"
+                                Margin="-5"
+                            />
+                            <Label Text="{Binding Title}"
+                                   VerticalOptions="End" 
+                                   HorizontalOptions="Center"
+                                   FontSize="Micro"
+                                   BackgroundColor="White"
+                                   />
+                        </StackLayout>-->
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Grid>
     </ContentView.Content>
 </ContentView>
