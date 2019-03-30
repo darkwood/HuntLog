@@ -38,6 +38,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\" />
     <Folder Include="InputViews\" />
+    <Folder Include="AppModule\Logs\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />

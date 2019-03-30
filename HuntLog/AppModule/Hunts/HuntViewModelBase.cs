@@ -34,8 +34,8 @@ namespace HuntLog.AppModule.Hunts
             DateTo = dto.DatoTil;
             HunterIds = dto.JegerIds;
             DogIds = dto.DogIds;
-            Latitude = MapStringToDouble(dto.Latitude);
-            Longitude = MapStringToDouble(dto.Longitude);
+            Latitude = Utility.MapStringToDouble(dto.Latitude);
+            Longitude = Utility.MapStringToDouble(dto.Longitude);
             ImagePath = dto.ImagePath;
             ImageSource = Utility.GetImageSource(dto.ImagePath);
             Notes = dto.Notes;
@@ -57,13 +57,6 @@ namespace HuntLog.AppModule.Hunts
                 ImagePath = ImagePath,
                 Notes = Notes
             };
-        }
-
-        private double MapStringToDouble(string doubleString)
-        {
-            double value;
-            double.TryParse(doubleString?.Replace('.', ','), out value);
-            return value;
         }
     }
 }

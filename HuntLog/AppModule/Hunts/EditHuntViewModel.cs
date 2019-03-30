@@ -18,8 +18,8 @@ namespace HuntLog.AppModule.Hunts
 {
     public class EditHuntViewModel : HuntViewModelBase
     {
-        private readonly IHuntService _huntService;
-        private readonly IHunterService _hunterService;
+        private readonly IBaseService<Jakt> _huntService;
+        private readonly IBaseService<Jeger> _hunterService;
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
         private readonly IFileManager _fileManager;
@@ -38,8 +38,8 @@ namespace HuntLog.AppModule.Hunts
 
         public string PositionStatus { get; set; }
 
-        public EditHuntViewModel(IHuntService huntService, 
-                                IHunterService hunterService, 
+        public EditHuntViewModel(IBaseService<Jakt> huntService, 
+                                IBaseService<Jeger> hunterService, 
                                 INavigator navigator, 
                                 IDialogService dialogService, 
                                 IFileManager fileManager,
@@ -140,7 +140,6 @@ namespace HuntLog.AppModule.Hunts
             {
                 Location = string.Empty;
             }
-
         }
 
         private async Task EditImage(object shortcut)
@@ -172,8 +171,9 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task SetHunterNames()
         {
-            var hunters = await _hunterService.GetItems(HunterIds);
-            HuntersNames = string.Join(", ", hunters.Select(h => h.Firstname));
+            var hunters = await _hunterService.GetItems();
+            var myHunters = hunters.Where(h => hunters.Any(hh => hh.ID == h.ID));
+            HuntersNames = string.Join(", ", myHunters.Select(h => h.Firstname));
         }
 
         public void SetState(Jakt hunt, Action<Jakt> callback)

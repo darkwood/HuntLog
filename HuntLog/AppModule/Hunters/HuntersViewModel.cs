@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
+using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
 
@@ -9,7 +10,7 @@ namespace HuntLog.AppModule.Hunters
 {
     public class HuntersViewModel : ViewModelBase
     {
-        private readonly IHunterService _hunterService;
+        private readonly IBaseService<Jeger> _hunterService;
         private readonly INavigator _navigator;
         private readonly Func<HunterViewModel> _hunterViewModelFactory;
         private readonly IDialogService _dialogService;
@@ -19,7 +20,7 @@ namespace HuntLog.AppModule.Hunters
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
 
-        public HuntersViewModel(IHunterService hunterService, INavigator navigator, Func<HunterViewModel> hunterViewModelFactory, IDialogService dialogService)
+        public HuntersViewModel(IBaseService<Jeger> hunterService, INavigator navigator, Func<HunterViewModel> hunterViewModelFactory, IDialogService dialogService)
         {
             _hunterService = hunterService;
             _navigator = navigator;

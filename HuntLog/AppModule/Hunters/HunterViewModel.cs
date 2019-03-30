@@ -12,7 +12,7 @@ namespace HuntLog.AppModule.Hunters
 {
     public class HunterViewModel : ViewModelBase
     {
-        private readonly IHunterService _hunterService;
+        private readonly IBaseService<Jeger> _hunterService;
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
         private Jeger _dto;
@@ -37,7 +37,7 @@ namespace HuntLog.AppModule.Hunters
         public string ImagePath { get; set; }
         public bool IsNew { get; set; }
 
-        public HunterViewModel(IHunterService hunterService, INavigator navigator, IDialogService dialogService)
+        public HunterViewModel(IBaseService<Jeger> hunterService, INavigator navigator, IDialogService dialogService)
         {
             _hunterService = hunterService;
             _navigator = navigator;

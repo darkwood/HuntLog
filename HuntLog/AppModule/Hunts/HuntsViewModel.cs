@@ -23,7 +23,7 @@ namespace HuntLog.AppModule.Hunts
 
     public class HuntsViewModel : ViewModelBase
     {
-        private readonly IHuntService _huntService;
+        private readonly IBaseService<Jakt> _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
@@ -36,7 +36,7 @@ namespace HuntLog.AppModule.Hunts
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
-        public HuntsViewModel(IHuntService huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService)
+        public HuntsViewModel(IBaseService<Jakt> huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService)
         {
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;

@@ -42,5 +42,11 @@ namespace HuntLog.Helpers
             await btn.ScaleTo(0.75, 50, Easing.Linear);
             await btn.ScaleTo(1, 50, Easing.Linear);
         }
+        public static double MapStringToDouble(string doubleString)
+        {
+            double value;
+            double.TryParse(doubleString?.Replace('.', ','), out value);
+            return value;
+        }
     }
 }

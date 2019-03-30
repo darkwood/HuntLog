@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.AppModule.Logs.LogView"
+             xmlns:Converters="clr-namespace:HuntLog.Converters"       
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             Title="{Binding Title}">
+ 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        
+        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">
+            <TableRoot>
+                
+                <TableSection Title="">
+                    <cells:ImageHeaderCell HeightRequest="180" Source="{Binding ImageSource}" Command="{Binding ImageCommand}" />
+                    <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
+                    
+                    <EntryCell Label="Antall sett" Text="{Binding Observed}" />
+                    <EntryCell Label="Antall skudd" Text="{Binding Shots}" />
+                    <EntryCell Label="Antall treff" Text="{Binding Hits}" />
+                    
+                    <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                    <EntryCell Label="Notat" Text="{Binding Notes}" />
+
+                    <ViewCell>
+                        <Button 
+                            Margin="15,25"
+                            Text="Slett" 
+                            StyleClass="PrimaryButton"
+                            Command="{Binding DeleteCommand}"
+                            IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+                        />
+                        
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </controls:ExtendedTableView>
+        
+    </ContentPage.Content>
+</ContentPage>

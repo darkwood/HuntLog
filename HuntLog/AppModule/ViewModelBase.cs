@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace HuntLog.AppModule
 {
@@ -29,6 +30,11 @@ namespace HuntLog.AppModule
             {
                 SetProperty(ref _isBusy, value);
             }
+        }
+
+        public virtual async Task AfterNavigate()
+        {
+            await Task.CompletedTask;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

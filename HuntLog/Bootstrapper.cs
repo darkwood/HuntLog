@@ -5,6 +5,7 @@ using HuntLog.AppModule.Hunts;
 using HuntLog.InputViews;
 using LightInject;
 using Xamarin.Forms;
+using HuntLog.AppModule.Logs;
 
 namespace HuntLog
 {
@@ -35,12 +36,14 @@ namespace HuntLog
             viewFactory.Register<HuntsViewModel, HuntsView>();
             viewFactory.Register<HuntViewModel, HuntView>();
             viewFactory.Register<EditHuntViewModel, EditHuntView>();
+            viewFactory.Register<LogViewModel, LogView>();
             viewFactory.Register<HuntersViewModel, HuntersView>();
             viewFactory.Register<HunterViewModel, HunterView>();
             viewFactory.Register<InputImageViewModel, InputImageView>();
             viewFactory.Register<InputPositionViewModel, InputPositionView>();
             viewFactory.Register<InputDateViewModel, InputDateView>();
             viewFactory.Register<InputPickerViewModel, InputPickerView>();
+
 
         }
 

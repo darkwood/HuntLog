@@ -12,7 +12,7 @@ namespace HuntLog.AppModule.Hunts
     public class HuntListItemViewModel : ViewModelBase
     {
         private readonly INavigator _navigator;
-        private readonly IHuntService _huntService;
+        private readonly IBaseService<Jakt> _huntService;
 
         private Jakt _dto { get; set; }
 
@@ -24,7 +24,7 @@ namespace HuntLog.AppModule.Hunts
         public DateTime DateTo => _dto.DatoTil;
         public ImageSource ImageSource => Utility.GetImageSource(_dto.ImagePath);
 
-        public HuntListItemViewModel(INavigator navigator, IHuntService huntService)
+        public HuntListItemViewModel(INavigator navigator, IBaseService<Jakt> huntService)
         {
             _navigator = navigator;
             _huntService = huntService;
@@ -39,7 +39,9 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task ShowHunt()
         {
-            await _navigator.PushAsync<HuntViewModel>(beforeNavigate: (arg) => arg.SetState(_dto));
+            await _navigator.PushAsync<HuntViewModel>(
+                beforeNavigate: (arg) => arg.SetState(_dto),
+                afterNavigate: async(arg) => await arg.AfterNavigate());
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.Helpers;
 using HuntLog.InputViews;
+using HuntLog.Models;
 using HuntLog.Services;
 
 namespace HuntLog.Factories
@@ -14,10 +15,10 @@ namespace HuntLog.Factories
 
     public class HunterFactory : IHunterFactory
     {
-        private readonly IHunterService _hunterService;
+        private readonly IBaseService<Jeger> _hunterService;
         private readonly INavigator _navigator;
 
-        public HunterFactory(IHunterService hunterService, INavigator navigator)
+        public HunterFactory(IBaseService<Jeger>hunterService, INavigator navigator)
         {
             _hunterService = hunterService;
             _navigator = navigator;

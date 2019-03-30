@@ -5,42 +5,49 @@
             xmlns:Converters="clr-namespace:HuntLog.Converters"
             xmlns:Controls="clr-namespace:HuntLog.Controls"
             xmlns:local="clr-namespace:HuntLog.AppModule.Hunts"
-            Title="{Binding Location}" xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+            xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+            Title="{Binding Location}" 
+            >
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
-            <ListView Header="{Binding}">
-                <ListView.HeaderTemplate>
-                    <DataTemplate>
-                        <StackLayout>
+        <ListView x:Name="itemListView" Header="{Binding}" ItemsSource="{Binding Items}" HasUnevenRows="true">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                    
+                        <local:HuntSummaryView />
                         
-                            <local:HuntSummaryView />
-                            
-                            <Button 
-                                StyleClass="PrimaryButton"
-                                HorizontalOptions="FillAndExpand"
-                                Text="Ny loggføring" 
-                                Margin="15"
-                            />
-                        </StackLayout>
-                    </DataTemplate>
-                </ListView.HeaderTemplate>
-              <ListView.ItemsSource>
-                  <x:Array Type="{x:Type x:String}">
-                    <x:String>mono</x:String>
-                    <x:String>monodroid</x:String>
-                    <x:String>monotouch</x:String>
-                    <x:String>monorail</x:String>
-                    <x:String>monodevelop</x:String>
-                    <x:String>monotone</x:String>
-                    <x:String>monopoly</x:String>
-                    <x:String>monomodal</x:String>
-                    <x:String>mononucleosis</x:String>
-                  </x:Array>
-              </ListView.ItemsSource>
+                        <Button 
+                            StyleClass="PrimaryButton"
+                            HorizontalOptions="FillAndExpand"
+                            Text="Ny loggføring" 
+                            Margin="15"
+                            Command="{Binding AddCommand}"
+                        />
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Title}" 
+                                            Detail="{Binding Detail}" 
+                                            Command="{Binding ItemTappedCommand}"
+                                            >
+                        <cells:ExtendedTextCell.ContextActions>
+                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
+                                      Text="Slett" 
+                                      IsDestructive="True" 
+                                      Icon="trash" />
+                            </cells:ExtendedTextCell.ContextActions>
+                    </cells:ExtendedTextCell>
+                </DataTemplate>     
+            </ListView.ItemTemplate>
         </ListView>
         
     </ContentPage.Content>

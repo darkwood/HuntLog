@@ -8,6 +8,8 @@ using HuntLog.AppModule.Hunters;
 using HuntLog.Factories;
 using HuntLog.InputViews;
 using HuntLog.AppModule.Hunts;
+using HuntLog.AppModule.Logs;
+using HuntLog.Models;
 
 namespace HuntLog
 {
@@ -22,8 +24,9 @@ namespace HuntLog
             .RegisterSingleton<IFileUtility>(f => DependencyService.Get<IFileUtility>())
             .RegisterSingleton<IFileManager, FileManager>()
             .RegisterSingleton<IMediaService, MediaService>()
-            .RegisterSingleton<IHuntService, HuntService>()
-            .RegisterSingleton<IHunterService, HunterService>()
+            .RegisterSingleton<IBaseService<Jakt>, BaseService<Jakt>>()
+            .RegisterSingleton<IBaseService<Jeger>, BaseService<Jeger>>()
+            .RegisterSingleton<IBaseService<Logg>, BaseService<Logg>>()
             .RegisterSingleton<IDialogService, DialogService>()
             .RegisterSingleton<IHunterFactory, HunterFactory>()
 
@@ -36,6 +39,9 @@ namespace HuntLog
 
             .Register<EditHuntViewModel>()
             .Register<EditHuntView>()
+
+            .Register<LogViewModel>()
+            .Register<LogView>()
 
             .Register<HuntersViewModel>()
             .Register<HuntersView>()
