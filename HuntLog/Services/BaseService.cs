@@ -14,14 +14,14 @@ namespace HuntLog.Services
     {
         Task<IEnumerable<T>> GetItems();
         Task<T> Get(string id);
-        Task Save(T hunt);
+        Task Save(T item);
         Task Delete(string id);
     }
 
     public class BaseService<T> : IBaseService<T> where T : BaseDto
     {
         private const int _delay = 0;
-        private string _dataFileName = "logg.json";
+        private string _dataFileName = "";
         private readonly IFileManager _fileManager;
         private List<T> _dtos;
 
@@ -55,17 +55,22 @@ namespace HuntLog.Services
                 _dtos = _fileManager.LoadFromLocalStorage<List<T>>(_dataFileName);
 
             }
-            return _dtos;
+            return _dtos.OrderByDescending(o => o.Created);
         }
 
-        public async Task Save(T hunt)
+        public async Task Save(T item)
         {
-            var itemToReplace = _dtos.SingleOrDefault(x => x.ID == hunt.ID);
+            var itemToReplace = _dtos.SingleOrDefault(x => x.ID == item.ID);
             if (itemToReplace != null)
             {
                 _dtos.Remove(itemToReplace);
+                item.Changed = DateTime.Now;
             }
-            _dtos.Add(hunt);
+            else 
+            {
+                item.Created = DateTime.Now;
+            }
+            _dtos.Add(item);
 
             _fileManager.SaveToLocalStorage(_dtos, _dataFileName);
 
@@ -107,6 +112,7 @@ namespace HuntLog.Services
             {
                 throw new NotImplementedException(typeof(T).ToString() + " sitt filnavn er ikke implementert.");
             }
+
         }
     }
 }

@@ -6,6 +6,8 @@ using HuntLog.InputViews;
 using LightInject;
 using Xamarin.Forms;
 using HuntLog.AppModule.Logs;
+using HuntLog.AppModule.Dogs;
+using HuntLog.AppModule.Species;
 
 namespace HuntLog
 {
@@ -41,22 +43,26 @@ namespace HuntLog
             viewFactory.Register<LogViewModel, LogView>();
             viewFactory.Register<HuntersViewModel, HuntersView>();
             viewFactory.Register<HunterViewModel, HunterView>();
+            viewFactory.Register<DogsViewModel, DogsView>();
+            viewFactory.Register<DogViewModel, DogView>();
+            viewFactory.Register<SpeciesViewModel, SpeciesView>();
+            viewFactory.Register<SpecieViewModel, SpecieView>();
             viewFactory.Register<InputImageViewModel, InputImageView>();
             viewFactory.Register<InputPositionViewModel, InputPositionView>();
             viewFactory.Register<InputDateViewModel, InputDateView>();
             viewFactory.Register<InputPickerViewModel, InputPickerView>();
-
-
         }
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
             var tabbed = new TabbedPage();
-            var huntPage = CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen");
-            var hunterPage = CreateTab(container.GetInstance<HuntersView>(), "Jegere");
 
-            tabbed.Children.Add(huntPage);
-            tabbed.Children.Add(hunterPage);
+            tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<HuntersView>(), "Jegere", "Tabbar/hunters.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<DogsView>(), "Hunder", "Tabbar/dog.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<SpeciesView>(), "Arter", "Tabbar/Arter.png"));
+            tabbed.Children.Add(CreateTab(new Page(), "Statistikk", "Tabbar/stats.png"));
+            tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
 
             _application.MainPage = tabbed;
             await Task.CompletedTask;
@@ -72,7 +78,6 @@ namespace HuntLog
 
         private void InitializeDummyData(IFileManager fileManager)
         {
-
             if (!fileManager.Exists("jakt.xml"))
             {
                 fileManager.CopyToAppFolder("arter.xml");

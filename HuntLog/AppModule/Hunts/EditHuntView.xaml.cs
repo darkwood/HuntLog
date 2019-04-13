@@ -9,6 +9,8 @@ using Plugin.Media.Abstractions;
 using Xamarin.Forms.Maps;
 using HuntLog.Helpers;
 using HuntLog.Factories;
+using HuntLog.Cells;
+using System.Collections.Generic;
 
 namespace HuntLog.AppModule.Hunts
 {
@@ -31,55 +33,53 @@ namespace HuntLog.AppModule.Hunts
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
         private readonly IFileManager _fileManager;
-        private readonly IHunterFactory _hunterFactory;
+        private readonly IHuntFactory _huntFactory;
         private Action<Jakt> _callback;
 
         public Command CancelCommand { get; set; }
         public Command SaveCommand { get; set; }
         public Command DeleteCommand { get; set; }
-        public Command PositionCommand { get; set; }
         public Command DateFromCommand { get; set; }
         public Command HuntersCommand { get; set; }
         public Command DogsCommand { get; set; }
 
-        public Action<MediaFile> SaveImageAction { get; set; }
-        public Action DeleteImageAction { get; set; }
+        public CellAction ImageAction { get; set; }
+        public CellAction MapAction { get; set; }
 
         public string PositionStatus { get; set; }
+        public List<PickerItem> Hunters { get; set; }
+        public List<PickerItem> Dogs { get; set; }
 
         public EditHuntViewModel(IBaseService<Jakt> huntService,
                                 IBaseService<Jeger> hunterService,
                                 INavigator navigator,
                                 IDialogService dialogService,
                                 IFileManager fileManager,
-                                IHunterFactory hunterFactory)
+                                IHuntFactory hunterFactory)
         {
             _huntService = huntService;
             _hunterService = hunterService;
             _navigator = navigator;
             _dialogService = dialogService;
             _fileManager = fileManager;
-            _hunterFactory = hunterFactory;
+            _huntFactory = hunterFactory;
+
             SaveCommand = new Command(async () => await Save());
             DeleteCommand = new Command(async () => await Delete());
-            CancelCommand = new Command(async () =>
-            {
-                await _navigator.PopAsync();
-            });
+            CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
-            PositionCommand = new Command(async () => await EditPosition());
             DateFromCommand = new Command(async () => await EditDateFrom());
-            HuntersCommand = new Command(async () => await EditHunters());
-            DogsCommand = new Command(async () => await EditDogs());
 
             CreateImageActions();
+            CreatePositionActions();
         }
 
         private void CreateImageActions()
         {
-            SaveImageAction += (MediaFile obj) =>
+            ImageAction = new CellAction();
+            ImageAction.Save += (object obj) =>
             {
-                MediaFile = obj;
+                MediaFile = (MediaFile)obj;
                 ImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = MediaFile.GetStreamWithImageRotatedForExternalStorage();
@@ -88,7 +88,7 @@ namespace HuntLog.AppModule.Hunts
                 OnPropertyChanged(nameof(ImageSource));
             };
 
-            DeleteImageAction += () =>
+            ImageAction.Delete += () =>
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
@@ -96,22 +96,36 @@ namespace HuntLog.AppModule.Hunts
             };
         }
 
-        private async Task EditDogs() { await Task.CompletedTask; }
-
-        private async Task EditHunters()
+        private void CreatePositionActions()
         {
-            await _navigator.PushAsync<InputPickerViewModel>(
-                beforeNavigate: async (arg) =>
-                {
-                    var hunterPickers = await _hunterFactory.CreateHunterPickerItems(HunterIds);
-                    await arg.InitializeAsync(hunterPickers,
-                        completeAction: async (value) =>
-                        {
-                            HunterIds = value.Where(x => x.Selected).Select(v => v.ID).ToList();
-                            await SetHunterNames();
-                        });
-                });
+            MapAction = new CellAction();
+            MapAction.Save += (object obj) =>
+            {
+                var pos = (Position)obj;
+                Latitude = pos.Latitude;
+                Longitude = pos.Longitude;
+            };
+
+            MapAction.Delete += () =>
+            {
+                Latitude = Longitude = 0;
+            };
         }
+
+        //private async Task EditHunters()
+        //{
+        //    await _navigator.PushAsync<InputPickerViewModel>(
+        //        beforeNavigate: async (arg) =>
+        //        {
+        //            var hunterPickers = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
+        //            await arg.InitializeAsync(hunterPickers,
+        //                completeAction: async (value) =>
+        //                {
+        //                    HunterIds = value.Where(x => x.Selected).Select(v => v.ID).ToList();
+        //                    await SetHunterNames();
+        //                });
+        //        });
+        //}
         private async Task EditDateFrom()
         {
             await _navigator.PushAsync<InputDateViewModel>(
@@ -124,35 +138,27 @@ namespace HuntLog.AppModule.Hunts
                     });
                 });
         }
-        private async Task EditPosition()
-        {
-            await _navigator.PushAsync<InputPositionViewModel>(
-                beforeNavigate: async (arg) =>
-                {
-                    await arg.InitializeAsync(new Position(Latitude, Longitude),
-                    completeAction: (position) =>
-                    {
-                        Latitude = position.Latitude;
-                        Longitude = position.Longitude;
-                    },
-                    deleteAction: () =>
-                    {
-                        Latitude = 0;
-                        Longitude = 0;
-                    });
-                });
-        }
 
         public override async Task AfterNavigate()
         {
-            await SetHunterNames();
-
             if (IsNew)
             {
-                await SetPositionAsync();
+#pragma warning disable CS4014
+                SetPositionAsync();
+#pragma warning restore CS4014
             }
 
-            foreach (var file in _fileManager.GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase)))
+            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
+            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+
+            WriteAllImagesToConsole();
+        }
+
+        private void WriteAllImagesToConsole()
+        {
+            var files = _fileManager.GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+            Console.WriteLine("----Photos: " + files.Count() + "----");
+            foreach (var file in files)
             {
                 Console.WriteLine(file);
             }
@@ -175,13 +181,6 @@ namespace HuntLog.AppModule.Hunts
             }
         }
 
-        private async Task SetHunterNames()
-        {
-            var hunters = await _hunterService.GetItems();
-            var myHunters = hunters.Where(h => hunters.Any(hh => hh.ID == h.ID));
-            HuntersNames = string.Join(", ", myHunters.Select(h => h.Firstname));
-        }
-
         public void SetState(Jakt hunt, Action<Jakt> callback)
         {
             SetStateFromDto(hunt ?? CreateNewHunt());
@@ -201,17 +200,15 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task Delete()
         {
-            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jakta blir permanent slettet. Er du sikker?");
-            if (ok)
+            var ok = await _huntFactory.DeleteHunt(ID, ImagePath);
+            if (ok) 
             {
-                await _huntService.Delete(ID);
                 await _navigator.PopToRootAsync();
             }
         }
 
         private async Task Save()
         {
-
             Jakt dto = CreateHuntDto();
             if (MediaFile != null)
             {
@@ -221,6 +218,23 @@ namespace HuntLog.AppModule.Hunts
             await _huntService.Save(dto);
             _callback.Invoke(dto);
             await _navigator.PopAsync();
+        }
+
+        protected Jakt CreateHuntDto()
+        {
+            return new Jakt
+            {
+                ID = ID ?? Guid.NewGuid().ToString(),
+                Sted = Location,
+                DatoFra = DateFrom,
+                DatoTil = DateTo,
+                JegerIds = Hunters.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
+                DogIds = Dogs.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
+                Latitude = Latitude.ToString(),
+                Longitude = Longitude.ToString(),
+                ImagePath = ImagePath,
+                Notes = Notes
+            };
         }
     }
 }

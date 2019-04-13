@@ -4,7 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule.Logs;
+using HuntLog.Factories;
 using HuntLog.Helpers;
+using HuntLog.InputViews;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
@@ -32,31 +34,40 @@ namespace HuntLog.AppModule.Hunts
     public class HuntViewModel : HuntViewModelBase
     {
         public ObservableCollection<LogViewModel> Items { get; set; }
+        public LogViewModel SelectedItem
+        {
+            get
+            {
+                return selectedItem;
+            }
 
-        private readonly IBaseService<Jakt> _huntService;
+            set
+            {
+                selectedItem = value;
+                selectedItem.ItemTappedCommand.Execute(null);
+            }
+        }
         private readonly IBaseService<Jeger> _hunterService;
         private readonly IBaseService<Logg> _logService;
         private readonly INavigator _navigator;
-        private readonly IDialogService _dialogService;
         private readonly Func<LogViewModel> _logItemViewModelFactory;
-        private Jakt _dto;
+        private readonly IHuntFactory _huntFactory;
+        private LogViewModel selectedItem;
 
         public Command EditCommand { get; set; }
         public Command AddCommand { get; set; }
 
-        public HuntViewModel(IBaseService<Jakt> huntService,
-                        IBaseService<Jeger> hunterService,
+        public HuntViewModel(IBaseService<Jeger> hunterService,
                         INavigator navigator,
                         IBaseService<Logg> logService,
                         Func<LogViewModel> logItemViewModelFactory,
-                        IDialogService dialogService)
+                        IHuntFactory huntFactory)
         {
-            _huntService = huntService;
             _hunterService = hunterService;
             _logService = logService;
             _navigator = navigator;
-            _dialogService = dialogService;
             _logItemViewModelFactory = logItemViewModelFactory;
+            _huntFactory = huntFactory;
 
             EditCommand = new Command(async () => await EditItem());
             AddCommand = new Command(async () => await AddItem());
@@ -90,10 +101,9 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task DeleteItem(object item)
         {
-            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Loggføringen blir permanent slettet. Er du sikker?");
+            var ok = await _huntFactory.DeleteLog(ID, ImagePath);
             if (ok)
             {
-                await _logService.Delete((item as HuntListItemViewModel).ID);
                 await FetchData();
             }
         }
@@ -103,26 +113,24 @@ namespace HuntLog.AppModule.Hunts
             IsBusy = true;
 
             Items = new ObservableCollection<LogViewModel>();
-            var items = await _logService.GetItems();
+            var items = new List<LogViewModel>();
+            var dtos = await _logService.GetItems();
 
-            foreach (var i in items.Where(x => x.JaktId == ID).ToList())
+            foreach (var i in dtos.Where(x => x.JaktId == ID).ToList())
             {
                 var vm = _logItemViewModelFactory();
                 vm.BeforeNavigate(i, null);
-                Items.Add(vm);
+                await vm.AfterNavigate();
+                items.Add(vm);
             }
+            items = items.OrderByDescending(o => o.Date).ToList();
+            items.ForEach(i => Items.Add(i));
 
-            SelectedHunters = new List<InputViews.InputPickerItemViewModel>();
-            var hunters = await _hunterService.GetItems();
-            foreach(var h in hunters.Where(x => HunterIds.Any(xx => xx == x.ID)))
-            {
-                SelectedHunters.Add(new InputViews.InputPickerItemViewModel
-                {
-                    ID = h.ID,
-                    Title = h.Firstname,
-                    ImageSource = Utility.GetImageSource(h.ImagePath)
-                });
-            }
+            var hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
+            var dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+
+            SelectedHuntersAndDogs = hunters.Where(h => h.Selected).ToList();
+            SelectedHuntersAndDogs.AddRange(dogs.Where(h => h.Selected).ToList());
 
             IsBusy = false;
         }

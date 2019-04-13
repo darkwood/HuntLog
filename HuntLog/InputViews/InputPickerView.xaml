@@ -10,7 +10,7 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding CurrentValue}">
+        <ListView ItemsSource="{Binding CurrentValue}" HasUnevenRows="true">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 

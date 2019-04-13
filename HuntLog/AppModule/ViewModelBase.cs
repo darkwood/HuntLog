@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using HuntLog.Services;
 using Plugin.Media.Abstractions;
+using Xamarin.Forms;
 
 namespace HuntLog.AppModule
 {
@@ -16,7 +17,10 @@ namespace HuntLog.AppModule
 
     public abstract class ViewModelBase : IViewModel
     {
-
+        public string ID { get; set; }
+        public ImageSource ImageSource { get; set; }
+        public string ImagePath { get; set; }
+        public bool IsNew => string.IsNullOrEmpty(ID);
         public MediaFile MediaFile { get; set; }
         public string Title { get; set; }
         public bool IsBusy { get; set; }

@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.94569-pre3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.250467-pre7" />
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
     <PackageReference Include="LightInject" Version="5.4.0" />
@@ -36,9 +36,10 @@
     <Folder Include="AppModule\Hunts\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="InputViews\" />
     <Folder Include="AppModule\Logs\" />
+    <Folder Include="AppModule\Dogs\" />
+    <Folder Include="AppModule\Species\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -69,6 +70,22 @@
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="InputViews\InputImageView.xaml.cs">
       <DependentUpon>InputImageView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\DogsView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpecieView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpecView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpeciesView.xaml.cs">
+      <DependentUpon>SpeciesView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

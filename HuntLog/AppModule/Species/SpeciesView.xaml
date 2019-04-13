@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Species.SpeciesView"
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    Title="Arter">
+     
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Add.png" Command="{Binding AddCommand}" Priority="1" />
+    </ContentPage.ToolbarItems>-->
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+             <StackLayout Margin="20" Orientation="Horizontal">
+                <Image Source="Tabbar/info.png" />
+                <Label FontSize="Small" 
+                       Text="Velg hvilke arter du jakter på. Disse artene blir tilgjengelig når du loggfører." />
+                </StackLayout>
+            
+            <ListView 
+                Grid.Row="1"
+                ItemsSource="{Binding SpeciesGroup}"
+                IsGroupingEnabled="true"
+                GroupDisplayBinding="{Binding Name}"
+                GroupShortNameBinding="{Binding ShortName}"
+                HasUnevenRows="true"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:ExtendedTextCell Text="{Binding Name}" 
+                                                ShowCheckBox="True" 
+                                                Selected="{Binding Selected}"
+                                                Command="{Binding ItemTappedCommand}" 
+                                                />                
+                </DataTemplate>     
+            </ListView.ItemTemplate>
+        </ListView>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

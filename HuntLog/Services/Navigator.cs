@@ -67,12 +67,13 @@ namespace HuntLog.Services
 
             beforeNavigate?.Invoke(viewModel);
 
-            await Navigation.PushAsync(view, animated);
 
             if (afterNavigate != null)
             {
                 await afterNavigate(viewModel);
             }
+
+            await Navigation.PushAsync(view, animated);
 
             return viewModel;
         }

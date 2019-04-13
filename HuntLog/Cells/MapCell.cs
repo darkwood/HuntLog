@@ -2,21 +2,15 @@
 using System.Windows.Input;
 using HuntLog.Controls;
 using HuntLog.Helpers;
+using HuntLog.InputViews;
+using HuntLog.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace HuntLog.Cells
 {
-    public class MapCell : ViewCell
+    public class MapCell : BaseCell
     {
-        public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command), typeof(Command), typeof(MapCell), null);
-
-        public ICommand Command
-        {
-            get => (ICommand)GetValue(CommandProperty);
-            set => SetValue(CommandProperty, value);
-        }
-
         public static readonly BindableProperty TextProperty =
             BindableProperty.Create(
                 nameof(Text), 
@@ -108,7 +102,7 @@ namespace HuntLog.Cells
             MyMap.Pins.Add(pin);
         }
 
-        public MapCell()
+        public MapCell() : base()
         {
             var viewLayout = new StackLayout
             {
@@ -154,11 +148,14 @@ namespace HuntLog.Cells
 
             var gestureRecognizer = new TapGestureRecognizer();
 
-            gestureRecognizer.Tapped += (s, e) => {
-                if (Command != null && Command.CanExecute(null))
+            gestureRecognizer.Tapped += async (s, e) => 
+            {
+                await _navigator.PushAsync<InputPositionViewModel>(
+                beforeNavigate: async (arg) =>
                 {
-                    Command.Execute(null);
-                }
+                    var position = new Position(Latitude, Longitude);
+                    await arg.InitializeAsync(position, CellAction.Save, CellAction.Delete);
+                });
             };
 
             viewLayout.GestureRecognizers.Add(gestureRecognizer);

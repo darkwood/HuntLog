@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="HuntLog.AppModule.Hunters.HunterView"
     xmlns:Converters="clr-namespace:HuntLog.Converters"     
     xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
     Title="{Binding Title}">
     
      <ContentPage.ToolbarItems>
@@ -13,32 +14,39 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-    <TableView Intent="Settings">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <controls:ExtendedTableView Grid.Row="0"
+                                        HasUnevenRows="true" 
+                                        Intent="Form">
             <TableRoot>
                 
                 <TableSection Title="">
-                    
+                    <cells:ImageHeaderCell HeightRequest="250" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
                     <EntryCell Label="Fornavn" Text="{Binding Firstname}" />
                     <EntryCell Label="Etternavn" Text="{Binding Lastname}" />
-                    <cells:ExtendedTextCell Text="Bilde" Detail="{Binding ImagePath}" ImageSource="{Binding ImageSource}" Command="{Binding ImageCommand}" />
                     <EntryCell Label="Epost" Text="{Binding Email}" Keyboard="Email" />
                     <EntryCell Label="Mobil" Text="{Binding Phone}" Keyboard="Telephone" />
                     
                 </TableSection>
-
-                <TableSection Title="">
-                    <ViewCell>
-                        <Button 
-                            Text="Slett" 
-                            StyleClass="PrimaryButton"
-                            Command="{Binding DeleteCommand}"
-                            IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
-                        />
-                        
-                    </ViewCell>
-                </TableSection>
+                
             </TableRoot>
-        </TableView>
+            </controls:ExtendedTableView>
+            
+            <Button Grid.Row="1"
+                    Margin="15"
+                    Text="Slett jeger" 
+                    StyleClass="PrimaryButton"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+            />
+            
+        </Grid>
+        
         
     </ContentPage.Content>
 </ContentPage>

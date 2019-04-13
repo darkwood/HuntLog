@@ -67,6 +67,7 @@ namespace HuntLog.Services
                     var xmlString = _fileUtility.Load(xmlFilename);
                     xmlString = xmlString.Replace("<int>", "<string>");
                     xmlString = xmlString.Replace("</int>", "</string>");
+                    xmlString = xmlString.Replace("ArrayOfInt", "ArrayOfString");
 
                     using (var reader = new StringReader(xmlString))
                     {

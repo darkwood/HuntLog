@@ -207,5 +207,17 @@
     <BundleResource Include="Resources\location.png" />
     <BundleResource Include="Resources\checked.png" />
     <BundleResource Include="Resources\checked_off.png" />
+    <BundleResource Include="Resources\Tabbar\dog%402x.png" />
+    <BundleResource Include="Resources\Tabbar\dog%403x.png" />
+    <BundleResource Include="Resources\Tabbar\gevir%402x.png" />
+    <BundleResource Include="Resources\Tabbar\gevir%403x.png" />
+    <BundleResource Include="Resources\Tabbar\hunters%402x.png" />
+    <BundleResource Include="Resources\Tabbar\hunters%403x.png" />
+    <BundleResource Include="Resources\Tabbar\info%402x.png" />
+    <BundleResource Include="Resources\Tabbar\info%403x.png" />
+    <BundleResource Include="Resources\Tabbar\stats.png" />
+    <BundleResource Include="Resources\Tabbar\stats%402x.png" />
+    <BundleResource Include="Resources\Tabbar\stats%403x.png" />
+    <BundleResource Include="Resources\Tabbar\Arter.png" />
   </ItemGroup>
 </Project>

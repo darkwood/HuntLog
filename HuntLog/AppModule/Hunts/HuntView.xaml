@@ -6,6 +6,7 @@
             xmlns:Controls="clr-namespace:HuntLog.Controls"
             xmlns:local="clr-namespace:HuntLog.AppModule.Hunts"
             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+            xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
             Title="{Binding Location}" 
             >
     
@@ -14,7 +15,11 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
-        <ListView x:Name="itemListView" Header="{Binding}" ItemsSource="{Binding Items}" HasUnevenRows="true">
+        <ListView x:Name="itemListView" 
+                  Header="{Binding}" 
+                  ItemsSource="{Binding Items}" 
+                  SelectedItem="{Binding SelectedItem}"
+                  HasUnevenRows="true">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackLayout>
@@ -34,8 +39,41 @@
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
-                                            Text="{Binding Title}" 
+                    <ViewCell>
+                        <StackLayout Margin="20,0" Orientation="Horizontal">
+                            
+                            <StackLayout>
+                                <Label FontSize="Large" Text="{Binding Header}" />
+                                <Label Text="{Binding Detail}" FontSize="Small" />
+                            </StackLayout>
+                            
+                            <StackLayout 
+                                HorizontalOptions="EndAndExpand" 
+                                BindableLayout.ItemsSource="{Binding HunterAndDog}" 
+                                Orientation="Horizontal">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                   <Controls:PickerItemView />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <!--
+                            <StackLayout.GestureRecognizers>
+                                 <TapGestureRecognizer Command="{Binding ItemTappedCommand}" />
+                            </StackLayout.GestureRecognizers>-->
+                        </StackLayout>
+                        
+                        
+                        
+                         <ViewCell.ContextActions>
+                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
+                                      Text="Slett" 
+                                      IsDestructive="True" 
+                                      Icon="trash" />
+                            </ViewCell.ContextActions>
+                    </ViewCell>
+                    <!--<cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Date, Converter={Converters:DateTimeToShortDateAndTimeConverter}}" 
                                             Detail="{Binding Detail}" 
                                             Command="{Binding ItemTappedCommand}"
                                             >
@@ -45,7 +83,7 @@
                                       IsDestructive="True" 
                                       Icon="trash" />
                             </cells:ExtendedTextCell.ContextActions>
-                    </cells:ExtendedTextCell>
+                    </cells:ExtendedTextCell>-->
                 </DataTemplate>     
             </ListView.ItemTemplate>
         </ListView>

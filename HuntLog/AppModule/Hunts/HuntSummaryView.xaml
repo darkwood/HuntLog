@@ -9,37 +9,35 @@
               HeightRequest="200">
             
              <Image Source="{Binding ImageSource}"
-                     HeightRequest="200"
+                     HeightRequest="300"
                     Aspect="AspectFill" />
             
-            <CollectionView ItemsSource="{Binding SelectedHunters}">
-                 <CollectionView.ItemTemplate>
+            <StackLayout BindableLayout.ItemsSource="{Binding SelectedHuntersAndDogs}"
+                         Orientation="Horizontal">
+                <BindableLayout.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="Test" />
-                       <!-- <StackLayout Orientation="Vertical" 
-                                 Margin="10, 5"
+                       <StackLayout Orientation="Vertical" 
+                                Margin="5"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End">
                             <ci:CircleImage 
                                 Source="{Binding ImageSource}"
-                                BackgroundColor="White" 
                                 HorizontalOptions="Center"
-                                BorderColor="Black" 
-                                BorderThickness="1" 
-                                HeightRequest="50"
-                                WidthRequest="50"
-                                Margin="-5"
+                                Aspect="AspectFill"
+                                BorderColor="White" 
+                                BorderThickness="2" 
+                                HeightRequest="60"
+                                WidthRequest="60"
                             />
                             <Label Text="{Binding Title}"
-                                   VerticalOptions="End" 
                                    HorizontalOptions="Center"
                                    FontSize="Micro"
                                    BackgroundColor="White"
                                    />
-                        </StackLayout>-->
+                        </StackLayout>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
         </Grid>
     </ContentView.Content>
 </ContentView>

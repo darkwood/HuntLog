@@ -26,7 +26,6 @@ namespace HuntLog.InputViews
         private readonly IMediaService _mediaService;
         private Action<MediaFile> _completeAction;
         private Action _deleteAction;
-        private MediaFile MediaFile { get; set; }
 
         public ImageSource Source { get; set; }
 

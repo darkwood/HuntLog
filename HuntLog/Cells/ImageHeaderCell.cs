@@ -10,26 +10,8 @@ using Xamarin.Forms;
 
 namespace HuntLog.Cells
 {
-    public class ImageHeaderCell : ViewCell
+    public class ImageHeaderCell : BaseCell
     {
-        private INavigator _navigator;
-
-        public static readonly BindableProperty CompleteActionProperty = BindableProperty.Create(nameof(CompleteAction), typeof(Action<MediaFile>), typeof(ImageHeaderCell), null);
-
-        public Action<MediaFile> CompleteAction
-        {
-            get { return (Action<MediaFile>)GetValue(CompleteActionProperty); }
-            set { SetValue(CompleteActionProperty, value); }
-        }
-
-        public static readonly BindableProperty DeleteActionProperty = BindableProperty.Create(nameof(DeleteAction), typeof(Action), typeof(ImageHeaderCell), null);
-
-        public Action DeleteAction
-        {
-            get { return (Action)GetValue(DeleteActionProperty); }
-            set { SetValue(DeleteActionProperty, value); }
-        }
-
         public static readonly BindableProperty SourceProperty =
             BindableProperty.Create(
                 nameof(Source), 
@@ -73,14 +55,15 @@ namespace HuntLog.Cells
 
         public ImageHeaderCell()
         {
-            _navigator = App.Navigator;
             var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
+            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             CreateImage();
 
             Buttons = GetButtons();
 
-            viewLayout.Children.Add(CellImage);
-            viewLayout.Children.Add(Buttons);
+            viewLayout.Children.Add(CellImage, 0, 0);
+            viewLayout.Children.Add(Buttons, 1, 0);
 
             View = viewLayout;
         }
@@ -96,37 +79,30 @@ namespace HuntLog.Cells
 
         private View GetButtons()
         {
-            var btnLayout = new StackLayout
+            var btnLayout = new Grid
             {
-                Orientation = StackOrientation.Horizontal,
-                VerticalOptions = LayoutOptions.EndAndExpand,
-                HorizontalOptions = LayoutOptions.EndAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 InputTransparent = true,
                 CascadeInputTransparent = false,
 
             };
-            btnLayout.Children.Add(CreateCircleImageButton("camera.png", HuntConfig.CapturePhoto));
-            btnLayout.Children.Add(CreateCircleImageButton("photos.png", HuntConfig.OpenLibrary));
+            btnLayout.Children.Add(CreateButton("camera.png", HuntConfig.CapturePhoto), 0, 0);
+            btnLayout.Children.Add(CreateButton("photos.png", HuntConfig.OpenLibrary), 0 , 1);
             return btnLayout;
         }
 
-        private CircleImage CreateCircleImageButton(string imagepath, string commandArg)
+        private ImageButton CreateButton(string imagepath, string commandArg)
         {
-            var img = new CircleImage
+            var img = new ImageButton
             {
-                HorizontalOptions = LayoutOptions.End,
-                VerticalOptions = LayoutOptions.End,
-                BorderThickness = 2,
-                BorderColor = Color.Black,
-                FillColor = Color.FromHex("#66FFFFFF"),
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                BackgroundColor = Color.FromHex("EEEEEE"),
                 Source = ImageSource.FromFile(imagepath),
-                Aspect = Aspect.AspectFit,
-                Opacity = 0.8,
-                HeightRequest = 60,
-                WidthRequest = 60,
-                Margin = 5,
             };
-            img.GestureRecognizers.Add(CreateTapGestureRecognizer(commandArg));
+            img.Command = new Command(async () => await EditImage(commandArg));
+            //img.GestureRecognizers.Add(CreateTapGestureRecognizer(commandArg));
             return img;
         }
 
@@ -146,7 +122,7 @@ namespace HuntLog.Cells
             await _navigator.PushAsync<InputImageViewModel>(
                 beforeNavigate: async (arg) =>
                 {
-                    await arg.InitializeAsync(CellImage.Source, CompleteAction, DeleteAction);
+                    await arg.InitializeAsync(CellImage.Source, CellAction.Save, CellAction.Delete);
                 },
                 afterNavigate: async (arg) => await arg.OnAfterNavigate(shortcut as string),
                 shortcut == null);

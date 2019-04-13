@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using HuntLog.Factories;
 using HuntLog.Helpers;
 using HuntLog.Models;
 using HuntLog.Services;
@@ -47,6 +48,8 @@ namespace HuntLog.AppModule.Hunts
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
+        private readonly IFileManager _fileManager;
+        private readonly IHuntFactory _huntFactory;
         private ObservableCollection<HuntGroup> _huntListItemViewModels;
         public ObservableCollection<HuntGroup> HuntListItemViewModels
         {
@@ -56,12 +59,14 @@ namespace HuntLog.AppModule.Hunts
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
-        public HuntsViewModel(IBaseService<Jakt> huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService)
+        public HuntsViewModel(IBaseService<Jakt> huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService, IFileManager fileManager, IHuntFactory huntFactory)
         {
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;
             _navigator = navigator;
             _dialogService = dialogService;
+            _fileManager = fileManager;
+            _huntFactory = huntFactory;
 
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
@@ -79,10 +84,11 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task DeleteItem(object item)
         {
-            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jakta blir permanent slettet. Er du sikker?");
+            var hunt = (item as HuntListItemViewModel);
+
+            var ok = await _huntFactory.DeleteHunt(hunt.ID, hunt.ImagePath);
             if (ok)
             {
-                await _huntService.Delete((item as HuntListItemViewModel).ID);
                 await FetchData();
             }
         }
@@ -125,15 +131,13 @@ namespace HuntLog.AppModule.Hunts
         private readonly INavigator _navigator;
         private readonly IBaseService<Jakt> _huntService;
 
-        private Jakt _dto { get; set; }
+        protected Jakt _dto { get; set; }
 
         public Command ItemTappedCommand { get; set; }
 
-        public string ID => _dto.ID;
-        public string Detail => _dto.DatoFra.ToShortDateString();
-        public DateTime DateFrom => _dto.DatoFra;
-        public DateTime DateTo => _dto.DatoTil;
-        public ImageSource ImageSource => Utility.GetImageSource(_dto.ImagePath);
+        public string Detail { get; set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DateTo { get; set; }
 
         public HuntListItemViewModel(INavigator navigator, IBaseService<Jakt> huntService)
         {
@@ -146,6 +150,12 @@ namespace HuntLog.AppModule.Hunts
         {
             _dto = dto;
             Title = _dto.Sted;
+            ID = _dto.ID;
+            ImagePath =_dto.ImagePath;
+            ImageSource = Utility.GetImageSource(ImagePath);
+            Detail =_dto.DatoFra.ToShortDateString();
+            DateFrom = _dto.DatoFra;
+            DateTo = _dto.DatoTil;
         }
 
         private async Task ShowHunt()

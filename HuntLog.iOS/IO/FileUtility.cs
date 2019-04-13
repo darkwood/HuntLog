@@ -34,8 +34,7 @@ namespace HuntLog.iOS.Renderers.IO
         public bool Exists(string filename)
         {
             if (string.IsNullOrWhiteSpace(filename)) { return false; }
-
-            string filePath = GetFilePath(filename);
+            var filePath = GetFilePath(filename);
             return File.Exists(filePath);
         }
 
@@ -53,6 +52,7 @@ namespace HuntLog.iOS.Renderers.IO
 
         public void Delete(string filename)
         {
+
             if (Exists(filename))
             {
                 string filePath = GetFilePath(filename);
@@ -68,6 +68,8 @@ namespace HuntLog.iOS.Renderers.IO
 
         public string GetFilePath(string filename)
         {
+            if(filename.IndexOf('/') > -1) { return filename; }
+
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, filename);
             return filePath;

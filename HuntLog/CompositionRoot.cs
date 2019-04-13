@@ -11,6 +11,8 @@ using HuntLog.AppModule.Hunts;
 using HuntLog.AppModule.Logs;
 using HuntLog.Models;
 using HuntLog.Cells;
+using HuntLog.AppModule.Dogs;
+using HuntLog.AppModule.Species;
 
 namespace HuntLog
 {
@@ -19,7 +21,7 @@ namespace HuntLog
         public void Compose(IServiceRegistry serviceRegistry)
         {
 
-            serviceRegistry
+            _ = serviceRegistry
             .RegisterSingleton<INavigator>(f => new Navigator(f.GetInstance<Lazy<TabbedPage>>(), f))
             .RegisterSingleton<TabbedPage>(f => ((TabbedPage)Application.Current.MainPage))
             .RegisterSingleton<IFileUtility>(f => DependencyService.Get<IFileUtility>())
@@ -28,8 +30,12 @@ namespace HuntLog
             .RegisterSingleton<IBaseService<Jakt>, BaseService<Jakt>>()
             .RegisterSingleton<IBaseService<Jeger>, BaseService<Jeger>>()
             .RegisterSingleton<IBaseService<Logg>, BaseService<Logg>>()
+            .RegisterSingleton<IBaseService<Dog>, BaseService<Dog>>()
+            .RegisterSingleton<IBaseService<Art>, BaseService<Art>>()
+            .RegisterSingleton<ISelectService<Art>, SelectService<Art>>()
+            .RegisterSingleton<IBaseService<ArtGroup>, BaseService<ArtGroup>>()
             .RegisterSingleton<IDialogService, DialogService>()
-            .RegisterSingleton<IHunterFactory, HunterFactory>()
+            .RegisterSingleton<IHuntFactory, HuntFactory>()
 
             .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
             .Register<HuntsView>()
@@ -49,6 +55,18 @@ namespace HuntLog
 
             .Register<HunterViewModel>()
             .Register<HunterView>()
+
+            .Register<DogsViewModel>()
+            .Register<DogsView>()
+
+            .Register<DogViewModel>()
+            .Register<DogView>()
+
+            .Register<SpeciesViewModel>()
+            .Register<SpeciesView>()
+
+            .Register<SpecieViewModel>()
+            .Register<SpecieView>()
 
             .Register<InputImageViewModel>()
             .Register<InputImageView>()

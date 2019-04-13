@@ -38,7 +38,7 @@ namespace HuntLog.InputViews
     {
         private readonly INavigator _navigator;
         private readonly IDialogService _dialogService;
-        private Action<Position> _completeAction;
+        private Action<object> _completeAction;
         private Action _deleteAction;
         private ExtendedMap _mapView;
 
@@ -87,7 +87,7 @@ namespace HuntLog.InputViews
             Loading = false;
         }
 
-        public async Task InitializeAsync(Position position, Action<Position> completeAction, Action deleteAction)
+        public async Task InitializeAsync(Position position, Action<object> completeAction, Action deleteAction)
         {
             _completeAction = completeAction;
             _deleteAction = deleteAction;
@@ -123,7 +123,7 @@ namespace HuntLog.InputViews
 
         private async Task Delete()
         {
-            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Bildet blir permanent slettet. Er du sikker?");
+            var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Posisjonen blir permanent slettet. Er du sikker?");
             if (ok)
             {
                 Position = new Position();

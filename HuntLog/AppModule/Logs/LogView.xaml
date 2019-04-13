@@ -26,14 +26,17 @@
                 <TableRoot>
                 
                     <TableSection Title="">
-                        <cells:ImageHeaderCell HeightRequest="180" Source="{Binding ImageSource}" CompleteAction="{Binding SaveImageAction}" DeleteAction="{Binding DeleteImageAction}" />
-                        <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" Command="{Binding PositionCommand}" />
+                        <cells:ImageHeaderCell HeightRequest="150" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
+                        <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" CellAction="{Binding MapAction}" />
                         
-                        <EntryCell Label="Antall sett" Text="{Binding Observed}" />
-                        <EntryCell Label="Antall skudd" Text="{Binding Shots}" />
-                        <EntryCell Label="Antall treff" Text="{Binding Hits}" />
+                        <cells:PickerCell Text="Art" PickerItems="{Binding SpeciesPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Antall sett" PickerItems="{Binding ObservedPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Antall skudd" PickerItems="{Binding ShotsPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Antall treff" PickerItems="{Binding HitsPickers}" Mode="Single" />
                         
-                        <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                        <cells:PickerCell Text="Jeger" PickerItems="{Binding HuntersPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Hunder" PickerItems="{Binding DogsPickers}" Mode="Single" />
+                        <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateAndTimeConverter}}" Command="{Binding DateFromCommand}"  />
                         <EntryCell Label="Notat" Text="{Binding Notes}" />
                         
                     </TableSection>
