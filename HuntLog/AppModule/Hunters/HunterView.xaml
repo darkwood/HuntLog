@@ -27,10 +27,10 @@
                 
                 <TableSection Title="">
                     <cells:ImageHeaderCell HeightRequest="250" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                    <EntryCell Label="Fornavn" Text="{Binding Firstname}" />
-                    <EntryCell Label="Etternavn" Text="{Binding Lastname}" />
-                    <EntryCell Label="Epost" Text="{Binding Email}" Keyboard="Email" />
-                    <EntryCell Label="Mobil" Text="{Binding Phone}" Keyboard="Telephone" />
+                    <cells:ExtendedTextCell Text="Fornavn" Text2="{Binding Firstname}" />
+                    <cells:ExtendedTextCell Text="Etternavn" Text2="{Binding Lastname}" />
+                    <cells:ExtendedTextCell Text="Epost" Text2="{Binding Email}" />
+                    <cells:ExtendedTextCell Text="Mobil" Text2="{Binding Phone}"  />
                     
                 </TableSection>
                 
@@ -40,7 +40,7 @@
             <Button Grid.Row="1"
                     Margin="15"
                     Text="Slett jeger" 
-                    StyleClass="PrimaryButton"
+                    StyleClass="DangerButton"
                     Command="{Binding DeleteCommand}"
                     IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
             />

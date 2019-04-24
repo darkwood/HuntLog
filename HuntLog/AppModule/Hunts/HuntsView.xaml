@@ -19,10 +19,16 @@
             GroupDisplayBinding="{Binding Name}"
             GroupShortNameBinding="{Binding ShortName}"
             HasUnevenRows="true"
+            IsPullToRefreshEnabled="true"
+            RefreshCommand="{Binding RefreshCommand}"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" Text="{Binding Title}" Detail="{Binding Detail}" Command="{Binding ItemTappedCommand}">
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Title}" 
+                                            Detail="{Binding Detail}" 
+                                            StyleId="disclosure"
+                                            Command="{Binding ItemTappedCommand}">
                         <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" IsDestructive="True" Icon="trash" />

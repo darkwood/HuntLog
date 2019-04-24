@@ -92,7 +92,7 @@ namespace HuntLog.AppModule.Dogs
             Dog dto = BuildDto();
             if (MediaFile != null)
             {
-                dto.ImagePath = SaveImage($"dog_{ID}.jpg", _fileManager);
+                SaveImage($"dog_{ID}.jpg", _fileManager);
             }
             await _dogService.Save(dto);
             await PopAsync();
@@ -119,7 +119,7 @@ namespace HuntLog.AppModule.Dogs
             Name = _dto.Navn;
             Breed = _dto.Rase;
             RegNo = _dto.Lisensnummer;
-            ImagePath = _dto.ImagePath;
+            ImagePath = $"dog_{ID}.jpg";
             ImageSource = Utility.GetImageSource(_dto.ImagePath);
 
             Title = ID == null ? "Ny hund" : "Rediger hund";

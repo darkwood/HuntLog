@@ -27,17 +27,18 @@
                 
                     <TableSection Title="">
                         <cells:ImageHeaderCell HeightRequest="150" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                        <cells:MapCell Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" CellAction="{Binding MapAction}" />
+                        <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                         
                         <cells:PickerCell Text="Art" PickerItems="{Binding SpeciesPickers}" Mode="Single" />
-                        <cells:PickerCell Text="Antall sett" PickerItems="{Binding ObservedPickers}" Mode="Single" />
-                        <cells:PickerCell Text="Antall skudd" PickerItems="{Binding ShotsPickers}" Mode="Single" />
-                        <cells:PickerCell Text="Antall treff" PickerItems="{Binding HitsPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Antall sett" PickerItems="{Binding ObservedPickers}" Mode="Numeric" />
+                        <cells:PickerCell Text="Antall skudd" PickerItems="{Binding ShotsPickers}" Mode="Numeric" />
+                        <cells:PickerCell Text="Antall treff" PickerItems="{Binding HitsPickers}" Mode="Numeric" />
                         
                         <cells:PickerCell Text="Jeger" PickerItems="{Binding HuntersPickers}" Mode="Single" />
                         <cells:PickerCell Text="Hunder" PickerItems="{Binding DogsPickers}" Mode="Single" />
-                        <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date, Converter={Converters:DateTimeToShortDateAndTimeConverter}}" Command="{Binding DateFromCommand}"  />
+                        <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date}" Command="{Binding TimeCommand}"  />
                         <EntryCell Label="Notat" Text="{Binding Notes}" />
+                        <cells:ExtendedTextCell Text="Flere felter" Text2="Vis >" Command="{Binding CustomFieldsCommand}"  />
                         
                     </TableSection>
                 </TableRoot>
@@ -46,7 +47,7 @@
             <Button Grid.Row="1"
                     Margin="15"
                     Text="Slett loggføring" 
-                    StyleClass="PrimaryButton"
+                    StyleClass="DangerButton"
                     Command="{Binding DeleteCommand}"
                     IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
             />

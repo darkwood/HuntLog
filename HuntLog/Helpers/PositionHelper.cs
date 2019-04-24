@@ -13,8 +13,8 @@ namespace HuntLog.Helpers
         {
             try
             {
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                var location = await Geolocation.GetLocationAsync(request);
+                //var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                var location = await Geolocation.GetLastKnownLocationAsync();
                 return location;
             }
             catch (FeatureNotSupportedException fnsEx)

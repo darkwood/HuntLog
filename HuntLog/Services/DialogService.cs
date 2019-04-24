@@ -11,7 +11,7 @@ namespace HuntLog.Services
 
     public class DialogService : IDialogService
     {
-        public async Task ShowAlert(string message, string title)
+        public async Task ShowAlert(string title, string message)
         {
             await App.Current.MainPage.DisplayAlert(title, message, "OK");
         }

@@ -20,6 +20,7 @@
     <PackageReference Include="Fody" Version="4.0.2" />
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Bogus" Version="26.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -40,6 +41,8 @@
     <Folder Include="AppModule\Logs\" />
     <Folder Include="AppModule\Dogs\" />
     <Folder Include="AppModule\Species\" />
+    <Folder Include="AppModule\CustomFields\" />
+    <Folder Include="AppModule\Stats\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -88,6 +91,42 @@
       <DependentUpon>SpeciesView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\MoreFields\SpecieView.xaml.cs">
+      <DependentUpon>FieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\MoreFields\FieldsView.xaml.cs">
+      <DependentUpon>FieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\FieldsView.xaml.cs">
+      <DependentUpon>FieldView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\FieldView.xaml.cs">
+      <DependentUpon>CustomField.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\CustomField.xaml.cs">
+      <DependentUpon>CustomField.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomField.xaml.cs">
+      <DependentUpon>CustomFieldView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\SpeciesView.xaml.cs">
+      <DependentUpon>CustomFieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomFieldsView.xaml.cs">
+      <DependentUpon>CustomFieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomFieldView.xaml.cs">
+      <DependentUpon>CustomFieldView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xml\arter.xml" />
@@ -122,6 +161,9 @@
   <ItemGroup>
     <Reference Include="Xamarin.iOS">
       <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.4.0.63\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.2.0-5\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

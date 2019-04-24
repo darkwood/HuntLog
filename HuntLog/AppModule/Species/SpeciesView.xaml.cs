@@ -109,7 +109,7 @@ namespace HuntLog.AppModule.Species
 
             //var itemsInGroups = itemVMs.GroupBy(g => g.GroupId);
             
-            foreach (var g in groups)
+            foreach (var g in groups.Where(gr => gr.ID != "100"))
             {
                 var group = new SpeciesGroup(g.Navn, "");
                 foreach (var specie in itemVMs.Where(x => x.GroupId.ToString() == g.ID))

@@ -101,31 +101,15 @@ namespace HuntLog.AppModule.Hunts
             MapAction = new CellAction();
             MapAction.Save += (object obj) =>
             {
-                var pos = (Position)obj;
-                Latitude = pos.Latitude;
-                Longitude = pos.Longitude;
+                Position = (Position)obj;
             };
 
             MapAction.Delete += () =>
             {
-                Latitude = Longitude = 0;
+                Position = new Position();
             };
         }
 
-        //private async Task EditHunters()
-        //{
-        //    await _navigator.PushAsync<InputPickerViewModel>(
-        //        beforeNavigate: async (arg) =>
-        //        {
-        //            var hunterPickers = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
-        //            await arg.InitializeAsync(hunterPickers,
-        //                completeAction: async (value) =>
-        //                {
-        //                    HunterIds = value.Where(x => x.Selected).Select(v => v.ID).ToList();
-        //                    await SetHunterNames();
-        //                });
-        //        });
-        //}
         private async Task EditDateFrom()
         {
             await _navigator.PushAsync<InputDateViewModel>(
@@ -143,9 +127,7 @@ namespace HuntLog.AppModule.Hunts
         {
             if (IsNew)
             {
-#pragma warning disable CS4014
-                SetPositionAsync();
-#pragma warning restore CS4014
+                await SetPositionAsync();
             }
 
             Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
@@ -171,8 +153,7 @@ namespace HuntLog.AppModule.Hunts
             var location = await PositionHelper.GetLocationAsync();
             if (location != null)
             {
-                Latitude = location.Latitude;
-                Longitude = location.Longitude;
+                Position = new Position(location.Latitude, location.Longitude);
                 Location = await PositionHelper.GetLocationNameForPosition(location.Latitude, location.Longitude);
             }
             else
@@ -212,7 +193,7 @@ namespace HuntLog.AppModule.Hunts
             Jakt dto = CreateHuntDto();
             if (MediaFile != null)
             {
-                dto.ImagePath = SaveImage($"hunt_{ID}.jpg", _fileManager);
+                SaveImage($"jakt_{ID}.jpg", _fileManager);
             }
 
             await _huntService.Save(dto);
@@ -230,8 +211,8 @@ namespace HuntLog.AppModule.Hunts
                 DatoTil = DateTo,
                 JegerIds = Hunters.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
                 DogIds = Dogs.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
-                Latitude = Latitude.ToString(),
-                Longitude = Longitude.ToString(),
+                Latitude = Position.Latitude.ToString(),
+                Longitude = Position.Longitude.ToString(),
                 ImagePath = ImagePath,
                 Notes = Notes
             };

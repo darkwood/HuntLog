@@ -32,55 +32,36 @@ namespace HuntLog.Cells
 
         /***************************************************************************/
 
-        public static readonly BindableProperty LatitudeProperty = BindableProperty.Create(
-            nameof(Latitude), 
-            typeof(double), 
+        public static readonly BindableProperty PositionProperty = BindableProperty.Create(
+            nameof(Position), 
+            typeof(Position), 
             typeof(MapCell), 
-            (double)-1,
+            new Position(),
+            defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) => 
             {
-                ((MapCell)bindable).SetMapPosition();
+                ((MapCell)bindable).SetMapPosition((Position)newValue);
             });
 
-        public double Latitude
+        public Position Position
         {
-            get { return (double)GetValue(LatitudeProperty); }
+            get { return (Position)GetValue(PositionProperty); }
             set { 
-                SetValue(LatitudeProperty, value);
+                SetValue(PositionProperty, value);
             }
         }
 
         /***************************************************************************/
 
 
-        public static readonly BindableProperty LongitudeProperty = BindableProperty.Create(
-            nameof(Longitude),
-            typeof(double),
-            typeof(MapCell),
-            (double)-1,
-            propertyChanged: (bindable, oldValue, newValue) =>
-            {
-                ((MapCell)bindable).SetMapPosition();
-            });
-
-        public double Longitude
-        {
-            get { return (double)GetValue(LongitudeProperty); }
-            set
-            {
-                SetValue(LongitudeProperty, value);
-            }
-        }
-
-
         public ActivityIndicator ActivityIndicator { get; private set; }
         public ExtendedMap MyMap { get; private set; }
-        public Position Position => new Position(Latitude, Longitude);
         public Label InfoText { get; set; }
 
-        private void SetMapPosition()
+        private void SetMapPosition(Position newPosition)
         {
-            var hasPosition = Longitude > 0 || Latitude > 0;
+            Position = newPosition;
+            var hasPosition = Position.Latitude != 0 && Position.Longitude != 0;
             MyMap.IsVisible = hasPosition;
             InfoText.IsVisible = !hasPosition;
             ActivityIndicator.IsVisible = false;
@@ -91,7 +72,7 @@ namespace HuntLog.Cells
 
             MyMap.MoveToRegion(
                 MapSpan.FromCenterAndRadius(
-                    Position, Distance.FromMeters(50)));
+                    Position, Distance.FromMeters(250)));
 
             var pin = new Pin()
             {
@@ -153,8 +134,7 @@ namespace HuntLog.Cells
                 await _navigator.PushAsync<InputPositionViewModel>(
                 beforeNavigate: async (arg) =>
                 {
-                    var position = new Position(Latitude, Longitude);
-                    await arg.InitializeAsync(position, CellAction.Save, CellAction.Delete);
+                    await arg.InitializeAsync(Position, CellAction.Save, CellAction.Delete);
                 });
             };
 

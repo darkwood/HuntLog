@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Converters="clr-namespace:HuntLog.Converters"       
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             x:Class="HuntLog.AppModule.Stats.StatsFilterView">
+    <ContentView.Content>
+        <ScrollView>
+            <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">
+                <TableSection Title="" />
+                <TableSection Title="Filter">
+                    <ViewCell>
+                        <Label Text="{Binding Info}" />
+                    </ViewCell>
+                    
+                    <cells:ExtendedTextCell Text="Jeger" Text2="Alle" StyleId="disclosure" />
+
+                    <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" StyleId="disclosure" />
+                    <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" StyleId="disclosure" />
+                    
+                    <ViewCell>
+                        <Grid Margin="10">
+                            <Button Grid.Column="0" StyleClass="PrimaryButton" Text="All time" Command="{Binding DateRangeCommand}" CommandParameter="Forever" />
+                            <Button Grid.Column="1" StyleClass="PrimaryButton" Text="Siste år" Command="{Binding DateRangeCommand}" CommandParameter="Year"/>
+                            <Button Grid.Column="2" StyleClass="PrimaryButton" Text="Siste måned" Command="{Binding DateRangeCommand}" CommandParameter="Month" />
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+            </controls:ExtendedTableView>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

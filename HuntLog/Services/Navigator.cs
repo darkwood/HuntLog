@@ -15,6 +15,7 @@ namespace HuntLog.Services
         Task<TViewModel> PushModalAsync<TViewModel>(Action<TViewModel>beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null) where TViewModel : class, IViewModel;
         Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null, bool animated = true) where TViewModel : class, IViewModel;
         void Register<TViewModel, TView>() where TViewModel : class, IViewModel where TView : Page;
+        void RegisterView<TViewModel, TView>() where TViewModel : class, IViewModel where TView : ContentView;
     }
 
     public class Navigator : INavigator
@@ -33,6 +34,13 @@ namespace HuntLog.Services
         public void Register<TViewModel, TView>()
             where TViewModel : class, IViewModel
             where TView : Page
+        {
+            _map[typeof(TViewModel)] = typeof(TView);
+        }
+
+        public void RegisterView<TViewModel, TView>()
+            where TViewModel : class, IViewModel
+            where TView : ContentView
         {
             _map[typeof(TViewModel)] = typeof(TView);
         }

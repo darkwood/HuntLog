@@ -4,6 +4,7 @@
         <ResourceDictionary>
             <Color x:Key="Primary">#597a59</Color>
             <Color x:Key="PrimaryDark">#1976D2</Color>
+            <Color x:Key="Danger">#FF0000</Color>
             <Color x:Key="Accent">#dedcaf</Color>
             <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
             <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
@@ -15,6 +16,12 @@
             </Style>
             <Style Class="PrimaryButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="4" />
+                <Setter Property="Padding" Value="10,5,10,5" />
+            </Style>
+            <Style Class="DangerButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Danger}" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="BorderRadius" Value="4" />
             </Style>

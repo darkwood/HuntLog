@@ -12,10 +12,11 @@ namespace HuntLog.Services
 {
     public interface IBaseService<T>
     {
-        Task<IEnumerable<T>> GetItems();
+        Task<IEnumerable<T>> GetItems(bool forceRefresh = false);
         Task<T> Get(string id);
         Task Save(T item);
         Task Delete(string id);
+        Task DeleteAll();
     }
 
     public class BaseService<T> : IBaseService<T> where T : BaseDto
@@ -35,8 +36,16 @@ namespace HuntLog.Services
 
         public async Task Delete(string id)
         {
+            await GetItems();
             _dtos.RemoveAt(_dtos.FindIndex(x => x.ID == id));
             _fileManager.SaveToLocalStorage(_dtos, _dataFileName);
+            await Task.CompletedTask;
+        }
+
+
+        public async Task DeleteAll()
+        {
+            _fileManager.Delete(_dataFileName);
             await Task.CompletedTask;
         }
 
@@ -46,9 +55,9 @@ namespace HuntLog.Services
             return hunts.SingleOrDefault(x => x.ID == id);
         }
 
-        public async Task<IEnumerable<T>> GetItems()
+        public async Task<IEnumerable<T>> GetItems(bool forceRefresh = false)
         {
-            if (_dtos == null)
+            if (_dtos == null || forceRefresh)
             {
                 await Task.Delay(_delay);
 
@@ -60,6 +69,7 @@ namespace HuntLog.Services
 
         public async Task Save(T item)
         {
+            await GetItems();
             var itemToReplace = _dtos.SingleOrDefault(x => x.ID == item.ID);
             if (itemToReplace != null)
             {
@@ -108,11 +118,16 @@ namespace HuntLog.Services
             {
                 _dataFileName = "loggtyper.xml";
             }
+            else if (p == typeof(LoggTypeGroup))
+            {
+                _dataFileName = "loggtypegroup.xml";
+            }
             else
             {
                 throw new NotImplementedException(typeof(T).ToString() + " sitt filnavn er ikke implementert.");
             }
 
         }
+
     }
 }

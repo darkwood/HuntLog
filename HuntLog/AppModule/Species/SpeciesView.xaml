@@ -20,6 +20,7 @@
              <StackLayout Margin="20" Orientation="Horizontal">
                 <Image Source="Tabbar/info.png" />
                 <Label FontSize="Small" 
+                       VerticalOptions="Center"
                        Text="Velg hvilke arter du jakter på. Disse artene blir tilgjengelig når du loggfører." />
                 </StackLayout>
             

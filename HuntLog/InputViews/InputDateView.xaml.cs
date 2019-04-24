@@ -17,6 +17,12 @@ namespace HuntLog.InputViews
 
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            myDate.Focus();
+            base.OnAppearing();
+        }
     }
 
     public class InputDateViewModel : InputViewBase

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Input;
+using HuntLog.Helpers;
+using HuntLog.InputViews;
 using ImageCircle.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace HuntLog.Cells
 {
-    public class ExtendedTextCell : ViewCell
+    public class ExtendedTextCell : BaseCell
     {
         public static readonly BindableProperty CommandProperty = 
             BindableProperty.Create(
@@ -14,7 +16,7 @@ namespace HuntLog.Cells
                 typeof(ExtendedTextCell), 
                 null,
                 propertyChanged: (bindable, oldValue, newValue) => {
-                    ((ExtendedTextCell)bindable).ViewLayout.GestureRecognizers.Add(((ExtendedTextCell)bindable).GestureRecognizer);
+                    //((ExtendedTextCell)bindable).ViewLayout.GestureRecognizers.Add(((ExtendedTextCell)bindable).GestureRecognizer);
                 }
             );
 
@@ -72,6 +74,7 @@ namespace HuntLog.Cells
             typeof(string),
             typeof(ExtendedTextCell),
             "",
+            defaultBindingMode: BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
             {
                 var text = (newValue as string);
@@ -234,8 +237,8 @@ namespace HuntLog.Cells
             {
                 Orientation=StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Padding = new Thickness(10, 10),
-                MinimumHeightRequest=60
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Padding = new Thickness(20, 10)
             };
 
             CellImage = new CircleImage
@@ -255,12 +258,16 @@ namespace HuntLog.Cells
             TextLabel = new Label{ Margin = 0 };
             sublayout.Children.Add(TextLabel);
 
-            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 11, TextColor = Color.FromHex("#597a59") };
+            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 11, TextColor = Utility.PRIMARY_COLOR };
             sublayout.Children.Add(DetailLabel);
 
             ViewLayout.Children.Add(sublayout);
 
-            Text2Label = new Label { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.EndAndExpand };
+            Text2Label = new Label { VerticalOptions = LayoutOptions.Center, 
+                                     FontSize = 14,
+                                     TextColor = Utility.PRIMARY_COLOR,
+                                     HorizontalOptions = LayoutOptions.FillAndExpand,
+                                     HorizontalTextAlignment = TextAlignment.End};
             ViewLayout.Children.Add(Text2Label);
 
             ActivityIndicator = new ActivityIndicator { 
@@ -276,21 +283,28 @@ namespace HuntLog.Cells
                 IsVisible = ShowCheckBox,
                 Source = ImageSource.FromFile("checked_off.png"),
                 Aspect = Aspect.AspectFit,
-                WidthRequest = 40,
-                HeightRequest = 40,
+                WidthRequest = 30,
+                HeightRequest = 30,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
             ViewLayout.Children.Add(SelectedImage);
 
             GestureRecognizer = new TapGestureRecognizer();
 
-            GestureRecognizer.Tapped += (s, e) => {
+            GestureRecognizer.Tapped += async (s, e) => {
                 if (Command != null && Command.CanExecute(null))
                 {
                     Command.Execute(null);
+                } else
+                {
+                    await _navigator.PushAsync<InputTextViewModel>(
+                        beforeNavigate: async (arg) =>
+                        {
+                            await arg.InitializeAsync(Text, Text2, (newVal) => { Text2 = newVal; });
+                        });
                 }
             };
-
+            ViewLayout.GestureRecognizers.Add(GestureRecognizer);
             View = ViewLayout;
         }
     }

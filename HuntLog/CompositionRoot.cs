@@ -13,6 +13,8 @@ using HuntLog.Models;
 using HuntLog.Cells;
 using HuntLog.AppModule.Dogs;
 using HuntLog.AppModule.Species;
+using HuntLog.AppModule.CustomFields;
+using HuntLog.AppModule.Stats;
 
 namespace HuntLog
 {
@@ -34,8 +36,12 @@ namespace HuntLog
             .RegisterSingleton<IBaseService<Art>, BaseService<Art>>()
             .RegisterSingleton<ISelectService<Art>, SelectService<Art>>()
             .RegisterSingleton<IBaseService<ArtGroup>, BaseService<ArtGroup>>()
+            .RegisterSingleton<IBaseService<LoggType>, BaseService<LoggType>>()
+            .RegisterSingleton<ISelectService<LoggType>, SelectService<LoggType>>()
+            .RegisterSingleton<IBaseService<LoggTypeGroup>, BaseService<LoggTypeGroup>>()
             .RegisterSingleton<IDialogService, DialogService>()
             .RegisterSingleton<IHuntFactory, HuntFactory>()
+            .RegisterSingleton<ICustomFieldFactory, CustomFieldFactory>()
 
             .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
             .Register<HuntsView>()
@@ -49,6 +55,8 @@ namespace HuntLog
 
             .Register<LogViewModel>()
             .Register<LogView>()
+            .Register<LogListItemViewModel>()
+            .Register<LogViewCode>()
 
             .Register<HuntersViewModel>()
             .Register<HuntersView>()
@@ -68,6 +76,15 @@ namespace HuntLog
             .Register<SpecieViewModel>()
             .Register<SpecieView>()
 
+            .Register<CustomFieldsViewModel>(new PerContainerLifetime())
+            .Register<CustomFieldsView>()
+
+            .Register<CustomFieldViewModel>()
+            .Register<CustomFieldView>()
+
+            //.Register<LogCustomFieldsViewModel>()
+            //.Register<LogCustomFieldsView>()
+
             .Register<InputImageViewModel>()
             .Register<InputImageView>()
 
@@ -77,9 +94,25 @@ namespace HuntLog
             .Register<InputDateViewModel>()
             .Register<InputDateView>()
 
-            .Register<InputPickerViewModel>()
-            .Register<InputPickerView>();
+            .Register<InputTimeViewModel>()
+            .Register<InputTimeView>()
 
+            .Register<InputPickerViewModel>()
+            .Register<InputPickerView>()
+
+            .Register<InputTextViewModel>()
+            .Register<InputTextView>()
+
+            .Register<StatsViewModel>()
+            .Register<StatsView>()
+
+            .Register<StatsMapViewModel>()
+            .Register<StatsMapView>()
+
+            .Register<StatsFilterViewModel>()
+            .Register<StatsFilterView>()
+
+            ;
         }
     }
 }

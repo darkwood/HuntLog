@@ -100,6 +100,7 @@
     <Compile Include="Renderers\ExtendedPageRenderer.cs" />
     <Compile Include="Renderers\ExtendedMapRenderer.cs" />
     <Compile Include="Renderers\ExtendedTableViewRenderer.cs" />
+    <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -219,5 +220,6 @@
     <BundleResource Include="Resources\Tabbar\stats%402x.png" />
     <BundleResource Include="Resources\Tabbar\stats%403x.png" />
     <BundleResource Include="Resources\Tabbar\Arter.png" />
+    <BundleResource Include="Resources\Tabbar\Felter.png" />
   </ItemGroup>
 </Project>

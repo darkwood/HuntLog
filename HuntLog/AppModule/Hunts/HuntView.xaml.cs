@@ -26,15 +26,16 @@ namespace HuntLog.AppModule.Hunts
 
         protected override async void OnAppearing()
         {
-            await _viewModel.InitializeAsync();
+            await _viewModel.OnAppearing();
             base.OnAppearing();
         }
     }
 
     public class HuntViewModel : HuntViewModelBase
     {
-        public ObservableCollection<LogViewModel> Items { get; set; }
-        public LogViewModel SelectedItem
+        public ObservableCollection<LogListItemViewModel> Items { get; set; }
+        private LogListItemViewModel selectedItem;
+        public LogListItemViewModel SelectedItem
         {
             get
             {
@@ -50,9 +51,9 @@ namespace HuntLog.AppModule.Hunts
         private readonly IBaseService<Jeger> _hunterService;
         private readonly IBaseService<Logg> _logService;
         private readonly INavigator _navigator;
-        private readonly Func<LogViewModel> _logItemViewModelFactory;
+        private readonly Func<LogListItemViewModel> _logListItemViewModelFactory;
         private readonly IHuntFactory _huntFactory;
-        private LogViewModel selectedItem;
+
 
         public Command EditCommand { get; set; }
         public Command AddCommand { get; set; }
@@ -60,13 +61,13 @@ namespace HuntLog.AppModule.Hunts
         public HuntViewModel(IBaseService<Jeger> hunterService,
                         INavigator navigator,
                         IBaseService<Logg> logService,
-                        Func<LogViewModel> logItemViewModelFactory,
+                        Func<LogListItemViewModel> logItemViewModelFactory,
                         IHuntFactory huntFactory)
         {
             _hunterService = hunterService;
             _logService = logService;
             _navigator = navigator;
-            _logItemViewModelFactory = logItemViewModelFactory;
+            _logListItemViewModelFactory = logItemViewModelFactory;
             _huntFactory = huntFactory;
 
             EditCommand = new Command(async () => await EditItem());
@@ -92,6 +93,11 @@ namespace HuntLog.AppModule.Hunts
             await FetchData();
         }
 
+        public async Task OnAppearing()
+        {
+            await FetchData();
+        }
+
         private async Task AddItem()
         {
             await _navigator.PushAsync<LogViewModel>(
@@ -112,15 +118,15 @@ namespace HuntLog.AppModule.Hunts
         {
             IsBusy = true;
 
-            Items = new ObservableCollection<LogViewModel>();
-            var items = new List<LogViewModel>();
+            Items = new ObservableCollection<LogListItemViewModel>();
+            var items = new List<LogListItemViewModel>();
             var dtos = await _logService.GetItems();
 
             foreach (var i in dtos.Where(x => x.JaktId == ID).ToList())
             {
-                var vm = _logItemViewModelFactory();
-                vm.BeforeNavigate(i, null);
-                await vm.AfterNavigate();
+                var vm = _logListItemViewModelFactory();
+                vm.BeforeNavigate(i);
+                vm.AfterNavigate();
                 items.Add(vm);
             }
             items = items.OrderByDescending(o => o.Date).ToList();
@@ -135,9 +141,5 @@ namespace HuntLog.AppModule.Hunts
             IsBusy = false;
         }
 
-        public async Task InitializeAsync()
-        {
-            await FetchData();
-        }
     }
 }

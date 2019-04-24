@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using HuntLog.AppModule.Logs;
 using HuntLog.AppModule.Dogs;
 using HuntLog.AppModule.Species;
+using HuntLog.AppModule.CustomFields;
+using HuntLog.AppModule.Stats;
 
 namespace HuntLog
 {
@@ -27,8 +29,9 @@ namespace HuntLog
             container.RegisterFrom<CompositionRoot>();
 
             RegisterViews(container.GetInstance<INavigator>());
+
             IFileManager fileManager = container.GetInstance<IFileManager>();
-            InitializeDummyData(fileManager);
+            InitializeData(fileManager);
 
             App.Navigator = container.GetInstance<INavigator>();
 
@@ -40,28 +43,41 @@ namespace HuntLog
             viewFactory.Register<HuntsViewModel, HuntsView>();
             viewFactory.Register<HuntViewModel, HuntView>();
             viewFactory.Register<EditHuntViewModel, EditHuntView>();
-            viewFactory.Register<LogViewModel, LogView>();
+            viewFactory.Register<LogViewModel, LogViewCode>();
             viewFactory.Register<HuntersViewModel, HuntersView>();
             viewFactory.Register<HunterViewModel, HunterView>();
             viewFactory.Register<DogsViewModel, DogsView>();
             viewFactory.Register<DogViewModel, DogView>();
             viewFactory.Register<SpeciesViewModel, SpeciesView>();
             viewFactory.Register<SpecieViewModel, SpecieView>();
+
+            viewFactory.Register<CustomFieldsViewModel, CustomFieldsView>();
+            viewFactory.Register<CustomFieldViewModel, CustomFieldView>();
+            //viewFactory.Register<LogCustomFieldsViewModel, LogCustomFieldsView>();
             viewFactory.Register<InputImageViewModel, InputImageView>();
             viewFactory.Register<InputPositionViewModel, InputPositionView>();
             viewFactory.Register<InputDateViewModel, InputDateView>();
+            viewFactory.Register<InputTimeViewModel, InputTimeView>();
             viewFactory.Register<InputPickerViewModel, InputPickerView>();
+            viewFactory.Register<InputTextViewModel, InputTextView>();
+
+            viewFactory.Register<StatsViewModel, StatsView>();
+            viewFactory.Register<StatsMapViewModel, StatsMapView>();
+            viewFactory.RegisterView<StatsFilterViewModel, StatsFilterView>();
         }
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
             var tabbed = new TabbedPage();
 
+            tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
+
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntersView>(), "Jegere", "Tabbar/hunters.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<DogsView>(), "Hunder", "Tabbar/dog.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<SpeciesView>(), "Arter", "Tabbar/Arter.png"));
-            tabbed.Children.Add(CreateTab(new Page(), "Statistikk", "Tabbar/stats.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<CustomFieldsView>(), "Egne felter", "Tabbar/Felter.png"));
+
             tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
 
             _application.MainPage = tabbed;
@@ -76,21 +92,29 @@ namespace HuntLog
             return huntPage;
         }
 
-        private void InitializeDummyData(IFileManager fileManager)
+        private void InitializeData(IFileManager fileManager)
         {
-            if (!fileManager.Exists("jakt.xml"))
+
+            if (!fileManager.Exists("arter.xml")) 
             {
                 fileManager.CopyToAppFolder("arter.xml");
                 fileManager.CopyToAppFolder("artgroup.xml");
-                fileManager.CopyToAppFolder("dogs.xml");
-                fileManager.CopyToAppFolder("jakt.xml");
-                fileManager.CopyToAppFolder("jegere.xml");
-                fileManager.CopyToAppFolder("logger.xml");
+
                 fileManager.CopyToAppFolder("loggtypegroup.xml");
                 fileManager.CopyToAppFolder("loggtyper.xml");
-                fileManager.CopyToAppFolder("myspecies.xml");
-                fileManager.CopyToAppFolder("selectedartids.xml");
             }
+
+#if DEBUG
+            //if (!fileManager.Exists("jakt.xml"))
+            //{
+            //    fileManager.CopyToAppFolder("dogs.xml");
+            //    fileManager.CopyToAppFolder("jakt.xml");
+            //    fileManager.CopyToAppFolder("jegere.xml");
+            //    fileManager.CopyToAppFolder("logger.xml");
+            //    fileManager.CopyToAppFolder("myspecies.xml");
+            //    fileManager.CopyToAppFolder("selectedartids.xml");
+            //}
+#endif
         }
     }
 }

@@ -70,7 +70,7 @@ namespace HuntLog.Factories
             var hunterPickers = hunters.Select(h => new PickerItem
             {
                 ID = h.ID,
-                Title = $"{h.Firstname}",
+                Title = $"{h.Fornavn}",
                 ImageSource = Utility.GetImageSource(h.ImagePath),
                 Selected = selectedIds.Exists(x => x == h.ID)
             }).ToList();

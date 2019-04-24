@@ -54,14 +54,20 @@ namespace HuntLog.Services
         public T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
+            var xmlFilename = filename.Replace(".json", ".xml");
+            if (Exists(xmlFilename))
+            {
+                var testdata = _fileUtility.Load(xmlFilename);
+                var length = testdata.Length;
+            }
             // 1 read json
             if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase) && Exists(filename))
             {
-                localObj = JsonConvert.DeserializeObject<T>(_fileUtility.Load(filename));
+                string json = _fileUtility.Load(filename);
+                localObj = JsonConvert.DeserializeObject<T>(json);
             }
             else
             {
-                var xmlFilename = filename.Replace(".json", ".xml");
                 if (Exists(xmlFilename))
                 {
                     var xmlString = _fileUtility.Load(xmlFilename);

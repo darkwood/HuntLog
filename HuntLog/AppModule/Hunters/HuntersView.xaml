@@ -18,7 +18,11 @@
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" Text="{Binding Name}" Command="{Binding ItemTappedCommand}">
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Name}" 
+                                            Detail="{Binding Email}"
+                                            StyleId="disclosure"
+                                            Command="{Binding ItemTappedCommand}">
                         <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntersListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" IsDestructive="True" Icon="trash" />

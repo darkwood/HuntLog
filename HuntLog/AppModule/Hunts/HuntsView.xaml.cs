@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.Factories;
@@ -59,6 +60,8 @@ namespace HuntLog.AppModule.Hunts
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
+        public Command RefreshCommand { get; set; }
+
         public HuntsViewModel(IBaseService<Jakt> huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService, IFileManager fileManager, IHuntFactory huntFactory)
         {
             _huntService = huntService;
@@ -70,7 +73,7 @@ namespace HuntLog.AppModule.Hunts
 
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
-
+            RefreshCommand = new Command(async () => await FetchData(true));
         }
 
         private async Task AddItem()
@@ -97,12 +100,12 @@ namespace HuntLog.AppModule.Hunts
             await FetchData();
         }
 
-        public async Task FetchData()
+        public async Task FetchData(bool forceRefresh = false)
         {
             IsBusy = true;
 
             HuntListItemViewModels = new ObservableCollection<HuntGroup>();
-            var hunts = await _huntService.GetItems();
+            var hunts = await _huntService.GetItems(forceRefresh);
 
             var huntListViewModels = hunts.Select(hunt =>
             {
@@ -153,7 +156,7 @@ namespace HuntLog.AppModule.Hunts
             ID = _dto.ID;
             ImagePath =_dto.ImagePath;
             ImageSource = Utility.GetImageSource(ImagePath);
-            Detail =_dto.DatoFra.ToShortDateString();
+            Detail = _dto.DatoFra.ToString("dd. MMM", new CultureInfo("nb-NO"));
             DateFrom = _dto.DatoFra;
             DateTo = _dto.DatoTil;
         }

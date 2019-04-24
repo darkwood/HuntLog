@@ -2,24 +2,25 @@
 <ArrayOfJeger xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Jeger>
     <ID>1</ID>
-    <Firstname>Tore</Firstname>
-    <Lastname>Mørkved</Lastname>
+    <Fornavn>Tore</Fornavn>
+    <Etternavn>Mørkved</Etternavn>
     <Email>tore.morkved@gmail.com</Email>
     <Phone>95156270</Phone>
+    <ImagePath />
     <IsMe>true</IsMe>    
   </Jeger>
   <Jeger>
     <ID>2</ID>
-    <Firstname>Arne</Firstname>
-    <Lastname>Bjarneson</Lastname>
+    <Fornavn>Arne</Fornavn>
+    <Etternavn>Bjarneson</Etternavn>
     <Email>arne.bjarne@test.com</Email>
     <Phone>89513549</Phone>
     <IsMe>false</IsMe>    
   </Jeger>
   <Jeger>
     <ID>3</ID>
-    <Firstname>Jens</Firstname>
-    <Lastname>Testesn</Lastname>
+    <Fornavn>Jens</Fornavn>
+    <Etternavn>Testesn</Etternavn>
     <Email>test@test.com</Email>
     <Phone>89513549</Phone>
     <IsMe>false</IsMe>    

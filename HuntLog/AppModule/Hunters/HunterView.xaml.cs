@@ -40,6 +40,11 @@ namespace HuntLog.AppModule.Hunters
         public Command ItemTappedCommand { get; set; }
         public Command DeleteCommand { get; set; }
 
+        public Command FirstnameCommand { get; set; }
+        public Command LastnameCommand { get; set; }
+        public Command PhoneCommand { get; set; }
+        public Command EmailCommand { get; set; }
+
         public CellAction ImageAction { get; set; }
 
         public string Name { get; set; }
@@ -95,7 +100,7 @@ namespace HuntLog.AppModule.Hunters
             Jeger dto = BuildDto();
             if (MediaFile != null)
             {
-                dto.ImagePath = SaveImage($"hunter_{ID}.jpg", _fileManager);
+                SaveImage($"jeger_{ID}.jpg", _fileManager);
             }
             await _hunterService.Save(dto);
             await PopAsync();
@@ -119,12 +124,12 @@ namespace HuntLog.AppModule.Hunters
         {
             _dto = dto ?? new Jeger();
             ID = _dto.ID;
-            Name = $"{_dto.Firstname} {_dto.Lastname}";
+            Name = $"{_dto.Fornavn} {_dto.Etternavn}";
             Email = _dto.Email;
-            Firstname = _dto.Firstname;
-            Lastname = _dto.Lastname;
+            Firstname = _dto.Fornavn;
+            Lastname = _dto.Etternavn;
             Phone = _dto.Phone;
-            ImagePath = _dto.ImagePath;
+            ImagePath = $"jeger_{ID}.jpg";
             ImageSource = Utility.GetImageSource(_dto.ImagePath);
 
             Title = ID == null ? "Ny jeger" : "Rediger jeger";
@@ -138,9 +143,8 @@ namespace HuntLog.AppModule.Hunters
                 Created = DateTime.Now,
                 Email = Email,
                 Phone = Phone,
-                Firstname = Firstname,
-                Lastname = Lastname,
-                ImagePath = ImagePath,
+                Fornavn = Firstname,
+                Etternavn = Lastname
             };
         }
     }

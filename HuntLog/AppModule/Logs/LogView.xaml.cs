@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Hunts;
 using HuntLog.AppModule.Species;
 using HuntLog.Cells;
@@ -37,15 +38,21 @@ namespace HuntLog.AppModule.Logs
         private readonly IBaseService<Logg> _logService;
         private readonly IFileManager _fileManager;
         private readonly IHuntFactory _huntFactory;
+        private readonly ICustomFieldFactory _fieldFactory;
         private Logg _dto;
 
-        public string HuntId { get; private set; }
+        public string HuntId { get; set; }
         public string Header => $"{Date.ToString("hh:mm", new CultureInfo("nb-no"))} {Specie?.Name}";
         public string Detail => $"{_dto.Sett} Sett\n{_dto.Skudd} Skudd\n{_dto.Treff} Treff";
         public DateTime Date { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
         public string Notes { get; set; }
+        public string Weather { get; set; }
+        public string WeaponType { get; set; }
+        public int Tags { get; set; }
+        public int Weight { get; set; }
+        public int ButchWeight { get; set; }
+        public string Gender { get; set; }
+        public string Age { get; set; }
         public List<PickerItem> HuntersPickers { get; set; }
         public List<PickerItem> DogsPickers { get; set; }
         public List<PickerItem> SpeciesPickers { get; set; }
@@ -54,33 +61,55 @@ namespace HuntLog.AppModule.Logs
         public List<PickerItem> HitsPickers { get; set; }
         public SpecieViewModel Specie { get; set; }
         public ObservableCollection<PickerItem> HunterAndDog { get; set; }
+        public List<CustomFieldViewModel> CustomFields { get; set; }
 
         public Command ItemTappedCommand { get; set; }
         public Command CancelCommand { get; set; }
         public Command SaveCommand { get; set; }
         public Command DeleteCommand { get; set; }
+        public Command TimeCommand { get; set; }
+        public Command CustomFieldsCommand { get; set; }
 
         public CellAction ImageAction { get; set; }
         public CellAction MapAction { get; set; }
+        public Position Position { get; set; }
 
         public LogViewModel(INavigator navigator, 
                             IBaseService<Logg> logService,
                             IFileManager fileManager,
-                            IHuntFactory huntFactory)
+                            IHuntFactory huntFactory,
+                            ICustomFieldFactory fieldFactory)
         {
             _navigator = navigator;
             _logService = logService;   
             _fileManager = fileManager;
             _huntFactory = huntFactory;
+            _fieldFactory = fieldFactory;
 
             ItemTappedCommand = new Command(async () => await ShowItem());
             SaveCommand = new Command(async () => await Save());
             DeleteCommand = new Command(async () => await Delete());
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
+
+            TimeCommand = new Command(async () => { await EditDateFrom(); });
             HunterAndDog = new ObservableCollection<PickerItem>();
+            CustomFields = new List<CustomFieldViewModel>();
 
             CreateImageActions();
             CreatePositionActions();
+        }
+
+        private async Task EditDateFrom()
+        {
+            await _navigator.PushAsync<InputTimeViewModel>(
+                beforeNavigate: async (arg) =>
+                {
+                    await arg.InitializeAsync(Date.TimeOfDay,
+                    completeAction: (value) =>
+                    {
+                        Date = new DateTime(Date.Year, Date.Month, Date.Day, value.Hours, value.Minutes, value.Seconds);
+                    });
+                });
         }
 
         private void CreateImageActions()
@@ -110,14 +139,12 @@ namespace HuntLog.AppModule.Logs
             MapAction = new CellAction();
             MapAction.Save += (object obj) =>
             {
-                var pos = (Position)obj;
-                Latitude = pos.Latitude;
-                Longitude = pos.Longitude;
+                Position = (Position)obj;
             };
 
             MapAction.Delete += () =>
             {
-                Latitude = Longitude = 0;
+                Position = new Position();
             };
         }
 
@@ -133,26 +160,33 @@ namespace HuntLog.AppModule.Logs
             ID = dto.ID;
             HuntId = dto.JaktId;
             Date = dto.Dato;
-            Latitude = Utility.MapStringToDouble(dto.Latitude); //TODO Create an extention on String class
-            Longitude = Utility.MapStringToDouble(dto.Longitude);
-            ImagePath = dto.ImagePath;
-            ImageSource = Utility.GetImageSource(dto.ImagePath);
+            Position = new Position(Utility.MapStringToDouble(dto.Latitude), Utility.MapStringToDouble(dto.Longitude));
+            ImagePath = dto.ImagePath ?? $"jaktlogg_{ID}.jpg";
+            ImageSource = Utility.GetImageSource(ImagePath);
             Notes = dto.Notes;
+            Weather = dto.Weather;
+            WeaponType = dto.WeaponType;
+            Tags = dto.Tags;
+            Weight = dto.Weight;
+            ButchWeight = dto.ButchWeight;
+            Gender = dto.Gender;
+            Age = dto.Age;
         }
 
         public override async Task AfterNavigate()
         {
             if (IsNew)
             {
-#pragma warning disable CS4014
-                SetPositionAsync();
-#pragma warning restore CS4014
+                await SetPositionAsync();
             }
             await PopulatePickers();
-            if(!string.IsNullOrEmpty(_dto.ArtId))
-            {
-                Specie = await _huntFactory.CreateSpecieViewModel(_dto.ArtId);
-            }
+
+            CustomFields = await _fieldFactory.CreateCustomFields(_dto);
+
+            //if (!string.IsNullOrEmpty(_dto.ArtId))
+            //{
+            //    Specie = await _huntFactory.CreateSpecieViewModel(_dto.ArtId);
+            //}
         }
 
         private async Task PopulatePickers()
@@ -167,13 +201,13 @@ namespace HuntLog.AppModule.Logs
             ShotsPickers = new List<PickerItem>();
             ObservedPickers = new List<PickerItem>();
 
-            for (var i = 0; i <= 5; i++)
+            int max = 3;
+            for (var i = 1; i <= max; i++)
             {
                 HitsPickers.Add(new PickerItem 
                 { 
                     ID = i.ToString(), 
                     Title = i.ToString(),
-                    IsNumericPicker = true,
                     Selected = i == _dto.Treff
                 });
 
@@ -181,7 +215,6 @@ namespace HuntLog.AppModule.Logs
                 {
                     ID = i.ToString(),
                     Title = i.ToString(),
-                    IsNumericPicker = true,
                     Selected = i == _dto.Sett
                 });
 
@@ -189,11 +222,35 @@ namespace HuntLog.AppModule.Logs
                 {
                     ID = i.ToString(),
                     Title = i.ToString(),
-                    IsNumericPicker = true,
                     Selected = i == _dto.Skudd
                 });
             }
+            //Add custom value pickers too
+            HitsPickers.Add(new PickerItem
+            {
+                ID = _dto.Treff.ToString(),
+                Title = _dto.Treff.ToString(),
+                Selected = _dto.Treff > max,
+                Custom = true
+            });
 
+            ObservedPickers.Add(new PickerItem
+            {
+                ID = _dto.Sett.ToString(),
+                Title = _dto.Sett.ToString(),
+                Selected = _dto.Sett > max,
+                Custom = true
+            });
+
+            ShotsPickers.Add(new PickerItem
+            {
+                ID = _dto.Skudd.ToString(),
+                Title = _dto.Skudd.ToString(),
+                Selected = _dto.Skudd > max,
+                Custom = true
+            });
+
+            //Add hunter and dog
             if (!string.IsNullOrEmpty(_dto.JegerId))
             {
                 HunterAndDog.Add(HuntersPickers.SingleOrDefault(h => h.Selected));
@@ -209,8 +266,7 @@ namespace HuntLog.AppModule.Logs
             var location = await PositionHelper.GetLocationAsync();
             if (location != null)
             {
-                Latitude = location.Latitude;
-                Longitude = location.Longitude;
+                Position = new Position(location.Latitude, location.Longitude);
             }
         }
 
@@ -246,7 +302,7 @@ namespace HuntLog.AppModule.Logs
             Logg dto = CreateLogDto();
             if (MediaFile != null)
             {
-                dto.ImagePath = SaveImage($"log_{ID}.jpg", _fileManager);
+                SaveImage($"jaktlogg_{ID}.jpg", _fileManager);
             }
 
             await _logService.Save(dto);
@@ -255,22 +311,30 @@ namespace HuntLog.AppModule.Logs
 
         protected Logg CreateLogDto()
         {
-            return new Logg
-            {
-                ID = ID ?? Guid.NewGuid().ToString(),
-                JaktId = HuntId,
-                Sett = int.Parse(ObservedPickers.SingleOrDefault(h => h.Selected)?.ID),
-                Skudd = int.Parse(ShotsPickers.SingleOrDefault(h => h.Selected)?.ID),
-                Treff = int.Parse(HitsPickers.SingleOrDefault(h => h.Selected)?.ID),
-                Dato = Date,
-                Latitude = Latitude.ToString(),
-                Longitude = Longitude.ToString(),
-                ImagePath = ImagePath,
-                Notes = Notes,
-                JegerId = HuntersPickers.SingleOrDefault(h => h.Selected)?.ID,
-                DogId = DogsPickers.SingleOrDefault(h => h.Selected)?.ID,
-                ArtId = SpeciesPickers.SingleOrDefault(h => h.Selected)?.ID
-            };
+            var log = new Logg();
+        
+            log.ID = ID ?? Guid.NewGuid().ToString();
+            log.JaktId = HuntId;
+            log.Sett = int.Parse(ObservedPickers.SingleOrDefault(h => h.Selected)?.ID ?? "0");
+            log.Skudd = int.Parse(ShotsPickers.SingleOrDefault(h => h.Selected)?.ID ?? "0");
+            log.Treff = int.Parse(HitsPickers.SingleOrDefault(h => h.Selected)?.ID ?? "0");
+            log.Dato = Date;
+            log.Latitude = Position.Latitude.ToString();
+            log.Longitude = Position.Longitude.ToString();
+            log.ImagePath = ImagePath;
+            log.Notes = Notes;
+            log.JegerId = HuntersPickers.SingleOrDefault(h => h.Selected)?.ID;
+            log.DogId = DogsPickers.SingleOrDefault(h => h.Selected)?.ID;
+            log.ArtId = SpeciesPickers.SingleOrDefault(h => h.Selected)?.ID;
+            log.Age = Age;
+            log.ButchWeight = ButchWeight;
+            log.Gender = Gender;
+            log.Weather = Weather;
+            log.WeaponType = WeaponType;
+            log.Weight = Weight;
+            log.Tags = Tags;
+
+            return log;
         }
     }
 }

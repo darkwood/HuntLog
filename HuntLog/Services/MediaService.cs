@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace HuntLog.Services
 {
@@ -23,15 +25,15 @@ namespace HuntLog.Services
         {
             await CrossMedia.Current.Initialize();
 
-            //var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-            //var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
 
-            //if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
-            //{
-            //    var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera, Permission.Storage });
-            //    cameraStatus = results[Permission.Camera];
-            //    storageStatus = results[Permission.Storage];
-            //}
+            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
+            {
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera, Permission.Storage });
+                cameraStatus = results[Permission.Camera];
+                storageStatus = results[Permission.Storage];
+            }
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
@@ -44,37 +46,25 @@ namespace HuntLog.Services
                 Directory = "",
                 CompressionQuality = 92,
                 PhotoSize = PhotoSize.Large,
+                AllowCropping = true,
+                SaveToAlbum = true
             });
             return file;
         }
 
         public async Task<MediaFile> OpenLibraryAsync()
         {
-            //if (cameraStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
-            //{
-            //    var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            //    {
-            //        Directory = "Sample",
-            //        Name = "test.jpg"
-            //    });
-            //}
-            //else
-            //{
-            //    await DisplayAlert("Permissions Denied", "Unable to take photos.", "OK");
-            //    //On iOS you may want to send your user to the settings screen.
-            //    //CrossPermissions.Current.OpenAppSettings();
-            //}
-
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
                 await _dialogService.ShowAlert("Bilder støttes ikke", "Tilgang er ikke gitt til bildebiblioteket. Kan endres i innstillinger på telefonen.");
+                CrossPermissions.Current.OpenAppSettings();
                 return null;
             }
 
             var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
             {
                 PhotoSize = PhotoSize.Large,
-                CompressionQuality = 92
+                CompressionQuality = 92,
             });
 
             return file;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -44,8 +45,11 @@ namespace HuntLog.Helpers
         }
         public static double MapStringToDouble(string doubleString)
         {
+            if(string.IsNullOrEmpty(doubleString)) { return 0; }
+
             double value;
-            double.TryParse(doubleString?.Replace('.', ','), out value);
+            var culture = CultureInfo.CreateSpecificCulture("nb-NO");
+            value = double.Parse(doubleString, CultureInfo.InvariantCulture);
             return value;
         }
     }

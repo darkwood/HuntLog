@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Converters="clr-namespace:HuntLog.Converters"     
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             x:Class="HuntLog.AppModule.CustomFields.CustomFieldView">
+    
+    <ContentPage.Content>
+        <controls:ExtendedTableView Grid.Row="0"
+                                        HasUnevenRows="true" 
+                                        Intent="Form">
+            <TableRoot>
+                
+                <TableSection Title="">
+                    <cells:ExtendedTextCell Text="{Binding Name}" ShowCheckBox="True" Selected="{Binding Selected}" />
+                </TableSection>
+                
+            </TableRoot>
+            </controls:ExtendedTableView>
+    </ContentPage.Content>
+</ContentPage>

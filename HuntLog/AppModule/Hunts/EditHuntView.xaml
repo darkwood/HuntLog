@@ -9,7 +9,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
-        <ToolbarItem Priority="1" Icon="trash.png" Command="{Binding DeleteCommand}" IsEnabled="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"/>
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -24,8 +24,8 @@
                 
                 <TableSection Title="">
                     <cells:ImageHeaderCell  HeightRequest="200" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                    <EntryCell              Label="Sted" Placeholder="Jaktsted..." Text="{Binding Location}" />
-                    <cells:MapCell          Text="Posisjon" Latitude="{Binding Latitude}" Longitude="{Binding Longitude}" CellAction="{Binding MapAction}" />
+                    <cells:ExtendedTextCell Text="Sted" Text2="{Binding Location}" />
+                    <cells:MapCell          Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                     <cells:PickerCell Text="Jegere" PickerItems="{Binding Hunters}" />
                     <cells:PickerCell Text="Hunder" PickerItems="{Binding Dogs}" />
                     <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
@@ -36,13 +36,13 @@
             </TableRoot>
         </controls:ExtendedTableView>
                 
-            <Button 
-                    Grid.Row="1"
+            <Button Grid.Row="1"
                     Margin="15"
-                    Text="Lagre" 
-                    StyleClass="PrimaryButton"
-                    Command="{Binding SaveCommand}"
-                />
+                    Text="Slett jakt" 
+                    StyleClass="DangerButton"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+            />
         
         </Grid>
     

@@ -5,6 +5,7 @@ using HuntLog.Helpers;
 using HuntLog.InputViews;
 using HuntLog.Models;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace HuntLog.AppModule.Hunts
 {
@@ -16,11 +17,10 @@ namespace HuntLog.AppModule.Hunts
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }
         public List<string> DogIds { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        public Position Position { get; set; }
         public string Notes { get; set; }
 
-        public bool HasLocation => Latitude > 0 && Longitude > 0;
+        public bool HasLocation => Position.Latitude > 0 && Position.Longitude > 0;
 
         public List<PickerItem> SelectedHuntersAndDogs { get; set; }
 
@@ -32,10 +32,9 @@ namespace HuntLog.AppModule.Hunts
             DateFrom = dto.DatoFra;
             DateTo = dto.DatoTil;
             DogIds = dto.DogIds;
-            Latitude = Utility.MapStringToDouble(dto.Latitude);
-            Longitude = Utility.MapStringToDouble(dto.Longitude);
-            ImagePath = dto.ImagePath;
-            ImageSource = Utility.GetImageSource(dto.ImagePath);
+            Position = new Position(Utility.MapStringToDouble(dto.Latitude), Utility.MapStringToDouble(dto.Longitude));
+            ImagePath = $"jakt_{ID}.jpg";
+            ImageSource = Utility.GetImageSource(ImagePath);
             Notes = dto.Notes;
         }
     }
