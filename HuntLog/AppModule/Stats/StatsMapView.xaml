@@ -4,14 +4,59 @@
              x:Class="HuntLog.AppModule.Stats.StatsMapView"
              xmlns:Converters="clr-namespace:HuntLog.Converters"       
              xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:sc="clr-namespace:Plugin.Segmented.Control;assembly=Plugin.Segmented"
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             xmlns:statsControls="clr-namespace:HuntLog.AppModule.Stats.Controls;assembly=HuntLog"
              xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog">
+     
     <ContentPage.Content>
-        <Grid>
-            <stats:StatsFilterView BindingContext="{Binding StatsFilterViewModel}" />
-             
-            <Label Grid.Row="1" Text="{Binding DateRange}"/>
+        <Grid Margin="0" RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <stats:StatsFilterView Grid.Row="0" BindingContext="{Binding StatsFilterViewModel}" />
+            
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            
+            
+                <StackLayout Grid.Row="0" 
+                             VerticalOptions="FillAndExpand" 
+                             HorizontalOptions="FillAndExpand">
+                    
+                        <controls:ExtendedMap 
+                                x:Name="ExtendedMapControl"
+                                MapType="Hybrid"
+                            />
+                </StackLayout>
+               
+                <StackLayout Grid.Row="1" Padding="10" Orientation="Horizontal" BackgroundColor="{StaticResource TableBg}">
+                    
+                    <Label Text="Vis på kartet"
+                           Margin="10" 
+                           FontSize="Small"
+                           VerticalOptions="Center" />
+                    
+                    <sc:SegmentedControl HorizontalOptions="EndAndExpand"
+                                              BackgroundColor="White"
+                                              SelectedTextColor="White"
+                                              TintColor="{StaticResource Primary}"
+                                              >  
+                        <sc:SegmentedControl.Children>  
+                            <sc:SegmentedControlOption Text="Alle" />  
+                            <sc:SegmentedControlOption Text="Sett" />  
+                            <sc:SegmentedControlOption Text="Skudd" />  
+                            <sc:SegmentedControlOption Text="Treff" />  
+                        </sc:SegmentedControl.Children>  
+                    </sc:SegmentedControl> 
+                            
+                </StackLayout>
+            </Grid> 
         </Grid>
-        
     </ContentPage.Content>
 </ContentPage>

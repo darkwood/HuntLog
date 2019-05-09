@@ -14,11 +14,10 @@
     
     <ContentPage.Content>
         
-        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">
-            <TableSection Title="" />
+        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">            
             <TableSection>
                 <cells:ExtendedTextCell Text="Kartvisning" Detail="Viser alle loggføringer på kartet" StyleId="disclosure" Command="{Binding MapCommand}" />
-                <cells:ExtendedTextCell Text="Arter skutt" Detail="Akkumulert oversikt over arter og antall treff" StyleId="disclosure" />
+                <cells:ExtendedTextCell Text="Arter skutt" Detail="Akkumulert oversikt over arter og antall treff" StyleId="disclosure" Command="{Binding HitrateCommand}" />
                 <cells:ExtendedTextCell Text="Beste jeger" Detail="Regnes ut av treffprosent og flest treff" StyleId="disclosure" />
             </TableSection>
         </controls:ExtendedTableView>

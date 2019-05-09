@@ -28,6 +28,2280 @@ namespace HuntLog.Droid
 		{
 			global::PCLStorage.Resource.String.ApplicationName = global::HuntLog.Droid.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::HuntLog.Droid.Resource.String.Hello;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_in = global::HuntLog.Droid.Resource.Animation.abc_fade_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_fade_out = global::HuntLog.Droid.Resource.Animation.abc_fade_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::HuntLog.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_popup_enter = global::HuntLog.Droid.Resource.Animation.abc_popup_enter;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_popup_exit = global::HuntLog.Droid.Resource.Animation.abc_popup_exit;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::HuntLog.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_in_bottom = global::HuntLog.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_in_top = global::HuntLog.Droid.Resource.Animation.abc_slide_in_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_out_bottom = global::HuntLog.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.abc_slide_out_top = global::HuntLog.Droid.Resource.Animation.abc_slide_out_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::HuntLog.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::HuntLog.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_snackbar_in = global::HuntLog.Droid.Resource.Animation.design_snackbar_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.design_snackbar_out = global::HuntLog.Droid.Resource.Animation.design_snackbar_out;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.tooltip_enter = global::HuntLog.Droid.Resource.Animation.tooltip_enter;
+			global::Plugin.Segmented.Control.Droid.Resource.Animation.tooltip_exit = global::HuntLog.Droid.Resource.Animation.tooltip_exit;
+			global::Plugin.Segmented.Control.Droid.Resource.Animator.design_appbar_state_list_animator = global::HuntLog.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarDivider = global::HuntLog.Droid.Resource.Attribute.actionBarDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarItemBackground = global::HuntLog.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarPopupTheme = global::HuntLog.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarSize = global::HuntLog.Droid.Resource.Attribute.actionBarSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarSplitStyle = global::HuntLog.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarStyle = global::HuntLog.Droid.Resource.Attribute.actionBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabBarStyle = global::HuntLog.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabStyle = global::HuntLog.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTabTextStyle = global::HuntLog.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarTheme = global::HuntLog.Droid.Resource.Attribute.actionBarTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionBarWidgetTheme = global::HuntLog.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionButtonStyle = global::HuntLog.Droid.Resource.Attribute.actionButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionDropDownStyle = global::HuntLog.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionLayout = global::HuntLog.Droid.Resource.Attribute.actionLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionMenuTextAppearance = global::HuntLog.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionMenuTextColor = global::HuntLog.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeBackground = global::HuntLog.Droid.Resource.Attribute.actionModeBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::HuntLog.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCloseDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCopyDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeCutDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeFindDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModePasteDrawable = global::HuntLog.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModePopupWindowStyle = global::HuntLog.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeShareDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeSplitBackground = global::HuntLog.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeStyle = global::HuntLog.Droid.Resource.Attribute.actionModeStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::HuntLog.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionOverflowButtonStyle = global::HuntLog.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionOverflowMenuStyle = global::HuntLog.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionProviderClass = global::HuntLog.Droid.Resource.Attribute.actionProviderClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.actionViewClass = global::HuntLog.Droid.Resource.Attribute.actionViewClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.activityChooserViewStyle = global::HuntLog.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::HuntLog.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogCenterButtons = global::HuntLog.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogStyle = global::HuntLog.Droid.Resource.Attribute.alertDialogStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alertDialogTheme = global::HuntLog.Droid.Resource.Attribute.alertDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.allowStacking = global::HuntLog.Droid.Resource.Attribute.allowStacking;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alpha = global::HuntLog.Droid.Resource.Attribute.alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.alphabeticModifiers = global::HuntLog.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.arrowHeadLength = global::HuntLog.Droid.Resource.Attribute.arrowHeadLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.arrowShaftLength = global::HuntLog.Droid.Resource.Attribute.arrowShaftLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::HuntLog.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeMaxTextSize = global::HuntLog.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeMinTextSize = global::HuntLog.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizePresetSizes = global::HuntLog.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeStepGranularity = global::HuntLog.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.autoSizeTextType = global::HuntLog.Droid.Resource.Attribute.autoSizeTextType;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.background = global::HuntLog.Droid.Resource.Attribute.background;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundSplit = global::HuntLog.Droid.Resource.Attribute.backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundStacked = global::HuntLog.Droid.Resource.Attribute.backgroundStacked;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundTint = global::HuntLog.Droid.Resource.Attribute.backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.backgroundTintMode = global::HuntLog.Droid.Resource.Attribute.backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.barLength = global::HuntLog.Droid.Resource.Attribute.barLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_autoHide = global::HuntLog.Droid.Resource.Attribute.behavior_autoHide;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_hideable = global::HuntLog.Droid.Resource.Attribute.behavior_hideable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_overlapTop = global::HuntLog.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_peekHeight = global::HuntLog.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.behavior_skipCollapsed = global::HuntLog.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.borderWidth = global::HuntLog.Droid.Resource.Attribute.borderWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.borderlessButtonStyle = global::HuntLog.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.bottomSheetDialogTheme = global::HuntLog.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.bottomSheetStyle = global::HuntLog.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarButtonStyle = global::HuntLog.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::HuntLog.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::HuntLog.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::HuntLog.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonBarStyle = global::HuntLog.Droid.Resource.Attribute.buttonBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonGravity = global::HuntLog.Droid.Resource.Attribute.buttonGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonPanelSideLayout = global::HuntLog.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonStyle = global::HuntLog.Droid.Resource.Attribute.buttonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonStyleSmall = global::HuntLog.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonTint = global::HuntLog.Droid.Resource.Attribute.buttonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.buttonTintMode = global::HuntLog.Droid.Resource.Attribute.buttonTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardBackgroundColor = global::HuntLog.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardCornerRadius = global::HuntLog.Droid.Resource.Attribute.cardCornerRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardElevation = global::HuntLog.Droid.Resource.Attribute.cardElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardMaxElevation = global::HuntLog.Droid.Resource.Attribute.cardMaxElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardPreventCornerOverlap = global::HuntLog.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.cardUseCompatPadding = global::HuntLog.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.checkboxStyle = global::HuntLog.Droid.Resource.Attribute.checkboxStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.checkedTextViewStyle = global::HuntLog.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.closeIcon = global::HuntLog.Droid.Resource.Attribute.closeIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.closeItemLayout = global::HuntLog.Droid.Resource.Attribute.closeItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapseContentDescription = global::HuntLog.Droid.Resource.Attribute.collapseContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapseIcon = global::HuntLog.Droid.Resource.Attribute.collapseIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapsedTitleGravity = global::HuntLog.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::HuntLog.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.color = global::HuntLog.Droid.Resource.Attribute.color;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorAccent = global::HuntLog.Droid.Resource.Attribute.colorAccent;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorBackgroundFloating = global::HuntLog.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorButtonNormal = global::HuntLog.Droid.Resource.Attribute.colorButtonNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlActivated = global::HuntLog.Droid.Resource.Attribute.colorControlActivated;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlHighlight = global::HuntLog.Droid.Resource.Attribute.colorControlHighlight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorControlNormal = global::HuntLog.Droid.Resource.Attribute.colorControlNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorError = global::HuntLog.Droid.Resource.Attribute.colorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorPrimary = global::HuntLog.Droid.Resource.Attribute.colorPrimary;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorPrimaryDark = global::HuntLog.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.colorSwitchThumbNormal = global::HuntLog.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.commitIcon = global::HuntLog.Droid.Resource.Attribute.commitIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentDescription = global::HuntLog.Droid.Resource.Attribute.contentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetEnd = global::HuntLog.Droid.Resource.Attribute.contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetEndWithActions = global::HuntLog.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetLeft = global::HuntLog.Droid.Resource.Attribute.contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetRight = global::HuntLog.Droid.Resource.Attribute.contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetStart = global::HuntLog.Droid.Resource.Attribute.contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::HuntLog.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPadding = global::HuntLog.Droid.Resource.Attribute.contentPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingBottom = global::HuntLog.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingLeft = global::HuntLog.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingRight = global::HuntLog.Droid.Resource.Attribute.contentPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentPaddingTop = global::HuntLog.Droid.Resource.Attribute.contentPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.contentScrim = global::HuntLog.Droid.Resource.Attribute.contentScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.controlBackground = global::HuntLog.Droid.Resource.Attribute.controlBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterEnabled = global::HuntLog.Droid.Resource.Attribute.counterEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterMaxLength = global::HuntLog.Droid.Resource.Attribute.counterMaxLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterOverflowTextAppearance = global::HuntLog.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.counterTextAppearance = global::HuntLog.Droid.Resource.Attribute.counterTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.customNavigationLayout = global::HuntLog.Droid.Resource.Attribute.customNavigationLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.defaultQueryHint = global::HuntLog.Droid.Resource.Attribute.defaultQueryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dialogPreferredPadding = global::HuntLog.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dialogTheme = global::HuntLog.Droid.Resource.Attribute.dialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.displayOptions = global::HuntLog.Droid.Resource.Attribute.displayOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.divider = global::HuntLog.Droid.Resource.Attribute.divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerHorizontal = global::HuntLog.Droid.Resource.Attribute.dividerHorizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerPadding = global::HuntLog.Droid.Resource.Attribute.dividerPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dividerVertical = global::HuntLog.Droid.Resource.Attribute.dividerVertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.drawableSize = global::HuntLog.Droid.Resource.Attribute.drawableSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.drawerArrowStyle = global::HuntLog.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dropDownListViewStyle = global::HuntLog.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::HuntLog.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextBackground = global::HuntLog.Droid.Resource.Attribute.editTextBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextColor = global::HuntLog.Droid.Resource.Attribute.editTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.editTextStyle = global::HuntLog.Droid.Resource.Attribute.editTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.elevation = global::HuntLog.Droid.Resource.Attribute.elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.errorEnabled = global::HuntLog.Droid.Resource.Attribute.errorEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.errorTextAppearance = global::HuntLog.Droid.Resource.Attribute.errorTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::HuntLog.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expanded = global::HuntLog.Droid.Resource.Attribute.expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleGravity = global::HuntLog.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMargin = global::HuntLog.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginBottom = global::HuntLog.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginEnd = global::HuntLog.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginStart = global::HuntLog.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleMarginTop = global::HuntLog.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.expandedTitleTextAppearance = global::HuntLog.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::HuntLog.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fabSize = global::HuntLog.Droid.Resource.Attribute.fabSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollEnabled = global::HuntLog.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::HuntLog.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::HuntLog.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::HuntLog.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::HuntLog.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.font = global::HuntLog.Droid.Resource.Attribute.font;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontFamily = global::HuntLog.Droid.Resource.Attribute.fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderAuthority = global::HuntLog.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderCerts = global::HuntLog.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderFetchStrategy = global::HuntLog.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderFetchTimeout = global::HuntLog.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderPackage = global::HuntLog.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontProviderQuery = global::HuntLog.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontStyle = global::HuntLog.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.fontWeight = global::HuntLog.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.foregroundInsidePadding = global::HuntLog.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.gapBetweenBars = global::HuntLog.Droid.Resource.Attribute.gapBetweenBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.goIcon = global::HuntLog.Droid.Resource.Attribute.goIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.headerLayout = global::HuntLog.Droid.Resource.Attribute.headerLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.height = global::HuntLog.Droid.Resource.Attribute.height;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hideOnContentScroll = global::HuntLog.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintAnimationEnabled = global::HuntLog.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintEnabled = global::HuntLog.Droid.Resource.Attribute.hintEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.hintTextAppearance = global::HuntLog.Droid.Resource.Attribute.hintTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.homeAsUpIndicator = global::HuntLog.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.homeLayout = global::HuntLog.Droid.Resource.Attribute.homeLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.icon = global::HuntLog.Droid.Resource.Attribute.icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconTint = global::HuntLog.Droid.Resource.Attribute.iconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconTintMode = global::HuntLog.Droid.Resource.Attribute.iconTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.iconifiedByDefault = global::HuntLog.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.imageButtonStyle = global::HuntLog.Droid.Resource.Attribute.imageButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.indeterminateProgressStyle = global::HuntLog.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.initialActivityCount = global::HuntLog.Droid.Resource.Attribute.initialActivityCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.insetForeground = global::HuntLog.Droid.Resource.Attribute.insetForeground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.isLightTheme = global::HuntLog.Droid.Resource.Attribute.isLightTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemBackground = global::HuntLog.Droid.Resource.Attribute.itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemIconTint = global::HuntLog.Droid.Resource.Attribute.itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemPadding = global::HuntLog.Droid.Resource.Attribute.itemPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemTextAppearance = global::HuntLog.Droid.Resource.Attribute.itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.itemTextColor = global::HuntLog.Droid.Resource.Attribute.itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.keylines = global::HuntLog.Droid.Resource.Attribute.keylines;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout = global::HuntLog.Droid.Resource.Attribute.layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layoutManager = global::HuntLog.Droid.Resource.Attribute.layoutManager;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_anchor = global::HuntLog.Droid.Resource.Attribute.layout_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_anchorGravity = global::HuntLog.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_behavior = global::HuntLog.Droid.Resource.Attribute.layout_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_collapseMode = global::HuntLog.Droid.Resource.Attribute.layout_collapseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::HuntLog.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::HuntLog.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_insetEdge = global::HuntLog.Droid.Resource.Attribute.layout_insetEdge;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_keyline = global::HuntLog.Droid.Resource.Attribute.layout_keyline;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_scrollFlags = global::HuntLog.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.layout_scrollInterpolator = global::HuntLog.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::HuntLog.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listDividerAlertDialog = global::HuntLog.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listItemLayout = global::HuntLog.Droid.Resource.Attribute.listItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listLayout = global::HuntLog.Droid.Resource.Attribute.listLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listMenuViewStyle = global::HuntLog.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPopupWindowStyle = global::HuntLog.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeight = global::HuntLog.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::HuntLog.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::HuntLog.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::HuntLog.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::HuntLog.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.logo = global::HuntLog.Droid.Resource.Attribute.logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.logoDescription = global::HuntLog.Droid.Resource.Attribute.logoDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.maxActionInlineWidth = global::HuntLog.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.maxButtonHeight = global::HuntLog.Droid.Resource.Attribute.maxButtonHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.measureWithLargestChild = global::HuntLog.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteButtonStyle = global::HuntLog.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteButtonTint = global::HuntLog.Droid.Resource.Attribute.mediaRouteButtonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::HuntLog.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteStopDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteTheme = global::HuntLog.Droid.Resource.Attribute.mediaRouteTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::HuntLog.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.menu = global::HuntLog.Droid.Resource.Attribute.menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.multiChoiceItemLayout = global::HuntLog.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationContentDescription = global::HuntLog.Droid.Resource.Attribute.navigationContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationIcon = global::HuntLog.Droid.Resource.Attribute.navigationIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.navigationMode = global::HuntLog.Droid.Resource.Attribute.navigationMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.numericModifiers = global::HuntLog.Droid.Resource.Attribute.numericModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.overlapAnchor = global::HuntLog.Droid.Resource.Attribute.overlapAnchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingBottomNoButtons = global::HuntLog.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingEnd = global::HuntLog.Droid.Resource.Attribute.paddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingStart = global::HuntLog.Droid.Resource.Attribute.paddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.paddingTopNoTitle = global::HuntLog.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelBackground = global::HuntLog.Droid.Resource.Attribute.panelBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelMenuListTheme = global::HuntLog.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.panelMenuListWidth = global::HuntLog.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleContentDescription = global::HuntLog.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleDrawable = global::HuntLog.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleEnabled = global::HuntLog.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleTint = global::HuntLog.Droid.Resource.Attribute.passwordToggleTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.passwordToggleTintMode = global::HuntLog.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupMenuStyle = global::HuntLog.Droid.Resource.Attribute.popupMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupTheme = global::HuntLog.Droid.Resource.Attribute.popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.popupWindowStyle = global::HuntLog.Droid.Resource.Attribute.popupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.preserveIconSpacing = global::HuntLog.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.pressedTranslationZ = global::HuntLog.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.progressBarPadding = global::HuntLog.Droid.Resource.Attribute.progressBarPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.progressBarStyle = global::HuntLog.Droid.Resource.Attribute.progressBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.queryBackground = global::HuntLog.Droid.Resource.Attribute.queryBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.queryHint = global::HuntLog.Droid.Resource.Attribute.queryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.radioButtonStyle = global::HuntLog.Droid.Resource.Attribute.radioButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyle = global::HuntLog.Droid.Resource.Attribute.ratingBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyleIndicator = global::HuntLog.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.ratingBarStyleSmall = global::HuntLog.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.reverseLayout = global::HuntLog.Droid.Resource.Attribute.reverseLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.rippleColor = global::HuntLog.Droid.Resource.Attribute.rippleColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.scrimAnimationDuration = global::HuntLog.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::HuntLog.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchHintIcon = global::HuntLog.Droid.Resource.Attribute.searchHintIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchIcon = global::HuntLog.Droid.Resource.Attribute.searchIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.searchViewStyle = global::HuntLog.Droid.Resource.Attribute.searchViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.seekBarStyle = global::HuntLog.Droid.Resource.Attribute.seekBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.selectableItemBackground = global::HuntLog.Droid.Resource.Attribute.selectableItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::HuntLog.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showAsAction = global::HuntLog.Droid.Resource.Attribute.showAsAction;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showDividers = global::HuntLog.Droid.Resource.Attribute.showDividers;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showText = global::HuntLog.Droid.Resource.Attribute.showText;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.showTitle = global::HuntLog.Droid.Resource.Attribute.showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.singleChoiceItemLayout = global::HuntLog.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spanCount = global::HuntLog.Droid.Resource.Attribute.spanCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinBars = global::HuntLog.Droid.Resource.Attribute.spinBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::HuntLog.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.spinnerStyle = global::HuntLog.Droid.Resource.Attribute.spinnerStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.splitTrack = global::HuntLog.Droid.Resource.Attribute.splitTrack;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.srcCompat = global::HuntLog.Droid.Resource.Attribute.srcCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.stackFromEnd = global::HuntLog.Droid.Resource.Attribute.stackFromEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_above_anchor = global::HuntLog.Droid.Resource.Attribute.state_above_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_collapsed = global::HuntLog.Droid.Resource.Attribute.state_collapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.state_collapsible = global::HuntLog.Droid.Resource.Attribute.state_collapsible;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.statusBarBackground = global::HuntLog.Droid.Resource.Attribute.statusBarBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.statusBarScrim = global::HuntLog.Droid.Resource.Attribute.statusBarScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subMenuArrow = global::HuntLog.Droid.Resource.Attribute.subMenuArrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.submitBackground = global::HuntLog.Droid.Resource.Attribute.submitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitle = global::HuntLog.Droid.Resource.Attribute.subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextAppearance = global::HuntLog.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextColor = global::HuntLog.Droid.Resource.Attribute.subtitleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.subtitleTextStyle = global::HuntLog.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.suggestionRowLayout = global::HuntLog.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchMinWidth = global::HuntLog.Droid.Resource.Attribute.switchMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchPadding = global::HuntLog.Droid.Resource.Attribute.switchPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchStyle = global::HuntLog.Droid.Resource.Attribute.switchStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.switchTextAppearance = global::HuntLog.Droid.Resource.Attribute.switchTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabBackground = global::HuntLog.Droid.Resource.Attribute.tabBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabContentStart = global::HuntLog.Droid.Resource.Attribute.tabContentStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabGravity = global::HuntLog.Droid.Resource.Attribute.tabGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabIndicatorColor = global::HuntLog.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabIndicatorHeight = global::HuntLog.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMaxWidth = global::HuntLog.Droid.Resource.Attribute.tabMaxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMinWidth = global::HuntLog.Droid.Resource.Attribute.tabMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabMode = global::HuntLog.Droid.Resource.Attribute.tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPadding = global::HuntLog.Droid.Resource.Attribute.tabPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingBottom = global::HuntLog.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingEnd = global::HuntLog.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingStart = global::HuntLog.Droid.Resource.Attribute.tabPaddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabPaddingTop = global::HuntLog.Droid.Resource.Attribute.tabPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabSelectedTextColor = global::HuntLog.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabTextAppearance = global::HuntLog.Droid.Resource.Attribute.tabTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tabTextColor = global::HuntLog.Droid.Resource.Attribute.tabTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAllCaps = global::HuntLog.Droid.Resource.Attribute.textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::HuntLog.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItem = global::HuntLog.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::HuntLog.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceListItemSmall = global::HuntLog.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::HuntLog.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::HuntLog.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::HuntLog.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::HuntLog.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorAlertDialogListItem = global::HuntLog.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorError = global::HuntLog.Droid.Resource.Attribute.textColorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.textColorSearchUrl = global::HuntLog.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.theme = global::HuntLog.Droid.Resource.Attribute.theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thickness = global::HuntLog.Droid.Resource.Attribute.thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTextPadding = global::HuntLog.Droid.Resource.Attribute.thumbTextPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTint = global::HuntLog.Droid.Resource.Attribute.thumbTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.thumbTintMode = global::HuntLog.Droid.Resource.Attribute.thumbTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMark = global::HuntLog.Droid.Resource.Attribute.tickMark;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMarkTint = global::HuntLog.Droid.Resource.Attribute.tickMarkTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tickMarkTintMode = global::HuntLog.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tint = global::HuntLog.Droid.Resource.Attribute.tint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tintMode = global::HuntLog.Droid.Resource.Attribute.tintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.title = global::HuntLog.Droid.Resource.Attribute.title;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleEnabled = global::HuntLog.Droid.Resource.Attribute.titleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMargin = global::HuntLog.Droid.Resource.Attribute.titleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginBottom = global::HuntLog.Droid.Resource.Attribute.titleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginEnd = global::HuntLog.Droid.Resource.Attribute.titleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginStart = global::HuntLog.Droid.Resource.Attribute.titleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMarginTop = global::HuntLog.Droid.Resource.Attribute.titleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleMargins = global::HuntLog.Droid.Resource.Attribute.titleMargins;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextAppearance = global::HuntLog.Droid.Resource.Attribute.titleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextColor = global::HuntLog.Droid.Resource.Attribute.titleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.titleTextStyle = global::HuntLog.Droid.Resource.Attribute.titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarId = global::HuntLog.Droid.Resource.Attribute.toolbarId;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::HuntLog.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.toolbarStyle = global::HuntLog.Droid.Resource.Attribute.toolbarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipForegroundColor = global::HuntLog.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipFrameBackground = global::HuntLog.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.tooltipText = global::HuntLog.Droid.Resource.Attribute.tooltipText;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.track = global::HuntLog.Droid.Resource.Attribute.track;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.trackTint = global::HuntLog.Droid.Resource.Attribute.trackTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.trackTintMode = global::HuntLog.Droid.Resource.Attribute.trackTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.useCompatPadding = global::HuntLog.Droid.Resource.Attribute.useCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.voiceIcon = global::HuntLog.Droid.Resource.Attribute.voiceIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionBar = global::HuntLog.Droid.Resource.Attribute.windowActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionBarOverlay = global::HuntLog.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowActionModeOverlay = global::HuntLog.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedHeightMajor = global::HuntLog.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedHeightMinor = global::HuntLog.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedWidthMajor = global::HuntLog.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowFixedWidthMinor = global::HuntLog.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowMinWidthMajor = global::HuntLog.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowMinWidthMinor = global::HuntLog.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Attribute.windowNoTitle = global::HuntLog.Droid.Resource.Attribute.windowNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::HuntLog.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::HuntLog.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::HuntLog.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::HuntLog.Droid.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Plugin.Segmented.Control.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::HuntLog.Droid.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::HuntLog.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::HuntLog.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::HuntLog.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_btn_colored_text_material = global::HuntLog.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_color_highlight_material = global::HuntLog.Droid.Resource.Color.abc_color_highlight_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_hint_foreground_material_dark = global::HuntLog.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_hint_foreground_material_light = global::HuntLog.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_input_method_navigation_guard = global::HuntLog.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::HuntLog.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::HuntLog.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_material_dark = global::HuntLog.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_primary_text_material_light = global::HuntLog.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text = global::HuntLog.Droid.Resource.Color.abc_search_url_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_normal = global::HuntLog.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_pressed = global::HuntLog.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_search_url_text_selected = global::HuntLog.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_secondary_text_material_dark = global::HuntLog.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_secondary_text_material_light = global::HuntLog.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_btn_checkable = global::HuntLog.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_default = global::HuntLog.Droid.Resource.Color.abc_tint_default;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_edittext = global::HuntLog.Droid.Resource.Color.abc_tint_edittext;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_seek_thumb = global::HuntLog.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_spinner = global::HuntLog.Droid.Resource.Color.abc_tint_spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.abc_tint_switch_track = global::HuntLog.Droid.Resource.Color.abc_tint_switch_track;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.accent_material_dark = global::HuntLog.Droid.Resource.Color.accent_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.accent_material_light = global::HuntLog.Droid.Resource.Color.accent_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_floating_material_dark = global::HuntLog.Droid.Resource.Color.background_floating_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_floating_material_light = global::HuntLog.Droid.Resource.Color.background_floating_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_material_dark = global::HuntLog.Droid.Resource.Color.background_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.background_material_light = global::HuntLog.Droid.Resource.Color.background_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::HuntLog.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_disabled_material_light = global::HuntLog.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::HuntLog.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_inverse_material_light = global::HuntLog.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_material_dark = global::HuntLog.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.bright_foreground_material_light = global::HuntLog.Droid.Resource.Color.bright_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.button_material_dark = global::HuntLog.Droid.Resource.Color.button_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.button_material_light = global::HuntLog.Droid.Resource.Color.button_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_dark_background = global::HuntLog.Droid.Resource.Color.cardview_dark_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_light_background = global::HuntLog.Droid.Resource.Color.cardview_light_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_shadow_end_color = global::HuntLog.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.cardview_shadow_start_color = global::HuntLog.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::HuntLog.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_error = global::HuntLog.Droid.Resource.Color.design_error;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_end_color = global::HuntLog.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_mid_color = global::HuntLog.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_shadow_start_color = global::HuntLog.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::HuntLog.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::HuntLog.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::HuntLog.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::HuntLog.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_snackbar_background_color = global::HuntLog.Droid.Resource.Color.design_snackbar_background_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.design_tint_password_toggle = global::HuntLog.Droid.Resource.Color.design_tint_password_toggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::HuntLog.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_disabled_material_light = global::HuntLog.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_material_dark = global::HuntLog.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.dim_foreground_material_light = global::HuntLog.Droid.Resource.Color.dim_foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.error_color_material = global::HuntLog.Droid.Resource.Color.error_color_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.foreground_material_dark = global::HuntLog.Droid.Resource.Color.foreground_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.foreground_material_light = global::HuntLog.Droid.Resource.Color.foreground_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.highlighted_text_material_dark = global::HuntLog.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.highlighted_text_material_light = global::HuntLog.Droid.Resource.Color.highlighted_text_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_800 = global::HuntLog.Droid.Resource.Color.material_blue_grey_800;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_900 = global::HuntLog.Droid.Resource.Color.material_blue_grey_900;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_blue_grey_950 = global::HuntLog.Droid.Resource.Color.material_blue_grey_950;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_deep_teal_200 = global::HuntLog.Droid.Resource.Color.material_deep_teal_200;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_deep_teal_500 = global::HuntLog.Droid.Resource.Color.material_deep_teal_500;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_100 = global::HuntLog.Droid.Resource.Color.material_grey_100;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_300 = global::HuntLog.Droid.Resource.Color.material_grey_300;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_50 = global::HuntLog.Droid.Resource.Color.material_grey_50;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_600 = global::HuntLog.Droid.Resource.Color.material_grey_600;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_800 = global::HuntLog.Droid.Resource.Color.material_grey_800;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_850 = global::HuntLog.Droid.Resource.Color.material_grey_850;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.material_grey_900 = global::HuntLog.Droid.Resource.Color.material_grey_900;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.normal = global::HuntLog.Droid.Resource.Color.normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_action_color_filter = global::HuntLog.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_icon_bg_color = global::HuntLog.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.notification_material_background_media_default_color = global::HuntLog.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_dark_material_dark = global::HuntLog.Droid.Resource.Color.primary_dark_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_dark_material_light = global::HuntLog.Droid.Resource.Color.primary_dark_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_material_dark = global::HuntLog.Droid.Resource.Color.primary_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_material_light = global::HuntLog.Droid.Resource.Color.primary_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_default_material_dark = global::HuntLog.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_default_material_light = global::HuntLog.Droid.Resource.Color.primary_text_default_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_disabled_material_dark = global::HuntLog.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.primary_text_disabled_material_light = global::HuntLog.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.ripple_material_dark = global::HuntLog.Droid.Resource.Color.ripple_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.ripple_material_light = global::HuntLog.Droid.Resource.Color.ripple_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_default_material_dark = global::HuntLog.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_default_material_light = global::HuntLog.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_disabled_material_dark = global::HuntLog.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.secondary_text_disabled_material_light = global::HuntLog.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.segmented_control_text = global::HuntLog.Droid.Resource.Color.segmented_control_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.selected = global::HuntLog.Droid.Resource.Color.selected;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::HuntLog.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_disabled_material_light = global::HuntLog.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_material_dark = global::HuntLog.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_material_light = global::HuntLog.Droid.Resource.Color.switch_thumb_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_normal_material_dark = global::HuntLog.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.switch_thumb_normal_material_light = global::HuntLog.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.tooltip_background_dark = global::HuntLog.Droid.Resource.Color.tooltip_background_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Color.tooltip_background_light = global::HuntLog.Droid.Resource.Color.tooltip_background_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_progress_bar_size = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::HuntLog.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_height_material = global::HuntLog.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_width_material = global::HuntLog.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::HuntLog.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::HuntLog.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::HuntLog.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::HuntLog.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::HuntLog.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::HuntLog.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::HuntLog.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::HuntLog.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_corner_material = global::HuntLog.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_inset_material = global::HuntLog.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_control_padding_material = global::HuntLog.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::HuntLog.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::HuntLog.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::HuntLog.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::HuntLog.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::HuntLog.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::HuntLog.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_min_width_major = global::HuntLog.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::HuntLog.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_padding_material = global::HuntLog.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::HuntLog.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::HuntLog.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::HuntLog.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::HuntLog.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::HuntLog.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::HuntLog.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::HuntLog.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::HuntLog.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::HuntLog.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::HuntLog.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_floating_window_z = global::HuntLog.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::HuntLog.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_panel_menu_list_width = global::HuntLog.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_progress_bar_height_material = global::HuntLog.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_search_view_preferred_height = global::HuntLog.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_search_view_preferred_width = global::HuntLog.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::HuntLog.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::HuntLog.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::HuntLog.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_switch_padding = global::HuntLog.Droid.Resource.Dimension.abc_switch_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_body_1_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_body_2_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_button_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_caption_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_1_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_2_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_3_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_display_4_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_headline_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_large_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_medium_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_menu_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_small_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_subhead_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::HuntLog.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_title_material = global::HuntLog.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::HuntLog.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::HuntLog.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_default_elevation = global::HuntLog.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.cardview_default_radius = global::HuntLog.Droid.Resource.Dimension.cardview_default_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::HuntLog.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::HuntLog.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::HuntLog.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::HuntLog.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.compat_control_corner_material = global::HuntLog.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_appbar_elevation = global::HuntLog.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_height = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_margin = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::HuntLog.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::HuntLog.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::HuntLog.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_border_width = global::HuntLog.Droid.Resource.Dimension.design_fab_border_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_elevation = global::HuntLog.Droid.Resource.Dimension.design_fab_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_image_size = global::HuntLog.Droid.Resource.Dimension.design_fab_image_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_size_mini = global::HuntLog.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_size_normal = global::HuntLog.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::HuntLog.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_elevation = global::HuntLog.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_icon_padding = global::HuntLog.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_icon_size = global::HuntLog.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_max_width = global::HuntLog.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_padding_bottom = global::HuntLog.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::HuntLog.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::HuntLog.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::HuntLog.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_elevation = global::HuntLog.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::HuntLog.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_max_width = global::HuntLog.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_min_width = global::HuntLog.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::HuntLog.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::HuntLog.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::HuntLog.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_snackbar_text_size = global::HuntLog.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_max_width = global::HuntLog.Droid.Resource.Dimension.design_tab_max_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::HuntLog.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_text_size = global::HuntLog.Droid.Resource.Dimension.design_tab_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.design_tab_text_size_2line = global::HuntLog.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.disabled_alpha_material_dark = global::HuntLog.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.disabled_alpha_material_light = global::HuntLog.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_default_thickness = global::HuntLog.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_margin = global::HuntLog.Droid.Resource.Dimension.fastscroll_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.fastscroll_minimum_range = global::HuntLog.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_colored = global::HuntLog.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_dark = global::HuntLog.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.highlight_alpha_material_light = global::HuntLog.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_alpha_material_dark = global::HuntLog.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_alpha_material_light = global::HuntLog.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::HuntLog.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::HuntLog.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::HuntLog.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::HuntLog.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::HuntLog.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::HuntLog.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::HuntLog.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::HuntLog.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::HuntLog.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::HuntLog.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::HuntLog.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_action_icon_size = global::HuntLog.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_action_text_size = global::HuntLog.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_big_circle_margin = global::HuntLog.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_content_margin_start = global::HuntLog.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_large_icon_height = global::HuntLog.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_large_icon_width = global::HuntLog.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_main_column_padding_top = global::HuntLog.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_media_narrow_margin = global::HuntLog.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_right_icon_size = global::HuntLog.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_right_side_padding_top = global::HuntLog.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_small_icon_background_padding = global::HuntLog.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::HuntLog.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_subtext_size = global::HuntLog.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_top_pad = global::HuntLog.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.notification_top_pad_large_text = global::HuntLog.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_corner_radius = global::HuntLog.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_horizontal_padding = global::HuntLog.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_margin = global::HuntLog.Droid.Resource.Dimension.tooltip_margin;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::HuntLog.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::HuntLog.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_vertical_padding = global::HuntLog.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::HuntLog.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Plugin.Segmented.Control.Droid.Resource.Dimension.tooltip_y_offset_touch = global::HuntLog.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::HuntLog.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_borderless_material = global::HuntLog.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_material = global::HuntLog.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::HuntLog.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::HuntLog.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_colored_material = global::HuntLog.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::HuntLog.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_material = global::HuntLog.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::HuntLog.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::HuntLog.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::HuntLog.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::HuntLog.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::HuntLog.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_top_material = global::HuntLog.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_control_background_material = global::HuntLog.Droid.Resource.Drawable.abc_control_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_dialog_material_background = global::HuntLog.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_edit_text_material = global::HuntLog.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_ab_back_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_clear_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_search_api_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::HuntLog.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::HuntLog.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_item_background_holo_dark = global::HuntLog.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_item_background_holo_light = global::HuntLog.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_focused_holo = global::HuntLog.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_longpressed_holo = global::HuntLog.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::HuntLog.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::HuntLog.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_list_selector_holo_light = global::HuntLog.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::HuntLog.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::HuntLog.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::HuntLog.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_material = global::HuntLog.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_ratingbar_small_material = global::HuntLog.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::HuntLog.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::HuntLog.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::HuntLog.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::HuntLog.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_seekbar_track_material = global::HuntLog.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::HuntLog.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::HuntLog.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_switch_thumb_material = global::HuntLog.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_tab_indicator_material = global::HuntLog.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_cursor_material = global::HuntLog.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::HuntLog.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::HuntLog.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_textfield_search_material = global::HuntLog.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.abc_vector_test = global::HuntLog.Droid.Resource.Drawable.abc_vector_test;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_hide_password = global::HuntLog.Droid.Resource.Drawable.avd_hide_password;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_hide_password_1 = global::HuntLog.Droid.Resource.Drawable.avd_hide_password_1;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_hide_password_2 = global::HuntLog.Droid.Resource.Drawable.avd_hide_password_2;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_hide_password_3 = global::HuntLog.Droid.Resource.Drawable.avd_hide_password_3;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_show_password = global::HuntLog.Droid.Resource.Drawable.avd_show_password;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_show_password_1 = global::HuntLog.Droid.Resource.Drawable.avd_show_password_1;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_show_password_2 = global::HuntLog.Droid.Resource.Drawable.avd_show_password_2;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.avd_show_password_3 = global::HuntLog.Droid.Resource.Drawable.avd_show_password_3;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::HuntLog.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_fab_background = global::HuntLog.Droid.Resource.Drawable.design_fab_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_ic_visibility = global::HuntLog.Droid.Resource.Drawable.design_ic_visibility;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_ic_visibility_off = global::HuntLog.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_password_eye = global::HuntLog.Droid.Resource.Drawable.design_password_eye;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.design_snackbar_background = global::HuntLog.Droid.Resource.Drawable.design_snackbar_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_audiotrack_dark = global::HuntLog.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_audiotrack_light = global::HuntLog.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_dialog_close_dark = global::HuntLog.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_dialog_close_light = global::HuntLog.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_00 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_01 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_02 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_03 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_04 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_05 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_06 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_07 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_08 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_09 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_10 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_11 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_12 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_13 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_14 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_collapse_15 = global::HuntLog.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_00 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_00;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_01 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_01;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_02 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_02;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_03 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_03;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_04 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_04;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_05 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_05;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_06 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_06;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_07 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_07;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_08 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_08;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_09 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_09;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_10 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_10;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_11 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_11;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_12 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_12;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_13 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_13;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_14 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_14;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_group_expand_15 = global::HuntLog.Droid.Resource.Drawable.ic_group_expand_15;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_pause_dark = global::HuntLog.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_pause_light = global::HuntLog.Droid.Resource.Drawable.ic_media_pause_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_play_dark = global::HuntLog.Droid.Resource.Drawable.ic_media_play_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_play_light = global::HuntLog.Droid.Resource.Drawable.ic_media_play_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_stop_dark = global::HuntLog.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_media_stop_light = global::HuntLog.Droid.Resource.Drawable.ic_media_stop_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_00_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_00_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_01_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_01_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_02_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_02_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_03_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_03_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_04_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_04_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_05_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_05_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_06_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_06_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_07_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_07_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_08_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_08_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_09_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_09_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_10_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_10_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_11_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_11_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_12_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_12_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_13_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_13_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_14_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_14_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_15_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_15_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_16_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_16_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_17_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_17_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_18_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_18_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_19_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_19_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_20_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_20_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_21_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_21_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_22_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_22_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_23_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_23_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_23_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_23_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_24_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_24_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_24_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_24_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_25_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_25_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_25_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_25_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_26_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_26_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_26_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_26_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_27_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_27_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_27_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_27_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_28_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_28_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_28_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_28_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_29_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_29_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_29_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_29_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_30_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_30_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connected_30_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connected_30_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_00_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_01_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_02_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_03_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_04_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_05_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_06_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_07_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_08_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_09_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_10_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_11_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_12_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_13_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_14_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_15_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_16_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_17_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_18_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_19_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_20_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_21_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_22_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_23_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_23_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_24_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_24_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_25_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_25_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_26_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_26_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_27_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_27_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_28_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_28_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_29_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_29_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_connecting_30_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_connecting_30_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disabled_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disabled_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disconnected_dark = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_disconnected_light = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_mr_button_grey = global::HuntLog.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_dark = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_group_light = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_speaker_light = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_tv_dark = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.ic_vol_type_tv_light = global::HuntLog.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connected_dark = global::HuntLog.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connected_light = global::HuntLog.Droid.Resource.Drawable.mr_button_connected_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connecting_dark = global::HuntLog.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_connecting_light = global::HuntLog.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_dark = global::HuntLog.Droid.Resource.Drawable.mr_button_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_button_light = global::HuntLog.Droid.Resource.Drawable.mr_button_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_close_dark = global::HuntLog.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_close_light = global::HuntLog.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::HuntLog.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_dialog_material_background_light = global::HuntLog.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_group_collapse = global::HuntLog.Droid.Resource.Drawable.mr_group_collapse;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_group_expand = global::HuntLog.Droid.Resource.Drawable.mr_group_expand;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_pause_dark = global::HuntLog.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_pause_light = global::HuntLog.Droid.Resource.Drawable.mr_media_pause_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_play_dark = global::HuntLog.Droid.Resource.Drawable.mr_media_play_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_play_light = global::HuntLog.Droid.Resource.Drawable.mr_media_play_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_stop_dark = global::HuntLog.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_media_stop_light = global::HuntLog.Droid.Resource.Drawable.mr_media_stop_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark = global::HuntLog.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.mr_vol_type_audiotrack_light = global::HuntLog.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.navigation_empty_icon = global::HuntLog.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_action_background = global::HuntLog.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg = global::HuntLog.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low = global::HuntLog.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low_normal = global::HuntLog.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_low_pressed = global::HuntLog.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_normal = global::HuntLog.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_bg_normal_pressed = global::HuntLog.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_icon_background = global::HuntLog.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_template_icon_bg = global::HuntLog.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_template_icon_low_bg = global::HuntLog.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notification_tile_bg = global::HuntLog.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::HuntLog.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_background = global::HuntLog.Droid.Resource.Drawable.segmented_control_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_first_background = global::HuntLog.Droid.Resource.Drawable.segmented_control_first_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.segmented_control_last_background = global::HuntLog.Droid.Resource.Drawable.segmented_control_last_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.tooltip_frame_dark = global::HuntLog.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Drawable.tooltip_frame_light = global::HuntLog.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ALT = global::HuntLog.Droid.Resource.Id.ALT;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.CTRL = global::HuntLog.Droid.Resource.Id.CTRL;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.FUNCTION = global::HuntLog.Droid.Resource.Id.FUNCTION;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.META = global::HuntLog.Droid.Resource.Id.META;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SHIFT = global::HuntLog.Droid.Resource.Id.SHIFT;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SYM = global::HuntLog.Droid.Resource.Id.SYM;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.SegControl = global::HuntLog.Droid.Resource.Id.SegControl;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action0 = global::HuntLog.Droid.Resource.Id.action0;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar = global::HuntLog.Droid.Resource.Id.action_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_activity_content = global::HuntLog.Droid.Resource.Id.action_bar_activity_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_container = global::HuntLog.Droid.Resource.Id.action_bar_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_root = global::HuntLog.Droid.Resource.Id.action_bar_root;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_spinner = global::HuntLog.Droid.Resource.Id.action_bar_spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_subtitle = global::HuntLog.Droid.Resource.Id.action_bar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_bar_title = global::HuntLog.Droid.Resource.Id.action_bar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_container = global::HuntLog.Droid.Resource.Id.action_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_context_bar = global::HuntLog.Droid.Resource.Id.action_context_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_divider = global::HuntLog.Droid.Resource.Id.action_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_image = global::HuntLog.Droid.Resource.Id.action_image;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_menu_divider = global::HuntLog.Droid.Resource.Id.action_menu_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_menu_presenter = global::HuntLog.Droid.Resource.Id.action_menu_presenter;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_bar = global::HuntLog.Droid.Resource.Id.action_mode_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_bar_stub = global::HuntLog.Droid.Resource.Id.action_mode_bar_stub;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_mode_close_button = global::HuntLog.Droid.Resource.Id.action_mode_close_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.action_text = global::HuntLog.Droid.Resource.Id.action_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.actions = global::HuntLog.Droid.Resource.Id.actions;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.activity_chooser_view_content = global::HuntLog.Droid.Resource.Id.activity_chooser_view_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.add = global::HuntLog.Droid.Resource.Id.add;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.alertTitle = global::HuntLog.Droid.Resource.Id.alertTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.all = global::HuntLog.Droid.Resource.Id.all;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.always = global::HuntLog.Droid.Resource.Id.always;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.async = global::HuntLog.Droid.Resource.Id.async;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.auto = global::HuntLog.Droid.Resource.Id.auto;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.beginning = global::HuntLog.Droid.Resource.Id.beginning;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.blocking = global::HuntLog.Droid.Resource.Id.blocking;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.bottom = global::HuntLog.Droid.Resource.Id.bottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.buttonPanel = global::HuntLog.Droid.Resource.Id.buttonPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.cancel_action = global::HuntLog.Droid.Resource.Id.cancel_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center = global::HuntLog.Droid.Resource.Id.center;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center_horizontal = global::HuntLog.Droid.Resource.Id.center_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.center_vertical = global::HuntLog.Droid.Resource.Id.center_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.checkbox = global::HuntLog.Droid.Resource.Id.checkbox;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.chronometer = global::HuntLog.Droid.Resource.Id.chronometer;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.clip_horizontal = global::HuntLog.Droid.Resource.Id.clip_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.clip_vertical = global::HuntLog.Droid.Resource.Id.clip_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.collapseActionView = global::HuntLog.Droid.Resource.Id.collapseActionView;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.container = global::HuntLog.Droid.Resource.Id.container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.contentPanel = global::HuntLog.Droid.Resource.Id.contentPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.coordinator = global::HuntLog.Droid.Resource.Id.coordinator;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.custom = global::HuntLog.Droid.Resource.Id.custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.customPanel = global::HuntLog.Droid.Resource.Id.customPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.decor_content_parent = global::HuntLog.Droid.Resource.Id.decor_content_parent;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.default_activity_button = global::HuntLog.Droid.Resource.Id.default_activity_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_bottom_sheet = global::HuntLog.Droid.Resource.Id.design_bottom_sheet;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_action_area = global::HuntLog.Droid.Resource.Id.design_menu_item_action_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_action_area_stub = global::HuntLog.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_menu_item_text = global::HuntLog.Droid.Resource.Id.design_menu_item_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.design_navigation_view = global::HuntLog.Droid.Resource.Id.design_navigation_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.disableHome = global::HuntLog.Droid.Resource.Id.disableHome;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.edit_query = global::HuntLog.Droid.Resource.Id.edit_query;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.end = global::HuntLog.Droid.Resource.Id.end;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.end_padder = global::HuntLog.Droid.Resource.Id.end_padder;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.enterAlways = global::HuntLog.Droid.Resource.Id.enterAlways;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.enterAlwaysCollapsed = global::HuntLog.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.exitUntilCollapsed = global::HuntLog.Droid.Resource.Id.exitUntilCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.expand_activities_button = global::HuntLog.Droid.Resource.Id.expand_activities_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.expanded_menu = global::HuntLog.Droid.Resource.Id.expanded_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill = global::HuntLog.Droid.Resource.Id.fill;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill_horizontal = global::HuntLog.Droid.Resource.Id.fill_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.fill_vertical = global::HuntLog.Droid.Resource.Id.fill_vertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.@fixed = global::HuntLog.Droid.Resource.Id.@fixed;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.forever = global::HuntLog.Droid.Resource.Id.forever;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ghost_view = global::HuntLog.Droid.Resource.Id.ghost_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.home = global::HuntLog.Droid.Resource.Id.home;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.homeAsUp = global::HuntLog.Droid.Resource.Id.homeAsUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.icon = global::HuntLog.Droid.Resource.Id.icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.icon_group = global::HuntLog.Droid.Resource.Id.icon_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.ifRoom = global::HuntLog.Droid.Resource.Id.ifRoom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.image = global::HuntLog.Droid.Resource.Id.image;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.info = global::HuntLog.Droid.Resource.Id.info;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.italic = global::HuntLog.Droid.Resource.Id.italic;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.item_touch_helper_previous_elevation = global::HuntLog.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.largeLabel = global::HuntLog.Droid.Resource.Id.largeLabel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.left = global::HuntLog.Droid.Resource.Id.left;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.line1 = global::HuntLog.Droid.Resource.Id.line1;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.line3 = global::HuntLog.Droid.Resource.Id.line3;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.listMode = global::HuntLog.Droid.Resource.Id.listMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.list_item = global::HuntLog.Droid.Resource.Id.list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.masked = global::HuntLog.Droid.Resource.Id.masked;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.media_actions = global::HuntLog.Droid.Resource.Id.media_actions;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.message = global::HuntLog.Droid.Resource.Id.message;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.middle = global::HuntLog.Droid.Resource.Id.middle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mini = global::HuntLog.Droid.Resource.Id.mini;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_art = global::HuntLog.Droid.Resource.Id.mr_art;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_list = global::HuntLog.Droid.Resource.Id.mr_chooser_list;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_desc = global::HuntLog.Droid.Resource.Id.mr_chooser_route_desc;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_icon = global::HuntLog.Droid.Resource.Id.mr_chooser_route_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_route_name = global::HuntLog.Droid.Resource.Id.mr_chooser_route_name;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_chooser_title = global::HuntLog.Droid.Resource.Id.mr_chooser_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_close = global::HuntLog.Droid.Resource.Id.mr_close;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_divider = global::HuntLog.Droid.Resource.Id.mr_control_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_playback_ctrl = global::HuntLog.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_subtitle = global::HuntLog.Droid.Resource.Id.mr_control_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_title = global::HuntLog.Droid.Resource.Id.mr_control_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_control_title_container = global::HuntLog.Droid.Resource.Id.mr_control_title_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_custom_control = global::HuntLog.Droid.Resource.Id.mr_custom_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_default_control = global::HuntLog.Droid.Resource.Id.mr_default_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_dialog_area = global::HuntLog.Droid.Resource.Id.mr_dialog_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_expandable_area = global::HuntLog.Droid.Resource.Id.mr_expandable_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_group_expand_collapse = global::HuntLog.Droid.Resource.Id.mr_group_expand_collapse;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_media_main_control = global::HuntLog.Droid.Resource.Id.mr_media_main_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_name = global::HuntLog.Droid.Resource.Id.mr_name;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_playback_control = global::HuntLog.Droid.Resource.Id.mr_playback_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_title_bar = global::HuntLog.Droid.Resource.Id.mr_title_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_control = global::HuntLog.Droid.Resource.Id.mr_volume_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_group_list = global::HuntLog.Droid.Resource.Id.mr_volume_group_list;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_item_icon = global::HuntLog.Droid.Resource.Id.mr_volume_item_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.mr_volume_slider = global::HuntLog.Droid.Resource.Id.mr_volume_slider;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.multiply = global::HuntLog.Droid.Resource.Id.multiply;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.navigation_header_container = global::HuntLog.Droid.Resource.Id.navigation_header_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.never = global::HuntLog.Droid.Resource.Id.never;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.none = global::HuntLog.Droid.Resource.Id.none;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.normal = global::HuntLog.Droid.Resource.Id.normal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_background = global::HuntLog.Droid.Resource.Id.notification_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_main_column = global::HuntLog.Droid.Resource.Id.notification_main_column;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.notification_main_column_container = global::HuntLog.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parallax = global::HuntLog.Droid.Resource.Id.parallax;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parentPanel = global::HuntLog.Droid.Resource.Id.parentPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.parent_matrix = global::HuntLog.Droid.Resource.Id.parent_matrix;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.pin = global::HuntLog.Droid.Resource.Id.pin;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.progress_circular = global::HuntLog.Droid.Resource.Id.progress_circular;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.progress_horizontal = global::HuntLog.Droid.Resource.Id.progress_horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.radio = global::HuntLog.Droid.Resource.Id.radio;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right = global::HuntLog.Droid.Resource.Id.right;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right_icon = global::HuntLog.Droid.Resource.Id.right_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.right_side = global::HuntLog.Droid.Resource.Id.right_side;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_image_matrix = global::HuntLog.Droid.Resource.Id.save_image_matrix;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_non_transition_alpha = global::HuntLog.Droid.Resource.Id.save_non_transition_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.save_scale_type = global::HuntLog.Droid.Resource.Id.save_scale_type;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.screen = global::HuntLog.Droid.Resource.Id.screen;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scroll = global::HuntLog.Droid.Resource.Id.scroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollIndicatorDown = global::HuntLog.Droid.Resource.Id.scrollIndicatorDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollIndicatorUp = global::HuntLog.Droid.Resource.Id.scrollIndicatorUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollView = global::HuntLog.Droid.Resource.Id.scrollView;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.scrollable = global::HuntLog.Droid.Resource.Id.scrollable;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_badge = global::HuntLog.Droid.Resource.Id.search_badge;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_bar = global::HuntLog.Droid.Resource.Id.search_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_button = global::HuntLog.Droid.Resource.Id.search_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_close_btn = global::HuntLog.Droid.Resource.Id.search_close_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_edit_frame = global::HuntLog.Droid.Resource.Id.search_edit_frame;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_go_btn = global::HuntLog.Droid.Resource.Id.search_go_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_mag_icon = global::HuntLog.Droid.Resource.Id.search_mag_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_plate = global::HuntLog.Droid.Resource.Id.search_plate;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_src_text = global::HuntLog.Droid.Resource.Id.search_src_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.search_voice_btn = global::HuntLog.Droid.Resource.Id.search_voice_btn;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.select_dialog_listview = global::HuntLog.Droid.Resource.Id.select_dialog_listview;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shape_id = global::HuntLog.Droid.Resource.Id.shape_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.shortcut = global::HuntLog.Droid.Resource.Id.shortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showCustom = global::HuntLog.Droid.Resource.Id.showCustom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showHome = global::HuntLog.Droid.Resource.Id.showHome;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.showTitle = global::HuntLog.Droid.Resource.Id.showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.smallLabel = global::HuntLog.Droid.Resource.Id.smallLabel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snackbar_action = global::HuntLog.Droid.Resource.Id.snackbar_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snackbar_text = global::HuntLog.Droid.Resource.Id.snackbar_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.snap = global::HuntLog.Droid.Resource.Id.snap;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.spacer = global::HuntLog.Droid.Resource.Id.spacer;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.split_action_bar = global::HuntLog.Droid.Resource.Id.split_action_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_atop = global::HuntLog.Droid.Resource.Id.src_atop;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_in = global::HuntLog.Droid.Resource.Id.src_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.src_over = global::HuntLog.Droid.Resource.Id.src_over;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.start = global::HuntLog.Droid.Resource.Id.start;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.status_bar_latest_event_content = global::HuntLog.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.submenuarrow = global::HuntLog.Droid.Resource.Id.submenuarrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.submit_area = global::HuntLog.Droid.Resource.Id.submit_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.tabMode = global::HuntLog.Droid.Resource.Id.tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.tag_transition_group = global::HuntLog.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text = global::HuntLog.Droid.Resource.Id.text;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text2 = global::HuntLog.Droid.Resource.Id.text2;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textSpacerNoButtons = global::HuntLog.Droid.Resource.Id.textSpacerNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textSpacerNoTitle = global::HuntLog.Droid.Resource.Id.textSpacerNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.text_input_password_toggle = global::HuntLog.Droid.Resource.Id.text_input_password_toggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textinput_counter = global::HuntLog.Droid.Resource.Id.textinput_counter;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.textinput_error = global::HuntLog.Droid.Resource.Id.textinput_error;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.time = global::HuntLog.Droid.Resource.Id.time;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.title = global::HuntLog.Droid.Resource.Id.title;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.titleDividerNoCustom = global::HuntLog.Droid.Resource.Id.titleDividerNoCustom;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.title_template = global::HuntLog.Droid.Resource.Id.title_template;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.top = global::HuntLog.Droid.Resource.Id.top;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.topPanel = global::HuntLog.Droid.Resource.Id.topPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.touch_outside = global::HuntLog.Droid.Resource.Id.touch_outside;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_current_scene = global::HuntLog.Droid.Resource.Id.transition_current_scene;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_layout_save = global::HuntLog.Droid.Resource.Id.transition_layout_save;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_position = global::HuntLog.Droid.Resource.Id.transition_position;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_scene_layoutid_cache = global::HuntLog.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.transition_transform = global::HuntLog.Droid.Resource.Id.transition_transform;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.uniform = global::HuntLog.Droid.Resource.Id.uniform;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.up = global::HuntLog.Droid.Resource.Id.up;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.useLogo = global::HuntLog.Droid.Resource.Id.useLogo;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.view_offset_helper = global::HuntLog.Droid.Resource.Id.view_offset_helper;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.visible = global::HuntLog.Droid.Resource.Id.visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.volume_item_container = global::HuntLog.Droid.Resource.Id.volume_item_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.withText = global::HuntLog.Droid.Resource.Id.withText;
+			global::Plugin.Segmented.Control.Droid.Resource.Id.wrap_content = global::HuntLog.Droid.Resource.Id.wrap_content;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.abc_config_activityDefaultDur = global::HuntLog.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.abc_config_activityShortDur = global::HuntLog.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::HuntLog.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.bottom_sheet_slide_duration = global::HuntLog.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.cancel_button_image_alpha = global::HuntLog.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.config_tooltipAnimTime = global::HuntLog.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.design_snackbar_text_max_lines = global::HuntLog.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.hide_password_duration = global::HuntLog.Droid.Resource.Integer.hide_password_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::HuntLog.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::HuntLog.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::HuntLog.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.show_password_duration = global::HuntLog.Droid.Resource.Integer.show_password_duration;
+			global::Plugin.Segmented.Control.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::HuntLog.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.Segmented.Control.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::HuntLog.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::HuntLog.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_bar_title_item = global::HuntLog.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_bar_up_container = global::HuntLog.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_menu_item_layout = global::HuntLog.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_menu_layout = global::HuntLog.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_mode_bar = global::HuntLog.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_action_mode_close_item_material = global::HuntLog.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_activity_chooser_view = global::HuntLog.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::HuntLog.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::HuntLog.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_material = global::HuntLog.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_alert_dialog_title_material = global::HuntLog.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_dialog_title_material = global::HuntLog.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_expanded_menu_layout = global::HuntLog.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::HuntLog.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_icon = global::HuntLog.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_layout = global::HuntLog.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_list_menu_item_radio = global::HuntLog.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::HuntLog.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_popup_menu_item_layout = global::HuntLog.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_content_include = global::HuntLog.Droid.Resource.Layout.abc_screen_content_include;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_simple = global::HuntLog.Droid.Resource.Layout.abc_screen_simple;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::HuntLog.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_screen_toolbar = global::HuntLog.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::HuntLog.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_search_view = global::HuntLog.Droid.Resource.Layout.abc_search_view;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.abc_select_dialog_material = global::HuntLog.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_bottom_navigation_item = global::HuntLog.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_bottom_sheet_dialog = global::HuntLog.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_snackbar = global::HuntLog.Droid.Resource.Layout.design_layout_snackbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_snackbar_include = global::HuntLog.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_tab_icon = global::HuntLog.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_layout_tab_text = global::HuntLog.Droid.Resource.Layout.design_layout_tab_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_menu_item_action_area = global::HuntLog.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item = global::HuntLog.Droid.Resource.Layout.design_navigation_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_header = global::HuntLog.Droid.Resource.Layout.design_navigation_item_header;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_separator = global::HuntLog.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_item_subheader = global::HuntLog.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_menu = global::HuntLog.Droid.Resource.Layout.design_navigation_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_navigation_menu_item = global::HuntLog.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.design_text_input_password_icon = global::HuntLog.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_chooser_dialog = global::HuntLog.Droid.Resource.Layout.mr_chooser_dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_chooser_list_item = global::HuntLog.Droid.Resource.Layout.mr_chooser_list_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_controller_material_dialog_b = global::HuntLog.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_controller_volume_item = global::HuntLog.Droid.Resource.Layout.mr_controller_volume_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_playback_control = global::HuntLog.Droid.Resource.Layout.mr_playback_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.mr_volume_control = global::HuntLog.Droid.Resource.Layout.mr_volume_control;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_action = global::HuntLog.Droid.Resource.Layout.notification_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_action_tombstone = global::HuntLog.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_media_action = global::HuntLog.Droid.Resource.Layout.notification_media_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_media_cancel_action = global::HuntLog.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media = global::HuntLog.Droid.Resource.Layout.notification_template_big_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_custom = global::HuntLog.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_narrow = global::HuntLog.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::HuntLog.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_custom_big = global::HuntLog.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_icon_group = global::HuntLog.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_lines_media = global::HuntLog.Droid.Resource.Layout.notification_template_lines_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_media = global::HuntLog.Droid.Resource.Layout.notification_template_media;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_media_custom = global::HuntLog.Droid.Resource.Layout.notification_template_media_custom;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_part_chronometer = global::HuntLog.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.notification_template_part_time = global::HuntLog.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.RadioButton = global::HuntLog.Droid.Resource.Layout.RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.RadioGroup = global::HuntLog.Droid.Resource.Layout.RadioGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_item_material = global::HuntLog.Droid.Resource.Layout.select_dialog_item_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_multichoice_material = global::HuntLog.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.select_dialog_singlechoice_material = global::HuntLog.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::HuntLog.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Plugin.Segmented.Control.Droid.Resource.Layout.tooltip = global::HuntLog.Droid.Resource.Layout.tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_bar_home_description = global::HuntLog.Droid.Resource.String.abc_action_bar_home_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_bar_up_description = global::HuntLog.Droid.Resource.String.abc_action_bar_up_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_menu_overflow_description = global::HuntLog.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_action_mode_done = global::HuntLog.Droid.Resource.String.abc_action_mode_done;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_activity_chooser_view_see_all = global::HuntLog.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_activitychooserview_choose_application = global::HuntLog.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_capital_off = global::HuntLog.Droid.Resource.String.abc_capital_off;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_capital_on = global::HuntLog.Droid.Resource.String.abc_capital_on;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_body_1_material = global::HuntLog.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_body_2_material = global::HuntLog.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_button_material = global::HuntLog.Droid.Resource.String.abc_font_family_button_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_caption_material = global::HuntLog.Droid.Resource.String.abc_font_family_caption_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_1_material = global::HuntLog.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_2_material = global::HuntLog.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_3_material = global::HuntLog.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_display_4_material = global::HuntLog.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_headline_material = global::HuntLog.Droid.Resource.String.abc_font_family_headline_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_menu_material = global::HuntLog.Droid.Resource.String.abc_font_family_menu_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_subhead_material = global::HuntLog.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_font_family_title_material = global::HuntLog.Droid.Resource.String.abc_font_family_title_material;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_search_hint = global::HuntLog.Droid.Resource.String.abc_search_hint;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_clear = global::HuntLog.Droid.Resource.String.abc_searchview_description_clear;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_query = global::HuntLog.Droid.Resource.String.abc_searchview_description_query;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_search = global::HuntLog.Droid.Resource.String.abc_searchview_description_search;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_submit = global::HuntLog.Droid.Resource.String.abc_searchview_description_submit;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_searchview_description_voice = global::HuntLog.Droid.Resource.String.abc_searchview_description_voice;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_shareactionprovider_share_with = global::HuntLog.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::HuntLog.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Plugin.Segmented.Control.Droid.Resource.String.abc_toolbar_collapse_description = global::HuntLog.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.appbar_scrolling_view_behavior = global::HuntLog.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.String.bottom_sheet_behavior = global::HuntLog.Droid.Resource.String.bottom_sheet_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.String.character_counter_pattern = global::HuntLog.Droid.Resource.String.character_counter_pattern;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_button_content_description = global::HuntLog.Droid.Resource.String.mr_button_content_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_connected = global::HuntLog.Droid.Resource.String.mr_cast_button_connected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_connecting = global::HuntLog.Droid.Resource.String.mr_cast_button_connecting;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_cast_button_disconnected = global::HuntLog.Droid.Resource.String.mr_cast_button_disconnected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_chooser_searching = global::HuntLog.Droid.Resource.String.mr_chooser_searching;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_chooser_title = global::HuntLog.Droid.Resource.String.mr_chooser_title;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_album_art = global::HuntLog.Droid.Resource.String.mr_controller_album_art;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_casting_screen = global::HuntLog.Droid.Resource.String.mr_controller_casting_screen;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_close_description = global::HuntLog.Droid.Resource.String.mr_controller_close_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_collapse_group = global::HuntLog.Droid.Resource.String.mr_controller_collapse_group;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_disconnect = global::HuntLog.Droid.Resource.String.mr_controller_disconnect;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_expand_group = global::HuntLog.Droid.Resource.String.mr_controller_expand_group;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_no_info_available = global::HuntLog.Droid.Resource.String.mr_controller_no_info_available;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_no_media_selected = global::HuntLog.Droid.Resource.String.mr_controller_no_media_selected;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_pause = global::HuntLog.Droid.Resource.String.mr_controller_pause;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_play = global::HuntLog.Droid.Resource.String.mr_controller_play;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_stop = global::HuntLog.Droid.Resource.String.mr_controller_stop;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_stop_casting = global::HuntLog.Droid.Resource.String.mr_controller_stop_casting;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_controller_volume_slider = global::HuntLog.Droid.Resource.String.mr_controller_volume_slider;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_system_route_name = global::HuntLog.Droid.Resource.String.mr_system_route_name;
+			global::Plugin.Segmented.Control.Droid.Resource.String.mr_user_route_category_name = global::HuntLog.Droid.Resource.String.mr_user_route_category_name;
+			global::Plugin.Segmented.Control.Droid.Resource.String.password_toggle_content_description = global::HuntLog.Droid.Resource.String.password_toggle_content_description;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye = global::HuntLog.Droid.Resource.String.path_password_eye;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye_mask_strike_through = global::HuntLog.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_eye_mask_visible = global::HuntLog.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.String.path_password_strike_through = global::HuntLog.Droid.Resource.String.path_password_strike_through;
+			global::Plugin.Segmented.Control.Droid.Resource.String.search_menu_title = global::HuntLog.Droid.Resource.String.search_menu_title;
+			global::Plugin.Segmented.Control.Droid.Resource.String.status_bar_notification_info_overflow = global::HuntLog.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.AlertDialog_AppCompat = global::HuntLog.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::HuntLog.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::HuntLog.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::HuntLog.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::HuntLog.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::HuntLog.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::HuntLog.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::HuntLog.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_CardView = global::HuntLog.Droid.Resource.Style.Base_CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::HuntLog.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::HuntLog.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::HuntLog.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::HuntLog.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::HuntLog.Droid.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::HuntLog.Droid.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::HuntLog.Droid.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::HuntLog.Droid.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::HuntLog.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::HuntLog.Droid.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::HuntLog.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::HuntLog.Droid.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::HuntLog.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::HuntLog.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::HuntLog.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::HuntLog.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::HuntLog.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_Design_AppBarLayout = global::HuntLog.Droid.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::HuntLog.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView = global::HuntLog.Droid.Resource.Style.CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView_Dark = global::HuntLog.Droid.Resource.Style.CardView_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.CardView_Light = global::HuntLog.Droid.Resource.Style.CardView_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::HuntLog.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V11_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_V11_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V11_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V14_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_V14_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V21_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V25_AppCompat = global::HuntLog.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::HuntLog.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::HuntLog.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::HuntLog.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::HuntLog.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::HuntLog.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::HuntLog.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::HuntLog.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Counter = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Error = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Hint = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Design_Tab = global::HuntLog.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::HuntLog.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::HuntLog.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_MediaRouter_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::HuntLog.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::HuntLog.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::HuntLog.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat = global::HuntLog.Droid.Resource.Style.Theme_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::HuntLog.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design = global::HuntLog.Droid.Resource.Style.Theme_Design;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::HuntLog.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light = global::HuntLog.Droid.Resource.Style.Theme_Design_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::HuntLog.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::HuntLog.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_Design_NoActionBar = global::HuntLog.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter = global::HuntLog.Droid.Resource.Style.Theme_MediaRouter;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_Light = global::HuntLog.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::HuntLog.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::HuntLog.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::HuntLog.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::HuntLog.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::HuntLog.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_EditText = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SearchView = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::HuntLog.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::HuntLog.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::HuntLog.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_AppBarLayout = global::HuntLog.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::HuntLog.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::HuntLog.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::HuntLog.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_CoordinatorLayout = global::HuntLog.Droid.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::HuntLog.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_NavigationView = global::HuntLog.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::HuntLog.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_Snackbar = global::HuntLog.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_TabLayout = global::HuntLog.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_Design_TextInputLayout = global::HuntLog.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::HuntLog.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::HuntLog.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar = global::HuntLog.Droid.Resource.Styleable.ActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_background = global::HuntLog.Droid.Resource.Styleable.ActionBar_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::HuntLog.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::HuntLog.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::HuntLog.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::HuntLog.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_displayOptions = global::HuntLog.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_divider = global::HuntLog.Droid.Resource.Styleable.ActionBar_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_elevation = global::HuntLog.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_height = global::HuntLog.Droid.Resource.Styleable.ActionBar_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::HuntLog.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::HuntLog.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_homeLayout = global::HuntLog.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_icon = global::HuntLog.Droid.Resource.Styleable.ActionBar_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::HuntLog.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_itemPadding = global::HuntLog.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_logo = global::HuntLog.Droid.Resource.Styleable.ActionBar_logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_navigationMode = global::HuntLog.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_popupTheme = global::HuntLog.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::HuntLog.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::HuntLog.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_subtitle = global::HuntLog.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::HuntLog.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_title = global::HuntLog.Droid.Resource.Styleable.ActionBar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::HuntLog.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBarLayout = global::HuntLog.Droid.Resource.Styleable.ActionBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::HuntLog.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuItemView = global::HuntLog.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::HuntLog.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMenuView = global::HuntLog.Droid.Resource.Styleable.ActionMenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode = global::HuntLog.Droid.Resource.Styleable.ActionMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_background = global::HuntLog.Droid.Resource.Styleable.ActionMode_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::HuntLog.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::HuntLog.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_height = global::HuntLog.Droid.Resource.Styleable.ActionMode_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::HuntLog.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::HuntLog.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView = global::HuntLog.Droid.Resource.Styleable.ActivityChooserView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::HuntLog.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::HuntLog.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog = global::HuntLog.Droid.Resource.Styleable.AlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_android_layout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_listLayout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_showTitle = global::HuntLog.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::HuntLog.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout = global::HuntLog.Droid.Resource.Styleable.AppBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_background = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_elevation = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_expanded = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates = global::HuntLog.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::HuntLog.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::HuntLog.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::HuntLog.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView = global::HuntLog.Droid.Resource.Styleable.AppCompatImageView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_android_src = global::HuntLog.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::HuntLog.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_tint = global::HuntLog.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::HuntLog.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar = global::HuntLog.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::HuntLog.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::HuntLog.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::HuntLog.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::HuntLog.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::HuntLog.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::HuntLog.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorError = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::HuntLog.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_elevation = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomNavigationView_menu = global::HuntLog.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::HuntLog.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::HuntLog.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::HuntLog.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::HuntLog.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ButtonBarLayout = global::HuntLog.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::HuntLog.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView = global::HuntLog.Droid.Resource.Styleable.CardView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_android_minHeight = global::HuntLog.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_android_minWidth = global::HuntLog.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::HuntLog.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardCornerRadius = global::HuntLog.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardElevation = global::HuntLog.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardMaxElevation = global::HuntLog.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::HuntLog.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::HuntLog.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPadding = global::HuntLog.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::HuntLog.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::HuntLog.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingRight = global::HuntLog.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CardView_contentPaddingTop = global::HuntLog.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::HuntLog.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem = global::HuntLog.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_alpha = global::HuntLog.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::HuntLog.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ColorStateListItem_android_color = global::HuntLog.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton = global::HuntLog.Droid.Resource.Styleable.CompoundButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_android_button = global::HuntLog.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_buttonTint = global::HuntLog.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::HuntLog.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::HuntLog.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme = global::HuntLog.Droid.Resource.Styleable.DesignTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::HuntLog.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::HuntLog.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DesignTheme_textColorError = global::HuntLog.Droid.Resource.Styleable.DesignTheme_textColorError;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_color = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::HuntLog.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_elevation = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::HuntLog.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily = global::HuntLog.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::HuntLog.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_font = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_font = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::HuntLog.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout = global::HuntLog.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::HuntLog.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::HuntLog.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::HuntLog.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::HuntLog.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow = global::HuntLog.Droid.Resource.Styleable.ListPopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::HuntLog.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::HuntLog.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton = global::HuntLog.Droid.Resource.Styleable.MediaRouteButton;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::HuntLog.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::HuntLog.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::HuntLog.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint = global::HuntLog.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup = global::HuntLog.Droid.Resource.Styleable.MenuGroup;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_enabled = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_id = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuGroup_android_visible = global::HuntLog.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem = global::HuntLog.Droid.Resource.Styleable.MenuItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionLayout = global::HuntLog.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::HuntLog.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_actionViewClass = global::HuntLog.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::HuntLog.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_checkable = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_checked = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_enabled = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_icon = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_id = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_onClick = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_title = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_android_visible = global::HuntLog.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_contentDescription = global::HuntLog.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_iconTint = global::HuntLog.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_iconTintMode = global::HuntLog.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_numericModifiers = global::HuntLog.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_showAsAction = global::HuntLog.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuItem_tooltipText = global::HuntLog.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView = global::HuntLog.Droid.Resource.Styleable.MenuView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_headerBackground = global::HuntLog.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::HuntLog.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemBackground = global::HuntLog.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::HuntLog.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::HuntLog.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::HuntLog.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::HuntLog.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::HuntLog.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.MenuView_subMenuArrow = global::HuntLog.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView = global::HuntLog.Droid.Resource.Styleable.NavigationView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_background = global::HuntLog.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::HuntLog.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::HuntLog.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_elevation = global::HuntLog.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_headerLayout = global::HuntLog.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemBackground = global::HuntLog.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemIconTint = global::HuntLog.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::HuntLog.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_itemTextColor = global::HuntLog.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.NavigationView_menu = global::HuntLog.Droid.Resource.Styleable.NavigationView_menu;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow = global::HuntLog.Droid.Resource.Styleable.PopupWindow;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::HuntLog.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::HuntLog.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::HuntLog.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindowBackgroundState = global::HuntLog.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::HuntLog.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView = global::HuntLog.Droid.Resource.Styleable.RecycleListView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::HuntLog.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::HuntLog.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView = global::HuntLog.Droid.Resource.Styleable.RecyclerView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::HuntLog.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_android_orientation = global::HuntLog.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::HuntLog.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::HuntLog.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::HuntLog.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::HuntLog.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::HuntLog.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_layoutManager = global::HuntLog.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::HuntLog.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_spanCount = global::HuntLog.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::HuntLog.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::HuntLog.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::HuntLog.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::HuntLog.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::HuntLog.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView = global::HuntLog.Droid.Resource.Styleable.SearchView;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_focusable = global::HuntLog.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_imeOptions = global::HuntLog.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_inputType = global::HuntLog.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_android_maxWidth = global::HuntLog.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_closeIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_commitIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::HuntLog.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_goIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::HuntLog.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_layout = global::HuntLog.Droid.Resource.Styleable.SearchView_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_queryBackground = global::HuntLog.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_queryHint = global::HuntLog.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_searchHintIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_searchIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_submitBackground = global::HuntLog.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::HuntLog.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SearchView_voiceIcon = global::HuntLog.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout = global::HuntLog.Droid.Resource.Styleable.SnackbarLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::HuntLog.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_elevation = global::HuntLog.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::HuntLog.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner = global::HuntLog.Droid.Resource.Styleable.Spinner;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::HuntLog.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_entries = global::HuntLog.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_popupBackground = global::HuntLog.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_android_prompt = global::HuntLog.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Spinner_popupTheme = global::HuntLog.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat = global::HuntLog.Droid.Resource.Styleable.SwitchCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_showText = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_track = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_trackTint = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::HuntLog.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem = global::HuntLog.Droid.Resource.Styleable.TabItem;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_icon = global::HuntLog.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_layout = global::HuntLog.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabItem_android_text = global::HuntLog.Droid.Resource.Styleable.TabItem_android_text;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout = global::HuntLog.Droid.Resource.Styleable.TabLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabBackground = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabContentStart = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabGravity = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabMode = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPadding = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TabLayout_tabTextColor = global::HuntLog.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance = global::HuntLog.Droid.Resource.Styleable.TextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColor = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textSize = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_android_typeface = global::HuntLog.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_fontFamily = global::HuntLog.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::HuntLog.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout = global::HuntLog.Droid.Resource.Styleable.TextInputLayout;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_android_hint = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::HuntLog.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar = global::HuntLog.Droid.Resource.Styleable.Toolbar;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_android_gravity = global::HuntLog.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_android_minHeight = global::HuntLog.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_buttonGravity = global::HuntLog.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::HuntLog.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_collapseIcon = global::HuntLog.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::HuntLog.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_logo = global::HuntLog.Droid.Resource.Styleable.Toolbar_logo;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_logoDescription = global::HuntLog.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::HuntLog.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::HuntLog.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_navigationIcon = global::HuntLog.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_popupTheme = global::HuntLog.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitle = global::HuntLog.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::HuntLog.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::HuntLog.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_title = global::HuntLog.Droid.Resource.Styleable.Toolbar_title;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMargin = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleMargins = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.Toolbar_titleTextColor = global::HuntLog.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View = global::HuntLog.Droid.Resource.Styleable.View;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_android_focusable = global::HuntLog.Droid.Resource.Styleable.View_android_focusable;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_android_theme = global::HuntLog.Droid.Resource.Styleable.View_android_theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_paddingEnd = global::HuntLog.Droid.Resource.Styleable.View_paddingEnd;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_paddingStart = global::HuntLog.Droid.Resource.Styleable.View_paddingStart;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.View_theme = global::HuntLog.Droid.Resource.Styleable.View_theme;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper = global::HuntLog.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::HuntLog.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::HuntLog.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::HuntLog.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat = global::HuntLog.Droid.Resource.Styleable.ViewStubCompat;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_id = global::HuntLog.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::HuntLog.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Plugin.Segmented.Control.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::HuntLog.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::HuntLog.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::HuntLog.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::HuntLog.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -3355,44 +5629,44 @@ namespace HuntLog.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0b0057
-			public const int abc_background_cache_hint_selector_material_dark = 2131427415;
-			
-			// aapt resource value: 0x7f0b0058
-			public const int abc_background_cache_hint_selector_material_light = 2131427416;
-			
 			// aapt resource value: 0x7f0b0059
-			public const int abc_btn_colored_borderless_text_material = 2131427417;
+			public const int abc_background_cache_hint_selector_material_dark = 2131427417;
 			
 			// aapt resource value: 0x7f0b005a
-			public const int abc_btn_colored_text_material = 2131427418;
+			public const int abc_background_cache_hint_selector_material_light = 2131427418;
 			
 			// aapt resource value: 0x7f0b005b
-			public const int abc_color_highlight_material = 2131427419;
+			public const int abc_btn_colored_borderless_text_material = 2131427419;
 			
 			// aapt resource value: 0x7f0b005c
-			public const int abc_hint_foreground_material_dark = 2131427420;
+			public const int abc_btn_colored_text_material = 2131427420;
 			
 			// aapt resource value: 0x7f0b005d
-			public const int abc_hint_foreground_material_light = 2131427421;
+			public const int abc_color_highlight_material = 2131427421;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int abc_hint_foreground_material_dark = 2131427422;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int abc_hint_foreground_material_light = 2131427423;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int abc_input_method_navigation_guard = 2131427340;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int abc_primary_text_disable_only_material_dark = 2131427422;
-			
-			// aapt resource value: 0x7f0b005f
-			public const int abc_primary_text_disable_only_material_light = 2131427423;
-			
 			// aapt resource value: 0x7f0b0060
-			public const int abc_primary_text_material_dark = 2131427424;
+			public const int abc_primary_text_disable_only_material_dark = 2131427424;
 			
 			// aapt resource value: 0x7f0b0061
-			public const int abc_primary_text_material_light = 2131427425;
+			public const int abc_primary_text_disable_only_material_light = 2131427425;
 			
 			// aapt resource value: 0x7f0b0062
-			public const int abc_search_url_text = 2131427426;
+			public const int abc_primary_text_material_dark = 2131427426;
+			
+			// aapt resource value: 0x7f0b0063
+			public const int abc_primary_text_material_light = 2131427427;
+			
+			// aapt resource value: 0x7f0b0064
+			public const int abc_search_url_text = 2131427428;
 			
 			// aapt resource value: 0x7f0b000d
 			public const int abc_search_url_text_normal = 2131427341;
@@ -3403,29 +5677,29 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b000f
 			public const int abc_search_url_text_selected = 2131427343;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int abc_secondary_text_material_dark = 2131427427;
-			
-			// aapt resource value: 0x7f0b0064
-			public const int abc_secondary_text_material_light = 2131427428;
-			
 			// aapt resource value: 0x7f0b0065
-			public const int abc_tint_btn_checkable = 2131427429;
+			public const int abc_secondary_text_material_dark = 2131427429;
 			
 			// aapt resource value: 0x7f0b0066
-			public const int abc_tint_default = 2131427430;
+			public const int abc_secondary_text_material_light = 2131427430;
 			
 			// aapt resource value: 0x7f0b0067
-			public const int abc_tint_edittext = 2131427431;
+			public const int abc_tint_btn_checkable = 2131427431;
 			
 			// aapt resource value: 0x7f0b0068
-			public const int abc_tint_seek_thumb = 2131427432;
+			public const int abc_tint_default = 2131427432;
 			
 			// aapt resource value: 0x7f0b0069
-			public const int abc_tint_spinner = 2131427433;
+			public const int abc_tint_edittext = 2131427433;
 			
 			// aapt resource value: 0x7f0b006a
-			public const int abc_tint_switch_track = 2131427434;
+			public const int abc_tint_seek_thumb = 2131427434;
+			
+			// aapt resource value: 0x7f0b006b
+			public const int abc_tint_spinner = 2131427435;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int abc_tint_switch_track = 2131427436;
 			
 			// aapt resource value: 0x7f0b0010
 			public const int accent_material_dark = 2131427344;
@@ -3481,17 +5755,17 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b000b
 			public const int cardview_shadow_start_color = 2131427339;
 			
+			// aapt resource value: 0x7f0b0058
+			public const int colorAccent = 2131427416;
+			
 			// aapt resource value: 0x7f0b0056
-			public const int colorAccent = 2131427414;
+			public const int colorPrimary = 2131427414;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int colorPrimary = 2131427412;
+			// aapt resource value: 0x7f0b0057
+			public const int colorPrimaryDark = 2131427415;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int colorPrimaryDark = 2131427413;
-			
-			// aapt resource value: 0x7f0b006b
-			public const int common_google_signin_btn_text_dark = 2131427435;
+			// aapt resource value: 0x7f0b006d
+			public const int common_google_signin_btn_text_dark = 2131427437;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int common_google_signin_btn_text_dark_default = 2131427328;
@@ -3505,8 +5779,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b0003
 			public const int common_google_signin_btn_text_dark_pressed = 2131427331;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int common_google_signin_btn_text_light = 2131427436;
+			// aapt resource value: 0x7f0b006e
+			public const int common_google_signin_btn_text_light = 2131427438;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int common_google_signin_btn_text_light_default = 2131427332;
@@ -3520,14 +5794,14 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b0007
 			public const int common_google_signin_btn_text_light_pressed = 2131427335;
 			
-			// aapt resource value: 0x7f0b006d
-			public const int common_google_signin_btn_tint = 2131427437;
+			// aapt resource value: 0x7f0b006f
+			public const int common_google_signin_btn_tint = 2131427439;
 			
 			// aapt resource value: 0x7f0b0048
 			public const int design_bottom_navigation_shadow_color = 2131427400;
 			
-			// aapt resource value: 0x7f0b006e
-			public const int design_error = 2131427438;
+			// aapt resource value: 0x7f0b0070
+			public const int design_error = 2131427440;
 			
 			// aapt resource value: 0x7f0b0049
 			public const int design_fab_shadow_end_color = 2131427401;
@@ -3553,8 +5827,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b0050
 			public const int design_snackbar_background_color = 2131427408;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int design_tint_password_toggle = 2131427439;
+			// aapt resource value: 0x7f0b0071
+			public const int design_tint_password_toggle = 2131427441;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int dim_foreground_disabled_material_dark = 2131427358;
@@ -3583,8 +5857,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b0026
 			public const int highlighted_text_material_light = 2131427366;
 			
-			// aapt resource value: 0x7f0b0053
-			public const int launcher_background = 2131427411;
+			// aapt resource value: 0x7f0b0055
+			public const int launcher_background = 2131427413;
 			
 			// aapt resource value: 0x7f0b0027
 			public const int material_blue_grey_800 = 2131427367;
@@ -3621,6 +5895,9 @@ namespace HuntLog.Droid
 			
 			// aapt resource value: 0x7f0b0032
 			public const int material_grey_900 = 2131427378;
+			
+			// aapt resource value: 0x7f0b0053
+			public const int normal = 2131427411;
 			
 			// aapt resource value: 0x7f0b0051
 			public const int notification_action_color_filter = 2131427409;
@@ -3673,17 +5950,23 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0b0040
 			public const int secondary_text_disabled_material_light = 2131427392;
 			
+			// aapt resource value: 0x7f0b0072
+			public const int segmented_control_text = 2131427442;
+			
+			// aapt resource value: 0x7f0b0054
+			public const int selected = 2131427412;
+			
 			// aapt resource value: 0x7f0b0041
 			public const int switch_thumb_disabled_material_dark = 2131427393;
 			
 			// aapt resource value: 0x7f0b0042
 			public const int switch_thumb_disabled_material_light = 2131427394;
 			
-			// aapt resource value: 0x7f0b0070
-			public const int switch_thumb_material_dark = 2131427440;
+			// aapt resource value: 0x7f0b0073
+			public const int switch_thumb_material_dark = 2131427443;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int switch_thumb_material_light = 2131427441;
+			// aapt resource value: 0x7f0b0074
+			public const int switch_thumb_material_light = 2131427444;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int switch_thumb_normal_material_dark = 2131427395;
@@ -4470,26 +6753,26 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020149
-			public const int avd_hide_password_1 = 2130837833;
+			// aapt resource value: 0x7f02014c
+			public const int avd_hide_password_1 = 2130837836;
 			
-			// aapt resource value: 0x7f02014a
-			public const int avd_hide_password_2 = 2130837834;
+			// aapt resource value: 0x7f02014d
+			public const int avd_hide_password_2 = 2130837837;
 			
-			// aapt resource value: 0x7f02014b
-			public const int avd_hide_password_3 = 2130837835;
+			// aapt resource value: 0x7f02014e
+			public const int avd_hide_password_3 = 2130837838;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f02014c
-			public const int avd_show_password_1 = 2130837836;
+			// aapt resource value: 0x7f02014f
+			public const int avd_show_password_1 = 2130837839;
 			
-			// aapt resource value: 0x7f02014d
-			public const int avd_show_password_2 = 2130837837;
+			// aapt resource value: 0x7f020150
+			public const int avd_show_password_2 = 2130837840;
 			
-			// aapt resource value: 0x7f02014e
-			public const int avd_show_password_3 = 2130837838;
+			// aapt resource value: 0x7f020151
+			public const int avd_show_password_3 = 2130837841;
 			
 			// aapt resource value: 0x7f020056
 			public const int camera = 2130837590;
@@ -5196,11 +7479,11 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f020140
 			public const int notification_icon_background = 2130837824;
 			
-			// aapt resource value: 0x7f020147
-			public const int notification_template_icon_bg = 2130837831;
+			// aapt resource value: 0x7f02014a
+			public const int notification_template_icon_bg = 2130837834;
 			
-			// aapt resource value: 0x7f020148
-			public const int notification_template_icon_low_bg = 2130837832;
+			// aapt resource value: 0x7f02014b
+			public const int notification_template_icon_low_bg = 2130837835;
 			
 			// aapt resource value: 0x7f020141
 			public const int notification_tile_bg = 2130837825;
@@ -5212,13 +7495,22 @@ namespace HuntLog.Droid
 			public const int photos = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int tooltip_frame_dark = 2130837828;
+			public const int segmented_control_background = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int tooltip_frame_light = 2130837829;
+			public const int segmented_control_first_background = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int trash = 2130837830;
+			public const int segmented_control_last_background = 2130837830;
+			
+			// aapt resource value: 0x7f020147
+			public const int tooltip_frame_dark = 2130837831;
+			
+			// aapt resource value: 0x7f020148
+			public const int tooltip_frame_light = 2130837832;
+			
+			// aapt resource value: 0x7f020149
+			public const int trash = 2130837833;
 			
 			static Drawable()
 			{
@@ -5250,6 +7542,9 @@ namespace HuntLog.Droid
 			
 			// aapt resource value: 0x7f0d0042
 			public const int SYM = 2131558466;
+			
+			// aapt resource value: 0x7f0d00d4
+			public const int SegControl = 2131558612;
 			
 			// aapt resource value: 0x7f0d00c4
 			public const int action0 = 2131558596;
@@ -5524,26 +7819,26 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0d006b
 			public const int list_item = 2131558507;
 			
-			// aapt resource value: 0x7f0d00d4
-			public const int main_appbar = 2131558612;
+			// aapt resource value: 0x7f0d00d5
+			public const int main_appbar = 2131558613;
+			
+			// aapt resource value: 0x7f0d00d8
+			public const int main_scrollview = 2131558616;
 			
 			// aapt resource value: 0x7f0d00d7
-			public const int main_scrollview = 2131558615;
+			public const int main_tablayout = 2131558615;
 			
 			// aapt resource value: 0x7f0d00d6
-			public const int main_tablayout = 2131558614;
+			public const int main_toolbar = 2131558614;
 			
-			// aapt resource value: 0x7f0d00d5
-			public const int main_toolbar = 2131558613;
-			
-			// aapt resource value: 0x7f0d00df
-			public const int masked = 2131558623;
+			// aapt resource value: 0x7f0d00e0
+			public const int masked = 2131558624;
 			
 			// aapt resource value: 0x7f0d00c7
 			public const int media_actions = 2131558599;
 			
-			// aapt resource value: 0x7f0d00dd
-			public const int message = 2131558621;
+			// aapt resource value: 0x7f0d00de
+			public const int message = 2131558622;
 			
 			// aapt resource value: 0x7f0d003c
 			public const int middle = 2131558460;
@@ -5743,14 +8038,17 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0d0094
 			public const int select_dialog_listview = 2131558548;
 			
-			// aapt resource value: 0x7f0d00d8
-			public const int shellcontent_appbar = 2131558616;
-			
-			// aapt resource value: 0x7f0d00da
-			public const int shellcontent_scrollview = 2131558618;
+			// aapt resource value: 0x7f0d00e1
+			public const int shape_id = 2131558625;
 			
 			// aapt resource value: 0x7f0d00d9
-			public const int shellcontent_toolbar = 2131558617;
+			public const int shellcontent_appbar = 2131558617;
+			
+			// aapt resource value: 0x7f0d00db
+			public const int shellcontent_scrollview = 2131558619;
+			
+			// aapt resource value: 0x7f0d00da
+			public const int shellcontent_toolbar = 2131558618;
 			
 			// aapt resource value: 0x7f0d007e
 			public const int shortcut = 2131558526;
@@ -5764,8 +8062,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0d0030
 			public const int showTitle = 2131558448;
 			
-			// aapt resource value: 0x7f0d00db
-			public const int sliding_tabs = 2131558619;
+			// aapt resource value: 0x7f0d00dc
+			public const int sliding_tabs = 2131558620;
 			
 			// aapt resource value: 0x7f0d0097
 			public const int smallLabel = 2131558551;
@@ -5851,8 +8149,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0d0079
 			public const int title_template = 2131558521;
 			
-			// aapt resource value: 0x7f0d00dc
-			public const int toolbar = 2131558620;
+			// aapt resource value: 0x7f0d00dd
+			public const int toolbar = 2131558621;
 			
 			// aapt resource value: 0x7f0d0049
 			public const int top = 2131558473;
@@ -5890,8 +8188,8 @@ namespace HuntLog.Droid
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d00de
-			public const int visible = 2131558622;
+			// aapt resource value: 0x7f0d00df
+			public const int visible = 2131558623;
 			
 			// aapt resource value: 0x7f0d00b9
 			public const int volume_item_container = 2131558585;
@@ -6182,31 +8480,37 @@ namespace HuntLog.Droid
 			public const int notification_template_part_time = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int RootLayout = 2130968639;
+			public const int RadioButton = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int select_dialog_item_material = 2130968640;
+			public const int RadioGroup = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int select_dialog_multichoice_material = 2130968641;
+			public const int RootLayout = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_singlechoice_material = 2130968642;
+			public const int select_dialog_item_material = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int ShellContent = 2130968643;
+			public const int select_dialog_multichoice_material = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int support_simple_spinner_dropdown_item = 2130968644;
+			public const int select_dialog_singlechoice_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int Tabbar = 2130968645;
+			public const int ShellContent = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int Toolbar = 2130968646;
+			public const int support_simple_spinner_dropdown_item = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int tooltip = 2130968647;
+			public const int Tabbar = 2130968647;
+			
+			// aapt resource value: 0x7f040048
+			public const int Toolbar = 2130968648;
+			
+			// aapt resource value: 0x7f040049
+			public const int tooltip = 2130968649;
 			
 			static Layout()
 			{

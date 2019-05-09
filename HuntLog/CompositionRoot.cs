@@ -15,6 +15,8 @@ using HuntLog.AppModule.Dogs;
 using HuntLog.AppModule.Species;
 using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Stats;
+using System.Reflection;
+using System.Linq;
 
 namespace HuntLog
 {
@@ -22,7 +24,6 @@ namespace HuntLog
     {       
         public void Compose(IServiceRegistry serviceRegistry)
         {
-
             _ = serviceRegistry
             .RegisterSingleton<INavigator>(f => new Navigator(f.GetInstance<Lazy<TabbedPage>>(), f))
             .RegisterSingleton<TabbedPage>(f => ((TabbedPage)Application.Current.MainPage))
@@ -42,6 +43,7 @@ namespace HuntLog
             .RegisterSingleton<IDialogService, DialogService>()
             .RegisterSingleton<IHuntFactory, HuntFactory>()
             .RegisterSingleton<ICustomFieldFactory, CustomFieldFactory>()
+
 
             .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
             .Register<HuntsView>()
@@ -109,8 +111,8 @@ namespace HuntLog
             .Register<StatsMapViewModel>()
             .Register<StatsMapView>()
 
-            .Register<StatsFilterViewModel>()
-            .Register<StatsFilterView>()
+            .RegisterSingleton<StatsFilterViewModel>()
+            .RegisterSingleton<StatsFilterView>()
 
             ;
         }

@@ -41,8 +41,7 @@ namespace HuntLog.AppModule.Stats
         public IEnumerable<Dog> Dogs { get; private set; }
 
         public Command MapCommand { get; set; }
-
-
+        public Command HitrateCommand { get; set; }
 
         public string Info { get; set; }
 
@@ -52,9 +51,9 @@ namespace HuntLog.AppModule.Stats
                               IBaseService<Jeger> hunterService,
                               IBaseService<Dog> dogService,
                               IBaseService<Art> specieService,
-                              INavigator navigator )
+                              INavigator navigator)
         {
-            CreateDummyDataCommand = new Command(async () =>  await GenerateDummyData());
+            CreateDummyDataCommand = new Command(async () => await GenerateDummyData());
             DeleteCommand = new Command(async () => await DeleteAll());
             _huntService = huntService;
             _logService = logService;
@@ -63,15 +62,16 @@ namespace HuntLog.AppModule.Stats
             _specieService = specieService;
             _navigator = navigator;
 
-            MapCommand = new Command(async () => { await ShowMap(); });
+            MapCommand = new Command(async () =>
+            {
+                await _navigator.PushAsync<StatsMapViewModel>();
+            });
 
+            HitrateCommand = new Command(async () =>
+            {
+                await _navigator.PushAsync<StatsMapViewModel>();
+            });
         }
-
-        private async Task ShowMap()
-        {
-            await _navigator.PushAsync<StatsMapViewModel>();
-        }
-
 
         private async Task DeleteAll()
         {
@@ -113,18 +113,20 @@ namespace HuntLog.AppModule.Stats
             Dogs = await _dogService.GetItems();
 
             /****************************************/
-
-            for (var i = 1; i <= 10; i++)
+            var count = 0;
+            for (var i = 1; i <= 30; i++)
             {
                 var item = CreateHunt(i);
                 await _huntService.Save(item);
 
-                for (var x = 1; x <= 10; x++)
+                for (var x = 1; x <= 20; x++)
                 {
-                    var log = CreateLog(x*i, i);
+                    var log = CreateLog(x*i, item);
                     await _logService.Save(log);
+                    count++;
                 }
             }
+            Console.WriteLine("Logs created: " + count);
 
             Hunts = await _huntService.GetItems();
             Logs = await _logService.GetItems();
@@ -165,13 +167,14 @@ namespace HuntLog.AppModule.Stats
                 .RuleFor(o => o.ID, f => id.ToString())
                 .RuleFor(u => u.Sted, (f, u) => f.Address.City())
                 .RuleFor(u => u.Notes, (f, u) => f.Rant.Review())
+                .RuleFor(x => x.DatoFra, (f, u) => f.Date.Between(DateTime.Now.AddYears(-10), DateTime.Now))
                 ;
+            faker.RuleFor(x => x.DatoTil, (f, u) => f.Date.Between(u.DatoFra, u.DatoFra.AddDays(rnd(0, 8))));
             var hunt = faker.Generate();
 
-            hunt.DatoFra = DateTime.Today.AddDays(rnd(-2000, 0));
             hunt.JegerIds = Hunters.Select(x => x.ID).Skip(rnd(0, 5)).Take(rnd(0, 5)).ToList();
             hunt.DogIds = Dogs.Select(x => x.ID).Skip(rnd(0, 5)).Take(rnd(0, 5)).ToList();
-            hunt.DatoTil = hunt.DatoFra.AddDays(rnd(0, 10));
+            //hunt.DatoTil = hunt.DatoFra.AddDays(rnd(0, 10));
 
             return hunt;
         }
@@ -181,26 +184,23 @@ namespace HuntLog.AppModule.Stats
             return new Random(DateTime.Now.Millisecond).Next(from, to);
         }
 
-        private Logg CreateLog(int id, int huntId)
+        private Logg CreateLog(int id, Jakt hunt)
         {
             var faker = new Faker<Logg>("nb_NO")
                 .RuleFor(o => o.ID, f => id.ToString())
                 .RuleFor(u => u.Notes, (f, u) => f.Rant.Review())
+                .RuleFor(x => x.Latitude, (f, u) => f.Address.Latitude(61, 65).ToString())
+                .RuleFor(x => x.Longitude, (f, u) => f.Address.Longitude(9, 12).ToString())
+                .RuleFor(x => x.Dato, (f, u) => f.Date.Between(hunt.DatoFra, hunt.DatoTil))
+                .RuleFor(x => x.Sett, (f, u) => f.Random.Int(0, 10))
+                .RuleFor(x => x.Skudd, (f, u) => f.Random.Int(0, 2))
+                .RuleFor(x => x.Treff, (f, u) => f.Random.Int(0, u.Skudd))
+                .RuleFor(x => x.JaktId, (f, u) => hunt.ID)
+                .RuleFor(x => x.JegerId, (f, u) => Hunters.ElementAt(f.Random.Int(0, Hunters.Count() - 1)).ID)
+                .RuleFor(x => x.DogId, (f, u) => Dogs.ElementAt(f.Random.Int(0, Dogs.Count() - 1)).ID)
+                .RuleFor(x => x.ArtId, (f, u) => Species.ElementAt(f.Random.Int(0, Species.Count() - 1)).ID)
                 ;
             var log = faker.Generate();
-
-
-            log.JaktId = huntId.ToString();
-            log.Dato = DateTime.Now.AddHours(rnd(-5, 5)).AddMinutes(rnd(0, 59));
-            log.Latitude = "63." + rnd(3800, 4300);
-            log.Longitude = "10." + rnd(2000, 3000);
-            log.JegerId = Hunters.ElementAt(rnd(0, Hunters.Count() - 1)).ID;
-            log.DogId = Dogs.ElementAt(rnd(0, Dogs.Count() - 1)).ID;
-            log.ArtId = Species.ElementAt(rnd(0, Species.Count() - 1)).ID;
-            log.Sett = rnd(0, 10);
-            log.Skudd = rnd(0, 2);
-            log.Treff = rnd(0, log.Skudd);
-
             return log;
         }
     }

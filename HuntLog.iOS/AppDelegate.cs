@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Plugin.Segmented.Control.iOS;
 using UIKit;
 using Xamarin.Forms;
 
@@ -29,6 +30,7 @@ namespace HuntLog.iOS.Renderers
             Xamarin.FormsMaps.Init();
             Forms.Init();
             ImageCircleRenderer.Init();
+            SegmentedControlRenderer.Initialize();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }

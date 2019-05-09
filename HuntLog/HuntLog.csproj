@@ -21,6 +21,7 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Bogus" Version="26.0.2" />
+    <PackageReference Include="Plugin.SegmentedControl.Netstandard" Version="3.6.2" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -36,13 +37,13 @@
     <Folder Include="AppModule\Hunters\" />
     <Folder Include="AppModule\Hunts\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="InputViews\" />
     <Folder Include="AppModule\Logs\" />
     <Folder Include="AppModule\Dogs\" />
     <Folder Include="AppModule\Species\" />
     <Folder Include="AppModule\CustomFields\" />
     <Folder Include="AppModule\Stats\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -50,6 +51,7 @@
     <Compile Remove="Factories\ViewFactory.cs" />
     <Compile Remove="Factories\IViewFactory.cs" />
     <Compile Remove="Models\ListModels\CellItem %28copy%29.cs" />
+    <Compile Remove="AppModule\Stats\StatsMapView %28copy%29.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />
