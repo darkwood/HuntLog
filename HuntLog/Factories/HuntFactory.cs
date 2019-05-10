@@ -22,6 +22,7 @@ namespace HuntLog.Factories
         Task<bool> DeleteHunter(string id, string imagePath);
         Task<bool> DeleteDog(string id, string imagePath);
 
+        Task<string> CreateLogSummary(Logg log);
     }
 
     public class HuntFactory : IHuntFactory
@@ -210,5 +211,36 @@ namespace HuntLog.Factories
             return ok;
         }
 
+        public async Task<string> CreateLogSummary(Logg l)
+        {
+            var desc = "";
+
+            if (!string.IsNullOrEmpty(l.ArtId))
+            {
+                var art = await _specieService.Get(l.ArtId);
+                if (art != null)
+                {
+                    desc += art.Navn + ".";
+                }
+            }
+
+            if (l.Skudd > 0)
+                desc += l.Skudd + " skudd, " + l.Treff + " treff. ";
+
+            if (l.Sett > 0)
+                desc += l.Sett + " sett. ";
+
+            if (!string.IsNullOrEmpty(l.JegerId))
+            {
+                var jeger = await _hunterService.Get(l.JegerId);
+                if (jeger != null)
+                {
+                    desc += "Av " + jeger.Fornavn;
+                }
+            }
+
+            return desc;
+
+        }
     }
 }

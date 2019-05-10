@@ -43,6 +43,9 @@
                            VerticalOptions="Center" />
                     
                     <sc:SegmentedControl HorizontalOptions="EndAndExpand"
+                                         SelectedSegment="{Binding SelectedSegment, Mode=TwoWay}"
+                                         SegmentSelectedCommand="{Binding SegmentSelectedCommand}"
+                                         FontSize="Small"
                                               BackgroundColor="White"
                                               SelectedTextColor="White"
                                               TintColor="{StaticResource Primary}"
