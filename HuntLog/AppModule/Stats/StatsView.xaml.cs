@@ -64,7 +64,8 @@ namespace HuntLog.AppModule.Stats
 
             MapCommand = new Command(async () =>
             {
-                await _navigator.PushAsync<StatsMapViewModel>();
+                await _navigator.PushAsync<StatsMapViewModel>(
+                    beforeNavigate: (arg) => arg.BeforeNavigate(null));
             });
 
             HitrateCommand = new Command(async () =>

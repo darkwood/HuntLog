@@ -5,6 +5,7 @@ using HuntLog.AppModule.Hunts;
 using HuntLog.InputViews;
 using LightInject;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using HuntLog.AppModule.Logs;
 using HuntLog.AppModule.Dogs;
 using HuntLog.AppModule.Species;
@@ -68,17 +69,21 @@ namespace HuntLog
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
-            var tabbed = new TabbedPage();
+
+            var tabbed = new Xamarin.Forms.TabbedPage();
+            tabbed.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
+
 
             tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
-
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
+
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntersView>(), "Jegere", "Tabbar/hunters.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<DogsView>(), "Hunder", "Tabbar/dog.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<SpeciesView>(), "Arter", "Tabbar/Arter.png"));
-            tabbed.Children.Add(CreateTab(container.GetInstance<CustomFieldsView>(), "Egne felter", "Tabbar/Felter.png"));
+            //tabbed.Children.Add(CreateTab(container.GetInstance<CustomFieldsView>(), "Egne felter", "Tabbar/Felter.png"));
+            //tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
 
-            tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
+
 
             _application.MainPage = tabbed;
             await Task.CompletedTask;

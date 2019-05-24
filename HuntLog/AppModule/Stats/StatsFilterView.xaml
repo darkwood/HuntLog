@@ -4,18 +4,12 @@
              xmlns:Converters="clr-namespace:HuntLog.Converters"       
              xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
-             x:Class="HuntLog.AppModule.Stats.StatsFilterView">
+             x:Class="HuntLog.AppModule.Stats.StatsFilterView"
+             >
     <ContentView.Content>
-        <StackLayout Grid.Row="0" 
-                     BackgroundColor="{StaticResource TableBg}" 
+        <StackLayout BackgroundColor="{StaticResource TableBg}"
+                     IsVisible="{Binding ShowFilterView}"
                      Padding="10">
-            <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                  <Label Text="Jeger" Margin="15" VerticalOptions="Center" />  
-                  <Label Text="Alle"  Margin="15" TextColor="{StaticResource Primary}" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding FilterHunterCommand}" />
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
             
             <Grid>
                 <Grid.RowDefinitions>
@@ -23,37 +17,99 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 
-                <StackLayout Grid.Row="0" BackgroundColor="White" Orientation="Horizontal">
-                  <Label Text="Dato fra-til" IsVisible="{Binding Visible, Converter={Converters:InverseBoolConverter}}" Margin="15" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />  
-                  <Label Text="{Binding DateFromTo}"  Margin="15" TextColor="{StaticResource Primary}" VerticalOptions="Center" HorizontalOptions="End"/>
-                  <Button Text="Ferdig" HorizontalOptions="EndAndExpand" IsVisible="{Binding Visible}" InputTransparent="true" Margin="15,0" />
-                    <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding FilterDateCommand}" />
-                    </StackLayout.GestureRecognizers>
+                 <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                     
+                      <Label Text="Filter" 
+                             Margin="10" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="StartAndExpand" 
+                             />  
+                      <Label Text="{Binding FilterSummary}" 
+                             FontSize="Small" 
+                             Margin="0" 
+                             TextColor="{StaticResource Primary}" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="End" 
+                             />
+                      <Button Text="{Binding UpDownIcon}" 
+                              FontSize="Large" 
+                              TextColor="{StaticResource Primary}" 
+                              FontFamily="{StaticResource FontAwesomeSolid}" 
+                              HorizontalOptions="End" 
+                              InputTransparent="true" 
+                              Margin="0,0,5,0" 
+                              Padding="5" 
+                              />
+                    
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterCommand}" />
+                        </StackLayout.GestureRecognizers>
                     
                 </StackLayout>
             
                 <StackLayout Grid.Row="1" IsVisible="{Binding Visible}">   
+                    <!--Hunter -->
                     <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                      <Label Text="Dato fra" Margin="15" VerticalOptions="Center" /> 
-                      <controls:ExtendedDatePicker MaximumDate="{Binding DateTo}" FocusCommand="{Binding FocusDateFromCommand, Mode=OneWayToSource}" Date="{Binding DateFrom}" IsVisible="false" />
-                      <Label Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}"  Margin="15" TextColor="{StaticResource Primary}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                          <Label Text="Jeger" Margin="10" 
+                                 VerticalOptions="Center" 
+                                 />  
+                          <Label Text="{Binding HunterName}"  
+                                 Margin="10" 
+                                 TextColor="{StaticResource Primary}" 
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="EndAndExpand"  
+                                 />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FilterHunterCommand}" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                   
+                    <!-- Dates -->
+                    <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                      <Label Text="Dato fra" 
+                             Margin="10" 
+                             VerticalOptions="Center" 
+                             /> 
+                      <controls:ExtendedDatePicker MaximumDate="{Binding DateTo}" 
+                                                   FocusCommand="{Binding FocusDateFromCommand, Mode=OneWayToSource}" 
+                                                   Date="{Binding DateFrom}" 
+                                                   IsVisible="false" 
+                                                   />
+                      <Label Text="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}"  
+                             Margin="10" 
+                             TextColor="{StaticResource Primary}" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="EndAndExpand" 
+                             />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding FocusDateFromCommand}" />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
 
-                    <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                      <Label Text="Dato til" Margin="15" VerticalOptions="Center" />  
-                      <controls:ExtendedDatePicker MinimumDate="{Binding DateFrom}" FocusCommand="{Binding FocusDateToCommand, Mode=OneWayToSource}" Date="{Binding DateTo}" IsVisible="false" />
-                      <Label Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}"  Margin="15" TextColor="{StaticResource Primary}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                    <StackLayout BackgroundColor="White" 
+                                 Orientation="Horizontal">
+                      <Label Text="Dato til" 
+                             Margin="10" 
+                             VerticalOptions="Center" 
+                             />  
+                      <controls:ExtendedDatePicker MinimumDate="{Binding DateFrom}" 
+                                                   FocusCommand="{Binding FocusDateToCommand, Mode=OneWayToSource}" 
+                                                   Date="{Binding DateTo}" 
+                                                   IsVisible="false" 
+                                                   />
+                      <Label Text="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" 
+                             Margin="10" 
+                             TextColor="{StaticResource Primary}" 
+                             VerticalOptions="Center" 
+                             HorizontalOptions="EndAndExpand" 
+                             />
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding FocusDateToCommand}" />
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                     
                     <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                         <Grid Margin="10" HorizontalOptions="CenterAndExpand">
+                         <Grid Margin="5" HorizontalOptions="CenterAndExpand">
                             <Button Grid.Column="0" StyleClass="PrimaryButton" Text="Alle" Command="{Binding DateRangeCommand}" CommandParameter="Alle" />
                             <Button Grid.Column="1" StyleClass="PrimaryButton" Text="Siste år" Command="{Binding DateRangeCommand}" CommandParameter="Siste år" />
                             <Button Grid.Column="2" StyleClass="PrimaryButton" Text="Siste måned" Command="{Binding DateRangeCommand}" CommandParameter="Siste måned" />

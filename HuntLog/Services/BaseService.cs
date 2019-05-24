@@ -46,6 +46,7 @@ namespace HuntLog.Services
         public async Task DeleteAll()
         {
             _fileManager.Delete(_dataFileName);
+            _dtos = null;
             await Task.CompletedTask;
         }
 

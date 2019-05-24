@@ -10,15 +10,11 @@
              xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog">
      
     <ContentPage.Content>
-        <Grid Margin="0" RowSpacing="0" ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <StackLayout>
+            <stats:StatsFilterView Grid.Row="0" 
+                                   BindingContext="{Binding StatsFilterViewModel}" />
             
-            <stats:StatsFilterView Grid.Row="0" BindingContext="{Binding StatsFilterViewModel}" />
-            
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto"/>
@@ -27,15 +23,28 @@
             
                 <StackLayout Grid.Row="0" 
                              VerticalOptions="FillAndExpand" 
-                             HorizontalOptions="FillAndExpand">
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="{StaticResource TableBg}"
+                             >
                     
                         <controls:ExtendedMap 
                                 x:Name="ExtendedMapControl"
+                                IsVisible="{Binding ShowMap}"
                                 MapType="Hybrid"
                             />
+                        <Label Text="Ingen loggføringer å vise."
+                               IsVisible="{Binding ShowEmptyMessage}"
+                               TextColor="Gray"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="Center"
+                               Margin="40"
+                               />
                 </StackLayout>
                
-                <StackLayout Grid.Row="1" Padding="10" Orientation="Horizontal" BackgroundColor="{StaticResource TableBg}">
+                <StackLayout Grid.Row="1" 
+                             Padding="10" 
+                             Orientation="Horizontal" 
+                             BackgroundColor="{StaticResource TableBg}">
                     
                     <Label Text="Vis på kartet"
                            Margin="10" 
@@ -60,6 +69,6 @@
                             
                 </StackLayout>
             </Grid> 
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

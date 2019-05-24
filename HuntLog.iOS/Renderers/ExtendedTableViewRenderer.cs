@@ -24,7 +24,11 @@ namespace HuntLog.iOS.Renderers
             base.OnElementPropertyChanged(sender, e);
 
             var view = (ExtendedTableView)Element;
-            Control.Source = new ExtendedUnEvenTableViewModelRenderer(view);
+            if(Control != null)
+            {
+                Control.Source = new ExtendedUnEvenTableViewModelRenderer(view);
+            }
+
         }
 
         public class ExtendedUnEvenTableViewModelRenderer : UnEvenTableViewModelRenderer

@@ -25,7 +25,6 @@ namespace HuntLog.iOS.Renderers
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Calabash.Start();
             Xamarin.FormsMaps.Init();
             Forms.Init();

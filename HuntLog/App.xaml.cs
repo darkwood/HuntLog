@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HuntLog
 {
     public partial class App : Application
@@ -10,7 +10,10 @@ namespace HuntLog
         public static INavigator Navigator { get; set; }
         public App()
         {
-             InitializeComponent();
+#if DEBUG
+            HotReloader.Current.Start(this);
+#endif
+            InitializeComponent();
         }
 
         protected async override void OnStart()

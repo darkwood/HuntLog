@@ -12,6 +12,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
+        <ToolbarItem Priority="2" Text="Kart" Command="{Binding MapCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
@@ -39,7 +40,7 @@
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell StyleId="disclosure">
+<!--                    <ViewCell StyleId="disclosure">
                         <StackLayout Margin="20,0" Orientation="Horizontal">
                             
                             <Image Source="{Binding ImageSource}" WidthRequest="80" Aspect="AspectFill" />
@@ -49,23 +50,7 @@
                                 <Label Text="{Binding Detail}" FontSize="Small" />
                             </StackLayout>
                             
-                            <!--<StackLayout 
-                                HorizontalOptions="EndAndExpand" 
-                                BindableLayout.ItemsSource="{Binding HunterAndDog}" 
-                                Orientation="Horizontal">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
-                                   <Controls:PickerItemView />
-                                </DataTemplate>
-                            </BindableLayout.ItemTemplate>
-                        </StackLayout>-->
-                        <!--
-                            <StackLayout.GestureRecognizers>
-                                 <TapGestureRecognizer Command="{Binding ItemTappedCommand}" />
-                            </StackLayout.GestureRecognizers>-->
                         </StackLayout>
-                        
-                        
                         
                          <ViewCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
@@ -73,11 +58,12 @@
                                       IsDestructive="True" 
                                       Icon="trash" />
                             </ViewCell.ContextActions>
-                    </ViewCell>
-                    <!--<cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
-                                            Text="{Binding Date, Converter={Converters:DateTimeToShortDateAndTimeConverter}}" 
+                    </ViewCell>-->
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Title}" 
                                             Detail="{Binding Detail}" 
                                             Command="{Binding ItemTappedCommand}"
+                                            StyleId="disclosure"
                                             >
                         <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
@@ -85,7 +71,7 @@
                                       IsDestructive="True" 
                                       Icon="trash" />
                             </cells:ExtendedTextCell.ContextActions>
-                    </cells:ExtendedTextCell>-->
+                    </cells:ExtendedTextCell>
                 </DataTemplate>     
             </ListView.ItemTemplate>
         </ListView>

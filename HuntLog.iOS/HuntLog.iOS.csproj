@@ -159,13 +159,13 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.94569-pre3" />
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.8" />
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.0.1</Version>
+      <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
-      <Version>3.5.0.129452</Version>
+      <Version>4.0.0.425677</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.0.0.5</Version>
@@ -175,6 +175,9 @@
     </PackageReference>
     <PackageReference Include="Plugin.SegmentedControl.Netstandard">
       <Version>3.6.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.HotReload">
+      <Version>1.2.9</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -224,5 +227,8 @@
     <BundleResource Include="Resources\Tabbar\stats%403x.png" />
     <BundleResource Include="Resources\Tabbar\Arter.png" />
     <BundleResource Include="Resources\Tabbar\Felter.png" />
+    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
+    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
+    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
   </ItemGroup>
 </Project>

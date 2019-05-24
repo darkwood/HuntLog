@@ -9,6 +9,7 @@ using Android.OS;
 using Xamarin.Forms;
 using ImageCircle.Forms.Plugin.Droid;
 using Plugin.CurrentActivity;
+using Plugin.Segmented.Control.Droid;
 
 namespace HuntLog.Droid
 {
@@ -21,12 +22,12 @@ namespace HuntLog.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            Forms.SetFlags("CollectionView_Experimental");
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
+            SegmentedControlRenderer.Init();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

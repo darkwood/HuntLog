@@ -42,9 +42,13 @@ namespace HuntLog.AppModule.Stats
         private readonly IHuntFactory _huntFactory;
         private readonly IBaseService<Logg> _logService;
         private IEnumerable<Logg> _logs;
+        private string _huntId;
 
         public StatsFilterViewModel StatsFilterViewModel { get; set; }
         public int SelectedSegment { get; set; }
+        public bool ShowMap { get; set; }
+        public bool ShowEmptyMessage { get; set; }
+        public bool UseFilterView { get; set; }
         public Command SegmentSelectedCommand { get; set; }
 
         public StatsMapViewModel(StatsFilterViewModel statsFilterViewModel,
@@ -55,17 +59,29 @@ namespace HuntLog.AppModule.Stats
             _logService = logService;
             StatsFilterViewModel = statsFilterViewModel;
 
-            StatsFilterViewModel.DateChangedAction += async () =>
+            StatsFilterViewModel.FilterChangedAction += async () =>
             {
                 await AddPins();
                 ZoomToShowAllPins();
             };
         }
 
+        public void BeforeNavigate(string huntId) 
+        {
+            _huntId = huntId;
+            UseFilterView = string.IsNullOrEmpty(_huntId);
+            StatsFilterViewModel.SetVisibility(UseFilterView);
+        }
        
         public async Task OnAppearing() 
         {
             _logs = await _logService.GetItems();
+
+            if (!string.IsNullOrEmpty(_huntId))
+            {
+                _logs = _logs.Where(l => l.JaktId == _huntId);
+            }
+
            await AddPins();
             ZoomToShowAllPins();
             SegmentSelectedCommand = new Command(async () => { await SelectedSegmentChanged(); });
@@ -82,10 +98,18 @@ namespace HuntLog.AppModule.Stats
         {
             var from = StatsFilterViewModel.DateFrom;
             var to = StatsFilterViewModel.DateTo;
+            var hunter = StatsFilterViewModel.SelectedHunter;
 
             _mapView.Pins.Clear();
 
-            var logs = _logs.Where(l => l.Dato >= from && l.Dato <= to).ToList();
+
+            var logs = UseFilterView 
+                            ? _logs.Where(l => l.Dato >= from 
+                                    && l.Dato <= to 
+                                    && (hunter == null || l.JegerId == hunter.ID))
+                                    .ToList()
+                            : _logs;
+
             foreach (var log in logs)
             {
                 if (!string.IsNullOrWhiteSpace(log.Latitude))
@@ -102,6 +126,8 @@ namespace HuntLog.AppModule.Stats
                     }
                 }
             }
+            ShowMap = _mapView.Pins.Any();
+            ShowEmptyMessage = !ShowMap;
         }
 
         private bool IsValidSegment(Logg log)
@@ -145,7 +171,7 @@ namespace HuntLog.AppModule.Stats
                 var regionCenterLatitude = (southWest.Latitude + northEast.Latitude) / 2;
                 var regionCenterLongitude = (southWest.Longitude + northEast.Longitude) / 2;
 
-                var radius = new Distance(Math.Max(spanLatitudeDelta, spanLongitudeDelta) * 20000);
+                var radius = new Distance(Math.Max(spanLatitudeDelta, spanLongitudeDelta) * 25000);
                 var center = new Position(regionCenterLatitude, regionCenterLongitude);
 
                 _mapView.MoveToRegion(MapSpan.FromCenterAndRadius(center, radius));

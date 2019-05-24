@@ -6,6 +6,10 @@ using Xamarin.Forms;
 using HuntLog.Extensions;
 using HuntLog.Services;
 using HuntLog.InputViews;
+using HuntLog.Models;
+using System.Linq;
+using HuntLog.Factories;
+using HuntLog.Helpers;
 
 namespace HuntLog.AppModule.Stats
 {
@@ -28,38 +32,70 @@ namespace HuntLog.AppModule.Stats
     public class StatsFilterViewModel : ViewModelBase
     {
         private readonly INavigator _navigator;
+        private readonly IHuntFactory _huntFactory;
 
         public Command DateRangeCommand { get; set; }
-        public Command FilterDateCommand { get; set; }
+        public Command FilterCommand { get; set; }
         public Command DateFromCommand { get; set; }
         public Command DateToCommand { get; set; }
-
-        public DateTime DateFrom { get; set; }
-        public DateTime DateTo { get; set; }
-        public string DateFromTo => GetFormattedDateRange();
-        public bool Visible { get; set; }
+        public Command FilterHunterCommand { get; set; }
         public Command FocusDateFromCommand { get; set; }
         public Command FocusDateToCommand { get; set; }
 
+        public PickerItem SelectedHunter { get; set; }
+        public string HunterName => SelectedHunter?.Title ?? "Alle jegere";
+        public DateTime DateFrom { get; set; }
+        public DateTime DateTo { get; set; }
+        public string FilterSummary => GetFilterSummary();
+        public bool ShowFilterView { get; set; }
+        public bool Visible { get; set; }
+        public string UpDownIcon => Visible ? FontAwesomeIcons.AngleUp : FontAwesomeIcons.AngleDown;
 
-        public static Action DateChangedAction { get; set; }
-        public StatsFilterViewModel(INavigator navigator)
+        public static Action FilterChangedAction { get; set; }
+
+        public StatsFilterViewModel(INavigator navigator, IHuntFactory huntFactory)
         {
+            _huntFactory = huntFactory;
+            _navigator = navigator;
 
-            DateRangeCommand = new Command(async (obj) => await SetDate(obj));
-            FilterDateCommand = new Command(() => 
+            DateRangeCommand = new Command(async (obj) => 
+            {
+                await SetDate(obj);
+                FilterChangedAction?.Invoke();
+            });
+
+            FilterCommand = new Command(() => 
             { 
                 Visible = !Visible;
-                if (!Visible)
+            });
+
+            FilterHunterCommand = new Command(async () => {
+
+                var selected = new List<string>();
+                if(SelectedHunter != null)
                 {
-                    DateChangedAction?.Invoke();
+                    selected.Add(SelectedHunter.ID);
                 }
+                var hunterItems = await _huntFactory.CreateHunterPickerItems(selected);
+
+                await _navigator.PushAsync<InputPickerViewModel>(
+                    afterNavigate: async (arg) => await arg.InitializeAsync(
+                        value: hunterItems,
+                        completeAction: (obj) => {
+                            SelectedHunter = obj?.FirstOrDefault(x => x.Selected);
+                            FilterChangedAction?.Invoke();
+                        }
+                        )
+                    );
             });
 
             DateFrom = DateTime.Now.AddMonths(-1);
             DateTo = DateTime.Now;
+        }
 
-            _navigator = navigator;
+        public void SetVisibility(bool show)
+        {
+            ShowFilterView = show;
         }
 
 
@@ -85,9 +121,10 @@ namespace HuntLog.AppModule.Stats
 
         }
 
-        private string GetFormattedDateRange(string rangeString = null)
+        private string GetFilterSummary(string rangeString = null)
         {
-            return rangeString == null ? $"{DateFrom.ToNoString()} - {DateTo.ToNoString()}" : rangeString;
+            var range = rangeString == null ? $"{DateFrom.ToNoString()} - {DateTo.ToNoString()}" : rangeString;
+            return $"{HunterName}, {range}";
         }
     }
 }

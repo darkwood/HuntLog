@@ -66,7 +66,6 @@ namespace HuntLog.Services
                 PhotoSize = PhotoSize.Large,
                 CompressionQuality = 92,
             });
-
             return file;
         }
     }

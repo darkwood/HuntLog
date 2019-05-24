@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule.Logs;
+using HuntLog.AppModule.Stats;
 using HuntLog.Factories;
 using HuntLog.Helpers;
 using HuntLog.InputViews;
@@ -56,6 +57,7 @@ namespace HuntLog.AppModule.Hunts
 
 
         public Command EditCommand { get; set; }
+        public Command MapCommand { get; set; }
         public Command AddCommand { get; set; }
 
         public HuntViewModel(IBaseService<Jeger> hunterService,
@@ -72,7 +74,16 @@ namespace HuntLog.AppModule.Hunts
 
             EditCommand = new Command(async () => await EditItem());
             AddCommand = new Command(async () => await AddItem());
+            MapCommand = new Command(async () => await ShowMap());
+
         }
+
+        private async Task ShowMap()
+        {
+            await _navigator.PushAsync<StatsMapViewModel>(
+                    beforeNavigate: (arg) => arg.BeforeNavigate(ID));
+        }
+
         private async Task EditItem()
         {
             Action<Jakt> callback = (arg) => { SetState(arg); };
