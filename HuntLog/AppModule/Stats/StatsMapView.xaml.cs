@@ -41,22 +41,25 @@ namespace HuntLog.AppModule.Stats
         private ExtendedMap _mapView;
         private readonly IHuntFactory _huntFactory;
         private readonly IBaseService<Logg> _logService;
+        private readonly IBaseService<Jakt> _huntService;
         private IEnumerable<Logg> _logs;
         private string _huntId;
+        private int _selectedSegment;
 
         public StatsFilterViewModel StatsFilterViewModel { get; set; }
-        public int SelectedSegment { get; set; }
+        //public int SelectedSegment { get; set; }
         public bool ShowMap { get; set; }
         public bool ShowEmptyMessage { get; set; }
-        public bool UseFilterView { get; set; }
         public Command SegmentSelectedCommand { get; set; }
 
         public StatsMapViewModel(StatsFilterViewModel statsFilterViewModel,
                               IHuntFactory huntFactory,
-                              IBaseService<Logg> logService)
+                              IBaseService<Logg> logService,
+                              IBaseService<Jakt> huntService)
         {
             _huntFactory = huntFactory;
             _logService = logService;
+            _huntService = huntService;
             StatsFilterViewModel = statsFilterViewModel;
 
             StatsFilterViewModel.FilterChangedAction += async () =>
@@ -66,11 +69,9 @@ namespace HuntLog.AppModule.Stats
             };
         }
 
-        public void BeforeNavigate(string huntId) 
+        public void BeforeNavigate(string huntId)
         {
             _huntId = huntId;
-            UseFilterView = string.IsNullOrEmpty(_huntId);
-            StatsFilterViewModel.SetVisibility(UseFilterView);
         }
        
         public async Task OnAppearing() 
@@ -80,19 +81,21 @@ namespace HuntLog.AppModule.Stats
             if (!string.IsNullOrEmpty(_huntId))
             {
                 _logs = _logs.Where(l => l.JaktId == _huntId);
+                StatsFilterViewModel.DateFrom = _logs.Min(l => l.Dato);
+                StatsFilterViewModel.DateTo = _logs.Max(l => l.Dato);
             }
 
            await AddPins();
             ZoomToShowAllPins();
-            SegmentSelectedCommand = new Command(async () => { await SelectedSegmentChanged(); });
+            SegmentSelectedCommand = new Command(async (arg) => { await SelectedSegmentChanged(arg); });
         }
 
-        private async Task SelectedSegmentChanged()
+        private async Task SelectedSegmentChanged(object arg)
         {
+            _selectedSegment = int.Parse(arg as string);
             await AddPins();
             ZoomToShowAllPins();
         }
-
 
         private async Task AddPins()
         {
@@ -103,12 +106,10 @@ namespace HuntLog.AppModule.Stats
             _mapView.Pins.Clear();
 
 
-            var logs = UseFilterView 
-                            ? _logs.Where(l => l.Dato >= from 
-                                    && l.Dato <= to 
+            var logs = _logs.Where(l => l.Dato >= from
+                                    && l.Dato <= to
                                     && (hunter == null || l.JegerId == hunter.ID))
-                                    .ToList()
-                            : _logs;
+                                    .ToList();
 
             foreach (var log in logs)
             {
@@ -132,7 +133,7 @@ namespace HuntLog.AppModule.Stats
 
         private bool IsValidSegment(Logg log)
         {
-            switch (SelectedSegment)
+            switch (_selectedSegment)
             {
                 case 1:
                     return log.Sett > 0;

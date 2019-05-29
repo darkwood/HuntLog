@@ -11,6 +11,7 @@ using HuntLog.AppModule.Dogs;
 using HuntLog.AppModule.Species;
 using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Stats;
+using HuntLog.AppModule.Setup;
 
 namespace HuntLog
 {
@@ -51,6 +52,7 @@ namespace HuntLog
             viewFactory.Register<DogViewModel, DogView>();
             viewFactory.Register<SpeciesViewModel, SpeciesView>();
             viewFactory.Register<SpecieViewModel, SpecieView>();
+            viewFactory.Register<SetupViewModel, SetupView>();
 
             viewFactory.Register<CustomFieldsViewModel, CustomFieldsView>();
             viewFactory.Register<CustomFieldViewModel, CustomFieldView>();
@@ -74,14 +76,10 @@ namespace HuntLog
             tabbed.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 
-            tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
-
-            tabbed.Children.Add(CreateTab(container.GetInstance<HuntersView>(), "Jegere", "Tabbar/hunters.png"));
-            tabbed.Children.Add(CreateTab(container.GetInstance<DogsView>(), "Hunder", "Tabbar/dog.png"));
-            tabbed.Children.Add(CreateTab(container.GetInstance<SpeciesView>(), "Arter", "Tabbar/Arter.png"));
-            //tabbed.Children.Add(CreateTab(container.GetInstance<CustomFieldsView>(), "Egne felter", "Tabbar/Felter.png"));
-            //tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<SetupView>(), "Oppsett", "Tabbar/hunters.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
+            tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
 
 
 
@@ -93,7 +91,7 @@ namespace HuntLog
         {
             var huntPage = new NavigationPage(page);
             huntPage.Title = title;
-            huntPage.Icon = icon;
+            huntPage.IconImageSource = icon;
             return huntPage;
         }
 

@@ -138,6 +138,30 @@ namespace HuntLog.Cells
 
         /***************************************************************************/
 
+        public static readonly BindableProperty ImageProperty =
+            BindableProperty.Create(
+                nameof(Image),
+                typeof(string),
+                typeof(ExtendedTextCell),
+                null,
+                propertyChanged: (bindable, oldValue, newValue) => {
+                    var current = (ExtendedTextCell)bindable;
+                    current.CellImage.Source = Utility.GetImageFromAssets(newValue as string);
+                    if(current.CellImage.Source != null)
+                    {
+                        current.CellImage.IsVisible = true;
+                    }
+                }
+            );
+
+        public string Image
+        {
+            get { return (string)GetValue(ImageProperty); }
+            set { SetValue(ImageProperty, value); }
+        }
+
+        /***************************************************************************/
+
         public static readonly BindableProperty ImageSizeProperty = BindableProperty.Create(
             nameof(ImageSize),
             typeof(int),
@@ -238,7 +262,7 @@ namespace HuntLog.Cells
                 Orientation=StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
-                Padding = new Thickness(20, 10)
+                Padding = new Thickness(10)
             };
 
             CellImage = new CircleImage

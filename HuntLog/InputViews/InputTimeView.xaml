@@ -10,11 +10,29 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <TimePicker x:Name="myTime"
-                    Time="{Binding CurrentValue, Mode=TwoWay}" 
-                    Margin="20, 40" 
-                    VerticalOptions="Start"
-                    HorizontalOptions="Fill"
-                    />
+        <StackLayout Margin="20">
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label Text="Tidspunkt" 
+                       VerticalOptions="Center"
+                       />
+                <TimePicker x:Name="myTime" 
+                            Time="{Binding CurrentTime, Mode=TwoWay}" 
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand"
+                            />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label Text="Dato" 
+                       VerticalOptions="Center"/>
+                
+                <DatePicker x:Name="myDate" 
+                            Date="{Binding CurrentDate, Mode=TwoWay}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand"
+                            Format="dd.MM.yyyy"
+                            />
+            </StackLayout>
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

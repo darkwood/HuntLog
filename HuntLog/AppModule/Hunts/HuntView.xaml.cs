@@ -55,6 +55,7 @@ namespace HuntLog.AppModule.Hunts
         private readonly Func<LogListItemViewModel> _logListItemViewModelFactory;
         private readonly IHuntFactory _huntFactory;
 
+        public string MapIcon => FontAwesomeIcons.MapMarkedAlt;
 
         public Command EditCommand { get; set; }
         public Command MapCommand { get; set; }
@@ -112,7 +113,7 @@ namespace HuntLog.AppModule.Hunts
         private async Task AddItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                    (vm) => vm.BeforeNavigate(null, ID),
+                    (vm) => vm.BeforeNavigate(null, _dto),
                     (vm) => vm.AfterNavigate());
         }
 

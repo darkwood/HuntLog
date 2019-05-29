@@ -21,8 +21,10 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Bogus" Version="27.0.1" />
-    <PackageReference Include="Plugin.SegmentedControl.Netstandard" Version="3.6.2" />
+    <PackageReference Include="Plugin.SegmentedControl.Netstandard" Version="4.0.0" />
     <PackageReference Include="Xamarin.HotReload" Version="1.2.9" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -44,6 +46,7 @@
     <Folder Include="AppModule\CustomFields\" />
     <Folder Include="AppModule\Stats\" />
     <Folder Include="Extensions\" />
+    <Folder Include="AppModule\Setup\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -145,6 +148,17 @@
     <None Remove="Assets\img-placeholder.jpg" />
     <None Remove="Assets\placeholder.jpg" />
     <None Remove="Assets\placeholder_map.png" />
+    <None Remove="Assets\hunters%403x.png" />
+    <None Remove="Assets\hunters.png" />
+    <None Remove="Assets\hunters%402x.png" />
+    <None Remove="Assets\hunters2.png" />
+    <None Remove="Assets\dog%403x.png" />
+    <None Remove="Cells\Arter.png" />
+    <None Remove="Assets\Arter.png" />
+    <None Remove="Assets\Felter.png" />
+    <None Remove="Assets\Dogs.png" />
+    <None Remove="Assets\Fields.png" />
+    <None Remove="Assets\Species.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xml\arter.xml" />
@@ -159,6 +173,10 @@
     <EmbeddedResource Include="Xml\selectedartids.xml" />
     <EmbeddedResource Include="Assets\placeholder.jpg" />
     <EmbeddedResource Include="Assets\placeholder_map.png" />
+    <EmbeddedResource Include="Assets\Hunters.png" />
+    <EmbeddedResource Include="Assets\Dogs.png" />
+    <EmbeddedResource Include="Assets\Fields.png" />
+    <EmbeddedResource Include="Assets\Species.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.iOS">

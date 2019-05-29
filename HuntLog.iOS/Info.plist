@@ -56,5 +56,7 @@
 		<string>FontAwesome5Regular.otf</string>
 		<string>FontAwesome5Solid.otf</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Tillat bruk av kamera</string>
 </dict>
 </plist>

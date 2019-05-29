@@ -220,7 +220,7 @@ namespace HuntLog.Factories
                 var art = await _specieService.Get(l.ArtId);
                 if (art != null)
                 {
-                    desc += art.Navn + ".";
+                    desc += art.Navn + ". ";
                 }
             }
 

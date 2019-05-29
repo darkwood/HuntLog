@@ -12,7 +12,10 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ListView 
+        <Grid>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <ListView 
+            IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
             x:Name="huntListView"
             ItemsSource="{Binding HuntListItemViewModels}"
             IsGroupingEnabled="true"
@@ -37,5 +40,7 @@
                 </DataTemplate>     
             </ListView.ItemTemplate>
         </ListView>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

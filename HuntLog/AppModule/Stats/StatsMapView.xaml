@@ -10,11 +10,16 @@
              xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog">
      
     <ContentPage.Content>
-        <StackLayout>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+             
             <stats:StatsFilterView Grid.Row="0" 
                                    BindingContext="{Binding StatsFilterViewModel}" />
-            
-            <Grid Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+           
+            <Grid Grid.Row="1" RowSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto"/>
@@ -46,12 +51,24 @@
                              Orientation="Horizontal" 
                              BackgroundColor="{StaticResource TableBg}">
                     
-                    <Label Text="Vis på kartet"
-                           Margin="10" 
+                    <Label Text="Filtrer på type hendelse"
+                           Margin="5" 
                            FontSize="Small"
                            VerticalOptions="Center" />
                     
-                    <sc:SegmentedControl HorizontalOptions="EndAndExpand"
+                    <Frame CornerRadius="10"  
+                            HasShadow="false"
+                           HorizontalOptions="EndAndExpand"
+                            Padding="0">
+                        <StackLayout Orientation="Horizontal" Padding="0 10">
+                            <Button Text="Alle" Padding="0 10" CommandParameter="0" Command="{Binding SegmentSelectedCommand}" />
+                            <Button Text="Sett" Padding="0 10" CommandParameter="1" Command="{Binding SegmentSelectedCommand}" />
+                            <Button Text="Skudd" Padding="0 10" CommandParameter="2" Command="{Binding SegmentSelectedCommand}" />
+                            <Button Text="Treff" Padding="0 10" CommandParameter="3" Command="{Binding SegmentSelectedCommand}" />
+                        </StackLayout>
+                   </Frame>
+                    
+                    <!--<sc:SegmentedControl HorizontalOptions="EndAndExpand"
                                          SelectedSegment="{Binding SelectedSegment, Mode=TwoWay}"
                                          SegmentSelectedCommand="{Binding SegmentSelectedCommand}"
                                          FontSize="Small"
@@ -65,10 +82,10 @@
                             <sc:SegmentedControlOption Text="Skudd" />  
                             <sc:SegmentedControlOption Text="Treff" />  
                         </sc:SegmentedControl.Children>  
-                    </sc:SegmentedControl> 
+                    </sc:SegmentedControl> -->
                             
                 </StackLayout>
             </Grid> 
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

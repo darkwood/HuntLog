@@ -39,6 +39,7 @@ namespace HuntLog.AppModule.Logs
         private readonly IFileManager _fileManager;
         private readonly IHuntFactory _huntFactory;
         private readonly ICustomFieldFactory _fieldFactory;
+        private Jakt _huntDto;
         private Logg _dto;
 
         public string HuntId { get; set; }
@@ -81,7 +82,7 @@ namespace HuntLog.AppModule.Logs
                             ICustomFieldFactory fieldFactory)
         {
             _navigator = navigator;
-            _logService = logService;   
+            _logService = logService;
             _fileManager = fileManager;
             _huntFactory = huntFactory;
             _fieldFactory = fieldFactory;
@@ -104,11 +105,13 @@ namespace HuntLog.AppModule.Logs
             await _navigator.PushAsync<InputTimeViewModel>(
                 beforeNavigate: async (arg) =>
                 {
-                    await arg.InitializeAsync(Date.TimeOfDay,
-                    completeAction: (value) =>
-                    {
-                        Date = new DateTime(Date.Year, Date.Month, Date.Day, value.Hours, value.Minutes, value.Seconds);
-                    });
+                    await arg.InitializeAsync(Date, 
+                        _huntDto.DatoFra, 
+                        _huntDto.DatoTil,
+                        completeAction: (value) =>
+                        {
+                            Date = value;
+                        });
                 });
         }
 
@@ -148,9 +151,11 @@ namespace HuntLog.AppModule.Logs
             };
         }
 
-        public void BeforeNavigate(Logg dto, string huntId = null)
+        public void BeforeNavigate(Logg dto, Jakt huntDto)
         {
-            _dto = dto ?? CreateItem(huntId);
+            _huntDto = huntDto;
+            _dto = dto ?? CreateItem();
+
             SetState(_dto);
             Title = IsNew ? "Ny loggføring" : dto.Dato.ToShortTimeString();
         }
@@ -270,21 +275,22 @@ namespace HuntLog.AppModule.Logs
             }
         }
 
-        private Logg CreateItem(string huntId)
+        private Logg CreateItem()
         {
-            if(huntId == null) { throw new ArgumentNullException(nameof(huntId), "You need to pass in the huntId to the SetState() method."); }
+            if(_huntDto == null) { throw new ArgumentNullException(nameof(_huntDto), "You need to pass in the huntDto to the SetState() method."); }
+
             return new Logg
             {
-                JaktId = huntId,
+                JaktId = _huntDto.ID,
                 Created = DateTime.Now,
-                Dato = DateTime.Now
+                Dato = _huntDto.DatoFra
             };
         }
 
         private async Task ShowItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                beforeNavigate: (arg) => arg.BeforeNavigate(_dto),
+                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto),
                 afterNavigate: async (arg) => await arg.AfterNavigate());
         }
 

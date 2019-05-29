@@ -25,6 +25,11 @@ namespace HuntLog.Helpers
             return ImageSource.FromResource("HuntLog.Assets." + PLACEHOLDER_PHOTO);
         }
 
+        public static ImageSource GetImageFromAssets(string imageFilename)
+        {
+            return ImageSource.FromResource("HuntLog.Assets." + imageFilename);
+        }
+
         public static string GetImageFilename(string filePath)
         {
             if (!String.IsNullOrEmpty(filePath) && filePath.Contains("/"))
@@ -49,7 +54,7 @@ namespace HuntLog.Helpers
 
             double value;
             var culture = CultureInfo.CreateSpecificCulture("nb-NO");
-            value = double.Parse(doubleString, CultureInfo.InvariantCulture);
+            value = double.Parse(doubleString);
             return value;
         }
     }

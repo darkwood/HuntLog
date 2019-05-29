@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.Services;
 using Xamarin.Forms;
@@ -26,7 +27,7 @@ namespace HuntLog.InputViews
 
         public List<PickerItem> CurrentValue { get; set; }
 
-        private bool _multiSelect;
+        public bool MultiSelect { get; set; }
 
         public InputPickerViewModel(INavigator navigator, IDialogService dialogService) : base(navigator, dialogService) 
         {
@@ -43,21 +44,22 @@ namespace HuntLog.InputViews
             {
                 val.ParentAction = HandleAction;
             }
-            _multiSelect = multiSelect;
+            MultiSelect = multiSelect;
             await Task.CompletedTask;
         }
 
         async Task HandleAction(PickerItem item)
         {
-            if (!_multiSelect)
+            if (!MultiSelect)
             {
-                foreach (var val in CurrentValue)
+                foreach (var val in CurrentValue.Where(x => x.ID != item.ID))
                 {
                     val.Selected = false;
                 }
-                item.Selected = true;
+
                 await Done();
             }
+
         }
 
         private async Task Done()

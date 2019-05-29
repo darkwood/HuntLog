@@ -89,7 +89,7 @@ namespace HuntLog.AppModule.Stats
                     );
             });
 
-            DateFrom = DateTime.Now.AddMonths(-1);
+            DateFrom = DateTime.Now.AddYears(-1);
             DateTo = DateTime.Now;
         }
 

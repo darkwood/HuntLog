@@ -41,5 +41,28 @@ namespace HuntLog.iOS.Renderers
             if (Control != null)
                 Control.AddGestureRecognizer(_tapRecogniser);
         }
+
+        //protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
+        //{
+        //    MKAnnotationView annotationView = null;
+
+        //    if (annotation is MKUserLocation)
+        //        return null;
+
+        //    var id = "myAnnotation";
+        //    annotationView = mapView.DequeueReusableAnnotation(id);
+        //    if (annotationView == null)
+        //    {
+        //        annotationView = new MKAnnotationView(annotation, id);
+        //        annotationView.Image = UIImage.FromFile("Tabbar/gevir.png");
+        //        annotationView.CalloutOffset = new CGPoint(0, 0);
+        //        //annotationView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile("monkey.png"));
+        //        annotationView.RightCalloutAccessoryView = UIButton.FromType(UIButtonType.DetailDisclosure);
+
+        //    }
+        //    annotationView.CanShowCallout = true;
+
+        //    return annotationView;
+        //}
     }
 }

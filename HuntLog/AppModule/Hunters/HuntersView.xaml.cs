@@ -62,11 +62,13 @@ namespace HuntLog.AppModule.Hunters
 
         private async Task DeleteItem(object item)
         {
+            IsBusy = true;
             var ok = await _huntFactory.DeleteHunter((item as HunterViewModel).ID, (item as HunterViewModel).ImagePath);
             if (ok)
             {
                 await FetchData();
             }
+            IsBusy = false;
         }
         public async Task InitializeAsync()
         {

@@ -18,6 +18,8 @@ namespace HuntLog.AppModule.Logs
         {
             _viewModel = viewModel;
             BindingContext = _viewModel;
+
+            InitializeToolbarItems();
         }
 
         protected override void OnAppearing()
@@ -25,7 +27,6 @@ namespace HuntLog.AppModule.Logs
             base.OnAppearing();
             if(!IsLoaded)
             {
-                InitializeToolbarItems();
                 InitializeContent();
                 IsLoaded = true;
             }

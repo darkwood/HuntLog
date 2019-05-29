@@ -17,6 +17,7 @@ using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Stats;
 using System.Reflection;
 using System.Linq;
+using HuntLog.AppModule.Setup;
 
 namespace HuntLog
 {
@@ -83,6 +84,9 @@ namespace HuntLog
 
             .Register<CustomFieldViewModel>()
             .Register<CustomFieldView>()
+
+            .Register<SetupViewModel>()
+            .Register<SetupView>()
 
             //.Register<LogCustomFieldsViewModel>()
             //.Register<LogCustomFieldsView>()

@@ -12,7 +12,6 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
-        <ToolbarItem Priority="2" Text="Kart" Command="{Binding MapCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
@@ -27,13 +26,27 @@
                     
                         <local:HuntSummaryView />
                         
-                        <Button 
-                            StyleClass="PrimaryButton"
-                            HorizontalOptions="FillAndExpand"
-                            Text="Ny loggføring" 
-                            Margin="15"
-                            Command="{Binding AddCommand}"
-                        />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button 
+                                StyleClass="PrimaryButton"
+                                Text="Ny loggføring" 
+                                Margin="10,5,0,5"
+                                Command="{Binding AddCommand}"
+                            />
+                            <Button 
+                                Grid.Column="1"
+                                StyleClass="PrimaryButton"
+                                Text="&#xf5a0; Vis kart" 
+                                FontFamily="{StaticResource FontAwesomeSolid}"
+                                Margin="0,5,10,5"
+                                Command="{Binding MapCommand}"
+                            />
+                        </Grid>
+                        
                     </StackLayout>
                 </DataTemplate>
             </ListView.HeaderTemplate>

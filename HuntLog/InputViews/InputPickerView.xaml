@@ -6,7 +6,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
-        <ToolbarItem Priority="1" Text="Ferdig" Command="{Binding DoneCommand}"/>
+        <ToolbarItem Priority="1" Text="Ferdig" IsEnabled="{Binding MultiSelect}" Command="{Binding DoneCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>

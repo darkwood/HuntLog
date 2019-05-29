@@ -8,7 +8,6 @@
              >
     <ContentView.Content>
         <StackLayout BackgroundColor="{StaticResource TableBg}"
-                     IsVisible="{Binding ShowFilterView}"
                      Padding="10">
             
             <Grid>
@@ -109,7 +108,7 @@
                     </StackLayout>
                     
                     <StackLayout BackgroundColor="White" Orientation="Horizontal">
-                         <Grid Margin="5" HorizontalOptions="CenterAndExpand">
+                         <Grid RowSpacing="0" Margin="5" HorizontalOptions="CenterAndExpand">
                             <Button Grid.Column="0" StyleClass="PrimaryButton" Text="Alle" Command="{Binding DateRangeCommand}" CommandParameter="Alle" />
                             <Button Grid.Column="1" StyleClass="PrimaryButton" Text="Siste år" Command="{Binding DateRangeCommand}" CommandParameter="Siste år" />
                             <Button Grid.Column="2" StyleClass="PrimaryButton" Text="Siste måned" Command="{Binding DateRangeCommand}" CommandParameter="Siste måned" />

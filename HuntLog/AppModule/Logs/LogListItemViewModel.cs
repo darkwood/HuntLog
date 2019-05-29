@@ -12,11 +12,11 @@ namespace HuntLog.AppModule.Logs
     public class LogListItemViewModel : ViewModelBase
     {
         private readonly INavigator _navigator;
+        private readonly IHuntFactory _huntFactory;
         private readonly IBaseService<Logg> _logService;
-        private readonly IBaseService<Art> _specieService;
-        private readonly IBaseService<Jeger> _hunterService;
-        private readonly IBaseService<Dog> _dogService;
+        private readonly IBaseService<Jakt> _huntService;
         private Logg _dto;
+        private Jakt _huntDto;
 
         public string Detail { get; set; }
         public Command ItemTappedCommand { get; set; }
@@ -26,23 +26,22 @@ namespace HuntLog.AppModule.Logs
         public Dog Dog { get; set; }
 
         public LogListItemViewModel(INavigator navigator, 
+                                    IHuntFactory huntFactory,
                                     IBaseService<Logg> logService, 
-                                    IBaseService<Art> specieService,
-                                    IBaseService<Jeger> hunterService,
-                                    IBaseService<Dog> dogService)
+                                    IBaseService<Jakt> huntService)
         {
             _navigator = navigator;
+            _huntFactory = huntFactory;
             _logService = logService;
-            _specieService = specieService;
-            _hunterService = hunterService;
-            _dogService = dogService;
+            _huntService = huntService;
+
             ItemTappedCommand = new Command(async () => { await ShowItem(); });
         }
 
         private async Task ShowItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                beforeNavigate: (arg) => arg.BeforeNavigate(_dto),
+                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto),
                 afterNavigate: async (arg) => await arg.AfterNavigate());
         }
 
@@ -62,22 +61,8 @@ namespace HuntLog.AppModule.Logs
 
         public override async Task AfterNavigate()
         {
-            if (!string.IsNullOrEmpty(_dto.ArtId))
-            {
-                Specie = await _specieService.Get(_dto.ArtId);
-            }
-
-            if (!string.IsNullOrEmpty(_dto.JegerId))
-            {
-                Hunter = await _hunterService.Get(_dto.JegerId);
-            }
-
-            if (!string.IsNullOrEmpty(_dto.DogId))
-            {
-                Dog = await _dogService.Get(_dto.DogId);
-            }
-
-            Detail = $"{_dto.Sett} Sett ({Specie?.Navn}), {_dto.Skudd} skudd og {_dto.Treff} treff";
+            _huntDto = await _huntService.Get(_dto.JaktId);
+            Detail = await _huntFactory.CreateLogSummary(_dto);
         }
     }
 }
