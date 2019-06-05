@@ -26,6 +26,12 @@ namespace HuntLog.AppModule.Setup
             _viewModel = viewModel;
             BindingContext = _viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
+        }
     }
 
     public class SetupViewModel : ViewModelBase
@@ -36,6 +42,7 @@ namespace HuntLog.AppModule.Setup
         private readonly IBaseService<Dog> _dogService;
         private readonly IBaseService<Art> _specieService;
         private readonly INavigator _navigator;
+        private readonly IFileManager _fileManager;
 
         public Command CreateDummyDataCommand { get; set; }
         public Command DeleteCommand { get; set; }
@@ -57,7 +64,8 @@ namespace HuntLog.AppModule.Setup
                               IBaseService<Jeger> hunterService,
                               IBaseService<Dog> dogService,
                               IBaseService<Art> specieService,
-                              INavigator navigator)
+                              INavigator navigator,
+                              IFileManager fileManager)
         {
             CreateDummyDataCommand = new Command(async () => await GenerateDummyData());
             DeleteCommand = new Command(async () => await DeleteAll());
@@ -68,6 +76,7 @@ namespace HuntLog.AppModule.Setup
             _dogService = dogService;
             _specieService = specieService;
             _navigator = navigator;
+            _fileManager = fileManager;
 
             HuntersCommand = new Command(async () =>
             {
@@ -88,6 +97,8 @@ namespace HuntLog.AppModule.Setup
             {
                 await _navigator.PushAsync<CustomFieldsViewModel>();
             });
+
+
         }
 
         private async Task DeleteAll()
@@ -100,6 +111,8 @@ namespace HuntLog.AppModule.Setup
             await _logService.DeleteAll();
             await _hunterService.DeleteAll();
             await _dogService.DeleteAll();
+
+            _fileManager.DeleteAllImages();
 
             timer.Stop();
             Info = "All data deleted. It took " + timer.Interval + " ms";
@@ -219,6 +232,11 @@ namespace HuntLog.AppModule.Setup
                 ;
             var log = faker.Generate();
             return log;
+        }
+
+        internal void OnAppearing()
+        {
+            _fileManager.WriteAllImagesToConsole();
         }
     }
 }

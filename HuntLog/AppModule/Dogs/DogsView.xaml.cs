@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
 using HuntLog.Factories;
@@ -37,6 +38,9 @@ namespace HuntLog.AppModule.Dogs
         private readonly IHuntFactory _huntFactory;
 
         public ObservableCollection<DogViewModel> Dogs { get; set; }
+
+        public bool ListVisible => !EmptyList && !IsBusy;
+        public bool EmptyList { get; set; }
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
@@ -86,7 +90,7 @@ namespace HuntLog.AppModule.Dogs
                 vm.SetState(hunt);
                 Dogs.Add(vm);
             }
-
+            EmptyList = !Dogs.Any();
             IsBusy = false;
         }
     }

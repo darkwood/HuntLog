@@ -133,17 +133,6 @@ namespace HuntLog.AppModule.Hunts
             Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
             Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
 
-            WriteAllImagesToConsole();
-        }
-
-        private void WriteAllImagesToConsole()
-        {
-            var files = _fileManager.GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
-            Console.WriteLine("----Photos: " + files.Count() + "----");
-            foreach (var file in files)
-            {
-                Console.WriteLine(file);
-            }
         }
 
         private async Task SetPositionAsync()
@@ -205,7 +194,7 @@ namespace HuntLog.AppModule.Hunts
         {
             return new Jakt
             {
-                ID = ID ?? Guid.NewGuid().ToString(),
+                ID = string.IsNullOrEmpty(ID) ? Guid.NewGuid().ToString() : ID,
                 Sted = Location,
                 DatoFra = DateFrom,
                 DatoTil = DateTo,

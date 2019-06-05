@@ -20,6 +20,8 @@ namespace HuntLog.AppModule.Logs
             BindingContext = _viewModel;
 
             InitializeToolbarItems();
+            var spin = new ActivityIndicator { IsRunning = true };
+            Content = spin;
         }
 
         protected override void OnAppearing()
@@ -35,6 +37,7 @@ namespace HuntLog.AppModule.Logs
         private void InitializeContent()
         {
             var tableView = new ExtendedTableView { HasUnevenRows = true, Intent = TableIntent.Form };
+
             var section1 = new TableSection();
             var section2 = new TableSection("Egendefinerte felter");
             var section3 = new TableSection();

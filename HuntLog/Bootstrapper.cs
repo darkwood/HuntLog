@@ -12,6 +12,7 @@ using HuntLog.AppModule.Species;
 using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Stats;
 using HuntLog.AppModule.Setup;
+using HuntLog.AppModule.Stats.Pages;
 
 namespace HuntLog
 {
@@ -65,6 +66,7 @@ namespace HuntLog
             viewFactory.Register<InputTextViewModel, InputTextView>();
 
             viewFactory.Register<StatsViewModel, StatsView>();
+            viewFactory.Register<StatsSpeciesListViewModel, StatsSpeciesListView>();
             viewFactory.Register<StatsMapViewModel, StatsMapView>();
             viewFactory.RegisterView<StatsFilterViewModel, StatsFilterView>();
         }
@@ -107,7 +109,7 @@ namespace HuntLog
                 fileManager.CopyToAppFolder("loggtyper.xml");
             }
 
-#if DEBUG
+//#if DEBUG
             //if (!fileManager.Exists("jakt.xml"))
             //{
             //    fileManager.CopyToAppFolder("dogs.xml");
@@ -117,7 +119,7 @@ namespace HuntLog
             //    fileManager.CopyToAppFolder("myspecies.xml");
             //    fileManager.CopyToAppFolder("selectedartids.xml");
             //}
-#endif
+//#endif
         }
     }
 }

@@ -27,9 +27,12 @@
                 
                 <TableSection Title="">
                     <cells:ImageHeaderCell HeightRequest="250" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                    <cells:ExtendedTextCell Text="Navn" Text2="{Binding Name}" />
+                    <EntryCell Label="Navn"  Text="{Binding Name}" />
+                    <EntryCell Label="Rase"  Text="{Binding Breed}" />
+                    <EntryCell Label="Regnr"  Text="{Binding RegNo}" />
+                    <!--<cells:ExtendedTextCell Text="Navn" Text2="{Binding Name}" />
                     <cells:ExtendedTextCell Text="Rase" Text2="{Binding Breed}" />
-                    <cells:ExtendedTextCell Text="Regnr" Text2="{Binding RegNo}" />
+                    <cells:ExtendedTextCell Text="Regnr" Text2="{Binding RegNo}" />-->
                 </TableSection>
                 
             </TableRoot>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.AppModule.Stats.Pages.StatsSpeciesListView"
+             Title="Antall felt vilt">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Items}" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                   <ViewCell>
+                        <StackLayout Margin="15"
+                                     Orientation="Horizontal">
+                            
+                            <Label Text="{Binding Title}"
+                                   VerticalOptions="Center" />
+                            
+                            <Label Text="{Binding Sum}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="EndAndExpand"
+                                   FontSize="Large" 
+                                   TextColor="{StaticResource Primary}"/>
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>     
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

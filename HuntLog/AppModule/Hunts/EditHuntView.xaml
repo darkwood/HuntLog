@@ -24,7 +24,8 @@
                 
                 <TableSection Title="">
                     <cells:ImageHeaderCell  HeightRequest="200" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                    <cells:ExtendedTextCell Text="Sted" Text2="{Binding Location}" />
+                    <EntryCell Label="Sted"  Text="{Binding Location}" />
+                    <!--<cells:ExtendedTextCell Text="Sted" Text2="{Binding Location}" />-->
                     <cells:MapCell          Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                     <cells:PickerCell Text="Jegere" PickerItems="{Binding Hunters}" />
                     <cells:PickerCell Text="Hunder" PickerItems="{Binding Dogs}" />

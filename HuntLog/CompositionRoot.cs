@@ -18,6 +18,7 @@ using HuntLog.AppModule.Stats;
 using System.Reflection;
 using System.Linq;
 using HuntLog.AppModule.Setup;
+using HuntLog.AppModule.Stats.Pages;
 
 namespace HuntLog
 {
@@ -114,6 +115,9 @@ namespace HuntLog
 
             .Register<StatsMapViewModel>()
             .Register<StatsMapView>()
+
+            .Register<StatsSpeciesListViewModel>()
+            .Register<StatsSpeciesListView>()
 
             .RegisterSingleton<StatsFilterViewModel>()
             .RegisterSingleton<StatsFilterView>()

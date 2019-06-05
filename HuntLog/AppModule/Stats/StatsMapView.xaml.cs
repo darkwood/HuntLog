@@ -41,7 +41,6 @@ namespace HuntLog.AppModule.Stats
         private ExtendedMap _mapView;
         private readonly IHuntFactory _huntFactory;
         private readonly IBaseService<Logg> _logService;
-        private readonly IBaseService<Jakt> _huntService;
         private IEnumerable<Logg> _logs;
         private string _huntId;
         private int _selectedSegment;
@@ -54,12 +53,10 @@ namespace HuntLog.AppModule.Stats
 
         public StatsMapViewModel(StatsFilterViewModel statsFilterViewModel,
                               IHuntFactory huntFactory,
-                              IBaseService<Logg> logService,
-                              IBaseService<Jakt> huntService)
+                              IBaseService<Logg> logService)
         {
             _huntFactory = huntFactory;
             _logService = logService;
-            _huntService = huntService;
             StatsFilterViewModel = statsFilterViewModel;
 
             StatsFilterViewModel.FilterChangedAction += async () =>
@@ -81,8 +78,11 @@ namespace HuntLog.AppModule.Stats
             if (!string.IsNullOrEmpty(_huntId))
             {
                 _logs = _logs.Where(l => l.JaktId == _huntId);
-                StatsFilterViewModel.DateFrom = _logs.Min(l => l.Dato);
-                StatsFilterViewModel.DateTo = _logs.Max(l => l.Dato);
+                if (_logs.Any())
+                {
+                    StatsFilterViewModel.DateFrom = _logs.Min(l => l.Dato);
+                    StatsFilterViewModel.DateTo = _logs.Max(l => l.Dato);
+                }
             }
 
            await AddPins();

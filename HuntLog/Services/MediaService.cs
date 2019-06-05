@@ -47,7 +47,7 @@ namespace HuntLog.Services
                 CompressionQuality = 92,
                 PhotoSize = PhotoSize.Large,
                 AllowCropping = true,
-                SaveToAlbum = true
+                SaveToAlbum = false
             });
             return file;
         }

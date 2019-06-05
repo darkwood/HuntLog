@@ -48,29 +48,29 @@ namespace HuntLog.AppModule.Hunts
         private readonly IBaseService<Jakt> _huntService;
         private readonly Func<HuntListItemViewModel> _huntListItemViewModelFactory;
         private readonly INavigator _navigator;
-        private readonly IDialogService _dialogService;
-        private readonly IFileManager _fileManager;
         private readonly IHuntFactory _huntFactory;
-        private ObservableCollection<HuntGroup> _huntListItemViewModels;
-        public ObservableCollection<HuntGroup> HuntListItemViewModels
-        {
-            get { return _huntListItemViewModels; }
-            set { SetProperty(ref _huntListItemViewModels, value); }
-        }
+        private readonly IDialogService _dialogService;
+
+        public ObservableCollection<HuntGroup> HuntListItemViewModels { get; set; }
+        public bool ListVisible => !EmptyList && !IsBusy;
+        public bool EmptyList { get; set; }
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
         public Command RefreshCommand { get; set; }
 
-        public HuntsViewModel(IBaseService<Jakt> huntService, Func<HuntListItemViewModel> huntListItemViewModelFactory, INavigator navigator, IDialogService dialogService, IFileManager fileManager, IHuntFactory huntFactory)
+        public HuntsViewModel(IBaseService<Jakt> huntService, 
+                            Func<HuntListItemViewModel> huntListItemViewModelFactory, 
+                            INavigator navigator, 
+                            IHuntFactory huntFactory,
+                            IDialogService dialogService)
         {
             _huntService = huntService;
             _huntListItemViewModelFactory = huntListItemViewModelFactory;
             _navigator = navigator;
-            _dialogService = dialogService;
-            _fileManager = fileManager;
             _huntFactory = huntFactory;
-
+            _dialogService = dialogService;
+            HuntListItemViewModels = new ObservableCollection<HuntGroup>();
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
             RefreshCommand = new Command(async () => await FetchData(true));
@@ -104,7 +104,6 @@ namespace HuntLog.AppModule.Hunts
         {
             IsBusy = true;
 
-            HuntListItemViewModels = new ObservableCollection<HuntGroup>();
             var hunts = await _huntService.GetItems(forceRefresh);
 
             var huntListViewModels = hunts.Select(hunt =>
@@ -115,6 +114,7 @@ namespace HuntLog.AppModule.Hunts
             });
 
             var groups = huntListViewModels.GroupBy(g => g.DateFrom.Year).OrderByDescending(o => o.Key);
+            HuntListItemViewModels.Clear();
             foreach (var g in groups)
             {
                 var jg = new HuntGroup(g.Key.ToString(), "");
@@ -124,6 +124,8 @@ namespace HuntLog.AppModule.Hunts
                 }
                 HuntListItemViewModels.Add(jg);
             }
+
+            EmptyList = !huntListViewModels.Any();
 
             IsBusy = false;
         }
@@ -163,9 +165,11 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task ShowHunt()
         {
+            IsBusy = true;
             await _navigator.PushAsync<HuntViewModel>(
                 beforeNavigate: (arg) => arg.SetState(_dto),
                 afterNavigate: async (arg) => await arg.AfterNavigate());
+            IsBusy = false;
         }
     }
 }

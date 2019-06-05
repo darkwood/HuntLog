@@ -12,10 +12,30 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <Grid>
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+        <Grid BackgroundColor="{StaticResource TableBg}">
+             
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         IsVisible="{Binding EmptyList}"
+                         Margin="20">
+                
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                
+                <Label Text="Ingen jegere opprettet enda" 
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       />
+                <Label Text="Ved å registrere jegere kan du opprette et jaktlag for hver jakt og markere hvem som har felt vilt." 
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       FontSize="Small"
+                       />
+                <Button Text="Opprett første jeger" 
+                        Command="{Binding AddCommand}" />
+            </StackLayout>
+            
             <ListView 
-                IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
+                IsVisible="{Binding ListVisible}"
                 x:Name="huntersListView"
                 ItemsSource="{Binding Hunters}"
                 HasUnevenRows="true"

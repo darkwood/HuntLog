@@ -21,7 +21,7 @@ namespace HuntLog.Services
 
     public class BaseService<T> : IBaseService<T> where T : BaseDto
     {
-        private const int _delay = 500;
+        private const int _delay = 0;
         private string _dataFileName = "";
         private readonly IFileManager _fileManager;
         private List<T> _dtos;
@@ -46,8 +46,8 @@ namespace HuntLog.Services
         public async Task DeleteAll()
         {
             _fileManager.Delete(_dataFileName);
-            _dtos = null;
-            await Task.CompletedTask;
+            _fileManager.Delete(_dataFileName.Replace(".json", ".xml"));
+            await GetItems();
         }
 
         public async Task<T> Get(string id)

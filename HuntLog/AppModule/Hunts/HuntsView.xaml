@@ -12,10 +12,34 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <Grid>
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+        <Grid BackgroundColor="{StaticResource TableBg}">
+             
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         IsVisible="{Binding EmptyList}"
+                         Margin="20">
+                
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                <Image Source="logo_splash_screen" Margin="5" />
+                <Label Text="Velkommen til Jaktloggen" 
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       />
+                <Label Text="Den beste måten å loggføre dine jaktturer. Håper du får mye glede av den i årene som kommer." 
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       FontSize="Small"
+                       />
+                <Label Text="Skitt jakt!" 
+                       HorizontalTextAlignment="Center"
+                       FontSize="Medium"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       />
+                <Button Text="Opprett første jakt" 
+                        Command="{Binding AddCommand}" />
+            </StackLayout>
+            
             <ListView 
-            IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
             x:Name="huntListView"
             ItemsSource="{Binding HuntListItemViewModels}"
             IsGroupingEnabled="true"
@@ -24,6 +48,8 @@
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"
             RefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsBusy}"
+            IsVisible="{Binding ListVisible}"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -31,6 +57,8 @@
                                             Text="{Binding Title}" 
                                             Detail="{Binding Detail}" 
                                             StyleId="disclosure"
+                                            SpinnerActive="{Binding IsBusy}"
+                                            IsEnabled="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
                                             Command="{Binding ItemTappedCommand}">
                         <cells:ExtendedTextCell.ContextActions>
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference huntListView}}" CommandParameter="{Binding .}"
@@ -40,7 +68,7 @@
                 </DataTemplate>     
             </ListView.ItemTemplate>
         </ListView>
-        </Grid>
+       </Grid>
         
     </ContentPage.Content>
 </ContentPage>

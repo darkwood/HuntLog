@@ -39,7 +39,7 @@ namespace HuntLog.Cells
             "150",
             propertyChanged: (bindable, oldValue, newValue) => {
                 var height = double.Parse(newValue as string);
-                ((ImageHeaderCell)bindable).View.HeightRequest = height;
+                //((ImageHeaderCell)bindable).View.HeightRequest = height;
             });
 
 
@@ -55,26 +55,42 @@ namespace HuntLog.Cells
 
         public ImageHeaderCell()
         {
-            var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
-            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
-            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            CreateImage();
+            //var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
+            //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
+            //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
+            var label = new Label 
+            { 
+                Text = "Bilde", 
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            CellImage = CreateImage();
             Buttons = GetButtons();
 
-            viewLayout.Children.Add(CellImage, 0, 0);
-            viewLayout.Children.Add(Buttons, 1, 0);
+            var viewLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Padding = 10
+            };
+            viewLayout.Children.Add(label);
+            viewLayout.Children.Add(CellImage);
+            viewLayout.Children.Add(Buttons);
 
             View = viewLayout;
         }
 
-        private void CreateImage()
+        private Image CreateImage()
         {
-            CellImage = new Image
+            var img = new Image
             {
-                Aspect = Aspect.AspectFill
+                Aspect = Aspect.AspectFill,
+                HorizontalOptions = LayoutOptions.End,
+                HeightRequest = 70,
+                WidthRequest = 70
             };
-            CellImage.GestureRecognizers.Add(CreateTapGestureRecognizer());
+            img.GestureRecognizers.Add(CreateTapGestureRecognizer());
+            return img;
         }
 
         private View GetButtons()
@@ -82,13 +98,13 @@ namespace HuntLog.Cells
             var btnLayout = new Grid
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.End,
                 InputTransparent = true,
                 CascadeInputTransparent = false,
 
             };
             btnLayout.Children.Add(CreateButton("camera.png", HuntConfig.CapturePhoto), 0, 0);
-            btnLayout.Children.Add(CreateButton("photos.png", HuntConfig.OpenLibrary), 0 , 1);
+            btnLayout.Children.Add(CreateButton("photos.png", HuntConfig.OpenLibrary), 1 , 0);
             return btnLayout;
         }
 

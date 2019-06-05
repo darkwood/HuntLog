@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using HuntLog.Interfaces;
 using System.Xml;
+using System.Linq;
 
 namespace HuntLog.Services
 {
@@ -20,6 +21,8 @@ namespace HuntLog.Services
         void Copy(string sourceFile, string destinationFile);
         void SaveToLocalStorage<T>(T objToSerialize, string filename);
         string[] GetAllFiles();
+        void WriteAllImagesToConsole();
+        void DeleteAllImages();
     }
 
     public class FileManager : IFileManager
@@ -123,5 +126,33 @@ namespace HuntLog.Services
         {
             return _fileUtility.GetAllFiles();
         }
+
+
+        public void WriteAllImagesToConsole()
+        {
+            var files = GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+            Console.WriteLine("----Photos: " + files.Count() + "----");
+            foreach (var file in files)
+            {
+                Console.WriteLine(file);
+            }
+        }
+
+        public void DeleteAllImages()
+        {
+#if DEBUG
+            var files = GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+
+            foreach (var file in files)
+            {
+                Console.WriteLine(file);
+                if (file.Contains("IMG_2019")) { Delete(file); }
+                if (file.Contains("jeger_")) { Delete(file); }
+                if (file.Contains("jakt_")) { Delete(file); }
+                if (file.Contains("dog_")) { Delete(file); }
+            }
+#endif
+        }
+
     }
 }

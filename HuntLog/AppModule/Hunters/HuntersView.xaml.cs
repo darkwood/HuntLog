@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
 using HuntLog.Factories;
@@ -37,6 +38,8 @@ namespace HuntLog.AppModule.Hunters
         private readonly IHuntFactory _huntFactory;
 
         public ObservableCollection<HunterViewModel> Hunters { get; set; }
+        public bool ListVisible => !EmptyList && !IsBusy;
+        public bool EmptyList { get; set; }
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
@@ -78,6 +81,7 @@ namespace HuntLog.AppModule.Hunters
         public async Task FetchData()
         {
             IsBusy = true;
+            EmptyList = true;
 
             Hunters = new ObservableCollection<HunterViewModel>();
             var hunts = await _hunterService.GetItems();
@@ -88,7 +92,7 @@ namespace HuntLog.AppModule.Hunters
                 vm.SetState(hunt);
                 Hunters.Add(vm);
             }
-
+            EmptyList = !Hunters.Any();
             IsBusy = false;
         }
     }

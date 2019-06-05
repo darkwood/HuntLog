@@ -47,6 +47,7 @@
     <Folder Include="AppModule\Stats\" />
     <Folder Include="Extensions\" />
     <Folder Include="AppModule\Setup\" />
+    <Folder Include="AppModule\Stats\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
