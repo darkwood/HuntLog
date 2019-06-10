@@ -26,9 +26,15 @@
             
         <Grid VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource TableBg}">
             
-            <Image 
+            <ci:CircleImage 
                 Source="{Binding Source}"
-                Aspect="AspectFit"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                Aspect="AspectFill"
+                BorderColor="White" 
+                BorderThickness="2"
+                WidthRequest="400"
+                HeightRequest="400"
             />
 
             <Grid IsVisible="{Binding IsBusy}" Padding="80" VerticalOptions="End" HorizontalOptions="Center">

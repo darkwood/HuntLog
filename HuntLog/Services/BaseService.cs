@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.Models;
-using Xamarin.Essentials;
-using Newtonsoft.Json;
-using System.Xml.Serialization;
+using Microsoft.AppCenter.Analytics;
 
 namespace HuntLog.Services
 {
@@ -76,10 +73,16 @@ namespace HuntLog.Services
             {
                 _dtos.Remove(itemToReplace);
                 item.Changed = DateTime.Now;
+                Analytics.TrackEvent("Item changed", new Dictionary<string, string> {
+                    { "Type", item.GetType().Name }
+                });
             }
             else 
             {
                 item.Created = DateTime.Now;
+                Analytics.TrackEvent("Item created", new Dictionary<string, string> {
+                    { "Type", item.GetType().Name }
+                });
             }
             _dtos.Add(item);
 

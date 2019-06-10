@@ -11,6 +11,8 @@ using HuntLog.Helpers;
 using HuntLog.Factories;
 using HuntLog.Cells;
 using System.Collections.Generic;
+using HuntLog.AppModule.Hunters;
+using HuntLog.AppModule.Dogs;
 
 namespace HuntLog.AppModule.Hunts
 {
@@ -23,6 +25,12 @@ namespace HuntLog.AppModule.Hunts
             BindingContext = viewModel;
             InitializeComponent();
             _viewModel = viewModel;
+        }
+
+        protected override async void OnAppearing()
+        {
+            await _viewModel.OnAppearing();
+            base.OnAppearing();
         }
     }
 
@@ -42,6 +50,9 @@ namespace HuntLog.AppModule.Hunts
         public Command DateFromCommand { get; set; }
         public Command HuntersCommand { get; set; }
         public Command DogsCommand { get; set; }
+
+        public Command AddHuntersCommand { get; set; }
+        public Command AddDogsCommand { get; set; }
 
         public CellAction ImageAction { get; set; }
         public CellAction MapAction { get; set; }
@@ -69,6 +80,8 @@ namespace HuntLog.AppModule.Hunts
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
             DateFromCommand = new Command(async () => await EditDateFrom());
+            AddHuntersCommand = new Command(async () => { await _navigator.PushAsync<HuntersViewModel>(); });
+            AddDogsCommand = new Command(async () => { await _navigator.PushAsync<DogsViewModel>(); });
 
             CreateImageActions();
             CreatePositionActions();
@@ -123,16 +136,17 @@ namespace HuntLog.AppModule.Hunts
                 });
         }
 
-        public override async Task AfterNavigate()
+        public async Task OnAppearing()
         {
+            IsBusy = true;
+            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
+            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+
             if (IsNew)
             {
                 await SetPositionAsync();
             }
-
-            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
-            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
-
+            IsBusy = false;
         }
 
         private async Task SetPositionAsync()
@@ -155,6 +169,7 @@ namespace HuntLog.AppModule.Hunts
         {
             SetStateFromDto(hunt ?? CreateNewHunt());
             Title = IsNew ? "Ny jakt" : "Rediger jakt";
+            IsBusy = true;
             _callback = callback;
         }
 
@@ -170,7 +185,7 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task Delete()
         {
-            var ok = await _huntFactory.DeleteHunt(ID, ImagePath);
+            var ok = await _huntFactory.DeleteHunt(ID);
             if (ok) 
             {
                 await _navigator.PopToRootAsync();
@@ -182,7 +197,7 @@ namespace HuntLog.AppModule.Hunts
             Jakt dto = CreateHuntDto();
             if (MediaFile != null)
             {
-                SaveImage($"jakt_{ID}.jpg", _fileManager);
+                SaveImage($"jakt_{dto.ID}.jpg", _fileManager);
             }
 
             await _huntService.Save(dto);

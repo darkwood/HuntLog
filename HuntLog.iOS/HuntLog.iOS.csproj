@@ -241,5 +241,6 @@
     <BundleResource Include="Resources\FontAwesome5Brands.otf" />
     <BundleResource Include="Resources\FontAwesome5Solid.otf" />
     <BundleResource Include="Resources\FontAwesome5Regular.otf" />
+    <BundleResource Include="Resources\icons8-plus.pdf" />
   </ItemGroup>
 </Project>

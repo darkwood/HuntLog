@@ -36,6 +36,26 @@ namespace HuntLog.Cells
 
         /***************************************************************************/
 
+        public static readonly BindableProperty SubTextProperty =
+            BindableProperty.Create(
+                nameof(SubText),
+                typeof(string),
+                typeof(PickerCell),
+                null,
+                propertyChanged: (bindable, oldValue, newValue) => {
+                    ((PickerCell)bindable).SubTextLabel.Text = newValue as string;
+                }
+            );
+
+        public string SubText
+        {
+            get { return (string)GetValue(SubTextProperty); }
+            set { SetValue(SubTextProperty, value); }
+        }
+        public Label SubTextLabel { get; private set; }
+
+        /***************************************************************************/
+
         public static readonly BindableProperty PickerItemsProperty =
                     BindableProperty.Create(
                         nameof(PickerItems),
@@ -43,8 +63,12 @@ namespace HuntLog.Cells
                         typeof(PickerCell),
                         null,
                         propertyChanged: (bindable, oldValue, newValue) => {
-                            ((PickerCell)bindable).PickerItems = newValue as List<PickerItem>;
-                            ((PickerCell)bindable).PopulatePickers();
+                            var prop = ((PickerCell)bindable).PickerItems;
+                            prop = newValue as List<PickerItem>;
+                            if (prop != null && prop.Any())
+                            {
+                                ((PickerCell)bindable).PopulatePickers();
+                            }
                         }
                     );
 
@@ -75,22 +99,53 @@ namespace HuntLog.Cells
 
         /***************************************************************************/
 
+        public static readonly BindableProperty EmptyCommandProperty =
+        BindableProperty.Create(
+            nameof(EmptyCommand),
+            typeof(Command),
+            typeof(PickerCell),
+            null,
+            propertyChanged: (bindable, oldValue, newValue) => {
+                ((PickerCell)bindable).EmptyCommand = (ICommand)newValue;
+                ((PickerCell)bindable).AddCommandForEmptyList();
+            }
+        );
+
+        public ICommand EmptyCommand
+        {
+            get => (ICommand)GetValue(EmptyCommandProperty);
+            set => SetValue(EmptyCommandProperty, value);
+        }
 
         public PickerCell() : base()
         {
-            var viewLayout = new Grid
+            //var viewLayout = new Grid
+            //{
+            //    Padding = new Thickness(15, 5),
+            //    HeightRequest = 70
+            //};
+            //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
+            //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            ViewLayout.HeightRequest = 70;
+
+            var labelsLayout = new StackLayout
             {
-                Padding = new Thickness(10, 5),
-                HeightRequest = 70
+                VerticalOptions = LayoutOptions.Center
             };
-            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
-            viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
             TextLabel = new Label {
-                VerticalOptions = LayoutOptions.Center,
                 LineBreakMode = LineBreakMode.NoWrap,
-                WidthRequest = 90
+                WidthRequest = 95
             };
+
+            SubTextLabel = new Label
+            {
+                FontSize = 12,
+                TextColor = Color.Gray
+            };
+
+            labelsLayout.Children.Add(TextLabel);
+            labelsLayout.Children.Add(SubTextLabel);
 
             PickersView = new StackLayout { 
                 Orientation = StackOrientation.Horizontal,
@@ -100,20 +155,21 @@ namespace HuntLog.Cells
 
             var scrollView = new ScrollView { 
                 Orientation = ScrollOrientation.Horizontal,
-                HorizontalOptions = LayoutOptions.End
+                HorizontalOptions = LayoutOptions.EndAndExpand
             };
             scrollView.Content = PickersView;
 
-            viewLayout.Children.Add(TextLabel, 0, 0);
-            viewLayout.Children.Add(scrollView, 1, 0);
+            ViewLayout.Children.Add(labelsLayout);
+            ViewLayout.Children.Add(scrollView);
 
-            View = viewLayout;
+            View = ViewLayout;
         }
 
         private void PopulatePickers()
         {
             PickersView.Children.Clear();
             var size = 50;
+
             foreach(var item in PickerItems)
             {
                 var wrap = new StackLayout {
@@ -204,6 +260,17 @@ namespace HuntLog.Cells
 
                 PickersView.Children.Add(wrap);
             }
+        }
+
+
+        private void AddCommandForEmptyList()
+        {
+            var btn = new Button();
+            btn.Text = "Opprett";
+            btn.StyleClass = new[] { "PrimaryButton" };
+            btn.Command = EmptyCommand;
+
+            PickersView.Children.Add(btn);
         }
 
     }

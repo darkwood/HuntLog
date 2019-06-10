@@ -48,6 +48,7 @@
     <Folder Include="Extensions\" />
     <Folder Include="AppModule\Setup\" />
     <Folder Include="AppModule\Stats\Pages\" />
+    <Folder Include="AppModule\Hunts\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -56,6 +57,7 @@
     <Compile Remove="Factories\IViewFactory.cs" />
     <Compile Remove="Models\ListModels\CellItem %28copy%29.cs" />
     <Compile Remove="AppModule\Stats\StatsMapView %28copy%29.xaml.cs" />
+    <Compile Remove="Helpers\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />

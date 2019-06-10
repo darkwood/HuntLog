@@ -12,7 +12,6 @@ namespace HuntLog.AppModule.Hunts
     public class HuntViewModelBase : ViewModelBase
     {
         protected Jakt _dto;
-
         public string Location { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }

@@ -30,6 +30,12 @@ namespace HuntLog.AppModule.Logs
             InitializeComponent();
             _viewModel = viewModel;
         }
+
+        protected override async void OnAppearing()
+        {
+            await _viewModel.OnAppearing();
+            base.OnAppearing();
+        }
     }
 
     public class LogViewModel : ViewModelBase
@@ -70,6 +76,7 @@ namespace HuntLog.AppModule.Logs
         public Command DeleteCommand { get; set; }
         public Command TimeCommand { get; set; }
         public Command CustomFieldsCommand { get; set; }
+        public Command NoSpecieCommand { get; set; }
 
         public CellAction ImageAction { get; set; }
         public CellAction MapAction { get; set; }
@@ -93,6 +100,7 @@ namespace HuntLog.AppModule.Logs
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
             TimeCommand = new Command(async () => { await EditDateFrom(); });
+            NoSpecieCommand = new Command(async () => { await _navigator.PushAsync<SpeciesViewModel>(); });
             HunterAndDog = new ObservableCollection<PickerItem>();
             CustomFields = new List<CustomFieldViewModel>();
 
@@ -178,7 +186,7 @@ namespace HuntLog.AppModule.Logs
             Age = dto.Age;
         }
 
-        public override async Task AfterNavigate()
+        public async Task OnAppearing()
         {
             if (IsNew)
             {
@@ -283,20 +291,20 @@ namespace HuntLog.AppModule.Logs
             {
                 JaktId = _huntDto.ID,
                 Created = DateTime.Now,
-                Dato = _huntDto.DatoFra
+                Dato = DateTime.Now
             };
         }
 
         private async Task ShowItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto),
-                afterNavigate: async (arg) => await arg.AfterNavigate());
+                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto));
+                //afterNavigate: async (arg) => await arg.OnAppearing());
         }
 
         private async Task Delete()
         {
-            var ok = await _huntFactory.DeleteLog(ID, ImagePath);
+            var ok = await _huntFactory.DeleteLog(ID);
             if (ok)
             {
                 await _navigator.PopAsync();
@@ -308,7 +316,7 @@ namespace HuntLog.AppModule.Logs
             Logg dto = CreateLogDto();
             if (MediaFile != null)
             {
-                SaveImage($"jaktlogg_{ID}.jpg", _fileManager);
+                SaveImage($"jaktlogg_{dto.ID}.jpg", _fileManager);
             }
 
             await _logService.Save(dto);

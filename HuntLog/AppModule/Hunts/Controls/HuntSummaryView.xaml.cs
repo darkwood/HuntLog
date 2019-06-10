@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HuntLog.Helpers;
 using Xamarin.Forms;
 
-namespace HuntLog.AppModule.Hunts
+namespace HuntLog.AppModule.Hunts.Controls
 {
     public partial class HuntSummaryView : ContentView
     {

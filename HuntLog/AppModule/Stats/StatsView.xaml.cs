@@ -73,7 +73,7 @@ namespace HuntLog.AppModule.Stats
             {
 
                 await _navigator.PushAsync<StatsSpeciesListViewModel>(
-                    afterNavigate: async (obj) => { await obj.AfterNavigate(); }
+                    afterNavigate: async (obj) => { await obj.OnAppearing(); }
                 );
             });
         }

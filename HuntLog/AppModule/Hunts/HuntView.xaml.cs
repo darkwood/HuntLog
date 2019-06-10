@@ -61,6 +61,8 @@ namespace HuntLog.AppModule.Hunts
         public Command MapCommand { get; set; }
         public Command AddCommand { get; set; }
 
+        public bool ShowMapButton => Items.Any();
+
         public HuntViewModel(IBaseService<Jeger> hunterService,
                         INavigator navigator,
                         IBaseService<Logg> logService,
@@ -77,6 +79,7 @@ namespace HuntLog.AppModule.Hunts
             AddCommand = new Command(async () => await AddItem());
             MapCommand = new Command(async () => await ShowMap());
 
+            Items = new ObservableCollection<LogListItemViewModel>();
         }
 
         private async Task ShowMap()
@@ -90,19 +93,13 @@ namespace HuntLog.AppModule.Hunts
             Action<Jakt> callback = (arg) => { SetState(arg); };
 
             await _navigator.PushAsync<EditHuntViewModel>(
-                    beforeNavigate: (arg) => arg.SetState(_dto, callback),
-                    afterNavigate: async (arg) => await arg.AfterNavigate());
+                    beforeNavigate: (arg) => arg.SetState(_dto, callback));
         }
 
         public void SetState(Jakt dto)
         {
             _dto = dto;
             SetStateFromDto(_dto);
-        }
-
-        public override async Task AfterNavigate()
-        {
-            await FetchData();
         }
 
         public async Task OnAppearing()
@@ -114,12 +111,12 @@ namespace HuntLog.AppModule.Hunts
         {
             await _navigator.PushAsync<LogViewModel>(
                     (vm) => vm.BeforeNavigate(null, _dto),
-                    (vm) => vm.AfterNavigate());
+                    (vm) => vm.OnAppearing());
         }
 
         private async Task DeleteItem(object item)
         {
-            var ok = await _huntFactory.DeleteLog(ID, ImagePath);
+            var ok = await _huntFactory.DeleteLog(ID);
             if (ok)
             {
                 await FetchData();
@@ -138,7 +135,7 @@ namespace HuntLog.AppModule.Hunts
             {
                 var vm = _logListItemViewModelFactory();
                 vm.BeforeNavigate(i);
-                vm.AfterNavigate();
+                await vm.OnAppearing();
                 items.Add(vm);
             }
             items = items.OrderByDescending(o => o.Date).ToList();

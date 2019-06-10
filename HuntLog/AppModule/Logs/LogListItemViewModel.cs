@@ -41,8 +41,8 @@ namespace HuntLog.AppModule.Logs
         private async Task ShowItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto),
-                afterNavigate: async (arg) => await arg.AfterNavigate());
+                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto));
+                //afterNavigate: async (arg) => await arg.OnAppearing());
         }
 
         public void BeforeNavigate(Logg dto)
@@ -59,7 +59,7 @@ namespace HuntLog.AppModule.Logs
             return $"Kl. {Date.ToString("hh:mm", new CultureInfo("nb-no"))}";
         }
 
-        public override async Task AfterNavigate()
+        public async Task OnAppearing()
         {
             _huntDto = await _huntService.Get(_dto.JaktId);
             Detail = await _huntFactory.CreateLogSummary(_dto);

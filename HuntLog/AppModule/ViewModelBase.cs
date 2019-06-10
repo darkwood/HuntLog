@@ -25,11 +25,6 @@ namespace HuntLog.AppModule
         public string Title { get; set; }
         public bool IsBusy { get; set; }
 
-        public virtual async Task AfterNavigate()
-        {
-            await Task.CompletedTask;
-        }
-
         public string SaveImage(string filename, IFileManager fileManager)
         {
             using (var memoryStream = new MemoryStream())

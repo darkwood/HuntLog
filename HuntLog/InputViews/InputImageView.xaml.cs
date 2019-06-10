@@ -58,25 +58,30 @@ namespace HuntLog.InputViews
 
         public async Task OnAfterNavigate(string shortcut)
         {
-            if (shortcut == HuntConfig.OpenLibrary) { await OpenLibrary(); }
-            if (shortcut == HuntConfig.CapturePhoto) { await CapturePhoto(); }
+            if (shortcut == HuntConfig.OpenLibrary) 
+            { 
+                await OpenLibrary(true); 
+            }
+            if (shortcut == HuntConfig.CapturePhoto) 
+            { 
+                await CapturePhoto(true); 
+            }
         }
 
-        private async Task CapturePhoto()
+        private async Task CapturePhoto(bool isShortCut = false)
         {
             MediaFile = await _mediaService.TakePhotoAsync();
-            Source = ImageSource.FromStream(() =>
-            {
-                var stream = MediaFile.GetStreamWithImageRotatedForExternalStorage();
-                return stream;
-            });
-
-            DoneCommand.ChangeCanExecute();
+            await AfterMediaRetrieved(isShortCut);
         }
 
-        private async Task OpenLibrary()
+        private async Task OpenLibrary(bool isShortCut = false)
         {
             MediaFile = await _mediaService.OpenLibraryAsync();
+            await AfterMediaRetrieved(isShortCut);
+        }
+
+        private async Task AfterMediaRetrieved(bool isShortCut)
+        {
             Source = ImageSource.FromStream(() =>
             {
                 var stream = MediaFile.GetStreamWithImageRotatedForExternalStorage();
@@ -84,6 +89,11 @@ namespace HuntLog.InputViews
             });
 
             DoneCommand.ChangeCanExecute();
+
+            if (isShortCut)
+            {
+                //await _navigator.PopAsync();
+            }
         }
 
         private async Task Delete()

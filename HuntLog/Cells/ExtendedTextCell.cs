@@ -251,19 +251,11 @@ namespace HuntLog.Cells
         }
 
         public CircleImage CellImage { get; private set; }
-        public StackLayout ViewLayout { get; private set; }
         public TapGestureRecognizer GestureRecognizer { get; private set; }
         public Image SelectedImage { get; private set; }
 
         public ExtendedTextCell()
         {
-            ViewLayout = new StackLayout
-            {
-                Orientation=StackOrientation.Horizontal,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Padding = new Thickness(10)
-            };
 
             CellImage = new CircleImage
             {
@@ -288,7 +280,7 @@ namespace HuntLog.Cells
             ViewLayout.Children.Add(sublayout);
 
             Text2Label = new Label { VerticalOptions = LayoutOptions.Center, 
-                                     FontSize = 14,
+                                     FontSize = 16,
                                      TextColor = Utility.PRIMARY_COLOR,
                                      HorizontalOptions = LayoutOptions.FillAndExpand,
                                      HorizontalTextAlignment = TextAlignment.End};

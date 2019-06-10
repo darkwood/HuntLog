@@ -8,6 +8,8 @@ namespace HuntLog.Cells
     {
         protected INavigator _navigator;
 
+        public StackLayout ViewLayout { get; set; }
+
         public static readonly BindableProperty CellActionProperty = BindableProperty.Create(nameof(CellAction), typeof(CellAction), typeof(ImageHeaderCell), null);
 
         public CellAction CellAction
@@ -17,9 +19,17 @@ namespace HuntLog.Cells
         }
 
 
-        public BaseCell()
+
+    public BaseCell()
         {
             _navigator = App.Navigator;
+
+            ViewLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Margin = new Thickness(20, 5, 5, 5),
+                HeightRequest = 50
+            };
         }
     }
 }

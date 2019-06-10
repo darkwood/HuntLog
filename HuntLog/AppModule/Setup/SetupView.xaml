@@ -30,6 +30,9 @@
                         <Label Text="{Binding Info}" VerticalOptions="Center" FontSize="Medium" />
                     </StackLayout>
                 </ViewCell>
+                <ViewCell Height="400">
+                    <Editor Text="{Binding ImageFiles}" />
+                </ViewCell>
             </TableSection>
 
         </controls:ExtendedTableView>

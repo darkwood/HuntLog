@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="HuntLog.AppModule.Hunts.HuntsView"
     xmlns:Converters="clr-namespace:HuntLog.Converters"
+    xmlns:controls="clr-namespace:HuntLog.AppModule.Hunts.Controls"
     xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
     Title="Jaktloggen">
     
@@ -14,30 +15,7 @@
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource TableBg}">
              
-            <StackLayout VerticalOptions="CenterAndExpand"
-                         HorizontalOptions="CenterAndExpand"
-                         IsVisible="{Binding EmptyList}"
-                         Margin="20">
-                
-                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-                <Image Source="logo_splash_screen" Margin="5" />
-                <Label Text="Velkommen til Jaktloggen" 
-                       FontSize="Large"
-                       HorizontalTextAlignment="Center"
-                       />
-                <Label Text="Den beste måten å loggføre dine jaktturer. Håper du får mye glede av den i årene som kommer." 
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource MediumGrayTextColor}"
-                       FontSize="Small"
-                       />
-                <Label Text="Skitt jakt!" 
-                       HorizontalTextAlignment="Center"
-                       FontSize="Medium"
-                       TextColor="{StaticResource MediumGrayTextColor}"
-                       />
-                <Button Text="Opprett første jakt" 
-                        Command="{Binding AddCommand}" />
-            </StackLayout>
+            <controls:HuntEmptyListView />
             
             <ListView 
             x:Name="huntListView"

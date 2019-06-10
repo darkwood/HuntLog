@@ -85,17 +85,12 @@ namespace HuntLog.Cells
 
         public MapCell() : base()
         {
-            var viewLayout = new StackLayout
-            {
-                Orientation=StackOrientation.Horizontal,
-                Padding = 10,
-                HeightRequest = 80
-            };
+            ViewLayout.HeightRequest = 90;
 
             TextLabel = new Label{
                 VerticalOptions = LayoutOptions.Center
             };
-            viewLayout.Children.Add(TextLabel);
+            ViewLayout.Children.Add(TextLabel);
 
 
             MyMap = new ExtendedMap
@@ -103,11 +98,11 @@ namespace HuntLog.Cells
                 HorizontalOptions = LayoutOptions.EndAndExpand,
                 MapType = MapType.Hybrid,
                 HeightRequest = 80,
-                WidthRequest = 150,
+                WidthRequest = 220,
                 IsEnabled = false,
                 IsVisible = false
             };
-            viewLayout.Children.Add(MyMap);
+            ViewLayout.Children.Add(MyMap);
 
             InfoText = new Label { 
                 IsVisible = true, 
@@ -116,7 +111,7 @@ namespace HuntLog.Cells
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Utility.PRIMARY_COLOR
             };
-            viewLayout.Children.Add(InfoText);
+            ViewLayout.Children.Add(InfoText);
 
             ActivityIndicator = new ActivityIndicator
             {
@@ -125,7 +120,7 @@ namespace HuntLog.Cells
                 IsRunning = true,
                 IsVisible = false
             };
-            viewLayout.Children.Add(ActivityIndicator);
+            ViewLayout.Children.Add(ActivityIndicator);
 
             var gestureRecognizer = new TapGestureRecognizer();
 
@@ -138,9 +133,9 @@ namespace HuntLog.Cells
                 });
             };
 
-            viewLayout.GestureRecognizers.Add(gestureRecognizer);
+            ViewLayout.GestureRecognizers.Add(gestureRecognizer);
 
-            View = viewLayout;
+            View = ViewLayout;
         }
     }
 }

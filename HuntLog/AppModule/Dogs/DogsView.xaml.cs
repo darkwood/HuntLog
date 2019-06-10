@@ -66,7 +66,7 @@ namespace HuntLog.AppModule.Dogs
 
         private async Task DeleteItem(object item)
         {
-            var ok = await _huntFactory.DeleteDog((item as DogViewModel).ID, (item as DogViewModel).ImagePath);
+            var ok = await _huntFactory.DeleteDog((item as DogViewModel).ID);
             if (ok)
             {
                 await FetchData();

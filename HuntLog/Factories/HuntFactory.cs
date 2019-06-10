@@ -17,10 +17,10 @@ namespace HuntLog.Factories
         Task<List<PickerItem>> CreateSpeciePickerItems(string selectedId);
         Task<SpecieViewModel> CreateSpecieViewModel(string artId);
 
-        Task<bool> DeleteHunt(string id, string imagePath);
-        Task<bool> DeleteLog(string id, string imagePath);
-        Task<bool> DeleteHunter(string id, string imagePath);
-        Task<bool> DeleteDog(string id, string imagePath);
+        Task<bool> DeleteHunt(string id);
+        Task<bool> DeleteLog(string id);
+        Task<bool> DeleteHunter(string id);
+        Task<bool> DeleteDog(string id);
 
         Task<string> CreateLogSummary(Logg log);
     }
@@ -83,6 +83,10 @@ namespace HuntLog.Factories
                 hunterPickers = hunterPickers.OrderByDescending(
                         o => hunt.JegerIds.Any(h => h == o.ID)).ToList();
             }
+            if(hunterPickers.Count == 1)
+            {
+                hunterPickers[0].Selected = true;
+            }
             return hunterPickers;
         }
 
@@ -129,11 +133,10 @@ namespace HuntLog.Factories
             var art = await _specieService.Get(artId);
             var itemVM = _specieViewModelFactory();
             itemVM.SetState(art, true);
-            await itemVM.AfterNavigate();
             return itemVM;
         }
 
-        public async Task<bool> DeleteHunt(string id, string imagePath)
+        public async Task<bool> DeleteHunt(string id)
         {
             var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jakta og alle loggføringer blir permanent slettet. Er du sikker?");
             if (ok)
@@ -145,23 +148,24 @@ namespace HuntLog.Factories
                     _fileManager.Delete(log.ImagePath);
                 }
 
+
                 await _huntService.Delete(id);
-                _fileManager.Delete(imagePath);
+                _fileManager.Delete($"jakt_{id}.jpg");
             }
             return ok;
         }
-        public async Task<bool> DeleteLog(string id, string imagePath)
+        public async Task<bool> DeleteLog(string id)
         {
             var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Loggføringen blir permanent slettet. Er du sikker?");
             if (ok)
             {
                 await _logService.Delete(id);
-                _fileManager.Delete(imagePath);
+                _fileManager.Delete($"logg_{id}.jpg");
             }
             return ok;
         }
 
-        public async Task<bool> DeleteHunter(string id, string imagePath)
+        public async Task<bool> DeleteHunter(string id)
         {
             var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Jeger blir permanent slettet. Er du sikker?");
             if (ok)
@@ -181,12 +185,12 @@ namespace HuntLog.Factories
                 }
 
                 await _hunterService.Delete(id);
-                _fileManager.Delete(imagePath);
+                _fileManager.Delete($"jeger_{id}.jpg");
             }
             return ok;
         }
 
-        public async Task<bool> DeleteDog(string id, string imagePath)
+        public async Task<bool> DeleteDog(string id)
         {
             var ok = await _dialogService.ShowConfirmDialog("Bekreft sletting", "Hund blir permanent slettet. Er du sikker?");
             if (ok)
@@ -206,7 +210,7 @@ namespace HuntLog.Factories
                 }
 
                 await _dogService.Delete(id);
-                _fileManager.Delete(imagePath);
+                _fileManager.Delete($"dog_{id}.jpg");
             }
             return ok;
         }

@@ -58,6 +58,7 @@ namespace HuntLog.AppModule.Setup
         public Command DogsCommand { get; set; }
         public Command SpeciesCommand { get; set; }
         public Command FieldsCommand { get; set; }
+        public string ImageFiles { get; set; }
 
         public SetupViewModel(IBaseService<Jakt> huntService,
                               IBaseService<Logg> logService,
@@ -113,6 +114,9 @@ namespace HuntLog.AppModule.Setup
             await _dogService.DeleteAll();
 
             _fileManager.DeleteAllImages();
+            _fileManager.Delete("myspecies.xml");
+            _fileManager.Delete("selectedartids.xml");
+            _fileManager.Delete("selectedloggids.xml");
 
             timer.Stop();
             Info = "All data deleted. It took " + timer.Interval + " ms";
@@ -236,7 +240,14 @@ namespace HuntLog.AppModule.Setup
 
         internal void OnAppearing()
         {
-            _fileManager.WriteAllImagesToConsole();
+            var files = _fileManager.GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+            Console.WriteLine("----Photos: " + files.Count() + "----");
+            ImageFiles = string.Empty;
+            foreach (var file in files)
+            {
+                Console.WriteLine(file);
+                ImageFiles += file + "\n\r";
+            }
         }
     }
 }

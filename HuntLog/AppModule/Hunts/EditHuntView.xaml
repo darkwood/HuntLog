@@ -19,20 +19,34 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             
-            <controls:ExtendedTableView Grid.Row="0" HasUnevenRows="true" Intent="Form">
+            <ActivityIndicator IsRunning="true" 
+                               IsVisible="{Binding IsBusy}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               />
+            <controls:ExtendedTableView HasUnevenRows="true" 
+                                        Intent="Form" 
+                                        IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}">
             <TableRoot>
                 
                 <TableSection Title="">
-                    <cells:ImageHeaderCell  HeightRequest="200" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                    <EntryCell Label="Sted"  Text="{Binding Location}" />
-                    <!--<cells:ExtendedTextCell Text="Sted" Text2="{Binding Location}" />-->
-                    <cells:MapCell          Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
-                    <cells:PickerCell Text="Jegere" PickerItems="{Binding Hunters}" />
-                    <cells:PickerCell Text="Hunder" PickerItems="{Binding Dogs}" />
+                    <EntryCell Label="Jaktsted" Placeholder="Legg til sted" HorizontalTextAlignment="End" Text="{Binding Location}" />
+                    <cells:ImageHeaderCell HeightRequest="200" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
+                    <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
+                    <cells:PickerCell Text="Jegere" SubText="Opprett flere jegere i oppsettfanen" PickerItems="{Binding Hunters}" EmptyCommand="{Binding AddHuntersCommand}" />
+                    <cells:PickerCell Text="Hunder" SubText="Opprett flere hunder i oppsettfanen" PickerItems="{Binding Dogs}" EmptyCommand="{Binding AddDogsCommand}" />
                     <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
                     <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                    <EntryCell Label="Notat" Text="{Binding Notes}" />
-                    
+                    <!--<EntryCell Label="Notat" Height="200" Text="{Binding Notes}" />-->
+                    <ViewCell>
+                        <StackLayout HeightRequest="150"
+                                     Margin="20,5,5,5">
+                            <Label Text="Notat" />
+                            <Editor HeightRequest="130" 
+                                    Text="{Binding Notes}" 
+                                    Placeholder="Legg til et notat"/>
+                        </StackLayout>
+                    </ViewCell>
                 </TableSection>
             </TableRoot>
         </controls:ExtendedTableView>

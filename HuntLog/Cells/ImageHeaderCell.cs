@@ -58,6 +58,7 @@ namespace HuntLog.Cells
             //var viewLayout = new Grid { HeightRequest = double.Parse(HeightRequest) };
             //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Star });
             //viewLayout.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            ViewLayout.HeightRequest = 90;
 
             var label = new Label 
             { 
@@ -68,26 +69,22 @@ namespace HuntLog.Cells
             CellImage = CreateImage();
             Buttons = GetButtons();
 
-            var viewLayout = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                Padding = 10
-            };
-            viewLayout.Children.Add(label);
-            viewLayout.Children.Add(CellImage);
-            viewLayout.Children.Add(Buttons);
+            ViewLayout.Children.Add(label);
+            ViewLayout.Children.Add(CellImage);
+            ViewLayout.Children.Add(Buttons);
 
-            View = viewLayout;
+            View = ViewLayout;
         }
 
         private Image CreateImage()
         {
-            var img = new Image
+            var img = new CircleImage
             {
                 Aspect = Aspect.AspectFill,
                 HorizontalOptions = LayoutOptions.End,
-                HeightRequest = 70,
-                WidthRequest = 70
+                VerticalOptions = LayoutOptions.Center,
+                HeightRequest = 80,
+                WidthRequest = 80
             };
             img.GestureRecognizers.Add(CreateTapGestureRecognizer());
             return img;

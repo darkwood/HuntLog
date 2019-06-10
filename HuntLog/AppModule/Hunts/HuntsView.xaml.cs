@@ -81,15 +81,14 @@ namespace HuntLog.AppModule.Hunts
             Action<Jakt> callback = (arg) => { };
 
             await _navigator.PushAsync<EditHuntViewModel>(
-                    beforeNavigate: (vm) => vm.SetState(null, callback),
-                    afterNavigate: (vm) => vm.AfterNavigate());
+                    beforeNavigate: (vm) => vm.SetState(null, callback));
         }
 
         private async Task DeleteItem(object item)
         {
             var hunt = (item as HuntListItemViewModel);
 
-            var ok = await _huntFactory.DeleteHunt(hunt.ID, hunt.ImagePath);
+            var ok = await _huntFactory.DeleteHunt(hunt.ID);
             if (ok)
             {
                 await FetchData();
@@ -168,7 +167,7 @@ namespace HuntLog.AppModule.Hunts
             IsBusy = true;
             await _navigator.PushAsync<HuntViewModel>(
                 beforeNavigate: (arg) => arg.SetState(_dto),
-                afterNavigate: async (arg) => await arg.AfterNavigate());
+                afterNavigate: async (arg) => await arg.OnAppearing());
             IsBusy = false;
         }
     }

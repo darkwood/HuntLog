@@ -24,14 +24,11 @@ namespace HuntLog.AppModule.Logs
             Content = spin;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
-            if(!IsLoaded)
-            {
-                InitializeContent();
-                IsLoaded = true;
-            }
+            await _viewModel.OnAppearing();
+            InitializeContent();
         }
 
         private void InitializeContent()
@@ -43,7 +40,7 @@ namespace HuntLog.AppModule.Logs
             var section3 = new TableSection();
             section1.Add(CreateImageHeaderCell("150", "ImageSource", "ImageAction"));
             section1.Add(CreateMapCell("Posisjon", "Position", "MapAction"));
-            section1.Add(CreatePicker("Art", "SpeciesPickers", PickerMode.Single));
+            section1.Add(CreatePicker("Art", "SpeciesPickers", PickerMode.Single, "Velg dine arter i oppsettfanen"));
             section1.Add(CreatePicker("Antall sett", "ObservedPickers", PickerMode.Numeric));
             section1.Add(CreatePicker("Antall skudd", "ShotsPickers", PickerMode.Numeric));
             section1.Add(CreatePicker("Antall treff", "HitsPickers", PickerMode.Numeric));
@@ -105,12 +102,17 @@ namespace HuntLog.AppModule.Logs
             return cell;
         }
 
-        private static PickerCell CreatePicker(string text, string itemsBinding, PickerMode mode)
+        private static PickerCell CreatePicker(string text, string itemsBinding, PickerMode mode, string subtext = "", string commandBinding = null)
         {
             var cell = new PickerCell();
             cell.Text = text;
             cell.SetBinding(PickerCell.PickerItemsProperty, itemsBinding);
             cell.Mode = mode;
+            cell.SubText = subtext;
+            if(commandBinding != null)
+            {
+                cell.SetBinding(PickerCell.EmptyCommandProperty, commandBinding);
+            }
 
             return cell;
         }

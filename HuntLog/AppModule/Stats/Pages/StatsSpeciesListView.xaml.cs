@@ -36,7 +36,7 @@ namespace HuntLog.AppModule.Stats.Pages
             _specieService = specieService;
             _logService = logService;
         }
-        public override async Task AfterNavigate()
+        public async Task OnAppearing()
         {
             IsBusy = true;
             var species = await _specieService.GetItems();

@@ -92,7 +92,7 @@ namespace HuntLog.AppModule.Dogs
             Dog dto = BuildDto();
             if (MediaFile != null)
             {
-                SaveImage($"dog_{ID}.jpg", _fileManager);
+                SaveImage($"dog_{dto.ID}.jpg", _fileManager);
             }
             await _dogService.Save(dto);
             await PopAsync();
@@ -105,7 +105,7 @@ namespace HuntLog.AppModule.Dogs
 
         private async Task Delete()
         {
-            var ok = await _huntFactory.DeleteDog(ID, ImagePath);
+            var ok = await _huntFactory.DeleteDog(ID);
             if (ok)
             {
                 await PopAsync();

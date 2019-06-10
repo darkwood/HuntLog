@@ -100,7 +100,7 @@ namespace HuntLog.AppModule.Hunters
             Jeger dto = BuildDto();
             if (MediaFile != null)
             {
-                SaveImage($"jeger_{ID}.jpg", _fileManager);
+                SaveImage($"jeger_{dto.ID}.jpg", _fileManager);
             }
             await _hunterService.Save(dto);
             await PopAsync();
@@ -113,7 +113,7 @@ namespace HuntLog.AppModule.Hunters
 
         private async Task Delete()
         {
-            var ok = await _huntFactory.DeleteHunter(ID, ImagePath);
+            var ok = await _huntFactory.DeleteHunter(ID);
             if (ok)
             {
                 await PopAsync();

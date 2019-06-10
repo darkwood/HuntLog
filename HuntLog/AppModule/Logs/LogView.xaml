@@ -29,7 +29,7 @@
                         <cells:ImageHeaderCell HeightRequest="150" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
                         <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                         
-                        <cells:PickerCell Text="Art" PickerItems="{Binding SpeciesPickers}" Mode="Single" />
+                        <cells:PickerCell Text="Art" SubText="Velg dine arter i oppsettfanen" PickerItems="{Binding SpeciesPickers}" EmptyCommand="{Binding NoSpecieCommand}" Mode="Single" />
                         <cells:PickerCell Text="Antall sett" PickerItems="{Binding ObservedPickers}" Mode="Numeric" />
                         <cells:PickerCell Text="Antall skudd" PickerItems="{Binding ShotsPickers}" Mode="Numeric" />
                         <cells:PickerCell Text="Antall treff" PickerItems="{Binding HitsPickers}" Mode="Numeric" />

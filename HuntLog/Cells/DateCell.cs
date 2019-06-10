@@ -6,7 +6,7 @@ using Xamarin.Forms.Maps;
 
 namespace HuntLog.Cells
 {
-    public class DateCell : ViewCell
+    public class DateCell : BaseCell
     {
         public static readonly BindableProperty ShowDatePickerProperty =
             BindableProperty.Create(
@@ -99,28 +99,20 @@ namespace HuntLog.Cells
 
         private void RenderView()
         {
-            var wrapperLayout = new StackLayout();
-
-            var viewLayout = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-                Padding = 10,
-                MinimumHeightRequest = 60
-            };
+            ViewLayout.HeightRequest = 60;
 
             TextLabel = new Label
             {
                 VerticalOptions = LayoutOptions.Start
             };
-            viewLayout.Children.Add(TextLabel);
+            ViewLayout.Children.Add(TextLabel);
 
             Text2Label = new Label { VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.EndAndExpand };
-            viewLayout.Children.Add(Text2Label);
+            ViewLayout.Children.Add(Text2Label);
 
             _datePicker = new DatePicker { IsVisible = false };
             _datePicker.SetBinding(DatePicker.DateProperty, nameof(Date), BindingMode.TwoWay);
-            viewLayout.Children.Add(_datePicker);
+            ViewLayout.Children.Add(_datePicker);
 
             var gestureRecognizer = new TapGestureRecognizer();
 
@@ -133,17 +125,17 @@ namespace HuntLog.Cells
                 }
             };
 
-            viewLayout.GestureRecognizers.Add(gestureRecognizer);
-            wrapperLayout.Children.Add(viewLayout);
+            ViewLayout.GestureRecognizers.Add(gestureRecognizer);
+            ViewLayout.Children.Add(ViewLayout);
 
-            DatePickerView = new Grid {
-                HeightRequest = 0,
-                BackgroundColor = Color.LightBlue
-            };
+            //DatePickerView = new Grid {
+            //    HeightRequest = 60,
+            //    BackgroundColor = Color.LightBlue
+            //};
 
-            wrapperLayout.Children.Add(DatePickerView); 
+            //ViewLayout.Children.Add(DatePickerView); 
 
-            View = wrapperLayout;
+            View = ViewLayout;
         }
     }
 }
