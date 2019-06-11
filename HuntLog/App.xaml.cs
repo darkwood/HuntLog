@@ -20,10 +20,10 @@ namespace HuntLog
 
         protected async override void OnStart()
         {
-            AppCenter.Start("ios=d512c099-5374-4e83-a058-40d4582b1b79;" +
+            AppCenter.Start("ios=c7df6e06-24c2-46dd-87da-5cf7f6d7858a;" +
                   "uwp={Your UWP App secret here};" +
                   "android={Your Android App secret here}",
-                  typeof(Analytics), typeof(Crashes));
+                  typeof(Analytics), typeof(Crashes))
 
             var bootstrapper = new Bootstrapper(this);
             await bootstrapper.Run();
