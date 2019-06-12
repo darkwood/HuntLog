@@ -23,7 +23,7 @@ namespace HuntLog
             AppCenter.Start("ios=c7df6e06-24c2-46dd-87da-5cf7f6d7858a;" +
                   "uwp={Your UWP App secret here};" +
                   "android={Your Android App secret here}",
-                  typeof(Analytics), typeof(Crashes))
+                  typeof(Analytics), typeof(Crashes));
 
             var bootstrapper = new Bootstrapper(this);
             await bootstrapper.Run();
