@@ -21,7 +21,6 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Bogus" Version="27.0.1" />
-    <PackageReference Include="Plugin.SegmentedControl.Netstandard" Version="4.0.0" />
     <PackageReference Include="Xamarin.HotReload" Version="1.2.9" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />

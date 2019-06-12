@@ -44,7 +44,8 @@ namespace HuntLog.Services
         {
             _fileManager.Delete(_dataFileName);
             _fileManager.Delete(_dataFileName.Replace(".json", ".xml"));
-            await GetItems();
+            _dtos = null;
+            await Task.CompletedTask;
         }
 
         public async Task<T> Get(string id)

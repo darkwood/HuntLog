@@ -24,7 +24,7 @@ namespace HuntLog.AppModule.CustomFields
 
         protected override async void OnAppearing()
         {
-            await _viewModel.InitializeAsync();
+            await _viewModel.OnAppearing();
             base.OnAppearing();
         }
     }
@@ -74,7 +74,7 @@ namespace HuntLog.AppModule.CustomFields
         //        await FetchData();
         //    }
         //}
-        public async Task InitializeAsync()
+        public async Task OnAppearing()
         {
             await FetchData();
         }

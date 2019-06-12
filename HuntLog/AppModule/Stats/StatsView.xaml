@@ -24,9 +24,9 @@
                                         Detail="Akkumulert oversikt over arter og antall treff" 
                                         StyleId="disclosure" 
                                         Command="{Binding HitrateCommand}" />
-                <cells:ExtendedTextCell Text="Beste jeger" 
+                <!--<cells:ExtendedTextCell Text="Beste jeger" 
                                         Detail="Regnes ut av treffprosent og flest treff" 
-                                        StyleId="disclosure" />
+                                        StyleId="disclosure" />-->
             </TableSection>
         </controls:ExtendedTableView>
     </ContentPage.Content>

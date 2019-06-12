@@ -10,7 +10,7 @@
             <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
             <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
             <Color x:Key="LightTextColor">#999999</Color>
-            <Color x:Key="TableBg">#EEE</Color>
+            <Color x:Key="TableBg">#f7f7f7</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="BarTextColor" Value="White" />

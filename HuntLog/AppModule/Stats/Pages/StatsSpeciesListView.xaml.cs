@@ -21,6 +21,12 @@ namespace HuntLog.AppModule.Stats.Pages
             InitializeComponent();
         }
 
+        protected override async void OnAppearing()
+        {
+            await _viewModel.OnAppearing();
+            base.OnAppearing();
+        }
+
     }
 
     public class StatsSpeciesListViewModel : ViewModelBase
@@ -28,27 +34,51 @@ namespace HuntLog.AppModule.Stats.Pages
         private readonly IBaseService<Art> _specieService;
         private readonly IBaseService<Logg> _logService;
 
+        public StatsFilterViewModel StatsFilterViewModel { get; set; }
         public List<StatsListItem> Items { get; set; }
 
-        public StatsSpeciesListViewModel(IBaseService<Art> specieService,
+        public StatsSpeciesListViewModel(StatsFilterViewModel statsFilterViewModel, 
+                                         IBaseService<Art> specieService,
                                          IBaseService<Logg> logService)
         {
+            StatsFilterViewModel = statsFilterViewModel;
             _specieService = specieService;
             _logService = logService;
+
+            StatsFilterViewModel.FilterChangedAction += async () =>
+            {
+                await PopulateItems();
+            };
         }
         public async Task OnAppearing()
         {
+            await PopulateItems();
+        }
+
+        private async Task PopulateItems()
+        {
             IsBusy = true;
+
+            var from = StatsFilterViewModel.DateFrom;
+            var to = StatsFilterViewModel.DateTo;
+            var hunter = StatsFilterViewModel.SelectedHunter;
+
             var species = await _specieService.GetItems();
             var logs = await _logService.GetItems();
-
             var items = new List<StatsListItem>();
-            foreach(var specie in species)
+
+            logs = logs.Where(l => l.Dato >= from
+                                    && l.Dato <= to
+                                    && (hunter == null || l.JegerId == hunter.ID))
+                                    .ToList();
+
+            foreach (var specie in species)
             {
                 var sum = logs.Where(l => l.ArtId == specie.ID).Sum(s => s.Treff);
-                if(sum > 0)
+                if (sum > 0)
                 {
-                    items.Add(new StatsListItem{ 
+                    items.Add(new StatsListItem
+                    {
                         Title = specie.Navn,
                         Sum = sum
                     });

@@ -3,28 +3,78 @@
              xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Stats.Pages.StatsSpeciesListView"
+             xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog"
              Title="Antall felt vilt">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Items}" HasUnevenRows="true">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                   <ViewCell>
-                        <StackLayout Margin="15"
-                                     Orientation="Horizontal">
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+             
+            <stats:StatsFilterView Grid.Row="0" 
+                                   BindingContext="{Binding StatsFilterViewModel}" />
+           
+            <CollectionView Grid.Row="1" 
+                            BackgroundColor="{StaticResource TableBg}"
                             
-                            <Label Text="{Binding Title}"
-                                   VerticalOptions="Center" />
-                            
-                            <Label Text="{Binding Sum}"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="EndAndExpand"
-                                   FontSize="Large" 
-                                   TextColor="{StaticResource Primary}"/>
-                            
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>     
-            </ListView.ItemTemplate>
-        </ListView>
+                            ItemsSource="{Binding Items}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="0" 
+                                   HasShadow="false" 
+                                   BorderColor="{StaticResource TableBg}"
+                                   CornerRadius="0">
+                                <StackLayout Padding="15"
+                                             BackgroundColor="White"
+                                             Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Title}"
+                                           VerticalOptions="Center" />
+                                    
+                                    <Label Text="{Binding Sum}"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large" 
+                                           TextColor="{StaticResource Primary}"/>
+                                    
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>     
+                    </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout Margin="20">
+                        <Label Text="Ingen resultater å vise"
+                               FontSize="18"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Prøv å utvide filteret. Eller treff bedre. ;)"
+                               FontSize="12"
+                               TextColor="Gray"
+                               HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+                </CollectionView>
+                <!--<ListView Grid.Row="1" ItemsSource="{Binding Items}" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                           <ViewCell>
+                                <StackLayout Margin="15"
+                                             Orientation="Horizontal">
+                                    
+                                    <Label Text="{Binding Title}"
+                                           VerticalOptions="Center" />
+                                    
+                                    <Label Text="{Binding Sum}"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="EndAndExpand"
+                                           FontSize="Large" 
+                                           TextColor="{StaticResource Primary}"/>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>     
+                    </ListView.ItemTemplate>
+                </ListView>-->
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

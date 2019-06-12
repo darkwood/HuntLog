@@ -44,8 +44,12 @@ namespace HuntLog.AppModule.Logs
             section1.Add(CreatePicker("Antall sett", "ObservedPickers", PickerMode.Numeric));
             section1.Add(CreatePicker("Antall skudd", "ShotsPickers", PickerMode.Numeric));
             section1.Add(CreatePicker("Antall treff", "HitsPickers", PickerMode.Numeric));
-            section1.Add(CreatePicker("Jeger", "HuntersPickers", PickerMode.Single));
-            section1.Add(CreatePicker("Hunder", "DogsPickers", PickerMode.Single));
+            section1.Add(CreatePicker("Jeger", "HuntersPickers", PickerMode.Single, "Jegere valgt i jakta"));
+            if (_viewModel.DogsPickers.Any())
+            {
+                section1.Add(CreatePicker("Hunder", "DogsPickers", PickerMode.Single, "Hunder valgt i jakta"));
+            }
+
             section1.Add(CreateTextCell("Dato", "Date", "TimeCommand"));
 
             tableView.Root.Add(section1);

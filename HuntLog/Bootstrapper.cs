@@ -83,8 +83,6 @@ namespace HuntLog
             tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
             tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
 
-
-
             _application.MainPage = tabbed;
             await Task.CompletedTask;
         }

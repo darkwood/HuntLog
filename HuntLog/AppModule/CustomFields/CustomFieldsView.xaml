@@ -2,6 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:Converters="clr-namespace:HuntLog.Converters"     
     x:Class="HuntLog.AppModule.CustomFields.CustomFieldsView"
     xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
     Title="Ekstra felter">
@@ -11,21 +12,28 @@
     </ContentPage.ToolbarItems>-->
     
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="{StaticResource TableBg}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             
-             <StackLayout Margin="20" Orientation="Horizontal">
+             <StackLayout Margin="20" 
+                          IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
+                          Orientation="Horizontal">
                 <Image Source="Tabbar/info.png" />
                 <Label FontSize="Small" 
                        VerticalOptions="Center"
                        Text="Velg hvilke ekstra data du ønsker å loggføre." />
                 </StackLayout>
-            
+            <ActivityIndicator IsRunning="true" 
+                               IsVisible="{Binding IsBusy}" 
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               />
             <ListView 
                 Grid.Row="1"
+                IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
                 ItemsSource="{Binding CustomFieldsGroup}"
                 IsGroupingEnabled="true"
                 GroupDisplayBinding="{Binding Name}"

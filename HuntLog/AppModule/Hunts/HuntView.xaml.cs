@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HuntLog.AppModule.Logs;
 using HuntLog.AppModule.Stats;
+using HuntLog.AppModule.Stats.Pages;
 using HuntLog.Factories;
 using HuntLog.Helpers;
 using HuntLog.InputViews;

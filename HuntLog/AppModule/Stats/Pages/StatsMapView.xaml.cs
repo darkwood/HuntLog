@@ -7,12 +7,10 @@ using HuntLog.Extensions;
 using HuntLog.Factories;
 using HuntLog.Models;
 using HuntLog.Services;
-using LightInject;
-using Plugin.Segmented.Control;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
-namespace HuntLog.AppModule.Stats
+namespace HuntLog.AppModule.Stats.Pages
 {
     public partial class StatsMapView : ContentPage
     {

@@ -10,6 +10,11 @@ namespace HuntLog.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var d = ((DateTime)value);
+            if(d == DateTime.MaxValue)
+            {
+                return string.Empty;
+            }
+
             return d.ToString("hh:mm", new CultureInfo("nb-no"));
         }
 

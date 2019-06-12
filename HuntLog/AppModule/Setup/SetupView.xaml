@@ -20,7 +20,7 @@
                 <cells:ExtendedTextCell Image="Fields.png" ImageSize="30" Text="Egne felter" StyleId="disclosure" Command="{Binding FieldsCommand}" />
             </TableSection>
 
-            
+            <!--
             <TableSection Title="Testdata">
                 <ViewCell>
                     <StackLayout Padding="10 20 0 10" Margin="10">
@@ -33,7 +33,7 @@
                 <ViewCell Height="400">
                     <Editor Text="{Binding ImageFiles}" />
                 </ViewCell>
-            </TableSection>
+            </TableSection>-->
 
         </controls:ExtendedTableView>
         

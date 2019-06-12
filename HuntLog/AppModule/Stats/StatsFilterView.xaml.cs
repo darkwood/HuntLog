@@ -52,6 +52,7 @@ namespace HuntLog.AppModule.Stats
         public string UpDownIcon => Visible ? FontAwesomeIcons.AngleUp : FontAwesomeIcons.AngleDown;
 
         public static Action FilterChangedAction { get; set; }
+        public DateTime Today => DateTime.Now.Date.AddDays(1).AddSeconds(-1);
 
         public StatsFilterViewModel(INavigator navigator, IHuntFactory huntFactory)
         {
@@ -90,7 +91,7 @@ namespace HuntLog.AppModule.Stats
             });
 
             DateFrom = DateTime.Now.AddYears(-1);
-            DateTo = DateTime.Now;
+            DateTo = Today;
         }
 
         public void SetVisibility(bool show)
@@ -105,15 +106,15 @@ namespace HuntLog.AppModule.Stats
             {
                 case "Alle":
                     DateFrom = DateTime.Parse("1990-01-01");
-                    DateTo = DateTime.Now;
+                    DateTo = Today;
                     break;
                 case "Siste år":
                     DateFrom = DateTime.Now.AddYears(-1);
-                    DateTo = DateTime.Now;
+                    DateTo = Today;
                     break;
                 case "Siste måned":
                     DateFrom = DateTime.Now.AddMonths(-1);
-                    DateTo = DateTime.Now;
+                    DateTo = Today;
                     break;
             }
             //DateFromTo = GetFormattedDateRange(obj as string);
@@ -123,7 +124,7 @@ namespace HuntLog.AppModule.Stats
 
         private string GetFilterSummary(string rangeString = null)
         {
-            var range = rangeString == null ? $"{DateFrom.ToNoString()} - {DateTo.ToNoString()}" : rangeString;
+            var range = rangeString == null ? $"{DateFrom.ToShortDateString()} - {DateTo.ToShortDateString()}" : rangeString;
             return $"{HunterName}, {range}";
         }
     }

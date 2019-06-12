@@ -71,10 +71,7 @@ namespace HuntLog.AppModule.Stats
 
             HitrateCommand = new Command(async () =>
             {
-
-                await _navigator.PushAsync<StatsSpeciesListViewModel>(
-                    afterNavigate: async (obj) => { await obj.OnAppearing(); }
-                );
+                await _navigator.PushAsync<StatsSpeciesListViewModel>();
             });
         }
 

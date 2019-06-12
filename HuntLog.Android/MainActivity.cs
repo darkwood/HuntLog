@@ -1,15 +1,11 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using ImageCircle.Forms.Plugin.Droid;
 using Plugin.CurrentActivity;
-using Plugin.Segmented.Control.Droid;
 
 namespace HuntLog.Droid
 {
@@ -27,7 +23,6 @@ namespace HuntLog.Droid
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             ImageCircleRenderer.Init();
-            SegmentedControlRenderer.Init();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
