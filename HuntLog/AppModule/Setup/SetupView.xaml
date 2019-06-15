@@ -4,12 +4,12 @@
              xmlns:Converters="clr-namespace:HuntLog.Converters"       
              xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             xmlns:setup="clr-namespace:HuntLog.AppModule.Setup;assembly=HuntLog"
              x:Class="HuntLog.AppModule.Setup.SetupView"
              Title="Oppsett">
     
     
     <ContentPage.Content>
-    
         <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">  
         
             <TableSection></TableSection>
