@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace HuntLog.iOS
+namespace HuntLog.iOS.Renderers
 {
     public class Application
     {

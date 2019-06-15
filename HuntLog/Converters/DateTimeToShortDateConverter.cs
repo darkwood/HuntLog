@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using HuntLog.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

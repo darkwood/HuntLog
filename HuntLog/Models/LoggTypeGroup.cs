@@ -1,9 +1,8 @@
 ﻿using System;
 namespace HuntLog.Models
 {
-    public class LoggTypeGroup
+    public class LoggTypeGroup : BaseDto
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
+        public string Navn { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace HuntLog.Interfaces
         void LogError(string error);
         void Delete(string filename);
         void Copy(string sourceFile, string destinationFile);
+        string[] GetAllFiles();
     }
 }

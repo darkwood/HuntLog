@@ -1,9 +1,8 @@
 ﻿using System;
 namespace HuntLog.Models
 {
-    public class Dog
+    public class Dog : BaseDto
     {
-        public int ID { get; set; }
         public string Navn { get; set; }
         public string Rase { get; set; }
         public string Lisensnummer { get; set; }

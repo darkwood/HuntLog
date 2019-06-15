@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.AppModule.Hunts.Controls.HuntEmptyListView"
+             >
+    <ContentView.Content>
+        <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         IsVisible="{Binding EmptyList}"
+                         Margin="20">
+                
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                <Image Source="logo_splash_screen" Margin="5" />
+                <Label Text="Velkommen til Jaktloggen" 
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       />
+                <Label Text="Den beste måten å loggføre dine jaktturer. Håper du får mye glede av den." 
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       FontSize="Small"
+                       Margin="5"
+                       />
+                <Button Text="Opprett første jakt" 
+                        Command="{Binding AddCommand}" />
+            </StackLayout>
+    </ContentView.Content>
+</ContentView>

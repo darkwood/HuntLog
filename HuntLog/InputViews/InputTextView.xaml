@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.InputViews.InputTextView"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Ferdig" Command="{Binding DoneCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="20" VerticalOptions="Start">
+            <Entry x:Name="MyEntry" Text="{Binding CurrentValue}" Keyboard="{Binding Keyboard}" ReturnCommand="{Binding DoneCommand}" HorizontalTextAlignment="Center" Grid.Row="1" FontSize="Large" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

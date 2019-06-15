@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             x:Class="HuntLog.InputViews.InputPickerView"
+             Title="{Binding Title}"
+             >
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Ferdig" IsEnabled="{Binding MultiSelect}" Command="{Binding DoneCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding CurrentValue}" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                            Text="{Binding Title}" 
+                                            Selected="{Binding Selected}"
+                                            ShowCheckBox="True"
+                                            Command="{Binding Tapped}"
+                                            />
+                </DataTemplate>     
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

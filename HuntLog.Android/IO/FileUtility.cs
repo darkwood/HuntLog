@@ -32,6 +32,8 @@ namespace Jaktloggen.Droid.IO
 
         public bool Exists(string filename)
         {
+            if (string.IsNullOrWhiteSpace(filename)) { return false; }
+
             string filePath = GetFilePath(filename);
             return File.Exists(filePath);
         }
@@ -73,6 +75,12 @@ namespace Jaktloggen.Droid.IO
         public void Copy(string sourcePath, string destinationPath)
         {
             File.Copy(sourcePath, destinationPath);
+        }
+
+        public string[] GetAllFiles()
+        {
+            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            return Directory.GetFiles(documentsPath);
         }
     }
 }

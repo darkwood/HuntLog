@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Converters="clr-namespace:HuntLog.Converters"       
+             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+             xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+             xmlns:setup="clr-namespace:HuntLog.AppModule.Setup;assembly=HuntLog"
+             x:Class="HuntLog.AppModule.Setup.SetupView"
+             Title="Oppsett">
+    
+    
+    <ContentPage.Content>
+        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">  
+        
+            <TableSection></TableSection>
+            <TableSection Title="Her oppretter du jegere, hunder og arter du ønsker å bruke i jaktloggen">
+                <cells:ExtendedTextCell Image="Hunters.png" ImageSize="30" Text="Jegere"  StyleId="disclosure" Command="{Binding HuntersCommand}" />
+                <cells:ExtendedTextCell Image="Dogs.png" ImageSize="30" Text="Hunder" StyleId="disclosure" Command="{Binding DogsCommand}" />
+                <cells:ExtendedTextCell Image="Species.png" ImageSize="30" Text="Arter" StyleId="disclosure" Command="{Binding SpeciesCommand}" />
+                <cells:ExtendedTextCell Image="Fields.png" ImageSize="30" Text="Egne felter" StyleId="disclosure" Command="{Binding FieldsCommand}" />
+            </TableSection>
+
+            <!--
+            <TableSection Title="Testdata">
+                <ViewCell>
+                    <StackLayout Padding="10 20 0 10" Margin="10">
+                         <Button Text="Lag testdata" StyleClass="PrimaryButton" Command="{Binding CreateDummyDataCommand}" />
+                         <Button Text="Slett all data" StyleClass="PrimaryButton" Command="{Binding DeleteCommand}" />
+                        
+                        <Label Text="{Binding Info}" VerticalOptions="Center" FontSize="Medium" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell Height="400">
+                    <Editor Text="{Binding ImageFiles}" />
+                </ViewCell>
+            </TableSection>-->
+
+        </controls:ExtendedTableView>
+        
+    </ContentPage.Content>
+</ContentPage>

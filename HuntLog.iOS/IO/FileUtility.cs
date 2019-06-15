@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using HuntLog.iOS.IO;
+using HuntLog.iOS.Renderers.IO;
 using HuntLog.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileUtility))]
-namespace HuntLog.iOS.IO
+namespace HuntLog.iOS.Renderers.IO
 {
     public class FileUtility : IFileUtility
     {
@@ -33,7 +33,8 @@ namespace HuntLog.iOS.IO
 
         public bool Exists(string filename)
         {
-            string filePath = GetFilePath(filename);
+            if (string.IsNullOrWhiteSpace(filename)) { return false; }
+            var filePath = GetFilePath(filename);
             return File.Exists(filePath);
         }
 
@@ -51,6 +52,7 @@ namespace HuntLog.iOS.IO
 
         public void Delete(string filename)
         {
+
             if (Exists(filename))
             {
                 string filePath = GetFilePath(filename);
@@ -66,7 +68,9 @@ namespace HuntLog.iOS.IO
 
         public string GetFilePath(string filename)
         {
-            var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            if(filename.IndexOf('/') > -1) { return filename; }
+
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, filename);
             return filePath;
         }
@@ -76,6 +80,12 @@ namespace HuntLog.iOS.IO
             var dest = GetFilePath(destinationFile);
             new FileInfo(dest).Directory.Create();
             File.Copy(GetFilePath(sourceFile), dest);
+        }
+
+        public string[] GetAllFiles()
+        {
+            var documentsPath = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            return Directory.GetFiles(documentsPath);
         }
     }
 }

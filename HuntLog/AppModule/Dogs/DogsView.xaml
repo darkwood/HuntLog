@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Dogs.DogsView"
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    Title="Hunder">
+     
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="Add.png" Command="{Binding AddCommand}" Priority="1" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource TableBg}">
+             
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         IsVisible="{Binding EmptyList}"
+                         Margin="20">
+                
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                
+                <Label Text="Ingen hunder opprettet enda" 
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       />
+                <Label Text="Ved å registrere hunder kan du inkludere de i jaktlaget og markere de i jaktsituasjoner." 
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource MediumGrayTextColor}"
+                       FontSize="Small"
+                       />
+                <Button Text="Opprett første hund" 
+                        Command="{Binding AddCommand}" />
+            </StackLayout>
+                
+            <ListView 
+                x:Name="dogsListView"
+                ItemsSource="{Binding Dogs}"
+                HasUnevenRows="true"
+                IsVisible="{Binding ListVisible}"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                                Text="{Binding Name}" 
+                                                Detail="{Binding Rase}"
+                                                StyleId="disclosure"
+                                                Command="{Binding ItemTappedCommand}">
+                            <cells:ExtendedTextCell.ContextActions>
+                                <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference dogsListView}}" CommandParameter="{Binding .}"
+                                          Text="Slett" IsDestructive="True" Icon="trash" />
+                                </cells:ExtendedTextCell.ContextActions>
+                        </cells:ExtendedTextCell>
+                    </DataTemplate>     
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

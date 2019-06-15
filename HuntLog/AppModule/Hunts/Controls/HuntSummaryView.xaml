@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Hunts.Controls.HuntSummaryView"
+    xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <ContentView.Content>
+        <Grid VerticalOptions="StartAndExpand"
+              HeightRequest="200">
+            
+             <Image Source="{Binding ImageSource}"
+                     HeightRequest="300"
+                    Aspect="AspectFill" />
+            
+            <ScrollView Orientation="Horizontal">
+                <StackLayout BindableLayout.ItemsSource="{Binding SelectedHuntersAndDogs}"
+                             Orientation="Horizontal"
+                             Margin="0 30">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                           <StackLayout Orientation="Vertical" 
+                                    Margin="-20,0,0,5"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="End">
+                                <ci:CircleImage 
+                                    Source="{Binding ImageSource}"
+                                    HorizontalOptions="Center"
+                                    Aspect="AspectFill"
+                                    BorderColor="White" 
+                                    BorderThickness="2" 
+                                    HeightRequest="60"
+                                    WidthRequest="60"
+                                />
+                                <Label Text="{Binding Title}"
+                                       HorizontalOptions="Center"
+                                       FontSize="Micro"
+                                       BackgroundColor="White"
+                                       />
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

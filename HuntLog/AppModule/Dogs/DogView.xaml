@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HuntLog.AppModule.Dogs.DogView"
+    xmlns:Converters="clr-namespace:HuntLog.Converters"     
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+    Title="{Binding Title}">
+    
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Lagre" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <controls:ExtendedTableView Grid.Row="0"
+                                        HasUnevenRows="true" 
+                                        Intent="Form">
+            <TableRoot>
+                
+                <TableSection Title="">
+                    <cells:ImageHeaderCell HeightRequest="250" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
+                    <EntryCell Label="Navn"  Text="{Binding Name}" />
+                    <EntryCell Label="Rase"  Text="{Binding Breed}" />
+                    <EntryCell Label="Regnr"  Text="{Binding RegNo}" />
+                    <!--<cells:ExtendedTextCell Text="Navn" Text2="{Binding Name}" />
+                    <cells:ExtendedTextCell Text="Rase" Text2="{Binding Breed}" />
+                    <cells:ExtendedTextCell Text="Regnr" Text2="{Binding RegNo}" />-->
+                </TableSection>
+                
+            </TableRoot>
+            </controls:ExtendedTableView>
+            
+            <Button Grid.Row="1"
+                    Margin="15"
+                    Text="Slett hund" 
+                    StyleClass="DangerButton"
+                    Command="{Binding DeleteCommand}"
+                    IsVisible="{Binding IsNew, Converter={Converters:InverseBoolConverter}}"
+            />
+            
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

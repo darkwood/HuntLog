@@ -5,6 +5,8 @@ using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using HuntLog.Interfaces;
+using System.Xml;
+using System.Linq;
 
 namespace HuntLog.Services
 {
@@ -18,6 +20,8 @@ namespace HuntLog.Services
         string SaveImage(string filename, byte[] imageData);
         void Copy(string sourceFile, string destinationFile);
         void SaveToLocalStorage<T>(T objToSerialize, string filename);
+        string[] GetAllFiles();
+        void DeleteAllImages();
     }
 
     public class FileManager : IFileManager
@@ -52,42 +56,32 @@ namespace HuntLog.Services
         public T LoadFromLocalStorage<T>(string filename, bool loadFromserver = false)
         {
             var localObj = (T)Activator.CreateInstance(typeof(T));
-            // 1 read json
-            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase))
+            var xmlFilename = filename.Replace(".json", ".xml");
+            if (Exists(xmlFilename))
             {
-                var jsonString = _fileUtility.Load(filename);
-
-                try
-                {
-                    localObj = JsonConvert.DeserializeObject<T>(jsonString);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message, ex);
-                    //Utils.LogError(ex);
-                }
+                var testdata = _fileUtility.Load(xmlFilename);
+                var length = testdata.Length;
+            }
+            // 1 read json
+            if (filename.EndsWith(".json", StringComparison.CurrentCultureIgnoreCase) && Exists(filename))
+            {
+                string json = _fileUtility.Load(filename);
+                localObj = JsonConvert.DeserializeObject<T>(json);
             }
             else
             {
-                //try to read from legacy xml
-                var xmlFilename = filename.Replace(".json", ".xml");
-                var localFileExists = Exists(xmlFilename);
-
-                if (localFileExists)
+                if (Exists(xmlFilename))
                 {
                     var xmlString = _fileUtility.Load(xmlFilename);
-                    try
+                    xmlString = xmlString.Replace("<int>", "<string>");
+                    xmlString = xmlString.Replace("</int>", "</string>");
+                    xmlString = xmlString.Replace("ArrayOfInt", "ArrayOfString");
+
+                    using (var reader = new StringReader(xmlString))
                     {
-                        using (var reader = new StringReader(xmlString))
-                        {
-                            XmlSerializer serializer = new XmlSerializer(typeof(T));
-                            localObj = (T)serializer.Deserialize(reader);
-                            SaveToLocalStorage(localObj, filename); //Save to json format
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        //Utility.LogError(ex);
+                        XmlSerializer serializer = new XmlSerializer(typeof(T));
+                        localObj = (T)serializer.Deserialize(reader);
+                        SaveToLocalStorage(localObj, filename); //Save to json format
                     }
                 }
             }
@@ -126,5 +120,24 @@ namespace HuntLog.Services
 
         public void Copy(string sourceFile, string destinationFile)
         => _fileUtility.Copy(sourceFile, destinationFile);
+
+        public string[] GetAllFiles()
+        {
+            return _fileUtility.GetAllFiles();
+        }
+
+        public void DeleteAllImages()
+        {
+#if DEBUG
+            var files = GetAllFiles().Where(f => f.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+
+            foreach (var file in files)
+            {
+                Console.WriteLine("Deleting: " + file);
+                Delete(file);
+            }
+#endif
+        }
+
     }
 }

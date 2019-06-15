@@ -1,23 +1,33 @@
 ﻿using HuntLog.Services;
-using HuntLog.ViewModels.Hunts;
-using HuntLog.Views.Hunts;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HuntLog
 {
     public partial class App : Application
     {
+        public static INavigator Navigator { get; set; }
         public App()
         {
-             InitializeComponent();
+#if DEBUG
+            HotReloader.Current.Start(this);
+#endif
+            InitializeComponent();
         }
 
         protected async override void OnStart()
         {
+            AppCenter.Start("ios=c7df6e06-24c2-46dd-87da-5cf7f6d7858a;" +
+                  "uwp={Your UWP App secret here};" +
+                  "android={Your Android App secret here}",
+                  typeof(Analytics), typeof(Crashes));
+
             var bootstrapper = new Bootstrapper(this);
             await bootstrapper.Run();
+
         }
 
 

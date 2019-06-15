@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HuntLog.InputViews.InputTimeView"
+             Title="Tidspunkt">
+    
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Ferdig" Command="{Binding DoneCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label Text="Tidspunkt" 
+                       VerticalOptions="Center"
+                       />
+                <TimePicker x:Name="myTime" 
+                            Time="{Binding CurrentTime, Mode=TwoWay}" 
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand"
+                            />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label Text="Dato" 
+                       VerticalOptions="Center"/>
+                
+                <DatePicker x:Name="myDate" 
+                            Date="{Binding CurrentDate, Mode=TwoWay}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand"
+                            Format="dd.MM.yyyy"
+                            />
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

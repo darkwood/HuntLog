@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:Converters="clr-namespace:HuntLog.Converters;assembly=HuntLog"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
+    x:Class="HuntLog.InputViews.InputPositionView">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Text="Avbryt" Command="{Binding CancelCommand}" />
+        <ToolbarItem Priority="1" Text="Ferdig" Command="{Binding DoneCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid> 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <controls:ExtendedMap 
+                    x:Name="MyMap"
+                    IsShowingUser="true" 
+                    MapType="Hybrid"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Tap="MyMap_Tap"
+                />
+            
+            <Grid Grid.Row="1" Margin="5">
+                   
+                    <Button 
+                        Grid.Column="0" 
+                        Image="location.png"
+                        Command="{Binding GetCurrentPositionCommand}"
+                    />
+
+                      <ActivityIndicator 
+                        Grid.Column="1"
+                        HorizontalOptions="Center" 
+                        IsRunning="{Binding Loading}" 
+                        IsVisible="{Binding Loading}" 
+                    />
+                    <Label
+                        Grid.Column="1"
+                        IsVisible="false"
+                        Text="{Binding PositionText}" 
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Black"
+                        FontSize="11"
+                        BackgroundColor="White"
+                        HorizontalOptions="Center"
+                    />
+                    <Button 
+                        Grid.Column="2"
+                        Text="Slett" 
+                        IsVisible="{Binding PositionText, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" 
+                        Command="{Binding DeleteCommand}"
+                    />
+                </Grid>
+            
+       </Grid>
+       
+    </ContentPage.Content>
+</ContentPage>
+

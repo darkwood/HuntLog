@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 using Xamarin.Forms;
 
-namespace HuntLog.iOS
+namespace HuntLog.iOS.Renderers
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -27,8 +25,8 @@ namespace HuntLog.iOS
             Xamarin.Calabash.Start();
             Xamarin.FormsMaps.Init();
             Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }

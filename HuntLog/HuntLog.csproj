@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -10,24 +11,43 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.94569-pre3" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-    <PackageReference Include="LightInject" Version="5.4.0" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="3.5.0.129452" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="LightInject" Version="5.5.0" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.0.0.425677" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
+    <PackageReference Include="Fody" Version="5.0.6" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Bogus" Version="27.0.1" />
+    <PackageReference Include="Xamarin.HotReload" Version="1.2.9" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\Hunts\" />
-    <Folder Include="Views\Hunts\" />
     <Folder Include="Xml\" />
     <Folder Include="Converters\" />
     <Folder Include="Models\ListModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Controls\" />
     <Folder Include="Assets\" />
+    <Folder Include="Cells\" />
+    <Folder Include="Factories\" />
+    <Folder Include="AppModule\" />
+    <Folder Include="AppModule\Hunters\" />
+    <Folder Include="AppModule\Hunts\" />
+    <Folder Include="InputViews\" />
+    <Folder Include="AppModule\Logs\" />
+    <Folder Include="AppModule\Dogs\" />
+    <Folder Include="AppModule\Species\" />
+    <Folder Include="AppModule\CustomFields\" />
+    <Folder Include="AppModule\Stats\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="AppModule\Setup\" />
+    <Folder Include="AppModule\Stats\Pages\" />
+    <Folder Include="AppModule\Hunts\Controls\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -35,19 +55,83 @@
     <Compile Remove="Factories\ViewFactory.cs" />
     <Compile Remove="Factories\IViewFactory.cs" />
     <Compile Remove="Models\ListModels\CellItem %28copy%29.cs" />
+    <Compile Remove="AppModule\Stats\StatsMapView %28copy%29.xaml.cs" />
+    <Compile Remove="Helpers\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />
     <EmbeddedResource Remove="Views\Hunts\HuntHeaderView.xaml" />
     <EmbeddedResource Remove="Views\Widgets\InlinePickerView.xaml" />
+    <EmbeddedResource Remove="Views\Fields\InputEntry.xaml" />
+    <EmbeddedResource Remove="AppModule\InputViews\InputPosition.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Hunts\HuntsView.xaml.cs">
-      <DependentUpon>..\Views\HuntsView.xaml</DependentUpon>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Hunters\HuntersView.xaml.cs">
+      <DependentUpon>..\..\Views\Hunters\HuntersView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Hunts\HuntView.xaml.cs">
-      <DependentUpon>..\Views\HuntView.xaml</DependentUpon>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Hunters\HunterView.xaml.cs">
+      <DependentUpon>..\..\Views\Hunters\HunterView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Hunts\EditHuntView.xaml.cs">
+      <DependentUpon>..\..\Views\Hunts\EditHuntView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="InputViews\InputImageView.xaml.cs">
+      <DependentUpon>InputImageView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\DogsView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpecieView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpecView.xaml.cs">
+      <DependentUpon>SpecieView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Species\SpeciesView.xaml.cs">
+      <DependentUpon>SpeciesView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\MoreFields\SpecieView.xaml.cs">
+      <DependentUpon>FieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\MoreFields\FieldsView.xaml.cs">
+      <DependentUpon>FieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\FieldsView.xaml.cs">
+      <DependentUpon>FieldView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\FieldView.xaml.cs">
+      <DependentUpon>CustomField.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\Fields\CustomField.xaml.cs">
+      <DependentUpon>CustomField.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomField.xaml.cs">
+      <DependentUpon>CustomFieldView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\SpeciesView.xaml.cs">
+      <DependentUpon>CustomFieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomFieldsView.xaml.cs">
+      <DependentUpon>CustomFieldsView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="AppModule\CustomFields\CustomFieldView.xaml.cs">
+      <DependentUpon>CustomFieldView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -64,6 +148,19 @@
     <None Remove="Xml\selectedartids.xml" />
     <None Remove="Xml\Jaktbare Arter.xml" />
     <None Remove="Assets\img-placeholder.jpg" />
+    <None Remove="Assets\placeholder.jpg" />
+    <None Remove="Assets\placeholder_map.png" />
+    <None Remove="Assets\hunters%403x.png" />
+    <None Remove="Assets\hunters.png" />
+    <None Remove="Assets\hunters%402x.png" />
+    <None Remove="Assets\hunters2.png" />
+    <None Remove="Assets\dog%403x.png" />
+    <None Remove="Cells\Arter.png" />
+    <None Remove="Assets\Arter.png" />
+    <None Remove="Assets\Felter.png" />
+    <None Remove="Assets\Dogs.png" />
+    <None Remove="Assets\Fields.png" />
+    <None Remove="Assets\Species.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xml\arter.xml" />
@@ -77,5 +174,18 @@
     <EmbeddedResource Include="Xml\myspecies.xml" />
     <EmbeddedResource Include="Xml\selectedartids.xml" />
     <EmbeddedResource Include="Assets\placeholder.jpg" />
+    <EmbeddedResource Include="Assets\placeholder_map.png" />
+    <EmbeddedResource Include="Assets\Hunters.png" />
+    <EmbeddedResource Include="Assets\Dogs.png" />
+    <EmbeddedResource Include="Assets\Fields.png" />
+    <EmbeddedResource Include="Assets\Species.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\12.4.0.63\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\9.2.0-5\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

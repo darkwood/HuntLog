@@ -28,6 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -38,6 +39,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignProvision>huntlog_distributionprofile_290519</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +55,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Jaktloggen Dev</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -61,8 +65,9 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>huntlog_distributionprofile_290519</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -96,8 +101,10 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\FileUtility.cs" />
-    <Compile Include="Renderers\ContentPageRenderer.cs" />
-    <Compile Include="Controls\ExtendedMapRenderer.cs" />
+    <Compile Include="Renderers\ExtendedPageRenderer.cs" />
+    <Compile Include="Renderers\ExtendedMapRenderer.cs" />
+    <Compile Include="Renderers\ExtendedTableViewRenderer.cs" />
+    <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -156,13 +163,28 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.94569-pre3" />
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.8" />
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.0.1</Version>
+      <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Maps">
-      <Version>3.5.0.129452</Version>
+      <Version>4.0.0.425677</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>4.0.1.5</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.HotReload">
+      <Version>1.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AppCenter.Analytics">
+      <Version>2.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -177,5 +199,45 @@
     <Folder Include="IO\" />
     <Folder Include="Assets.xcassets\logo_splash_screen.imageset\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Assets.xcassets\Add.imageset\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\map_location.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\camera%403x.png" />
+    <BundleResource Include="Resources\camera%402x.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\photos%403x.png" />
+    <BundleResource Include="Resources\photos%402x.png" />
+    <BundleResource Include="Resources\photos.png" />
+    <BundleResource Include="Resources\trash%403x.png" />
+    <BundleResource Include="Resources\trash%402x.png" />
+    <BundleResource Include="Resources\trash.png" />
+    <BundleResource Include="Resources\Add%403x.png" />
+    <BundleResource Include="Resources\Add%402x.png" />
+    <BundleResource Include="Resources\Add.png" />
+    <BundleResource Include="Resources\location%403x.png" />
+    <BundleResource Include="Resources\location%402x.png" />
+    <BundleResource Include="Resources\location.png" />
+    <BundleResource Include="Resources\checked.png" />
+    <BundleResource Include="Resources\checked_off.png" />
+    <BundleResource Include="Resources\Tabbar\dog%402x.png" />
+    <BundleResource Include="Resources\Tabbar\dog%403x.png" />
+    <BundleResource Include="Resources\Tabbar\gevir%402x.png" />
+    <BundleResource Include="Resources\Tabbar\gevir%403x.png" />
+    <BundleResource Include="Resources\Tabbar\hunters%402x.png" />
+    <BundleResource Include="Resources\Tabbar\hunters%403x.png" />
+    <BundleResource Include="Resources\Tabbar\info%402x.png" />
+    <BundleResource Include="Resources\Tabbar\info%403x.png" />
+    <BundleResource Include="Resources\Tabbar\stats.png" />
+    <BundleResource Include="Resources\Tabbar\stats%402x.png" />
+    <BundleResource Include="Resources\Tabbar\stats%403x.png" />
+    <BundleResource Include="Resources\Tabbar\Arter.png" />
+    <BundleResource Include="Resources\Tabbar\Felter.png" />
+    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
+    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
+    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
+    <BundleResource Include="Resources\icons8-plus.pdf" />
   </ItemGroup>
 </Project>

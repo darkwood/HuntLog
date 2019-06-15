@@ -21,4 +21,25 @@
     <ButchWeight>0</ButchWeight>
     <Tags>0</Tags>
   </Logg>
+    <Logg>
+    <ID>2</ID>
+    <Treff>2</Treff>
+    <Skudd>2</Skudd>
+    <Sett>6</Sett>
+    <Dato>2017-02-24T09:30:51.897373+00:00</Dato>
+    <ArtId>18</ArtId>
+    <JegerId>1</JegerId>
+    <DogId>0</DogId>
+    <JaktId>2</JaktId>
+    <Latitude />
+    <Longitude />
+    <Notes />
+    <Gender />
+    <Weather />
+    <Age />
+    <WeaponType />
+    <Weight>0</Weight>
+    <ButchWeight>0</ButchWeight>
+    <Tags>0</Tags>
+  </Logg>
 </ArrayOfLogg>
