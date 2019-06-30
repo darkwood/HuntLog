@@ -105,6 +105,7 @@
     <Compile Include="Renderers\ExtendedMapRenderer.cs" />
     <Compile Include="Renderers\ExtendedTableViewRenderer.cs" />
     <Compile Include="Renderers\ExtendedViewCellRenderer.cs" />
+    <Compile Include="Renderers\ExtendedStepperRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

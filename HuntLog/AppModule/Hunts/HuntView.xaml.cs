@@ -28,13 +28,26 @@ namespace HuntLog.AppModule.Hunts
 
         protected override async void OnAppearing()
         {
-            await _viewModel.OnAppearing();
             base.OnAppearing();
+            await _viewModel.FetchData();
+        }
+    }
+
+    public class LogGroup : ObservableCollection<LogListItemViewModel>
+    {
+        public String Name { get; private set; }
+        public String ShortName { get; private set; }
+
+        public LogGroup(String Name, String ShortName)
+        {
+            this.Name = Name;
+            this.ShortName = ShortName;
         }
     }
 
     public class HuntViewModel : HuntViewModelBase
     {
+        public ObservableCollection<LogGroup> LogListItemViewModels { get; set; }
         public ObservableCollection<LogListItemViewModel> Items { get; set; }
         private LogListItemViewModel selectedItem;
         public LogListItemViewModel SelectedItem
@@ -76,10 +89,12 @@ namespace HuntLog.AppModule.Hunts
             _logListItemViewModelFactory = logItemViewModelFactory;
             _huntFactory = huntFactory;
 
+
             EditCommand = new Command(async () => await EditItem());
             AddCommand = new Command(async () => await AddItem());
             MapCommand = new Command(async () => await ShowMap());
 
+            LogListItemViewModels = new ObservableCollection<LogGroup>();
             Items = new ObservableCollection<LogListItemViewModel>();
         }
 
@@ -103,16 +118,11 @@ namespace HuntLog.AppModule.Hunts
             SetStateFromDto(_dto);
         }
 
-        public async Task OnAppearing()
-        {
-            await FetchData();
-        }
-
         private async Task AddItem()
         {
             await _navigator.PushAsync<LogViewModel>(
                     (vm) => vm.BeforeNavigate(null, _dto),
-                    (vm) => vm.OnAppearing());
+                    (vm) => vm.AfterNavigate());
         }
 
         private async Task DeleteItem(object item)
@@ -140,7 +150,19 @@ namespace HuntLog.AppModule.Hunts
                 items.Add(vm);
             }
             items = items.OrderByDescending(o => o.Date).ToList();
-            items.ForEach(i => Items.Add(i));
+            var groups = items.GroupBy(g => g.Date.ToShortDateString()).OrderByDescending(o => o.Key);
+            LogListItemViewModels.Clear();
+            foreach (var g in groups)
+            {
+                var jg = new LogGroup(g.Key, "");
+                foreach (var item in g.OrderByDescending(o => o.Date))
+                {
+                    jg.Add(items.Single(h => h.ID == item.ID));
+                }
+                LogListItemViewModels.Add(jg);
+            }
+
+            //items.ForEach(i => Items.Add(i));
 
             var hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
             var dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);

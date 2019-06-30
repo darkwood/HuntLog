@@ -21,7 +21,7 @@
                 
                 <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
                 
-                <Label Text="Ingen jegere opprettet enda" 
+                <Label Text="En jakt trenger en jeger. Eller flere." 
                        FontSize="Large"
                        HorizontalTextAlignment="Center"
                        />

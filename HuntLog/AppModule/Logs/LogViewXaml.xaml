@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="HuntLog.AppModule.Logs.LogView"
+             x:Class="HuntLog.AppModule.Logs.LogViewXaml"
              xmlns:Converters="clr-namespace:HuntLog.Converters"       
              xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
@@ -27,15 +27,16 @@
                 
                     <TableSection Title="">
                         <cells:ImageHeaderCell HeightRequest="150" Source="{Binding ImageSource}" CellAction="{Binding ImageAction}" />
-                        <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
-                        
-                        <cells:PickerCell Text="Art" SubText="Velg dine arter i oppsettfanen" PickerItems="{Binding SpeciesPickers}" EmptyCommand="{Binding NoSpecieCommand}" Mode="Single" />
+                         
                         <cells:PickerCell Text="Antall sett" PickerItems="{Binding ObservedPickers}" Mode="Numeric" />
                         <cells:PickerCell Text="Antall skudd" PickerItems="{Binding ShotsPickers}" Mode="Numeric" />
                         <cells:PickerCell Text="Antall treff" PickerItems="{Binding HitsPickers}" Mode="Numeric" />
-                        
+                       
+                        <cells:PickerCell Text="Art" SubText="Velg dine arter i oppsettfanen" PickerItems="{Binding SpeciesPickers}" EmptyCommand="{Binding NoSpecieCommand}" Mode="Single" />
                         <cells:PickerCell Text="Jeger" PickerItems="{Binding HuntersPickers}" Mode="Single" />
                         <cells:PickerCell Text="Hunder" PickerItems="{Binding DogsPickers}" Mode="Single" />
+                        <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
+                       
                         <cells:ExtendedTextCell Text="Dato" Text2="{Binding Date}" Command="{Binding TimeCommand}"  />
                         <EntryCell Label="Notat" Text="{Binding Notes}" />
                         <cells:ExtendedTextCell Text="Flere felter" Text2="Vis >" Command="{Binding CustomFieldsCommand}"  />

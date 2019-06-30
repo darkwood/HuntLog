@@ -13,7 +13,7 @@ namespace HuntLog
         public App()
         {
 #if DEBUG
-            HotReloader.Current.Start(this);
+            //HotReloader.Current.Start(this);
 #endif
             InitializeComponent();
         }

@@ -20,15 +20,16 @@ namespace HuntLog.Cells
                 null,
                 propertyChanged: (bindable, oldValue, newValue) => {
                     var src = newValue as ImageSource;
+                    ((ImageHeaderCell)bindable).Source = src;
                     ((ImageHeaderCell)bindable).CellImage.Source = src;
                     //((ImageHeaderCell)bindable).CellImage.IsVisible = newValue != null;
                     ((ImageHeaderCell)bindable).Buttons.IsVisible = true;
                 }
             );
-        
-        public string Source
+
+        public ImageSource Source
         {
-            get { return (string)GetValue(SourceProperty); }
+            get { return (ImageSource)GetValue(SourceProperty); }
             set { SetValue(SourceProperty, value); }
         }
 
@@ -41,8 +42,6 @@ namespace HuntLog.Cells
                 var height = double.Parse(newValue as string);
                 //((ImageHeaderCell)bindable).View.HeightRequest = height;
             });
-
-
 
         public string HeightRequest
         {
@@ -133,12 +132,12 @@ namespace HuntLog.Cells
         private async Task EditImage(object shortcut)
         {
             await _navigator.PushAsync<InputImageViewModel>(
-                beforeNavigate: async (arg) =>
-                {
-                    await arg.InitializeAsync(CellImage.Source, CellAction.Save, CellAction.Delete);
-                },
-                afterNavigate: async (arg) => await arg.OnAfterNavigate(shortcut as string),
-                shortcut == null);
+            beforeNavigate: async (arg) =>
+            {
+                await arg.InitializeAsync(CellImage.Source, CellAction.Save, CellAction.Delete);
+            },
+            afterNavigate: async (arg) => await arg.OnAfterNavigate(shortcut as string),
+            shortcut == null);
         }
     }
 }

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using HuntLog.Cells;
 using HuntLog.Controls;
+using HuntLog.Helpers;
 using HuntLog.InputViews;
 using Xamarin.Forms;
 
 namespace HuntLog.AppModule.Logs
 {
-    public class LogViewCode : ContentPage
+    public partial class LogView : ContentPage
     {
         private readonly LogViewModel _viewModel;
 
         public bool IsLoaded { get; private set; }
 
-        public LogViewCode(LogViewModel viewModel)
+        public LogView(LogViewModel viewModel)
         {
             _viewModel = viewModel;
             BindingContext = _viewModel;
@@ -24,10 +25,9 @@ namespace HuntLog.AppModule.Logs
             Content = spin;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
-            await _viewModel.OnAppearing();
             InitializeContent();
         }
 
@@ -39,17 +39,17 @@ namespace HuntLog.AppModule.Logs
             var section2 = new TableSection("Egendefinerte felter");
             var section3 = new TableSection();
             section1.Add(CreateImageHeaderCell("150", "ImageSource", "ImageAction"));
-            section1.Add(CreateMapCell("Posisjon", "Position", "MapAction"));
-            section1.Add(CreatePicker("Art", "SpeciesPickers", PickerMode.Single, "Velg dine arter i oppsettfanen"));
-            section1.Add(CreatePicker("Antall sett", "ObservedPickers", PickerMode.Numeric));
-            section1.Add(CreatePicker("Antall skudd", "ShotsPickers", PickerMode.Numeric));
-            section1.Add(CreatePicker("Antall treff", "HitsPickers", PickerMode.Numeric));
-            section1.Add(CreatePicker("Jeger", "HuntersPickers", PickerMode.Single, "Jegere valgt i jakta"));
-            if (_viewModel.DogsPickers.Any())
+            section1.Add(CreatePicker("Art", "SpeciesPickers", PickerMode.Single, "Velg arter i oppsettfanen"));
+            section1.Add(CreateStepper("Antall sett", "Observed"));
+            section1.Add(CreateStepper("Antall skudd", "Shots"));
+            section1.Add(CreateStepper("Antall treff", "Hits"));
+            section1.Add(CreatePicker("Jeger", "HuntersPickers", PickerMode.Single));
+            if (_viewModel.DogsPickers != null && _viewModel.DogsPickers.Any())
             {
-                section1.Add(CreatePicker("Hunder", "DogsPickers", PickerMode.Single, "Hunder valgt i jakta"));
+                section1.Add(CreatePicker("Hund", "DogsPickers", PickerMode.Single));
             }
 
+            section1.Add(CreateMapCell("Posisjon", "Position", "MapAction"));
             section1.Add(CreateTextCell("Dato", "Date", "TimeCommand"));
 
             tableView.Root.Add(section1);
@@ -71,6 +71,40 @@ namespace HuntLog.AppModule.Logs
             }
 
             Content = tableView;
+        }
+
+        private Cell CreateStepper(string text, string binding)
+        {
+            var cell = new ViewCell();
+            var layout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Margin = 15
+            };
+            layout.Children.Add(new Label 
+            { 
+                Text = text, 
+                VerticalOptions = LayoutOptions.Center 
+            });
+
+            var valueLabel = new Label();
+            valueLabel.TextColor = Utility.PRIMARY_COLOR;
+            valueLabel.SetBinding(Label.TextProperty, binding);
+            valueLabel.HorizontalOptions = LayoutOptions.EndAndExpand;
+            valueLabel.VerticalOptions = LayoutOptions.Center;
+            valueLabel.FontSize = 20;
+            valueLabel.Margin = 5;
+            layout.Children.Add(valueLabel);
+
+            var stepper = new Stepper();
+            stepper.SetBinding(Stepper.ValueProperty, binding);
+            stepper.HorizontalOptions = LayoutOptions.End;
+            stepper.VerticalOptions = LayoutOptions.Center;
+            layout.Children.Add(stepper);
+
+            cell.View = layout;
+            return cell;
+
         }
 
         //TOD: Create CellFactory and move methods
@@ -103,6 +137,7 @@ namespace HuntLog.AppModule.Logs
             cell.HeightRequest = height;
             cell.SetBinding(ImageHeaderCell.SourceProperty, sourceBinding);
             cell.SetBinding(BaseCell.CellActionProperty, actionBinding);
+
             return cell;
         }
 
