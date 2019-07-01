@@ -18,7 +18,7 @@ namespace HuntLog.Services
 
     public class BaseService<T> : IBaseService<T> where T : BaseDto
     {
-        private const int _delay = 700;
+        private const int _delay = 0;
         private string _dataFileName = "";
         private readonly IFileManager _fileManager;
         private List<T> _dtos;

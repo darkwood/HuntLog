@@ -28,8 +28,8 @@
             
             <ci:CircleImage 
                 Source="{Binding Source}"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
                 Aspect="AspectFill"
                 BorderColor="White" 
                 BorderThickness="2"

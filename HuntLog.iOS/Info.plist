@@ -24,8 +24,6 @@
 	<string>Jaktloggen</string>
 	<key>CFBundleIdentifier</key>
 	<string>no.toremorkved.jaktloggen</string>
-	<key>CFBundleVersion</key>
-	<string>2.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
@@ -49,7 +47,7 @@
 	<key>CFBundleName</key>
 	<string>Jaktloggen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1</string>
+	<string>3.2</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome5Brands.otf</string>

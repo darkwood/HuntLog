@@ -61,7 +61,7 @@ namespace HuntLog.InputViews
             CancelCommand = new Command(async () => {
                 await _navigator.PopAsync();
             });
-            GetCurrentPositionCommand = new Command(async () => await GetCurrentPosition());
+            GetCurrentPositionCommand = new Command(async () => await SetCurrentPosition());
         }
 
         public void SetPin()
@@ -76,7 +76,7 @@ namespace HuntLog.InputViews
             _mapView.Pins.Add(pin);
         }
 
-        private async Task GetCurrentPosition()
+        private async Task SetCurrentPosition()
         {
             Loading = true;
             var location = await Geolocation.GetLastKnownLocationAsync();
@@ -92,7 +92,14 @@ namespace HuntLog.InputViews
             _completeAction = completeAction;
             _deleteAction = deleteAction;
 
-            SetMapPosition(position);
+            if(position.Latitude > 0 && position.Longitude > 0)
+            {
+                SetMapPosition(position);
+            }
+            else
+            {
+                await SetCurrentPosition();
+            }
 
             await Task.CompletedTask;
         }
