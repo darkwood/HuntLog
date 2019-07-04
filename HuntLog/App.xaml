@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HuntLog.App">
 <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#597a59</Color>
             <Color x:Key="PrimaryDark">#496a49</Color>
+            <Color x:Key="PrimaryBright">#e69200</Color>
             <Color x:Key="Danger">#FF0000</Color>
             <Color x:Key="Accent">#dedcaf</Color>
             <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
@@ -11,6 +12,9 @@
             <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
             <Color x:Key="LightTextColor">#999999</Color>
             <Color x:Key="TableBg">#f7f7f7</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource PrimaryBright}" />
+            </Style>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="BarTextColor" Value="White" />

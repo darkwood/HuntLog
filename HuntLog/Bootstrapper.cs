@@ -17,6 +17,8 @@ using System.Reflection;
 using System.Linq;
 using System;
 using HuntLog.Factories;
+using HuntLog.Helpers;
+using HuntLog.AppModule.Info;
 
 namespace HuntLog
 {
@@ -63,12 +65,13 @@ namespace HuntLog
         protected async Task ConfigureApplication(IServiceFactory container)
         {
             var tabbed = new Xamarin.Forms.TabbedPage();
+            tabbed.SelectedTabColor = Utility.PRIMARYBRIGHT_COLOR;
             tabbed.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<SetupView>(), "Oppsett", "Tabbar/hunters.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
-            tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<InfoView>(), "Info", "Tabbar/info.png"));
 
             _application.MainPage = tabbed;
             await Task.CompletedTask;

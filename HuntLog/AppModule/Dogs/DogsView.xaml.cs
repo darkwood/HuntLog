@@ -25,7 +25,7 @@ namespace HuntLog.AppModule.Dogs
 
         protected override async void OnAppearing()
         {
-            await _viewModel.InitializeAsync();
+            //await _viewModel.InitializeAsync();
             base.OnAppearing();
         }
     }
@@ -55,7 +55,7 @@ namespace HuntLog.AppModule.Dogs
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
 
-
+            FetchData();
         }
 
         private async Task AddItem()

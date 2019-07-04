@@ -12,10 +12,10 @@ namespace HuntLog
         public static INavigator Navigator { get; set; }
         public App()
         {
-#if DEBUG
-            //HotReloader.Current.Start(this);
-#endif
             InitializeComponent();
+#if DEBUG
+            HotReloader.Current.Run(this);
+#endif
         }
 
         protected async override void OnStart()

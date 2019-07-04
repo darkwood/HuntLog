@@ -29,7 +29,7 @@ namespace HuntLog.AppModule.Hunts
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await _viewModel.FetchData();
+            //await _viewModel.FetchData();
         }
     }
 
@@ -74,6 +74,7 @@ namespace HuntLog.AppModule.Hunts
         public Command EditCommand { get; set; }
         public Command MapCommand { get; set; }
         public Command AddCommand { get; set; }
+        public Command RefreshCommand { get; set; }
 
         public bool ShowMapButton => Items.Any();
 
@@ -93,6 +94,7 @@ namespace HuntLog.AppModule.Hunts
             EditCommand = new Command(async () => await EditItem());
             AddCommand = new Command(async () => await AddItem());
             MapCommand = new Command(async () => await ShowMap());
+            RefreshCommand = new Command(async () => await FetchData());
 
             LogListItemViewModels = new ObservableCollection<LogGroup>();
             Items = new ObservableCollection<LogListItemViewModel>();
@@ -116,6 +118,7 @@ namespace HuntLog.AppModule.Hunts
         {
             _dto = dto;
             SetStateFromDto(_dto);
+            FetchData();
         }
 
         private async Task AddItem()

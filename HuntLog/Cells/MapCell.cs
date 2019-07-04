@@ -13,15 +13,16 @@ namespace HuntLog.Cells
     {
         public static readonly BindableProperty TextProperty =
             BindableProperty.Create(
-                nameof(Text), 
-                typeof(string), 
-                typeof(MapCell), 
+                nameof(Text),
+                typeof(string),
+                typeof(MapCell),
                 null,
-                propertyChanged: (bindable, oldValue, newValue) => {
-                ((MapCell)bindable).TextLabel.Text = newValue as string;
+                propertyChanged: (bindable, oldValue, newValue) =>
+                {
+                    ((MapCell)bindable).TextLabel.Text = newValue as string;
                 }
             );
-        
+
         public string Text
         {
             get { return (string)GetValue(TextProperty); }
@@ -33,12 +34,12 @@ namespace HuntLog.Cells
         /***************************************************************************/
 
         public static readonly BindableProperty PositionProperty = BindableProperty.Create(
-            nameof(Position), 
-            typeof(Position), 
-            typeof(MapCell), 
+            nameof(Position),
+            typeof(Position),
+            typeof(MapCell),
             new Position(),
             defaultBindingMode: BindingMode.TwoWay,
-            propertyChanged: (bindable, oldValue, newValue) => 
+            propertyChanged: (bindable, oldValue, newValue) =>
             {
                 ((MapCell)bindable).SetMapPosition((Position)newValue);
             });
@@ -46,7 +47,8 @@ namespace HuntLog.Cells
         public Position Position
         {
             get { return (Position)GetValue(PositionProperty); }
-            set { 
+            set
+            {
                 SetValue(PositionProperty, value);
             }
         }
@@ -66,7 +68,8 @@ namespace HuntLog.Cells
             InfoText.IsVisible = !hasPosition;
             ActivityIndicator.IsVisible = false;
 
-            if(!hasPosition){
+            if (!hasPosition)
+            {
                 return;
             }
 
@@ -87,7 +90,8 @@ namespace HuntLog.Cells
         {
             ViewLayout.HeightRequest = 90;
 
-            TextLabel = new Label{
+            TextLabel = new Label
+            {
                 VerticalOptions = LayoutOptions.Center
             };
             ViewLayout.Children.Add(TextLabel);
@@ -104,9 +108,10 @@ namespace HuntLog.Cells
             };
             ViewLayout.Children.Add(MyMap);
 
-            InfoText = new Label { 
-                IsVisible = true, 
-                Text = "Sett posisjon", 
+            InfoText = new Label
+            {
+                IsVisible = true,
+                Text = "Sett posisjon",
                 HorizontalOptions = LayoutOptions.EndAndExpand,
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Utility.PRIMARY_COLOR
@@ -124,7 +129,7 @@ namespace HuntLog.Cells
 
             var gestureRecognizer = new TapGestureRecognizer();
 
-            gestureRecognizer.Tapped += async (s, e) => 
+            gestureRecognizer.Tapped += async (s, e) =>
             {
                 await _navigator.PushAsync<InputPositionViewModel>(
                 beforeNavigate: async (arg) =>
