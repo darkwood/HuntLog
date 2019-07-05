@@ -46,10 +46,13 @@ namespace HuntLog.InputViews
         public Command CancelCommand { get; set; }
         public Command DoneCommand { get; set; }
         public Command GetCurrentPositionCommand { get; set; }
+        public Command GetHuntPositionCommand { get; set; }
+        public Position HuntPosition { get; set; }
 
         public Position Position { get; set; }
         public string PositionText => Position.Latitude > 0 ? $"{Position.Latitude}, {Position.Latitude}" : string.Empty;
         public bool Loading { get; set; }
+        public bool HasHuntPosition => HuntPosition.Latitude != 0;
 
         public InputPositionViewModel(INavigator navigator, IDialogService dialogService)
         {
@@ -62,6 +65,7 @@ namespace HuntLog.InputViews
                 await _navigator.PopAsync();
             });
             GetCurrentPositionCommand = new Command(async () => await SetCurrentPosition());
+            GetHuntPositionCommand = new Command(SetHuntPosition);
         }
 
         public void SetPin()
@@ -87,10 +91,16 @@ namespace HuntLog.InputViews
             Loading = false;
         }
 
-        public async Task InitializeAsync(Position position, Action<object> completeAction, Action deleteAction)
+        private void SetHuntPosition()
+        {
+            SetMapPosition(HuntPosition);
+        }
+
+        public async Task InitializeAsync(Position position, Position huntPosition, Action<object> completeAction, Action deleteAction)
         {
             _completeAction = completeAction;
             _deleteAction = deleteAction;
+            HuntPosition = huntPosition;
 
             if(position.Latitude > 0 && position.Longitude > 0)
             {

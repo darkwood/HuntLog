@@ -11,7 +11,7 @@
             >
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
+        <ToolbarItem Priority="1" Text="Rediger jakt" Command="{Binding EditCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 

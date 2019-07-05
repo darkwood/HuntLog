@@ -66,7 +66,8 @@ namespace HuntLog.AppModule.Logs
         public CellAction MapAction { get; set; }
         public Position Position { get; set; }
         public IMediaService MediaService { get; set; }
-
+        public Position HuntPosition => new Position(Utility.MapStringToDouble(_huntDto.Latitude),
+                                                     Utility.MapStringToDouble(_huntDto.Longitude));
         public LogViewModel(INavigator navigator,
                             IBaseService<Logg> logService,
                             IFileManager fileManager,

@@ -26,12 +26,6 @@ namespace HuntLog.AppModule.Hunts
             InitializeComponent();
             _viewModel = viewModel;
         }
-
-        //protected override async void OnAppearing()
-        //{
-        //    await _viewModel.OnAppearing();
-        //    base.OnAppearing();
-        //}
     }
 
     public class EditHuntViewModel : HuntViewModelBase

@@ -22,12 +22,13 @@ namespace HuntLog.AppModule.Logs
             InitializeToolbarItems();
             //var spin = new ActivityIndicator { IsRunning = true };
             //Content = spin;
-            InitializeContent();
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            InitializeContent();
         }
 
         private void InitializeContent()
@@ -48,7 +49,7 @@ namespace HuntLog.AppModule.Logs
                 section1.Add(CreatePicker("Hund", "DogsPickers", PickerMode.Single));
             }
 
-            section1.Add(CreateMapCell("Posisjon", "Position", "MapAction"));
+            section1.Add(CreateMapCell("Posisjon", "Position", "HuntPosition", "MapAction"));
             section1.Add(CreateTextCell("Dato", "Date", "TimeCommand"));
 
             tableView.Root.Add(section1);
@@ -107,12 +108,13 @@ namespace HuntLog.AppModule.Logs
         }
 
         //TOD: Create CellFactory and move methods
-        private Cell CreateMapCell(string text, string positionBinding, string commandBinding)
+        private Cell CreateMapCell(string text, string positionBinding, string huntPosBinding, string commandBinding)
         {
             var mapCell = new MapCell();
             mapCell.Text = text;
             mapCell.SetBinding(MapCell.PositionProperty, positionBinding);
             mapCell.SetBinding(MapCell.CellActionProperty, commandBinding);
+            mapCell.SetBinding(MapCell.HuntPositionProperty, huntPosBinding);
             return mapCell;
         }
 

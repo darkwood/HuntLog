@@ -55,6 +55,28 @@ namespace HuntLog.Cells
 
         /***************************************************************************/
 
+    public static readonly BindableProperty HuntPositionProperty = BindableProperty.Create(
+        nameof(HuntPosition),
+        typeof(Position),
+        typeof(MapCell),
+        new Position(),
+        defaultBindingMode: BindingMode.TwoWay,
+        propertyChanged: (bindable, oldValue, newValue) =>
+        {
+            
+        });
+
+        public Position HuntPosition
+        {
+            get { return (Position)GetValue(HuntPositionProperty); }
+            set
+            {
+                SetValue(HuntPositionProperty, value);
+            }
+        }
+
+        /***************************************************************************/
+
 
         public ActivityIndicator ActivityIndicator { get; private set; }
         public ExtendedMap MyMap { get; private set; }
@@ -134,7 +156,7 @@ namespace HuntLog.Cells
                 await _navigator.PushAsync<InputPositionViewModel>(
                 beforeNavigate: async (arg) =>
                 {
-                    await arg.InitializeAsync(Position, CellAction.Save, CellAction.Delete);
+                    await arg.InitializeAsync(Position, HuntPosition, CellAction.Save, CellAction.Delete);
                 });
             };
 

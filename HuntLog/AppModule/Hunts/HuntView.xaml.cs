@@ -29,7 +29,7 @@ namespace HuntLog.AppModule.Hunts
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            //await _viewModel.FetchData();
+            await _viewModel.FetchData();
         }
     }
 
@@ -118,7 +118,6 @@ namespace HuntLog.AppModule.Hunts
         {
             _dto = dto;
             SetStateFromDto(_dto);
-            FetchData();
         }
 
         private async Task AddItem()

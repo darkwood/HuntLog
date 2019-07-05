@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:Converters="clr-namespace:HuntLog.Converters;assembly=HuntLog"
@@ -30,18 +30,27 @@
                    
                     <Button 
                         Grid.Column="0" 
-                        Image="location.png"
+                        Text="&#xf124; GPS" 
+                        FontFamily="{StaticResource FontAwesomeSolid}"
                         Command="{Binding GetCurrentPositionCommand}"
+                    />
+                
+                <Button 
+                        Grid.Column="1" 
+                        Text="&#xf015; Jaktsted" 
+                        FontFamily="{StaticResource FontAwesomeSolid}"
+                        Command="{Binding GetCurrentPositionCommand}"
+                        IsVisible="{Binding HasHuntPosition}"
                     />
 
                       <ActivityIndicator 
-                        Grid.Column="1"
+                        Grid.Column="2"
                         HorizontalOptions="Center" 
                         IsRunning="{Binding Loading}" 
                         IsVisible="{Binding Loading}" 
                     />
                     <Label
-                        Grid.Column="1"
+                        Grid.Column="2"
                         IsVisible="false"
                         Text="{Binding PositionText}" 
                         VerticalOptions="Center"
@@ -52,8 +61,9 @@
                         HorizontalOptions="Center"
                     />
                     <Button 
-                        Grid.Column="2"
-                        Image="trash.png"
+                        Grid.Column="3"
+                        Text="&#xf2ed; Slett" 
+                        FontFamily="{StaticResource FontAwesomeSolid}"
                         IsVisible="{Binding PositionText, Converter={Converters:InvertedEmptyStringToBooleanConverter}}" 
                         Command="{Binding DeleteCommand}"
                     />

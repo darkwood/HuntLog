@@ -56,8 +56,6 @@ namespace HuntLog.AppModule.CustomFields
             _factory = factory;
 
             AddCommand = new Command(async () => await AddItem());
-            //DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
-            FetchData();
         }
 
         private async Task AddItem()
@@ -66,14 +64,6 @@ namespace HuntLog.AppModule.CustomFields
                     beforeNavigate: (vm) => vm.SetState(null, true));
         }
 
-        //private async Task DeleteItem(object item)
-        //{
-        //    var ok = await _huntFactory.DeleteCustomField((item as CustomFieldViewModel).ID, (item as CustomFieldViewModel).ImagePath);
-        //    if (ok)
-        //    {
-        //        await FetchData();
-        //    }
-        //}
         public async Task Initialize()
         {
             await FetchData();
