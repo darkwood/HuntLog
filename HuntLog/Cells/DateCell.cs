@@ -73,11 +73,12 @@ namespace HuntLog.Cells
             typeof(DateTime),
             typeof(DateCell),
             DateTime.MinValue,
+            BindingMode.TwoWay,
             propertyChanged: (bindable, oldValue, newValue) =>
             {
                 var date = (DateTime) newValue;
                 ((DateCell)bindable).Text2Label.IsVisible = true;
-                ((DateCell)bindable).Text2Label.Text = date.ToString();
+                ((DateCell)bindable).Text2Label.Text = date.ToShortDateString();
             });
 
         public DateTime Date
@@ -108,6 +109,7 @@ namespace HuntLog.Cells
             ViewLayout.Children.Add(TextLabel);
 
             Text2Label = new Label { VerticalOptions = LayoutOptions.Start, HorizontalOptions = LayoutOptions.EndAndExpand };
+            Text2Label.SetBinding(Label.TextProperty, nameof(Date), BindingMode.TwoWay);
             ViewLayout.Children.Add(Text2Label);
 
             _datePicker = new DatePicker { IsVisible = false };
@@ -119,14 +121,13 @@ namespace HuntLog.Cells
             gestureRecognizer.Tapped += (s, e) =>
             {
                 _datePicker.Focus();
-                if (Command != null && Command.CanExecute(null))
-                {
-                    Command.Execute(null);
-                }
+                //if (Command != null && Command.CanExecute(null))
+                //{
+                //    Command.Execute(null);
+                //}
             };
 
             ViewLayout.GestureRecognizers.Add(gestureRecognizer);
-            ViewLayout.Children.Add(ViewLayout);
 
             //DatePickerView = new Grid {
             //    HeightRequest = 60,

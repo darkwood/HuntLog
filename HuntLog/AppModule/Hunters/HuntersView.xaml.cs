@@ -54,7 +54,6 @@ namespace HuntLog.AppModule.Hunters
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
 
-
         }
 
         private async Task AddItem()

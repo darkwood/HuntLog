@@ -46,10 +46,13 @@ namespace HuntLog.InputViews
         public Command CancelCommand { get; set; }
         public Command DoneCommand { get; set; }
         public Command GetCurrentPositionCommand { get; set; }
+        public Command GetHuntPositionCommand { get; set; }
+        public Position HuntPosition { get; set; }
 
         public Position Position { get; set; }
         public string PositionText => Position.Latitude > 0 ? $"{Position.Latitude}, {Position.Latitude}" : string.Empty;
         public bool Loading { get; set; }
+        public bool HasHuntPosition => HuntPosition.Latitude != 0;
 
         public InputPositionViewModel(INavigator navigator, IDialogService dialogService)
         {
@@ -61,7 +64,8 @@ namespace HuntLog.InputViews
             CancelCommand = new Command(async () => {
                 await _navigator.PopAsync();
             });
-            GetCurrentPositionCommand = new Command(async () => await GetCurrentPosition());
+            GetCurrentPositionCommand = new Command(async () => await SetCurrentPosition());
+            GetHuntPositionCommand = new Command(SetHuntPosition);
         }
 
         public void SetPin()
@@ -76,7 +80,7 @@ namespace HuntLog.InputViews
             _mapView.Pins.Add(pin);
         }
 
-        private async Task GetCurrentPosition()
+        private async Task SetCurrentPosition()
         {
             Loading = true;
             var location = await Geolocation.GetLastKnownLocationAsync();
@@ -87,12 +91,25 @@ namespace HuntLog.InputViews
             Loading = false;
         }
 
-        public async Task InitializeAsync(Position position, Action<object> completeAction, Action deleteAction)
+        private void SetHuntPosition()
+        {
+            SetMapPosition(HuntPosition);
+        }
+
+        public async Task InitializeAsync(Position position, Position huntPosition, Action<object> completeAction, Action deleteAction)
         {
             _completeAction = completeAction;
             _deleteAction = deleteAction;
+            HuntPosition = huntPosition;
 
-            SetMapPosition(position);
+            if(position.Latitude > 0 && position.Longitude > 0)
+            {
+                SetMapPosition(position);
+            }
+            else
+            {
+                await SetCurrentPosition();
+            }
 
             await Task.CompletedTask;
         }

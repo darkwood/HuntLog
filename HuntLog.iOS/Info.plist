@@ -24,8 +24,6 @@
 	<string>Jaktloggen</string>
 	<key>CFBundleIdentifier</key>
 	<string>no.toremorkved.jaktloggen</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
@@ -35,7 +33,7 @@
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Allow positioning for ios11?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>NSLocationWhenInUseUsageDescription</string>
+	<string>Du kan da lagre posisjonen til dine jaktsituasjoner!</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>NSCameraUsageDescription</key>
@@ -49,7 +47,7 @@
 	<key>CFBundleName</key>
 	<string>Jaktloggen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.2</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome5Brands.otf</string>

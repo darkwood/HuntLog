@@ -41,22 +41,22 @@ namespace HuntLog.AppModule.Logs
         private async Task ShowItem()
         {
             await _navigator.PushAsync<LogViewModel>(
-                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto));
-                //afterNavigate: async (arg) => await arg.OnAppearing());
+                beforeNavigate: (arg) => arg.BeforeNavigate(_dto, _huntDto),
+                afterNavigate: async (arg) => await arg.AfterNavigate());
         }
 
         public void BeforeNavigate(Logg dto)
         {
             _dto = dto;
             Date = _dto.Dato;
+            ID = _dto.ID;
             Title = CreateTitle();
             ImageSource = Utility.GetImageSource($"jaktlogg_{ID}.jpg");
         }
 
         private string CreateTitle()
         {
-            
-            return $"Kl. {Date.ToString("hh:mm", new CultureInfo("nb-no"))}";
+            return $"{Date.ToString("HH:mm", new CultureInfo("nb-NO"))}";
         }
 
         public async Task OnAppearing()

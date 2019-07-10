@@ -90,10 +90,11 @@ namespace HuntLog.InputViews
 
             DoneCommand.ChangeCanExecute();
 
-            if (isShortCut)
-            {
-                //await _navigator.PopAsync();
-            }
+            //if (isShortCut)
+            //{
+            //    DoneCommand.Execute(null);
+            //}
+            await Task.CompletedTask;
         }
 
         private async Task Delete()

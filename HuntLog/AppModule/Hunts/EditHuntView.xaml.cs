@@ -26,12 +26,6 @@ namespace HuntLog.AppModule.Hunts
             InitializeComponent();
             _viewModel = viewModel;
         }
-
-        protected override async void OnAppearing()
-        {
-            await _viewModel.OnAppearing();
-            base.OnAppearing();
-        }
     }
 
     public class EditHuntViewModel : HuntViewModelBase
@@ -136,7 +130,7 @@ namespace HuntLog.AppModule.Hunts
                 });
         }
 
-        public async Task OnAppearing()
+        public async Task InitializeAsync()
         {
             IsBusy = true;
             Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
@@ -171,6 +165,7 @@ namespace HuntLog.AppModule.Hunts
             Title = IsNew ? "Ny jakt" : "Rediger jakt";
             IsBusy = true;
             _callback = callback;
+            InitializeAsync();
         }
 
         private Jakt CreateNewHunt()

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
             x:Class="HuntLog.AppModule.Hunts.HuntView"
@@ -11,15 +11,21 @@
             >
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Priority="1" Text="Rediger" Command="{Binding EditCommand}" />
+        <ToolbarItem Priority="1" Text="Rediger jakt" Command="{Binding EditCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 
         <ListView x:Name="itemListView" 
                   Header="{Binding}" 
-                  ItemsSource="{Binding Items}" 
+                  ItemsSource="{Binding LogListItemViewModels}" 
                   SelectedItem="{Binding SelectedItem}"
-                  HasUnevenRows="true">
+                  IsGroupingEnabled="true"
+                    GroupDisplayBinding="{Binding Name}"
+                    GroupShortNameBinding="{Binding ShortName}"
+                    HasUnevenRows="true"
+                    IsPullToRefreshEnabled="true"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    IsRefreshing="{Binding IsBusy}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackLayout>
@@ -53,25 +59,6 @@
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-<!--                    <ViewCell StyleId="disclosure">
-                        <StackLayout Margin="20,0" Orientation="Horizontal">
-                            
-                            <Image Source="{Binding ImageSource}" WidthRequest="80" Aspect="AspectFill" />
-                            
-                            <StackLayout VerticalOptions="Center" Margin="5">
-                                <Label Text="{Binding Title}" />
-                                <Label Text="{Binding Detail}" FontSize="Small" />
-                            </StackLayout>
-                            
-                        </StackLayout>
-                        
-                         <ViewCell.ContextActions>
-                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
-                                      Text="Slett" 
-                                      IsDestructive="True" 
-                                      Icon="trash" />
-                            </ViewCell.ContextActions>
-                    </ViewCell>-->
                     <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
                                             Text="{Binding Title}" 
                                             Detail="{Binding Detail}" 
@@ -82,7 +69,7 @@
                             <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
                                       Text="Slett" 
                                       IsDestructive="True" 
-                                      Icon="trash" />
+                                      Icon="trash.png" />
                             </cells:ExtendedTextCell.ContextActions>
                     </cells:ExtendedTextCell>
                 </DataTemplate>     

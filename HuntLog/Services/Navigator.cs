@@ -16,6 +16,7 @@ namespace HuntLog.Services
         Task<TViewModel> PushAsync<TViewModel>(Action<TViewModel> beforeNavigate = null, Func<TViewModel, Task> afterNavigate = null, bool animated = true) where TViewModel : class, IViewModel;
         void Register<TViewModel, TView>() where TViewModel : class, IViewModel where TView : Page;
         void RegisterView<TViewModel, TView>() where TViewModel : class, IViewModel where TView : ContentView;
+        void Register(Type vm, Type view);
     }
 
     public class Navigator : INavigator
@@ -29,6 +30,11 @@ namespace HuntLog.Services
         {
             _tabbedPage = tabbedPage;
             this.serviceFactory = serviceFactory;
+        }
+
+        public void Register(Type vm, Type view)
+        {
+            _map[vm] = view;
         }
 
         public void Register<TViewModel, TView>()
@@ -102,5 +108,6 @@ namespace HuntLog.Services
 
             return viewModel;
         }
+
     }
 }

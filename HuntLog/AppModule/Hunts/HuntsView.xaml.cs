@@ -164,11 +164,9 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task ShowHunt()
         {
-            IsBusy = true;
             await _navigator.PushAsync<HuntViewModel>(
-                beforeNavigate: (arg) => arg.SetState(_dto),
-                afterNavigate: async (arg) => await arg.OnAppearing());
-            IsBusy = false;
+                beforeNavigate: (arg) => arg.SetState(_dto));
+                //afterNavigate: async (arg) => await arg.FetchData());
         }
     }
 }

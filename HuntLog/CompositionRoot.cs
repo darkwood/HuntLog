@@ -19,6 +19,8 @@ using System.Reflection;
 using System.Linq;
 using HuntLog.AppModule.Setup;
 using HuntLog.AppModule.Stats.Pages;
+using HuntLog.AppModule;
+using System.Timers;
 
 namespace HuntLog
 {
@@ -45,84 +47,20 @@ namespace HuntLog
             .RegisterSingleton<IDialogService, DialogService>()
             .RegisterSingleton<IHuntFactory, HuntFactory>()
             .RegisterSingleton<ICustomFieldFactory, CustomFieldFactory>()
-
-
-            .Register<HuntsViewModel, HuntsViewModel>(new PerContainerLifetime())
-            .Register<HuntsView>()
-            .Register<HuntListItemViewModel>()
-
-            .Register<HuntViewModel>()
-            .Register<HuntView>()
-
-            .Register<EditHuntViewModel>()
-            .Register<EditHuntView>()
-
-            .Register<LogViewModel>()
-            .Register<LogView>()
-            .Register<LogListItemViewModel>()
-            .Register<LogViewCode>()
-
-            .Register<HuntersViewModel>()
-            .Register<HuntersView>()
-
-            .Register<HunterViewModel>()
-            .Register<HunterView>()
-
-            .Register<DogsViewModel>()
-            .Register<DogsView>()
-
-            .Register<DogViewModel>()
-            .Register<DogView>()
-
-            .Register<SpeciesViewModel>()
-            .Register<SpeciesView>()
-
-            .Register<SpecieViewModel>()
-            .Register<SpecieView>()
-
-            .Register<CustomFieldsViewModel>(new PerContainerLifetime())
-            .Register<CustomFieldsView>()
-
-            .Register<CustomFieldViewModel>()
-            .Register<CustomFieldView>()
-
-            .Register<SetupViewModel>()
-            .Register<SetupView>()
-
-            //.Register<LogCustomFieldsViewModel>()
-            //.Register<LogCustomFieldsView>()
-
-            .Register<InputImageViewModel>()
-            .Register<InputImageView>()
-
-            .Register<InputPositionViewModel>()
-            .Register<InputPositionView>()
-
-            .Register<InputDateViewModel>()
-            .Register<InputDateView>()
-
-            .Register<InputTimeViewModel>()
-            .Register<InputTimeView>()
-
-            .Register<InputPickerViewModel>()
-            .Register<InputPickerView>()
-
-            .Register<InputTextViewModel>()
-            .Register<InputTextView>()
-
-            .Register<StatsViewModel>()
-            .Register<StatsView>()
-
-            .Register<StatsMapViewModel>()
-            .Register<StatsMapView>()
-
-            .Register<StatsSpeciesListViewModel>()
-            .Register<StatsSpeciesListView>()
-
-            .RegisterSingleton<StatsFilterViewModel>()
-            .RegisterSingleton<StatsFilterView>()
-
             ;
+
+            foreach (var vm in AssemblyFactory.GetViewModels())
+            {
+                serviceRegistry.Register(vm);
+            }
+            foreach (var view in AssemblyFactory.GetViews())
+            {
+                serviceRegistry.Register(view);
+            }
+
+            serviceRegistry.RegisterSingleton<StatsFilterViewModel>();
+            serviceRegistry.RegisterSingleton<StatsFilterView>();
+
         }
     }
 }

@@ -11,19 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="LightInject" Version="5.5.0" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="4.0.0.425677" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.1.0.555618" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
-    <PackageReference Include="Fody" Version="5.0.6" />
+    <PackageReference Include="Fody" Version="5.1.1"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
-    <PackageReference Include="Bogus" Version="27.0.1" />
-    <PackageReference Include="Xamarin.HotReload" Version="1.2.9" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
+    <PackageReference Include="Bogus" Version="28.0.1" />
+    <PackageReference Include="Xamarin.HotReload" Version="1.4.12" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -48,6 +50,7 @@
     <Folder Include="AppModule\Setup\" />
     <Folder Include="AppModule\Stats\Pages\" />
     <Folder Include="AppModule\Hunts\Controls\" />
+    <Folder Include="AppModule\Info\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -161,6 +164,7 @@
     <None Remove="Assets\Dogs.png" />
     <None Remove="Assets\Fields.png" />
     <None Remove="Assets\Species.png" />
+    <None Remove="Assets\hunt_bridge_dog.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xml\arter.xml" />
@@ -179,6 +183,7 @@
     <EmbeddedResource Include="Assets\Dogs.png" />
     <EmbeddedResource Include="Assets\Fields.png" />
     <EmbeddedResource Include="Assets\Species.png" />
+    <EmbeddedResource Include="Assets\info.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.iOS">

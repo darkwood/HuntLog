@@ -13,6 +13,12 @@ using HuntLog.AppModule.CustomFields;
 using HuntLog.AppModule.Stats;
 using HuntLog.AppModule.Setup;
 using HuntLog.AppModule.Stats.Pages;
+using System.Reflection;
+using System.Linq;
+using System;
+using HuntLog.Factories;
+using HuntLog.Helpers;
+using HuntLog.AppModule.Info;
 
 namespace HuntLog
 {
@@ -41,47 +47,31 @@ namespace HuntLog
             await ConfigureApplication(container);
         }
 
-        protected void RegisterViews(INavigator viewFactory)
+        protected void RegisterViews(INavigator viewFactory)    
         {
-            viewFactory.Register<HuntsViewModel, HuntsView>();
-            viewFactory.Register<HuntViewModel, HuntView>();
-            viewFactory.Register<EditHuntViewModel, EditHuntView>();
-            viewFactory.Register<LogViewModel, LogViewCode>();
-            viewFactory.Register<HuntersViewModel, HuntersView>();
-            viewFactory.Register<HunterViewModel, HunterView>();
-            viewFactory.Register<DogsViewModel, DogsView>();
-            viewFactory.Register<DogViewModel, DogView>();
-            viewFactory.Register<SpeciesViewModel, SpeciesView>();
-            viewFactory.Register<SpecieViewModel, SpecieView>();
-            viewFactory.Register<SetupViewModel, SetupView>();
+            var vms = AssemblyFactory.GetViewModels();
+            var views = AssemblyFactory.GetViews();
 
-            viewFactory.Register<CustomFieldsViewModel, CustomFieldsView>();
-            viewFactory.Register<CustomFieldViewModel, CustomFieldView>();
-            //viewFactory.Register<LogCustomFieldsViewModel, LogCustomFieldsView>();
-            viewFactory.Register<InputImageViewModel, InputImageView>();
-            viewFactory.Register<InputPositionViewModel, InputPositionView>();
-            viewFactory.Register<InputDateViewModel, InputDateView>();
-            viewFactory.Register<InputTimeViewModel, InputTimeView>();
-            viewFactory.Register<InputPickerViewModel, InputPickerView>();
-            viewFactory.Register<InputTextViewModel, InputTextView>();
-
-            viewFactory.Register<StatsViewModel, StatsView>();
-            viewFactory.Register<StatsSpeciesListViewModel, StatsSpeciesListView>();
-            viewFactory.Register<StatsMapViewModel, StatsMapView>();
-            viewFactory.RegisterView<StatsFilterViewModel, StatsFilterView>();
+            foreach (var vm in vms)
+            {
+                var view = views.SingleOrDefault(x => x.Name.Replace("View", "ViewModel") == vm.Name);
+                if(view != null)
+                {
+                    viewFactory.Register(vm, view);
+                }
+            }
         }
 
         protected async Task ConfigureApplication(IServiceFactory container)
         {
-
             var tabbed = new Xamarin.Forms.TabbedPage();
+            tabbed.SelectedTabColor = Utility.PRIMARYBRIGHT_COLOR;
             tabbed.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-
 
             tabbed.Children.Add(CreateTab(container.GetInstance<HuntsView>(), "Jaktloggen", "Tabbar/gevir.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<SetupView>(), "Oppsett", "Tabbar/hunters.png"));
             tabbed.Children.Add(CreateTab(container.GetInstance<StatsView>(), "Statistikk", "Tabbar/stats.png"));
-            tabbed.Children.Add(CreateTab(new Page(), "Info", "Tabbar/info.png"));
+            tabbed.Children.Add(CreateTab(container.GetInstance<InfoView>(), "Info", "Tabbar/info.png"));
 
             _application.MainPage = tabbed;
             await Task.CompletedTask;
