@@ -31,7 +31,6 @@
     <Folder Include="Models\" />
     <Folder Include="Xml\" />
     <Folder Include="Converters\" />
-    <Folder Include="Models\ListModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Controls\" />
     <Folder Include="Assets\" />

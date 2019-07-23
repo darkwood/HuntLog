@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
 using HuntLog.Helpers;
 using HuntLog.Services;
+using Microsoft.AppCenter.Analytics;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
@@ -58,6 +60,10 @@ namespace HuntLog.InputViews
 
         public async Task OnAfterNavigate(string shortcut)
         {
+            Analytics.TrackEvent("ImagePicker", new Dictionary<string, string> {
+                    { "Type", shortcut ?? HuntConfig.ViewPhoto }
+                });
+
             if (shortcut == HuntConfig.OpenLibrary) 
             { 
                 await OpenLibrary(true); 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Hunts.EditHuntView"
@@ -35,9 +35,9 @@
                     <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                     <cells:PickerCell Text="Jegere" PickerItems="{Binding Hunters}" EmptyCommand="{Binding AddHuntersCommand}" />
                     <cells:PickerCell Text="Hunder" PickerItems="{Binding Dogs}" EmptyCommand="{Binding AddDogsCommand}" />
-                    <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                   <!-- <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
                     <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                    <!--<EntryCell Label="Notat" Height="200" Text="{Binding Notes}" />-->
+                  -->  <!--<EntryCell Label="Notat" Height="200" Text="{Binding Notes}" />-->
                     <ViewCell>
                         <StackLayout HeightRequest="150"
                                      Margin="20,5,5,5">
