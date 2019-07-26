@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
 using LightInject;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace HuntLog.Services

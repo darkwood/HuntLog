@@ -24,25 +24,35 @@
     
     <ContentPage.Content>
             
-        <Grid VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource TableBg}">
-            
+        <Grid VerticalOptions="FillAndExpand"
+              BackgroundColor="{StaticResource TableBg}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
             <ci:CircleImage 
                 Source="{Binding Source}"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Aspect="AspectFill"
-                BorderColor="White" 
+                BorderColor="White"
                 BorderThickness="2"
-                WidthRequest="400"
-                HeightRequest="400"
+                WidthRequest="350"
+                HeightRequest="350"
             />
 
-            <Grid IsVisible="{Binding IsBusy}" Padding="80" VerticalOptions="End" HorizontalOptions="Center">
+            <Grid IsVisible="{Binding IsBusy}"
+                  Grid.Row="1"
+                  Padding="80"
+                  VerticalOptions="End"
+                  HorizontalOptions="Center"
+                  >
                 <ActivityIndicator  IsRunning="true" IsEnabled="true"/>
             </Grid>
             
             <Grid IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}" 
-                  Padding="40" 
+                  Grid.Row="1"
+                  Margin="40" 
                   VerticalOptions="End">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+
 //[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HuntLog
 {
@@ -13,9 +14,6 @@ namespace HuntLog
         public App()
         {
             InitializeComponent();
-#if DEBUG
-            HotReloader.Current.Run(this);
-#endif
         }
 
         protected async override void OnStart()
