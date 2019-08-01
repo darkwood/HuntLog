@@ -55,6 +55,7 @@ namespace HuntLog.AppModule.Dogs
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
 
+            IsBusy = true;
         }
 
         private async Task AddItem()

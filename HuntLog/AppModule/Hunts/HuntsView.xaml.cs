@@ -155,8 +155,7 @@ namespace HuntLog.AppModule.Hunts
             _dto = dto;
             Title = _dto.Sted;
             ID = _dto.ID;
-            ImagePath =_dto.ImagePath;
-            ImageSource = Utility.GetImageSource(ImagePath);
+            ImageSource = Utility.GetImageSource(_dto.ImagePath);
             Detail = _dto.DatoFra.ToString("dd. MMM", new CultureInfo("nb-NO"));
             DateFrom = _dto.DatoFra;
             DateTo = _dto.DatoTil;

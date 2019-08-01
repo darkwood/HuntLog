@@ -13,7 +13,7 @@ namespace HuntLog.Models
         public string JaktId { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public string ImagePath { get; set; }
+        public string ImagePath => $"jaktlogg_{ID}.jpg";
         public string Notes { get; set; }
 
         public string Gender { get; set; }

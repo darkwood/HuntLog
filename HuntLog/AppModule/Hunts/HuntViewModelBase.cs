@@ -32,8 +32,7 @@ namespace HuntLog.AppModule.Hunts
             DateTo = dto.DatoTil;
             DogIds = dto.DogIds;
             Position = new Position(Utility.MapStringToDouble(dto.Latitude), Utility.MapStringToDouble(dto.Longitude));
-            ImagePath = $"jakt_{ID}.jpg";
-            ImageSource = Utility.GetImageSource(ImagePath);
+            ImageSource = Utility.GetImageSource(dto.ImagePath);
             Notes = dto.Notes;
         }
     }

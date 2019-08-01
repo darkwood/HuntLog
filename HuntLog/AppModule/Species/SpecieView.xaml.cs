@@ -78,7 +78,6 @@ namespace HuntLog.AppModule.Species
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 

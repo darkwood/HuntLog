@@ -12,13 +12,14 @@
     
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource TableBg}">
-             
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                
             <StackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand"
                          IsVisible="{Binding EmptyList}"
                          Margin="20">
                 
-                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
                 
                 <Label Text="Jakter du med hund?" 
                        FontSize="Large"

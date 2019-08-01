@@ -52,10 +52,12 @@ namespace HuntLog.AppModule.CustomFields
         public CustomFieldsViewModel(ICustomFieldFactory factory,
             INavigator navigator)
         {
-            _navigator = navigator;;
+            _navigator = navigator;
             _factory = factory;
 
             AddCommand = new Command(async () => await AddItem());
+
+            IsBusy = true;
         }
 
         private async Task AddItem()

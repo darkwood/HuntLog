@@ -6,6 +6,6 @@ namespace HuntLog.Models
         public string Navn { get; set; }
         public string Rase { get; set; }
         public string Lisensnummer { get; set; }
-        public string ImagePath { get; set; }
+        public string ImagePath => $"dog_{ID}.jpg";
     }
 }

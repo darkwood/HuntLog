@@ -106,7 +106,6 @@ namespace HuntLog.AppModule.Hunts
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 
@@ -199,7 +198,7 @@ namespace HuntLog.AppModule.Hunts
             Jakt dto = CreateHuntDto();
             if (MediaFile != null)
             {
-                SaveImage($"jakt_{dto.ID}.jpg", _fileManager);
+                SaveImage(dto.ImagePath, _fileManager);
             }
 
             await _huntService.Save(dto);
@@ -219,7 +218,6 @@ namespace HuntLog.AppModule.Hunts
                 DogIds = Dogs.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
                 Latitude = Position.Latitude.ToString(),
                 Longitude = Position.Longitude.ToString(),
-                ImagePath = ImagePath,
                 Notes = Notes
             };
         }

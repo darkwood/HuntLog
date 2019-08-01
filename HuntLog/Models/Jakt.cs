@@ -12,7 +12,7 @@ namespace HuntLog.Models
         public List<string> DogIds = new List<string>();
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public string ImagePath { get; set; }
+        public string ImagePath => $"jakt_{ID}.jpg";
         public string Notes { get; set; }
     }
 }
