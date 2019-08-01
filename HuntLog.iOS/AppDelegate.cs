@@ -21,8 +21,9 @@ namespace HuntLog.iOS.Renderers
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.SetFlags("CollectionView_Experimental");
+#if DEBUG
             Xamarin.Calabash.Start();
+#endif
             Xamarin.FormsMaps.Init();
             Forms.Init();
             ImageCircleRenderer.Init();

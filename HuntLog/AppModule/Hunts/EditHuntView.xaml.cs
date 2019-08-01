@@ -26,6 +26,11 @@ namespace HuntLog.AppModule.Hunts
             InitializeComponent();
             _viewModel = viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 
     public class EditHuntViewModel : HuntViewModelBase
@@ -74,7 +79,9 @@ namespace HuntLog.AppModule.Hunts
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
             DateFromCommand = new Command(async () => await EditDateFrom());
-            AddHuntersCommand = new Command(async () => { await _navigator.PushAsync<HuntersViewModel>(); });
+            AddHuntersCommand = new Command(async () => {
+                await _navigator.PushAsync<HuntersViewModel>(beforeNavigate: (arg) => {  });
+            });
             AddDogsCommand = new Command(async () => { await _navigator.PushAsync<DogsViewModel>(); });
 
             CreateImageActions();

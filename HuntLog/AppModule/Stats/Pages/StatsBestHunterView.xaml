@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HuntLog.AppModule.Stats.Pages.StatsBestHunterView"
+    xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog"
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
+    Title="Beste jeger">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <stats:StatsFilterView Grid.Row="0"
+                                   BindingContext="{Binding StatsFilterViewModel}" />
+
+            <ListView Grid.Row="1" ItemsSource="{Binding Items}" HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                           <cells:ExtendedTextCell ImageSource="{Binding ImageSource}"
+                                                   Text="{Binding Title}"
+                                                   Text2="{Binding Text2}"
+                                                   Detail="{Binding Detail}"
+                                                   />
+                        </DataTemplate>     
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <!--<CollectionView Grid.Row="1"
+                            BackgroundColor="{StaticResource TableBg}"
+                            ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame Padding="0"
+                               HasShadow="false"
+                               BorderColor="{StaticResource TableBg}"
+                               CornerRadius="0">
+
+                            <Grid   Padding="15"
+                                    BackgroundColor="White">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".3*" />
+                                    <ColumnDefinition Width=".3*" />
+                                    <ColumnDefinition Width=".4*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="0"
+                                       Text="{Binding Title}" />
+
+                                <StackLayout Orientation="Horizontal"
+                                             Grid.Column="1"
+                                             HorizontalOptions="Center"
+                                             >
+                                    <Label Text="{Binding Sum}"
+                                        FontSize="Large"
+                                        TextColor="{StaticResource Primary}" />
+
+                                    <Label Text="%"
+                                        FontSize="Large"
+                                        TextColor="{StaticResource Primary}" />
+
+                                </StackLayout>
+                            
+                                    <Label  Grid.Column="2"
+                                            TextColor="{StaticResource Primary}"
+                                            Text="{Binding Detail}"
+                                            HorizontalOptions="End" />
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout Margin="20">
+                        <Label Text="Ingen jegere registrert"
+                               FontSize="18"
+                               HorizontalTextAlignment="Center" />
+                        <Label Text="Registrer jegere og loggfør for å komme i gang."
+                               FontSize="12"
+                               TextColor="Gray"
+                               HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+            </CollectionView>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

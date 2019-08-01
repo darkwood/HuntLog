@@ -82,6 +82,7 @@ namespace HuntLog
             var huntPage = new NavigationPage(page);
             huntPage.Title = title;
             huntPage.IconImageSource = icon;
+            huntPage.AutomationId = title;
             return huntPage;
         }
 

@@ -266,8 +266,8 @@ namespace HuntLog.Cells
         private void AddCommandForEmptyList()
         {
             var btn = new Button();
-            btn.Text = "Opprett";
-            btn.StyleClass = new[] { "PrimaryButton" };
+            btn.Text = "Rediger";
+            btn.StyleClass = new[] { "" };
             btn.Command = EmptyCommand;
 
             PickersView.Children.Add(btn);

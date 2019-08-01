@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HuntLog.InputViews;
+using HuntLog.Helpers;
 using HuntLog.Models;
 using HuntLog.Services;
 using Xamarin.Forms;
 
 namespace HuntLog.AppModule.Stats.Pages
 {
-    public partial class StatsSpeciesListView : ContentPage
+    public partial class StatsBestHunterView : ContentPage
     {
-        private readonly StatsSpeciesListViewModel _viewModel;
+        private readonly StatsBestHunterViewModel _viewModel;
 
-        public StatsSpeciesListView(StatsSpeciesListViewModel viewModel)
+        public StatsBestHunterView(StatsBestHunterViewModel viewModel)
         {
             _viewModel = viewModel;
             BindingContext = _viewModel;
@@ -23,26 +23,25 @@ namespace HuntLog.AppModule.Stats.Pages
 
         protected override async void OnAppearing()
         {
-            await _viewModel.OnAppearing();
             base.OnAppearing();
+            await _viewModel.OnAppearing();
         }
-
     }
 
-    public class StatsSpeciesListViewModel : ViewModelBase
+    public class StatsBestHunterViewModel : ViewModelBase
     {
-        private readonly IBaseService<Art> _specieService;
+        private readonly IBaseService<Jeger> _hunterService;
         private readonly IBaseService<Logg> _logService;
 
         public StatsFilterViewModel StatsFilterViewModel { get; set; }
         public List<StatsListItem> Items { get; set; }
 
-        public StatsSpeciesListViewModel(StatsFilterViewModel statsFilterViewModel, 
-                                         IBaseService<Art> specieService,
+        public StatsBestHunterViewModel(StatsFilterViewModel statsFilterViewModel,
+                                         IBaseService<Jeger> hunterService,
                                          IBaseService<Logg> logService)
         {
             StatsFilterViewModel = statsFilterViewModel;
-            _specieService = specieService;
+            _hunterService = hunterService;
             _logService = logService;
 
             StatsFilterViewModel.FilterChangedAction += async () =>
@@ -62,8 +61,8 @@ namespace HuntLog.AppModule.Stats.Pages
             var from = StatsFilterViewModel.DateFrom;
             var to = StatsFilterViewModel.DateTo;
             var hunter = StatsFilterViewModel.SelectedHunter;
-
-            var species = await _specieService.GetItems();
+            
+            var hunters = await _hunterService.GetItems();
             var logs = await _logService.GetItems();
             var items = new List<StatsListItem>();
 
@@ -72,29 +71,23 @@ namespace HuntLog.AppModule.Stats.Pages
                                     && (hunter == null || l.JegerId == hunter.ID))
                                     .ToList();
 
-            foreach (var specie in species)
+            foreach (var h in hunters)
             {
-                var sum = logs.Where(l => l.ArtId == specie.ID).Sum(s => s.Treff);
-                if (sum > 0)
+                var hits = logs.Where(l => l.JegerId == h.ID).Sum(s => s.Treff);
+                var shots = logs.Where(l => l.JegerId == h.ID).Sum(s => s.Skudd);
+                var percent = shots > 0 ? Decimal.Round(hits * 100 / shots) : 0;
+
+                items.Add(new StatsListItem
                 {
-                    items.Add(new StatsListItem
-                    {
-                        Title = specie.Navn,
-                        Sum = sum
-                    });
-                }
+                    Title = h.Fornavn,
+                    Sum = percent,
+                    Text2 = percent + "%",
+                    Detail = $"{shots} skudd, {hits} treff",
+                    ImageSource = Utility.GetImageSource(h.ImagePath)
+            }); 
             }
             Items = items.OrderByDescending(o => o.Sum).ToList();
             IsBusy = false;
         }
-    }
-
-    public class StatsListItem
-    {
-        public string Title { get; set; }
-        public string Text2 { get; set; }
-        public decimal Sum { get; set; }
-        public string Detail { get; set; }
-        public ImageSource ImageSource { get; set; }
     }
 }

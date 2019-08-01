@@ -44,6 +44,7 @@ namespace HuntLog.AppModule.Setup
         private readonly INavigator _navigator;
         private readonly IFileManager _fileManager;
 
+        public Command DebugCommand { get; set; }
         public Command CreateDummyDataCommand { get; set; }
         public Command DeleteCommand { get; set; }
         public IEnumerable<Jeger> Hunters { get; private set; }
@@ -59,6 +60,8 @@ namespace HuntLog.AppModule.Setup
         public Command SpeciesCommand { get; set; }
         public Command FieldsCommand { get; set; }
         public string ImageFiles { get; set; }
+        public bool DebugVisible { get; set; }
+        public bool IsDebugMode { get; set; }
 
         public SetupViewModel(IBaseService<Jakt> huntService,
                               IBaseService<Logg> logService,
@@ -68,6 +71,7 @@ namespace HuntLog.AppModule.Setup
                               INavigator navigator,
                               IFileManager fileManager)
         {
+            DebugCommand = new Command( () => { DebugVisible = !DebugVisible; });
             CreateDummyDataCommand = new Command(async () => await GenerateDummyData());
             DeleteCommand = new Command(async () => await DeleteAll());
 
@@ -99,7 +103,9 @@ namespace HuntLog.AppModule.Setup
                 await _navigator.PushAsync<CustomFieldsViewModel>();
             });
 
-
+#if DEBUG
+            IsDebugMode = true;
+#endif
         }
 
         private async Task DeleteAll()

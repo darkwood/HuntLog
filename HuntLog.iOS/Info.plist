@@ -47,7 +47,7 @@
 	<key>CFBundleName</key>
 	<string>Jaktloggen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.2</string>
+	<string>3.0</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome5Brands.otf</string>

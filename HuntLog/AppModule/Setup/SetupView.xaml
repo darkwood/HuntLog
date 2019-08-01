@@ -7,10 +7,10 @@
              xmlns:setup="clr-namespace:HuntLog.AppModule.Setup;assembly=HuntLog"
              x:Class="HuntLog.AppModule.Setup.SetupView"
              Title="Oppsett">
-    
-    
+
     <ContentPage.Content>
-        <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">  
+        <Grid>
+            <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">  
         
             <TableSection></TableSection>
             <TableSection Title="Her oppretter du jegere, hunder og arter du ønsker å bruke i jaktloggen">
@@ -20,22 +20,24 @@
                 <cells:ExtendedTextCell Image="Fields.png" ImageSize="30" Text="Egne felter" StyleId="disclosure" Command="{Binding FieldsCommand}" />
             </TableSection>
 
-            <!--
-            <TableSection Title="Testdata">
-                <ViewCell>
-                    <StackLayout Padding="10 20 0 10" Margin="10">
-                         <Button Text="Lag testdata" StyleClass="PrimaryButton" Command="{Binding CreateDummyDataCommand}" />
-                         <Button Text="Slett all data" StyleClass="PrimaryButton" Command="{Binding DeleteCommand}" />
-                        
-                        <Label Text="{Binding Info}" VerticalOptions="Center" FontSize="Medium" />
-                    </StackLayout>
-                </ViewCell>
-                <ViewCell Height="400">
-                    <Editor Text="{Binding ImageFiles}" />
-                </ViewCell>
-            </TableSection>-->
-
         </controls:ExtendedTableView>
-        
+
+        <StackLayout Padding="10 20 0 10" Margin="10" VerticalOptions="End" IsVisible="{Binding DebugVisible}">
+            <Button Text="Lag testdata" StyleClass="PrimaryButton" Command="{Binding CreateDummyDataCommand}" />
+            <Button Text="Slett all data" StyleClass="PrimaryButton" Command="{Binding DeleteCommand}" />
+            <Label Text="{Binding Info}" VerticalOptions="Center" FontSize="Medium" />
+            <Editor Text="{Binding ImageFiles}" />
+        </StackLayout>
+
+            
+        <Button StyleClass="PrimaryButton"
+                Text="Testdata"
+                Command="{Binding DebugCommand}"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="10"
+                IsVisible="{Binding IsDebugMode}"
+                />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
