@@ -35,9 +35,9 @@
                     <cells:MapCell Text="Posisjon" Position="{Binding Position}" CellAction="{Binding MapAction}" />
                     <cells:PickerCell Text="Jegere" PickerItems="{Binding Hunters}" EmptyCommand="{Binding AddHuntersCommand}" />
                     <cells:PickerCell Text="Hunder" PickerItems="{Binding Dogs}" EmptyCommand="{Binding AddDogsCommand}" />
-                   <!-- <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
-                    <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" />
-                  -->  <!--<EntryCell Label="Notat" Height="200" Text="{Binding Notes}" />-->
+                    <cells:ExtendedTextCell Text="Dato fra" Text2="{Binding DateFrom, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateFromCommand}"  />
+                    <cells:ExtendedTextCell Text="Dato til" Text2="{Binding DateTo, Converter={Converters:DateTimeToShortDateConverter}}" Command="{Binding DateToCommand}" />
+                    <!--<EntryCell Label="Notat" Height="200" Text="{Binding Notes}" />-->
                     <ViewCell>
                         <StackLayout HeightRequest="150"
                                      Margin="20,5,5,5">

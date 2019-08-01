@@ -47,6 +47,7 @@ namespace HuntLog.AppModule.Hunts
         public Command SaveCommand { get; set; }
         public Command DeleteCommand { get; set; }
         public Command DateFromCommand { get; set; }
+        public Command DateToCommand { get; set; }
         public Command HuntersCommand { get; set; }
         public Command DogsCommand { get; set; }
 
@@ -79,6 +80,7 @@ namespace HuntLog.AppModule.Hunts
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
             DateFromCommand = new Command(async () => await EditDateFrom());
+            DateToCommand = new Command(async () => await EditDateTo());
             AddHuntersCommand = new Command(async () => {
                 await _navigator.PushAsync<HuntersViewModel>(beforeNavigate: (arg) => {  });
             });
@@ -132,6 +134,27 @@ namespace HuntLog.AppModule.Hunts
                     completeAction: (value) =>
                     {
                         DateFrom = value;
+                        if(DateFrom > DateTo)
+                        {
+                            DateTo = DateFrom;
+                        }
+                    });
+                });
+        }
+
+        private async Task EditDateTo()
+        {
+            await _navigator.PushAsync<InputDateViewModel>(
+                beforeNavigate: async (arg) =>
+                {
+                    await arg.InitializeAsync(DateTo,
+                    completeAction: (value) =>
+                    {
+                        DateTo = value;
+                        if (DateTo < DateFrom)
+                        {
+                            DateFrom = DateTo;
+                        }
                     });
                 });
         }
