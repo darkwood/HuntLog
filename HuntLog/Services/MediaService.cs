@@ -23,7 +23,7 @@ namespace HuntLog.Services
 
         public async Task<MediaFile> TakePhotoAsync()
         {
-            await CheckPermissions();
+            await InitializeAndCheckPermissions();
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
@@ -42,7 +42,7 @@ namespace HuntLog.Services
             return file;
         }
 
-        private static async Task CheckPermissions()
+        private static async Task InitializeAndCheckPermissions()
         {
             await CrossMedia.Current.Initialize();
 

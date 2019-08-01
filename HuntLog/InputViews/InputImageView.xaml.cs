@@ -86,7 +86,7 @@ namespace HuntLog.InputViews
             await AfterMediaRetrieved(isShortCut);
         }
 
-        private async Task AfterMediaRetrieved(bool isShortCut)
+        private async Task  AfterMediaRetrieved(bool isShortCut)
         {
             Source = ImageSource.FromStream(() =>
             {
