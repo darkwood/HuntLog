@@ -15,7 +15,9 @@
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource TableBg}">
              
-            <controls:HuntEmptyListView />
+            <controls:HuntEmptyListView x:Name="emptyView" />
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             
             <ListView 
             x:Name="huntListView"

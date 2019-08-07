@@ -6,12 +6,7 @@
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
              x:Class="HuntLog.AppModule.Stats.StatsView"
              Title="Statistikk">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Add.png" Command="{Binding CreateDummyDataCommand}" Priority="1" />
-        <ToolbarItem Icon="trash.png" Command="{Binding DeleteCommand}" Priority="1" />
-    </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         
         <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">            

@@ -48,7 +48,6 @@ namespace HuntLog.AppModule.Hunts
     public class HuntViewModel : HuntViewModelBase
     {
         public ObservableCollection<LogGroup> LogListItemViewModels { get; set; }
-        public ObservableCollection<LogListItemViewModel> Items { get; set; }
         private LogListItemViewModel selectedItem;
         public LogListItemViewModel SelectedItem
         {
@@ -75,8 +74,9 @@ namespace HuntLog.AppModule.Hunts
         public Command MapCommand { get; set; }
         public Command AddCommand { get; set; }
         public Command RefreshCommand { get; set; }
+        public Command DeleteItemCommand { get; set; }
 
-        public bool ShowMapButton => Items.Any();
+        public bool ShowMapButton => LogListItemViewModels.Any();
 
         public HuntViewModel(IBaseService<Jeger> hunterService,
                         INavigator navigator,
@@ -95,9 +95,10 @@ namespace HuntLog.AppModule.Hunts
             AddCommand = new Command(async () => await AddItem());
             MapCommand = new Command(async () => await ShowMap());
             RefreshCommand = new Command(async () => await FetchData());
-
+            DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
             LogListItemViewModels = new ObservableCollection<LogGroup>();
-            Items = new ObservableCollection<LogListItemViewModel>();
+
+            IsBusy = true;
         }
 
         private async Task ShowMap()
@@ -129,7 +130,9 @@ namespace HuntLog.AppModule.Hunts
 
         private async Task DeleteItem(object item)
         {
-            var ok = await _huntFactory.DeleteLog(ID);
+            var log = (item as LogListItemViewModel);
+
+            var ok = await _huntFactory.DeleteLog(log.ID);
             if (ok)
             {
                 await FetchData();
@@ -140,7 +143,6 @@ namespace HuntLog.AppModule.Hunts
         {
             IsBusy = true;
 
-            Items = new ObservableCollection<LogListItemViewModel>();
             var items = new List<LogListItemViewModel>();
             var dtos = await _logService.GetItems();
 
@@ -153,7 +155,8 @@ namespace HuntLog.AppModule.Hunts
             }
             items = items.OrderByDescending(o => o.Date).ToList();
             var groups = items.GroupBy(g => g.Date.ToShortDateString()).OrderByDescending(o => o.Key);
-            LogListItemViewModels.Clear();
+            var groupItems = new ObservableCollection<LogGroup>();
+
             foreach (var g in groups)
             {
                 var jg = new LogGroup(g.Key, "");
@@ -161,8 +164,10 @@ namespace HuntLog.AppModule.Hunts
                 {
                     jg.Add(items.Single(h => h.ID == item.ID));
                 }
-                LogListItemViewModels.Add(jg);
+                groupItems.Add(jg);
             }
+
+            LogListItemViewModels = groupItems;
 
             //items.ForEach(i => Items.Add(i));
 

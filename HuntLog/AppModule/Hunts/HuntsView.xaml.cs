@@ -27,6 +27,7 @@ namespace HuntLog.AppModule.Hunts
         protected override async void OnAppearing()
         {
             await _viewModel.InitializeAsync();
+            await emptyView.FadeOutOverlay();
             base.OnAppearing();
         }
     }
@@ -74,6 +75,7 @@ namespace HuntLog.AppModule.Hunts
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (args) => await DeleteItem(args));
             RefreshCommand = new Command(async () => await FetchData(true));
+
         }
 
         private async Task AddItem()

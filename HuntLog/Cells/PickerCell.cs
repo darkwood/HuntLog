@@ -117,6 +117,7 @@ namespace HuntLog.Cells
             set => SetValue(EmptyCommandProperty, value);
         }
 
+
         public PickerCell() : base()
         {
             //var viewLayout = new Grid

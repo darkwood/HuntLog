@@ -14,7 +14,7 @@ namespace HuntLog.Xnapshot
               "iPhone-XS",
               //"iPhone-XR",
               //"iPhone-8-Plus",
-              "iPhone-8",
+              //"iPhone-8",
               //"iPhone-SE"
           })
         {
@@ -28,5 +28,15 @@ namespace HuntLog.Xnapshot
         {
             App.Tap(c => c.Marked("Oppsett"));
         }
+
+        protected override void SetAppStateForScreenshot3()
+        {
+            App.Tap(c => c.Marked("Statistikk"));
+        }
+
+        //protected override void SetAppStateForScreenshot4()
+        //{
+        //    App.Tap(c => c.Marked("Høylandet"));
+        //}
     }
 }

@@ -8,26 +8,35 @@
         <!--<ActivityIndicator IsRunning="{Binding IsBusy}" 
                                IsVisible="{Binding IsBusy}" />-->
         
-        <StackLayout VerticalOptions="CenterAndExpand"
-                     HorizontalOptions="CenterAndExpand"
-                     IsVisible="{Binding EmptyList}"
-                     >
-                
-            <StackLayout VerticalOptions="Start" Margin="30">
-                <Image Source="logo_splash_screen" />
+        <Grid VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding EmptyList}"
+                >
+
+            <StackLayout VerticalOptions="End" Margin="60 30">
                 <Label Text="Velkommen til Jaktloggen" 
-                       Margin="5"
-                       FontSize="Large"
-                       HorizontalTextAlignment="Center"
-                       />
+                    Margin="5"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    />
                 <Label Text="Den beste måten å loggføre dine jaktturer. Håper du får mye glede av den." 
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource MediumGrayTextColor}"
-                       FontSize="Small"
-                       />
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource MediumGrayTextColor}"
+                        FontSize="Small"
+                        />
                 <Button Text="Opprett første jakt" 
                         Command="{Binding AddCommand}" />
             </StackLayout>
-        </StackLayout>
+
+            <Grid x:Name="bg"
+                  InputTransparent="True"
+                  BackgroundColor="{StaticResource Primary}" />
+
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Image Source="logo_splash_screen" />
+            </StackLayout>
+            
+        </Grid>
     </ContentView.Content>
 </ContentView>

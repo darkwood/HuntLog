@@ -82,9 +82,21 @@ namespace HuntLog.AppModule.Hunts
             DateFromCommand = new Command(async () => await EditDateFrom());
             DateToCommand = new Command(async () => await EditDateTo());
             AddHuntersCommand = new Command(async () => {
-                await _navigator.PushAsync<HuntersViewModel>(beforeNavigate: (arg) => {  });
+                await _navigator.PushAsync<HuntersViewModel>(beforeNavigate: (arg) => {
+                    arg.Callback = () =>
+                    {
+                        GetHunters();
+                    };
+                });
             });
-            AddDogsCommand = new Command(async () => { await _navigator.PushAsync<DogsViewModel>(); });
+            AddDogsCommand = new Command(async () => {
+                await _navigator.PushAsync<DogsViewModel>(beforeNavigate: (arg) => {
+                    arg.Callback = () =>
+                    {
+                        GetDogs();
+                    };
+                });
+            });
 
             CreateImageActions();
             CreatePositionActions();
@@ -162,14 +174,24 @@ namespace HuntLog.AppModule.Hunts
         public async Task InitializeAsync()
         {
             IsBusy = true;
-            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
-            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+            await GetHunters();
+            await GetDogs();
 
             if (IsNew)
             {
                 await SetPositionAsync();
             }
             IsBusy = false;
+        }
+
+        private async Task GetDogs()
+        {
+            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+        }
+
+        private async Task GetHunters()
+        {
+            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
         }
 
         private async Task SetPositionAsync()
@@ -234,7 +256,7 @@ namespace HuntLog.AppModule.Hunts
             return new Jakt
             {
                 ID = string.IsNullOrEmpty(ID) ? Guid.NewGuid().ToString() : ID,
-                Sted = Location,
+                Sted = string.IsNullOrWhiteSpace(Location) ? $"Jakt {DateFrom.ToShortDateString()}" : Location,
                 DatoFra = DateFrom,
                 DatoTil = DateTo,
                 JegerIds = Hunters.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),

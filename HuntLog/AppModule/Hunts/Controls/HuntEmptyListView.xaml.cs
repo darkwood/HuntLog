@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace HuntLog.AppModule.Hunts.Controls
@@ -9,6 +10,11 @@ namespace HuntLog.AppModule.Hunts.Controls
         public HuntEmptyListView()
         {
             InitializeComponent();
+        }
+
+        public async Task FadeOutOverlay()
+        {
+            await bg.FadeTo(0, 1000, Easing.CubicIn);
         }
     }
 }

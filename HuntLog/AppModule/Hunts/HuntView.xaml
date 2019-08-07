@@ -14,67 +14,68 @@
         <ToolbarItem Priority="1" Text="Rediger jakt" Command="{Binding EditCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource TableBg}">
 
-        <ListView x:Name="itemListView" 
-                  Header="{Binding}" 
-                  ItemsSource="{Binding LogListItemViewModels}" 
-                  SelectedItem="{Binding SelectedItem}"
-                  IsGroupingEnabled="true"
-                    GroupDisplayBinding="{Binding Name}"
-                    GroupShortNameBinding="{Binding ShortName}"
-                    HasUnevenRows="true"
-                    IsPullToRefreshEnabled="true"
-                    RefreshCommand="{Binding RefreshCommand}"
-                    IsRefreshing="{Binding IsBusy}">
-            <ListView.HeaderTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                    
-                        <controls:HuntSummaryView />
-                        
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Button 
-                                StyleClass="PrimaryButton"
-                                Text="Ny loggføring" 
-                                Margin="10,5,0,5"
-                                Command="{Binding AddCommand}"
-                            />
-                            <Button 
-                                Grid.Column="1"
-                                Text="&#xf5a0; Vis i kart" 
-                                FontFamily="{StaticResource FontAwesomeSolid}"
-                                Margin="10,5,10,5"
-                                Command="{Binding MapCommand}"
-                                IsVisible="{Binding ShowMapButton}"
-                            />
-                        </Grid>
-                        
-                    </StackLayout>
-                </DataTemplate>
-            </ListView.HeaderTemplate>
-            
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
-                                            Text="{Binding Title}" 
-                                            Detail="{Binding Detail}" 
-                                            Command="{Binding ItemTappedCommand}"
-                                            StyleId="disclosure"
-                                            >
-                        <cells:ExtendedTextCell.ContextActions>
-                            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
-                                      Text="Slett" 
-                                      IsDestructive="True" 
-                                      Icon="trash.png" />
-                            </cells:ExtendedTextCell.ContextActions>
-                    </cells:ExtendedTextCell>
-                </DataTemplate>     
-            </ListView.ItemTemplate>
-        </ListView>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
         
+            <ListView x:Name="itemListView"
+                      IsVisible="{Binding IsBusy, Converter={Converters:InverseBoolConverter}}"
+                      Header="{Binding}" 
+                      ItemsSource="{Binding LogListItemViewModels}" 
+                      SelectedItem="{Binding SelectedItem}"
+                      IsGroupingEnabled="true"
+                        GroupDisplayBinding="{Binding Name}"
+                        GroupShortNameBinding="{Binding ShortName}"
+                        HasUnevenRows="true">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                    
+                            <controls:HuntSummaryView />
+                        
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Button 
+                                    StyleClass="PrimaryButton"
+                                    Text="Ny loggføring" 
+                                    Margin="10,5,0,5"
+                                    Command="{Binding AddCommand}"
+                                />
+                                <Button 
+                                    Grid.Column="1"
+                                    Text="&#xf5a0; Vis i kart" 
+                                    FontFamily="{StaticResource FontAwesomeSolid}"
+                                    Margin="10,5,10,5"
+                                    Command="{Binding MapCommand}"
+                                    IsVisible="{Binding ShowMapButton}"
+                                />
+                            </Grid>
+                        
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+            
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                                Text="{Binding Title}" 
+                                                Detail="{Binding Detail}" 
+                                                Command="{Binding ItemTappedCommand}"
+                                                StyleId="disclosure"
+                                                >
+                            <cells:ExtendedTextCell.ContextActions>
+                                <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference itemListView}}" CommandParameter="{Binding .}"
+                                          Text="Slett" 
+                                          IsDestructive="True" 
+                                          Icon="trash.png" />
+                                </cells:ExtendedTextCell.ContextActions>
+                        </cells:ExtendedTextCell>
+                    </DataTemplate>     
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

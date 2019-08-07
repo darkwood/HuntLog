@@ -44,6 +44,7 @@ namespace HuntLog.AppModule.Dogs
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
+        public Action Callback { get; set; }
 
         public DogsViewModel(IBaseService<Dog> dogService, INavigator navigator, Func<DogViewModel> dogViewModelFactory, IHuntFactory huntFactory)
         {
@@ -91,6 +92,7 @@ namespace HuntLog.AppModule.Dogs
                 Dogs.Add(vm);
             }
             EmptyList = !Dogs.Any();
+            Callback?.Invoke();
             IsBusy = false;
         }
     }

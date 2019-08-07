@@ -35,7 +35,7 @@
                                        HorizontalOptions="Center"
                                        FontSize="Micro"
                                        BackgroundColor="White"
-                                       Margin="0 5"
+                                       Margin="5"
                                        />
                             </StackLayout>
                         </DataTemplate>
