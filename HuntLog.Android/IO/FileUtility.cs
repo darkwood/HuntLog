@@ -82,5 +82,11 @@ namespace Jaktloggen.Droid.IO
             var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             return Directory.GetFiles(documentsPath);
         }
+
+        public byte[] ReadAll(string filename)
+        {
+            string filePath = GetFilePath(filename);
+            return File.ReadAllBytes(filePath);
+        }
     }
 }
