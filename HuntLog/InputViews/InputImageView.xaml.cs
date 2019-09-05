@@ -55,6 +55,7 @@ namespace HuntLog.InputViews
             _completeAction = completeAction;
             _deleteAction = deleteAction;
             Source = source;
+
             await Task.CompletedTask;
         }
 
@@ -63,6 +64,8 @@ namespace HuntLog.InputViews
             Analytics.TrackEvent("ImagePicker", new Dictionary<string, string> {
                     { "Type", shortcut ?? HuntConfig.ViewPhoto }
                 });
+
+            await _mediaService.InitializeAndCheckPermissions();
 
             if (shortcut == HuntConfig.OpenLibrary) 
             { 

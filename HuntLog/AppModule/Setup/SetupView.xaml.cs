@@ -45,6 +45,7 @@ namespace HuntLog.AppModule.Setup
         private readonly IBaseService<Art> _specieService;
         private readonly INavigator _navigator;
         private readonly IFileManager _fileManager;
+        private readonly IDialogService _dialogService;
         private string[] filenames;
 
         public Command DebugCommand { get; set; }
@@ -76,7 +77,8 @@ namespace HuntLog.AppModule.Setup
                               IBaseService<Dog> dogService,
                               IBaseService<Art> specieService,
                               INavigator navigator,
-                              IFileManager fileManager)
+                              IFileManager fileManager,
+                              IDialogService dialogService)
         {
             DebugCommand = new Command( () => { DebugVisible = !DebugVisible; });
             CreateDummyDataCommand = new Command(async () => await GenerateDummyData());
@@ -92,6 +94,7 @@ namespace HuntLog.AppModule.Setup
             _specieService = specieService;
             _navigator = navigator;
             _fileManager = fileManager;
+            _dialogService = dialogService;
 
             HuntersCommand = new Command(async () =>
             {
@@ -123,6 +126,12 @@ namespace HuntLog.AppModule.Setup
 
         private async Task ClearData()
         {
+            var answer = await _dialogService.ShowConfirmDialog("Slett alle data i Azure?", "Vil du virkelig fjerne alle filer i Azure? Dette kan ikke reverseres!");
+            if(answer == false)
+            {
+                return;
+            }
+
             var files = await AzureStorage.GetFilesListAsync(ContainerType.Data);
             foreach(var f in files)
             {

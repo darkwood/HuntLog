@@ -11,6 +11,7 @@ namespace HuntLog.Services
     {
         Task<MediaFile> TakePhotoAsync();
         Task<MediaFile> OpenLibraryAsync();
+        Task InitializeAndCheckPermissions();
     }
     public class MediaService : IMediaService
     {
@@ -23,8 +24,7 @@ namespace HuntLog.Services
 
         public async Task<MediaFile> TakePhotoAsync()
         {
-            await InitializeAndCheckPermissions();
-
+            
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await _dialogService.ShowAlert("Ingen kamera", "Kamera ikke tilgjengelig.");
@@ -42,7 +42,7 @@ namespace HuntLog.Services
             return file;
         }
 
-        private static async Task InitializeAndCheckPermissions()
+        public async Task InitializeAndCheckPermissions()
         {
             await CrossMedia.Current.Initialize();
 
