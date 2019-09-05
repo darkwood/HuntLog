@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Info.InfoView"
-             Title="Info kommer">
+             Title="Om Jaktloggen">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" 
+        <Grid VerticalOptions="FillAndExpand" 
               HorizontalOptions="FillAndExpand"
               BackgroundColor="{StaticResource TableBg}">
             
@@ -12,6 +12,21 @@
                    HorizontalOptions="FillAndExpand"
                    VerticalOptions="FillAndExpand"
                    Aspect="AspectFill" />
-        </StackLayout>
+
+            <StackLayout Padding="20">
+                <Label Text="Jaktloggen er utviklet av Tore Mørkved på frivillig basis." />
+                <Label Margin="0,10"
+                       Text="Tilbakemeldinger settes pris på. Ris og Ros gjør du her, rett fra appen! Er du veldig  fornøyd, gi appen masse stjerner i App Store :)"
+                       />
+
+                <WebView x:Name="webView"
+                         BackgroundColor="Yellow"
+                         VerticalOptions="FillAndExpand"
+                         />
+            </StackLayout>
+            
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

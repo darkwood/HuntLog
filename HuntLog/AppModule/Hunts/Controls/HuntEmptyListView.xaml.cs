@@ -14,7 +14,7 @@ namespace HuntLog.AppModule.Hunts.Controls
 
         public async Task FadeOutOverlay()
         {
-            await bg.FadeTo(0, 1000, Easing.CubicIn);
+            //await bg.FadeTo(0, 1000, Easing.CubicIn);
         }
     }
 }

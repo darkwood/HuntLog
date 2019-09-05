@@ -15,6 +15,7 @@ namespace HuntLog.AppModule.Info
 
             _viewModel = viewModel;
             BindingContext = _viewModel;
+            //webView.Source = new 
         }
     }
 

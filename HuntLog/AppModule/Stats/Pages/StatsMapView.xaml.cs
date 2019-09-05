@@ -7,6 +7,7 @@ using HuntLog.Extensions;
 using HuntLog.Factories;
 using HuntLog.Models;
 using HuntLog.Services;
+using HuntLog.Helpers;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -117,7 +118,7 @@ namespace HuntLog.AppModule.Stats.Pages
                     {
                         _mapView.Pins.Add(new Pin
                         {
-                            Position = new Position(double.Parse(log.Latitude), double.Parse(log.Longitude)),
+                            Position = new Position(Utility.MapStringToDouble(log.Latitude), Utility.MapStringToDouble(log.Longitude)),
                             Type = PinType.SearchResult,
                             Address = await _huntFactory.CreateLogSummary(log),
                             Label = log.Dato.ToNoString()

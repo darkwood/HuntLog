@@ -53,8 +53,8 @@ namespace HuntLog.Helpers
         {
             if(string.IsNullOrEmpty(doubleString)) { return 0; }
 
+            doubleString = doubleString.Replace(",", ".");
             double value;
-            var culture = CultureInfo.CreateSpecificCulture("nb-NO");
             value = double.Parse(doubleString);
             return value;
         }

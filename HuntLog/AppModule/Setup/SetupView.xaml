@@ -9,6 +9,7 @@
              Title="Oppsett">
 
     <ContentPage.Content>
+
         <Grid>
             <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">  
         
@@ -23,10 +24,17 @@
         </controls:ExtendedTableView>
 
         <StackLayout Padding="10 20 0 10" Margin="10" VerticalOptions="End" IsVisible="{Binding DebugVisible}">
+            <Label Text="Azure" />
+            <Grid Padding="5">
+                <Button Grid.Column="0" Text="Lagre data" StyleClass="PrimaryButton" Command="{Binding StoreDataCommand}" />
+                <Button Grid.Column="1" Text="Last ned data" StyleClass="PrimaryButton" Command="{Binding LoadDataCommand}" />
+                <Button Grid.Column="2" Text="Slett all data" StyleClass="PrimaryButton" Command="{Binding ClearDataCommand}" />
+            </Grid>
+            <Label Text="Testdata" />
             <Button Text="Lag testdata" StyleClass="PrimaryButton" Command="{Binding CreateDummyDataCommand}" />
             <Button Text="Slett all data" StyleClass="PrimaryButton" Command="{Binding DeleteCommand}" />
             <Label Text="{Binding Info}" VerticalOptions="Center" FontSize="Medium" />
-            <Editor Text="{Binding ImageFiles}" />
+            <Editor Text="{Binding ImageFiles}" IsVisible="false" />
         </StackLayout>
 
             

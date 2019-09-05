@@ -28,9 +28,10 @@
                         Command="{Binding AddCommand}" />
             </StackLayout>
 
-            <Grid x:Name="bg"
+            <!--<Grid x:Name="bg"
                   InputTransparent="True"
                   BackgroundColor="{StaticResource Primary}" />
+            -->
 
             <StackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand">

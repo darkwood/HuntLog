@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="HuntLog.AppModule.Dogs.DogsView"
+    xmlns:Converters="clr-namespace:HuntLog.Converters"
     xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
     Title="Hunder">
      
@@ -13,6 +14,29 @@
     <ContentPage.Content>
         <Grid BackgroundColor="{StaticResource TableBg}">
 
+                
+            <ListView 
+                x:Name="dogsListView"
+                ItemsSource="{Binding Dogs}"
+                HasUnevenRows="true"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                                                Text="{Binding Name}" 
+                                                Detail="{Binding Rase}"
+                                                StyleId="disclosure"
+                                                Command="{Binding ItemTappedCommand}">
+                            <cells:ExtendedTextCell.ContextActions>
+                                <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference dogsListView}}" CommandParameter="{Binding .}"
+                                          Text="Slett" IsDestructive="True" Icon="trash" />
+                                </cells:ExtendedTextCell.ContextActions>
+                        </cells:ExtendedTextCell>
+                    </DataTemplate>     
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
                 
             <StackLayout VerticalOptions="CenterAndExpand"
@@ -33,28 +57,7 @@
                 <Button Text="Opprett første hund" 
                         Command="{Binding AddCommand}" />
             </StackLayout>
-                
-            <ListView 
-                x:Name="dogsListView"
-                ItemsSource="{Binding Dogs}"
-                HasUnevenRows="true"
-                IsVisible="{Binding ListVisible}"
-                >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
-                                                Text="{Binding Name}" 
-                                                Detail="{Binding Rase}"
-                                                StyleId="disclosure"
-                                                Command="{Binding ItemTappedCommand}">
-                            <cells:ExtendedTextCell.ContextActions>
-                                <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference dogsListView}}" CommandParameter="{Binding .}"
-                                          Text="Slett" IsDestructive="True" Icon="trash" />
-                                </cells:ExtendedTextCell.ContextActions>
-                        </cells:ExtendedTextCell>
-                    </DataTemplate>     
-                </ListView.ItemTemplate>
-            </ListView>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

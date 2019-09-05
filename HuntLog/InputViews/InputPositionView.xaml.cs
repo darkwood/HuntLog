@@ -50,7 +50,7 @@ namespace HuntLog.InputViews
         public Position HuntPosition { get; set; }
 
         public Position Position { get; set; }
-        public string PositionText => Position.Latitude > 0 ? $"{Position.Latitude}, {Position.Latitude}" : string.Empty;
+        public string PositionText => Position.Latitude != 0 ? $"{Position.Latitude}, {Position.Longitude}" : string.Empty;
         public bool Loading { get; set; }
         public bool HasHuntPosition => HuntPosition.Latitude != 0;
 
@@ -102,7 +102,7 @@ namespace HuntLog.InputViews
             _deleteAction = deleteAction;
             HuntPosition = huntPosition;
 
-            if(position.Latitude > 0 && position.Longitude > 0)
+            if(position.Latitude != 0 && position.Longitude != 0)
             {
                 SetMapPosition(position);
             }
