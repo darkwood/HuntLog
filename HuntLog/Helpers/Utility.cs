@@ -55,7 +55,7 @@ namespace HuntLog.Helpers
 
             doubleString = doubleString.Replace(",", ".");
             double value;
-            value = double.Parse(doubleString);
+            value = double.Parse(doubleString, CultureInfo.InvariantCulture);
             return value;
         }
     }
