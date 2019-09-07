@@ -29,11 +29,11 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Allow Jaktloggen access to my location?</string>
+	<string>Tillat Jaktloggen å bruke din posisjon</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow positioning for ios11?</string>
+	<string>Tillat Jaktloggen å bruke din posisjon</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Du kan da lagre posisjonen til dine jaktsituasjoner!</string>
+	<string>Tillat Jaktloggen å bruke din posisjon</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>NSCameraUsageDescription</key>
@@ -56,5 +56,9 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Tillat bruk av kamera</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Tillat tilgang til kalenderen</string>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>

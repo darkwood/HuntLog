@@ -118,7 +118,7 @@ namespace Xnapshot {
                     .iOS
                     .AppBundle(appBundlePath)
                     .DeviceIdentifier(device.UUID)
-                    .StartApp();
+                    .StartApp(Xamarin.UITest.Configuration.AppDataMode.DoNotClear);
 
                 TakeScreenShot(device.Name);
             }
