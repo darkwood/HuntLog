@@ -29,19 +29,19 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Tillat Jaktloggen å bruke din posisjon</string>
+	<string>Jaktloggen trenger tilgang til din posisjon for å registrere koordinater og gi mulighet for å vise loggføringen på kartet.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Tillat Jaktloggen å bruke din posisjon</string>
+	<string>Jaktloggen trenger tilgang til din posisjon for å registrere koordinater og gi mulighet for å vise loggføringen på kartet.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Tillat Jaktloggen å bruke din posisjon</string>
+	<string>Jaktloggen trenger tilgang til din posisjon for å registrere koordinater og gi mulighet for å vise loggføringen på kartet.</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Tillat bruk av kamera</string>
+	<string>Jaktloggen trenger tilgang til kamera så du kan ta bilde og lagre i loggen</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Tillat bruk av bildebibliotek</string>
+	<string>Jaktloggen trenger tilgang til bildebiblioteket så du kan lagre bilder i loggen</string>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>Tillat bruk av mediabibliotek</string>
+	<string>Jaktloggen trenger tilgang til mediabiblioteket så du kan lagre bilder i loggen</string>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>CFBundleName</key>
@@ -55,10 +55,10 @@
 		<string>FontAwesome5Solid.otf</string>
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Tillat bruk av kamera</string>
+	<string>Jaktloggen trenger tilgang til kamera så du kan ta bilde og lagre i loggen</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Tillat tilgang til kalenderen</string>
+	<string>Jaktloggen trenger tilgang til kalenderen så du kan registrere kalenderhendelser i loggen</string>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>6</string>
 </dict>
 </plist>

@@ -15,7 +15,6 @@
                     Margin="20, 40" 
                     VerticalOptions="Start"
                     HorizontalOptions="Fill"
-                    Format="dd.MM.yyyy"
                     />
     </ContentPage.Content>
 </ContentPage>
