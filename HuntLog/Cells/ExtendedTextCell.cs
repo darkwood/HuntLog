@@ -271,19 +271,21 @@ namespace HuntLog.Cells
             ViewLayout.Children.Add(CellImage);
 
             var sublayout = new StackLayout { VerticalOptions = LayoutOptions.CenterAndExpand };
-            TextLabel = new Label{ Margin = 0 };
+            TextLabel = new Label{ Margin = 0};
+            TextLabel.SetDynamicResource(Label.TextColorProperty, "TextColor");
             sublayout.Children.Add(TextLabel);
 
-            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 11, TextColor = Utility.PRIMARY_COLOR };
+            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 11 };
+            DetailLabel.SetDynamicResource(Label.TextColorProperty, "Primary");
             sublayout.Children.Add(DetailLabel);
 
             ViewLayout.Children.Add(sublayout);
 
             Text2Label = new Label { VerticalOptions = LayoutOptions.Center, 
                                      FontSize = 16,
-                                     TextColor = Utility.PRIMARY_COLOR,
                                      HorizontalOptions = LayoutOptions.FillAndExpand,
                                      HorizontalTextAlignment = TextAlignment.End};
+            Text2Label.SetDynamicResource(Label.TextColorProperty, "Primary");
             ViewLayout.Children.Add(Text2Label);
 
             ActivityIndicator = new ActivityIndicator { 

@@ -11,18 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <PackageReference Include="LightInject" Version="5.5.0" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="4.1.0.673156" />
-    <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
-    <PackageReference Include="Fody" Version="5.2.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="LightInject" Version="6.2.0" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.3.0.908675" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.1.3" />
+    <PackageReference Include="Fody" Version="6.0.2"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 <PrivateAssets>all</PrivateAssets>
 </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
-    <PackageReference Include="Bogus" Version="28.0.2" />
+    <PackageReference Include="Bogus" Version="28.4.1" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.1.1" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.1.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
@@ -50,6 +50,7 @@
     <Folder Include="AppModule\Stats\Pages\" />
     <Folder Include="AppModule\Hunts\Controls\" />
     <Folder Include="AppModule\Info\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Views\HuntsPage.cs" />
@@ -59,6 +60,7 @@
     <Compile Remove="Models\ListModels\CellItem %28copy%29.cs" />
     <Compile Remove="AppModule\Stats\StatsMapView %28copy%29.xaml.cs" />
     <Compile Remove="Helpers\Constants.cs" />
+    <Compile Remove="Styles\LightTheme %28copy%29.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />

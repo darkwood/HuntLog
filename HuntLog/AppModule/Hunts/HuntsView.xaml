@@ -5,19 +5,18 @@
     x:Class="HuntLog.AppModule.Hunts.HuntsView"
     xmlns:Converters="clr-namespace:HuntLog.Converters"
     xmlns:controls="clr-namespace:HuntLog.AppModule.Hunts.Controls"
-    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
-    Title="Jaktloggen">
+    xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog" xmlns:controls1="clr-namespace:HuntLog.Controls" Title="Jaktloggen">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="Add.png" Command="{Binding AddCommand}" Priority="1" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <Grid BackgroundColor="{StaticResource TableBg}">
+        <Grid>
              
-            <controls:HuntEmptyListView x:Name="emptyView" />
+            <controls:HuntEmptyListView x:Name="emptyView" BackgroundColor="Transparent" />
 
-            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <controls1:ExtendedActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
             
             <ListView 
             x:Name="huntListView"
@@ -30,10 +29,12 @@
             RefreshCommand="{Binding RefreshCommand}"
             IsRefreshing="{Binding IsBusy}"
             IsVisible="{Binding ListVisible}"
+            GroupHeaderTemplate="{StaticResource GroupHeaderTemplate}"
             >
+
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}" 
+                    <cells:ExtendedTextCell ImageSource="{Binding ImageSource}"
                                             Text="{Binding Title}" 
                                             Detail="{Binding Detail}" 
                                             StyleId="disclosure"

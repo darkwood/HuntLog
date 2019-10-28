@@ -47,7 +47,7 @@
 	<key>CFBundleName</key>
 	<string>Jaktloggen</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.1</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome5Brands.otf</string>
@@ -59,6 +59,6 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>Jaktloggen trenger tilgang til kalenderen så du kan registrere kalenderhendelser i loggen</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>2</string>
 </dict>
 </plist>

@@ -1,6 +1,8 @@
 ﻿using System;
 using HuntLog.Services;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace HuntLog.Cells
 {
@@ -30,6 +32,8 @@ namespace HuntLog.Cells
                 Margin = new Thickness(20, 5, 5, 5),
                 HeightRequest = 50
             };
+
+            this.On<iOS>().SetDefaultBackgroundColor(Color.Transparent);
         }
     }
 }
