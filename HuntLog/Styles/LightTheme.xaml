@@ -4,6 +4,8 @@
                     x:Class="HuntLog.Styles.LightTheme">
    
     <Color x:Key="Primary">#597a59</Color>
+    <Color x:Key="PrimaryText">#597a59</Color>
+
     <Color x:Key="GroupHeaderBgColor">#DDD</Color>
     <Color x:Key="GroupHeaderTextColor">Black</Color>
     <Color x:Key="TextColor">#EEEEEE</Color>

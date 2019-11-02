@@ -253,6 +253,7 @@ namespace HuntLog.Cells
         public CircleImage CellImage { get; private set; }
         public TapGestureRecognizer GestureRecognizer { get; private set; }
         public Image SelectedImage { get; private set; }
+        public double FontSize { get; }
 
         public ExtendedTextCell()
         {
@@ -275,8 +276,8 @@ namespace HuntLog.Cells
             TextLabel.SetDynamicResource(Label.TextColorProperty, "TextColor");
             sublayout.Children.Add(TextLabel);
 
-            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 11 };
-            DetailLabel.SetDynamicResource(Label.TextColorProperty, "Primary");
+            DetailLabel = new Label { Margin = 0, IsVisible = false, FontSize = 13 };
+            DetailLabel.SetDynamicResource(Label.TextColorProperty, "PrimaryText");
             sublayout.Children.Add(DetailLabel);
 
             ViewLayout.Children.Add(sublayout);
@@ -285,7 +286,7 @@ namespace HuntLog.Cells
                                      FontSize = 16,
                                      HorizontalOptions = LayoutOptions.FillAndExpand,
                                      HorizontalTextAlignment = TextAlignment.End};
-            Text2Label.SetDynamicResource(Label.TextColorProperty, "Primary");
+            Text2Label.SetDynamicResource(Label.TextColorProperty, "PrimaryText");
             ViewLayout.Children.Add(Text2Label);
 
             ActivityIndicator = new ActivityIndicator { 
