@@ -18,11 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLogWatch.WatchOSApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntLogWatch.WatchOSExtension", "HuntLogWatch\HuntLogWatch.WatchOSExtension\HuntLogWatch.WatchOSExtension.csproj", "{EB9CD690-8F96-4302-86C7-DDE40D02CFB1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{E07ABA60-C353-4FBC-980B-1D95AF3A24A3}"
-	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
