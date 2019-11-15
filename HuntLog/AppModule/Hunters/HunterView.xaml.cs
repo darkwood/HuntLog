@@ -86,7 +86,6 @@ namespace HuntLog.AppModule.Hunters
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 
@@ -100,7 +99,7 @@ namespace HuntLog.AppModule.Hunters
             Jeger dto = BuildDto();
             if (MediaFile != null)
             {
-                SaveImage($"jeger_{dto.ID}.jpg", _fileManager);
+                SaveImage(dto.ImagePath, _fileManager);
             }
             await _hunterService.Save(dto);
             await PopAsync();
@@ -129,7 +128,6 @@ namespace HuntLog.AppModule.Hunters
             Firstname = _dto.Fornavn;
             Lastname = _dto.Etternavn;
             Phone = _dto.Phone;
-            ImagePath = $"jeger_{ID}.jpg";
             ImageSource = Utility.GetImageSource(_dto.ImagePath);
 
             Title = ID == null ? "Ny jeger" : "Rediger jeger";

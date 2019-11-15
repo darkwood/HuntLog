@@ -20,8 +20,8 @@ namespace HuntLog.AppModule.Logs
             _viewModel = viewModel;
             BindingContext = _viewModel;
             InitializeToolbarItems();
-            //var spin = new ActivityIndicator { IsRunning = true };
-            //Content = spin;
+            var spin = new ActivityIndicator { IsRunning = true };
+            Content = spin;
 
         }
 

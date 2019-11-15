@@ -92,7 +92,9 @@ namespace HuntLog.AppModule.Stats.Pages
     public class StatsListItem
     {
         public string Title { get; set; }
-        public int Sum { get; set; }
+        public string Text2 { get; set; }
+        public decimal Sum { get; set; }
         public string Detail { get; set; }
+        public ImageSource ImageSource { get; set; }
     }
 }

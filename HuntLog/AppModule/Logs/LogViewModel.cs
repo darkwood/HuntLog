@@ -129,7 +129,6 @@ namespace HuntLog.AppModule.Logs
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 
@@ -162,8 +161,7 @@ namespace HuntLog.AppModule.Logs
             HuntId = dto.JaktId;
             Date = dto.Dato;
             Position = new Position(Utility.MapStringToDouble(dto.Latitude), Utility.MapStringToDouble(dto.Longitude));
-            ImagePath = $"jaktlogg_{ID}.jpg";
-            ImageSource = Utility.GetImageSource(ImagePath);
+            ImageSource = Utility.GetImageSource(dto.ImagePath);
             Observed = dto.Sett;
             Shots = dto.Skudd;
             Hits = dto.Treff;
@@ -307,7 +305,7 @@ namespace HuntLog.AppModule.Logs
             Logg dto = CreateLogDto();
             if (MediaFile != null)
             {
-                SaveImage($"jaktlogg_{dto.ID}.jpg", _fileManager);
+                SaveImage(dto.ImagePath, _fileManager);
             }
 
             await _logService.Save(dto);
@@ -326,7 +324,6 @@ namespace HuntLog.AppModule.Logs
             log.Dato = Date;
             log.Latitude = Position.Latitude.ToString();
             log.Longitude = Position.Longitude.ToString();
-            log.ImagePath = ImagePath;
             log.Notes = Notes;
             log.JegerId = HuntersPickers.SingleOrDefault(h => h.Selected)?.ID;
             log.DogId = DogsPickers.SingleOrDefault(h => h.Selected)?.ID;

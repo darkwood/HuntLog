@@ -11,6 +11,7 @@ namespace HuntLog.Services
     {
         Task<MediaFile> TakePhotoAsync();
         Task<MediaFile> OpenLibraryAsync();
+        Task InitializeAndCheckPermissions();
     }
     public class MediaService : IMediaService
     {
@@ -23,18 +24,7 @@ namespace HuntLog.Services
 
         public async Task<MediaFile> TakePhotoAsync()
         {
-            await CrossMedia.Current.Initialize();
-
-            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
-
-            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
-            {
-                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera, Permission.Storage });
-                cameraStatus = results[Permission.Camera];
-                storageStatus = results[Permission.Storage];
-            }
-
+            
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await _dialogService.ShowAlert("Ingen kamera", "Kamera ikke tilgjengelig.");
@@ -50,6 +40,21 @@ namespace HuntLog.Services
                 SaveToAlbum = false
             });
             return file;
+        }
+
+        public async Task InitializeAndCheckPermissions()
+        {
+            await CrossMedia.Current.Initialize();
+
+            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+
+            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
+            {
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Permission.Camera, Permission.Storage });
+                cameraStatus = results[Permission.Camera];
+                storageStatus = results[Permission.Storage];
+            }
         }
 
         public async Task<MediaFile> OpenLibraryAsync()

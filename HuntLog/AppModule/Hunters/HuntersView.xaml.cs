@@ -43,6 +43,7 @@ namespace HuntLog.AppModule.Hunters
 
         public Command AddCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
+        public Action Callback { get; set; }
 
         public HuntersViewModel(IBaseService<Jeger> hunterService, INavigator navigator, Func<HunterViewModel> hunterViewModelFactory, IHuntFactory huntFactory)
         {
@@ -54,6 +55,7 @@ namespace HuntLog.AppModule.Hunters
             AddCommand = new Command(async () => await AddItem());
             DeleteItemCommand = new Command(async (item) => await DeleteItem(item));
 
+            IsBusy = true;
         }
 
         private async Task AddItem()
@@ -92,6 +94,7 @@ namespace HuntLog.AppModule.Hunters
                 Hunters.Add(vm);
             }
             EmptyList = !Hunters.Any();
+            Callback?.Invoke();
             IsBusy = false;
         }
     }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:cells="clr-namespace:HuntLog.Cells;assembly=HuntLog"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Stats.Pages.StatsSpeciesListView"
              xmlns:stats="clr-namespace:HuntLog.AppModule.Stats;assembly=HuntLog"
@@ -17,7 +16,6 @@
            
             <CollectionView Grid.Row="1" 
                             BackgroundColor="{StaticResource TableBg}"
-                            
                             ItemsSource="{Binding Items}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using HuntLog.AppModule;
 using HuntLog.Helpers;
 using HuntLog.Services;
+using Microsoft.AppCenter.Analytics;
 using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 
@@ -53,11 +55,18 @@ namespace HuntLog.InputViews
             _completeAction = completeAction;
             _deleteAction = deleteAction;
             Source = source;
+
             await Task.CompletedTask;
         }
 
         public async Task OnAfterNavigate(string shortcut)
         {
+            Analytics.TrackEvent("ImagePicker", new Dictionary<string, string> {
+                    { "Type", shortcut ?? HuntConfig.ViewPhoto }
+                });
+
+            await _mediaService.InitializeAndCheckPermissions();
+
             if (shortcut == HuntConfig.OpenLibrary) 
             { 
                 await OpenLibrary(true); 
@@ -80,7 +89,7 @@ namespace HuntLog.InputViews
             await AfterMediaRetrieved(isShortCut);
         }
 
-        private async Task AfterMediaRetrieved(bool isShortCut)
+        private async Task  AfterMediaRetrieved(bool isShortCut)
         {
             Source = ImageSource.FromStream(() =>
             {

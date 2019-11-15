@@ -19,7 +19,6 @@ namespace HuntLog.AppModule
     {
         public string ID { get; set; }
         public ImageSource ImageSource { get; set; }
-        public string ImagePath { get; set; }
         public bool IsNew => string.IsNullOrEmpty(ID);
         public MediaFile MediaFile { get; set; }
         public string Title { get; set; }

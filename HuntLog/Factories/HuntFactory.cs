@@ -160,7 +160,7 @@ namespace HuntLog.Factories
             if (ok)
             {
                 await _logService.Delete(id);
-                _fileManager.Delete($"logg_{id}.jpg");
+                _fileManager.Delete($"jaktlogg_{id}.jpg");
             }
             return ok;
         }

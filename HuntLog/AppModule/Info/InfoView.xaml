@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Info.InfoView"
-             Title="Info kommer">
+             Title="Om Jaktloggen">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" 
+        <Grid VerticalOptions="FillAndExpand" 
               HorizontalOptions="FillAndExpand"
               BackgroundColor="{StaticResource TableBg}">
-            
-            <Image Source="{Binding ImageSource}"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Aspect="AspectFill" />
-        </StackLayout>
+
+            <WebView x:Name="webView"
+                    VerticalOptions="FillAndExpand"
+                    />
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

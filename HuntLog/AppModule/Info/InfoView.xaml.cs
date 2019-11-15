@@ -15,6 +15,7 @@ namespace HuntLog.AppModule.Info
 
             _viewModel = viewModel;
             BindingContext = _viewModel;
+            webView.Source = "https://docs.google.com/forms/d/e/1FAIpQLSc3SL850itOSFd0nIqKnT8iovy6m3rKHrH_3_F3ck2mr9FP6g/viewform?usp=sf_link";
         }
     }
 

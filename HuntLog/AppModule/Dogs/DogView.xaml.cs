@@ -78,7 +78,6 @@ namespace HuntLog.AppModule.Dogs
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 
@@ -92,7 +91,7 @@ namespace HuntLog.AppModule.Dogs
             Dog dto = BuildDto();
             if (MediaFile != null)
             {
-                SaveImage($"dog_{dto.ID}.jpg", _fileManager);
+                SaveImage(dto.ImagePath, _fileManager);
             }
             await _dogService.Save(dto);
             await PopAsync();
@@ -119,7 +118,6 @@ namespace HuntLog.AppModule.Dogs
             Name = _dto.Navn;
             Breed = _dto.Rase;
             RegNo = _dto.Lisensnummer;
-            ImagePath = $"dog_{ID}.jpg";
             ImageSource = Utility.GetImageSource(_dto.ImagePath);
 
             Title = ID == null ? "Ny hund" : "Rediger hund";
@@ -133,8 +131,7 @@ namespace HuntLog.AppModule.Dogs
                 Created = DateTime.Now,
                 Navn = Name,
                 Rase = Breed,
-                Lisensnummer = RegNo,
-                ImagePath = ImagePath,
+                Lisensnummer = RegNo
             };
         }
     }

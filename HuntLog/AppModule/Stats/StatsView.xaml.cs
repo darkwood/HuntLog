@@ -43,6 +43,7 @@ namespace HuntLog.AppModule.Stats
 
         public Command MapCommand { get; set; }
         public Command HitrateCommand { get; set; }
+        public Command BestHunterCommand { get; set; }
 
         public string Info { get; set; }
 
@@ -72,6 +73,10 @@ namespace HuntLog.AppModule.Stats
             HitrateCommand = new Command(async () =>
             {
                 await _navigator.PushAsync<StatsSpeciesListViewModel>();
+            });
+             BestHunterCommand = new Command(async () =>
+            {
+                await _navigator.PushAsync<StatsBestHunterViewModel>();
             });
         }
 

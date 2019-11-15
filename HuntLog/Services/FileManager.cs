@@ -22,6 +22,9 @@ namespace HuntLog.Services
         void SaveToLocalStorage<T>(T objToSerialize, string filename);
         string[] GetAllFiles();
         void DeleteAllImages();
+        string Load(string filename);
+        void Save(string filename, string text);
+        byte[] ReadAll(string filename);
     }
 
     public class FileManager : IFileManager
@@ -139,5 +142,19 @@ namespace HuntLog.Services
 #endif
         }
 
+        public string Load(string filename)
+        {
+            return _fileUtility.Load(filename);
+        }
+
+        public void Save(string filename, string text)
+        {
+            _fileUtility.Save(filename, text);
+        }
+
+        public byte[] ReadAll(string filename)
+        {
+            return _fileUtility.ReadAll(filename);
+        }
     }
 }

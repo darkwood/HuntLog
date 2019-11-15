@@ -6,12 +6,7 @@
              xmlns:controls="clr-namespace:HuntLog.Controls;assembly=HuntLog"
              x:Class="HuntLog.AppModule.Stats.StatsView"
              Title="Statistikk">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="Add.png" Command="{Binding CreateDummyDataCommand}" Priority="1" />
-        <ToolbarItem Icon="trash.png" Command="{Binding DeleteCommand}" Priority="1" />
-    </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         
         <controls:ExtendedTableView HasUnevenRows="true" Intent="Form">            
@@ -20,13 +15,14 @@
                                         Detail="Viser alle loggføringer på kartet" 
                                         StyleId="disclosure" 
                                         Command="{Binding MapCommand}" />
-                <cells:ExtendedTextCell Text="Arter skutt" 
-                                        Detail="Akkumulert oversikt over arter og antall treff" 
+                <cells:ExtendedTextCell Text="Felt vilt" 
+                                        Detail="Akkumulert oversikt felt vilt og antall treff" 
                                         StyleId="disclosure" 
                                         Command="{Binding HitrateCommand}" />
-                <!--<cells:ExtendedTextCell Text="Beste jeger" 
+                <cells:ExtendedTextCell Text="Beste jeger" 
                                         Detail="Regnes ut av treffprosent og flest treff" 
-                                        StyleId="disclosure" />-->
+                                        StyleId="disclosure"
+                                        Command="{Binding BestHunterCommand}"/>
             </TableSection>
         </controls:ExtendedTableView>
     </ContentPage.Content>

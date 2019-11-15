@@ -39,7 +39,7 @@
                         Grid.Column="1" 
                         Text="&#xf015; Jaktsted" 
                         FontFamily="{StaticResource FontAwesomeSolid}"
-                        Command="{Binding GetCurrentPositionCommand}"
+                        Command="{Binding GetHuntPositionCommand}"
                         IsVisible="{Binding HasHuntPosition}"
                     />
 

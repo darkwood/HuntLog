@@ -117,6 +117,7 @@ namespace HuntLog.Cells
             set => SetValue(EmptyCommandProperty, value);
         }
 
+
         public PickerCell() : base()
         {
             //var viewLayout = new Grid
@@ -266,8 +267,8 @@ namespace HuntLog.Cells
         private void AddCommandForEmptyList()
         {
             var btn = new Button();
-            btn.Text = "Opprett";
-            btn.StyleClass = new[] { "PrimaryButton" };
+            btn.Text = "Rediger";
+            btn.StyleClass = new[] { "" };
             btn.Command = EmptyCommand;
 
             PickersView.Children.Add(btn);

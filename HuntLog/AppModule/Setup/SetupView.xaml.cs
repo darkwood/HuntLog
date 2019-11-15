@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using Bogus;
@@ -43,9 +45,16 @@ namespace HuntLog.AppModule.Setup
         private readonly IBaseService<Art> _specieService;
         private readonly INavigator _navigator;
         private readonly IFileManager _fileManager;
+        private readonly IDialogService _dialogService;
+        private string[] filenames;
 
+        public Command DebugCommand { get; set; }
         public Command CreateDummyDataCommand { get; set; }
         public Command DeleteCommand { get; set; }
+        public Command StoreDataCommand { get; set; }
+        public Command LoadDataCommand { get; set; }
+        public Command ClearDataCommand { get; set; }
+
         public IEnumerable<Jeger> Hunters { get; private set; }
         public IEnumerable<Jakt> Hunts { get; private set; }
         public IEnumerable<Logg> Logs { get; private set; }
@@ -59,6 +68,8 @@ namespace HuntLog.AppModule.Setup
         public Command SpeciesCommand { get; set; }
         public Command FieldsCommand { get; set; }
         public string ImageFiles { get; set; }
+        public bool DebugVisible { get; set; }
+        public bool IsDebugMode { get; set; }
 
         public SetupViewModel(IBaseService<Jakt> huntService,
                               IBaseService<Logg> logService,
@@ -66,10 +77,15 @@ namespace HuntLog.AppModule.Setup
                               IBaseService<Dog> dogService,
                               IBaseService<Art> specieService,
                               INavigator navigator,
-                              IFileManager fileManager)
+                              IFileManager fileManager,
+                              IDialogService dialogService)
         {
+            DebugCommand = new Command( () => { DebugVisible = !DebugVisible; });
             CreateDummyDataCommand = new Command(async () => await GenerateDummyData());
             DeleteCommand = new Command(async () => await DeleteAll());
+            StoreDataCommand = new Command(async () => await StoreData());
+            LoadDataCommand = new Command(async () => await LoadData());
+            ClearDataCommand = new Command(async () => await ClearData());
 
             _huntService = huntService;
             _logService = logService;
@@ -78,6 +94,7 @@ namespace HuntLog.AppModule.Setup
             _specieService = specieService;
             _navigator = navigator;
             _fileManager = fileManager;
+            _dialogService = dialogService;
 
             HuntersCommand = new Command(async () =>
             {
@@ -99,7 +116,95 @@ namespace HuntLog.AppModule.Setup
                 await _navigator.PushAsync<CustomFieldsViewModel>();
             });
 
+            filenames = new [] {"jakt.json", "jegere.json", "dogs.json",
+                                "logger.json", "selectedloggids.json", "selectedartids.json" };
 
+#if DEBUG
+            IsDebugMode = true;
+#endif
+        }
+
+        private async Task ClearData()
+        {
+            var answer = await _dialogService.ShowConfirmDialog("Slett alle data i Azure?", "Vil du virkelig fjerne alle filer i Azure? Dette kan ikke reverseres!");
+            if(answer == false)
+            {
+                return;
+            }
+
+            var files = await AzureStorage.GetFilesListAsync(ContainerType.Data);
+            foreach(var f in files)
+            {
+                await AzureStorage.DeleteFileAsync(ContainerType.Data, f);
+                Info = f + " deleted from Azure";
+            }
+
+            var images = await AzureStorage.GetFilesListAsync(ContainerType.Image);
+            foreach (var i in images)
+            {
+                await AzureStorage.DeleteFileAsync(ContainerType.Image, i);
+                Info = i + " deleted from Azure";
+            }
+
+            Info = $"Azure data ({files.Count}) and images ({images.Count}) deleted";
+        }
+
+        private async Task LoadData()
+        {
+            foreach (var f in filenames)
+            {
+                var byteData = await AzureStorage.GetFileAsync(ContainerType.Data, f);
+                if(byteData != null && byteData.Length > 0)
+                {
+                    var text = Encoding.UTF8.GetString(byteData);
+                    _fileManager.Save(f, text);
+                    Console.WriteLine("Downloaded file: " + f);
+                }
+            }
+
+            var images = await AzureStorage.GetFilesListAsync(ContainerType.Image);
+            foreach(var i in images)
+            {
+                var byteArray = await AzureStorage.GetFileAsync(ContainerType.Image, i);
+                _fileManager.SaveImage(i, byteArray);
+                Console.WriteLine("Downloaded image: " + i);
+            }
+        }
+
+        private async Task StoreData()
+        {
+            foreach (var f in filenames)
+            {
+                await UploadToAzure(f);
+            }
+
+            var images = _fileManager.GetAllFiles().Where(
+                x => x.EndsWith(".jpg", StringComparison.CurrentCultureIgnoreCase));
+
+            foreach (var i in images)
+            {
+                var name = i.Split('/').LastOrDefault();
+                var byteData = _fileManager.ReadAll(name);
+                var response = await AzureStorage.UploadFileAsync(ContainerType.Image, new MemoryStream(byteData), name);
+                Console.WriteLine("Uploaded photo: " + response);
+            }
+
+            await Task.CompletedTask;
+
+        }
+
+        private async Task UploadToAzure(string f)
+        {
+            if (_fileManager.Exists(f))
+            {
+                var content = _fileManager.Load(f);
+                if (!string.IsNullOrWhiteSpace(content))
+                {
+                    var byteData = Encoding.UTF8.GetBytes(content);
+                    var response = await AzureStorage.UploadFileAsync(ContainerType.Data, new MemoryStream(byteData), f);
+                    Console.WriteLine("Uploaded file: " + response);
+                }
+            }
         }
 
         private async Task DeleteAll()
@@ -246,7 +351,7 @@ namespace HuntLog.AppModule.Setup
             foreach (var file in files)
             {
                 Console.WriteLine(file);
-                ImageFiles += file + "\n\r";
+                //ImageFiles += file + "\n\r";
             }
         }
     }

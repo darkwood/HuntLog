@@ -14,5 +14,6 @@ namespace HuntLog.Interfaces
         void Delete(string filename);
         void Copy(string sourceFile, string destinationFile);
         string[] GetAllFiles();
+        byte[] ReadAll(string filename);
     }
 }

@@ -49,7 +49,6 @@ namespace HuntLog.iOS.Renderers
             public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
             {
                 var cell = base.GetCell(tableView, indexPath);
-                cell.ContentView.BackgroundColor = UIColor.White;
                 return cell;
             }
         }

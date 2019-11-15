@@ -26,6 +26,11 @@ namespace HuntLog.AppModule.Hunts
             InitializeComponent();
             _viewModel = viewModel;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 
     public class EditHuntViewModel : HuntViewModelBase
@@ -42,6 +47,7 @@ namespace HuntLog.AppModule.Hunts
         public Command SaveCommand { get; set; }
         public Command DeleteCommand { get; set; }
         public Command DateFromCommand { get; set; }
+        public Command DateToCommand { get; set; }
         public Command HuntersCommand { get; set; }
         public Command DogsCommand { get; set; }
 
@@ -74,8 +80,23 @@ namespace HuntLog.AppModule.Hunts
             CancelCommand = new Command(async () => { await _navigator.PopAsync(); });
 
             DateFromCommand = new Command(async () => await EditDateFrom());
-            AddHuntersCommand = new Command(async () => { await _navigator.PushAsync<HuntersViewModel>(); });
-            AddDogsCommand = new Command(async () => { await _navigator.PushAsync<DogsViewModel>(); });
+            DateToCommand = new Command(async () => await EditDateTo());
+            AddHuntersCommand = new Command(async () => {
+                await _navigator.PushAsync<HuntersViewModel>(beforeNavigate: (arg) => {
+                    arg.Callback = () =>
+                    {
+                        GetHunters();
+                    };
+                });
+            });
+            AddDogsCommand = new Command(async () => {
+                await _navigator.PushAsync<DogsViewModel>(beforeNavigate: (arg) => {
+                    arg.Callback = () =>
+                    {
+                        GetDogs();
+                    };
+                });
+            });
 
             CreateImageActions();
             CreatePositionActions();
@@ -99,7 +120,6 @@ namespace HuntLog.AppModule.Hunts
             {
                 MediaFile?.Dispose();
                 ImageSource = null;
-                ImagePath = string.Empty;
             };
         }
 
@@ -126,6 +146,27 @@ namespace HuntLog.AppModule.Hunts
                     completeAction: (value) =>
                     {
                         DateFrom = value;
+                        if(DateFrom > DateTo)
+                        {
+                            DateTo = DateFrom;
+                        }
+                    });
+                });
+        }
+
+        private async Task EditDateTo()
+        {
+            await _navigator.PushAsync<InputDateViewModel>(
+                beforeNavigate: async (arg) =>
+                {
+                    await arg.InitializeAsync(DateTo,
+                    completeAction: (value) =>
+                    {
+                        DateTo = value;
+                        if (DateTo < DateFrom)
+                        {
+                            DateFrom = DateTo;
+                        }
                     });
                 });
         }
@@ -133,14 +174,24 @@ namespace HuntLog.AppModule.Hunts
         public async Task InitializeAsync()
         {
             IsBusy = true;
-            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
-            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+            await GetHunters();
+            await GetDogs();
 
             if (IsNew)
             {
                 await SetPositionAsync();
             }
             IsBusy = false;
+        }
+
+        private async Task GetDogs()
+        {
+            Dogs = await _huntFactory.CreateDogPickerItems(_dto.DogIds);
+        }
+
+        private async Task GetHunters()
+        {
+            Hunters = await _huntFactory.CreateHunterPickerItems(_dto.JegerIds);
         }
 
         private async Task SetPositionAsync()
@@ -192,7 +243,7 @@ namespace HuntLog.AppModule.Hunts
             Jakt dto = CreateHuntDto();
             if (MediaFile != null)
             {
-                SaveImage($"jakt_{dto.ID}.jpg", _fileManager);
+                SaveImage(dto.ImagePath, _fileManager);
             }
 
             await _huntService.Save(dto);
@@ -205,14 +256,13 @@ namespace HuntLog.AppModule.Hunts
             return new Jakt
             {
                 ID = string.IsNullOrEmpty(ID) ? Guid.NewGuid().ToString() : ID,
-                Sted = Location,
+                Sted = string.IsNullOrWhiteSpace(Location) ? $"Jakt {DateFrom.ToShortDateString()}" : Location,
                 DatoFra = DateFrom,
                 DatoTil = DateTo,
                 JegerIds = Hunters.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
                 DogIds = Dogs.Where(x => x.Selected).Select(h => h.ID).ToList<string>(),
                 Latitude = Position.Latitude.ToString(),
                 Longitude = Position.Longitude.ToString(),
-                ImagePath = ImagePath,
                 Notes = Notes
             };
         }

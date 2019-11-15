@@ -5,5 +5,6 @@ namespace HuntLog.Helpers
     {
         public const string OpenLibrary = "openlibrary";
         public const string CapturePhoto = "takephoto";
+        public const string ViewPhoto = "viewphoto";
     }
 }

@@ -51,7 +51,7 @@ namespace HuntLog.AppModule.Logs
             Date = _dto.Dato;
             ID = _dto.ID;
             Title = CreateTitle();
-            ImageSource = Utility.GetImageSource($"jaktlogg_{ID}.jpg");
+            ImageSource = Utility.GetImageSource(_dto.ImagePath);
         }
 
         private string CreateTitle()

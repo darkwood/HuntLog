@@ -59,9 +59,9 @@ namespace HuntLog.AppModule.Stats
             _huntFactory = huntFactory;
             _navigator = navigator;
 
-            DateRangeCommand = new Command(async (obj) => 
+            DateRangeCommand = new Command((obj) =>
             {
-                await SetDate(obj);
+                SetDate(obj);
                 FilterChangedAction?.Invoke();
             });
 
@@ -90,8 +90,7 @@ namespace HuntLog.AppModule.Stats
                     );
             });
 
-            DateFrom = DateTime.Now.AddYears(-1);
-            DateTo = Today;
+            SetDate("Alle");
         }
 
         public void SetVisibility(bool show)
@@ -100,13 +99,13 @@ namespace HuntLog.AppModule.Stats
         }
 
 
-        private async Task SetDate(object obj)
+        private void SetDate(object obj)
         {
             switch (obj as string)
             {
                 case "Alle":
                     DateFrom = DateTime.Parse("1990-01-01");
-                    DateTo = Today;
+                    DateTo = DateTime.Parse("2999-01-01");
                     break;
                 case "Siste år":
                     DateFrom = DateTime.Now.AddYears(-1);
@@ -117,9 +116,6 @@ namespace HuntLog.AppModule.Stats
                     DateTo = Today;
                     break;
             }
-            //DateFromTo = GetFormattedDateRange(obj as string);
-            await Task.CompletedTask;
-
         }
 
         private string GetFilterSummary(string rangeString = null)

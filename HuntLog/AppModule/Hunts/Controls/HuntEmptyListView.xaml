@@ -1,28 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="HuntLog.AppModule.Hunts.Controls.HuntEmptyListView"
              >
     <ContentView.Content>
-        <StackLayout VerticalOptions="CenterAndExpand"
-                         HorizontalOptions="CenterAndExpand"
-                         IsVisible="{Binding EmptyList}"
-                         Margin="20">
-                
-                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
-                <Image Source="logo_splash_screen" Margin="5" />
+        
+        <!--<ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               IsVisible="{Binding IsBusy}" />-->
+        
+        <Grid VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="{Binding EmptyList}"
+                >
+
+            <StackLayout VerticalOptions="End" Margin="60 30">
                 <Label Text="Velkommen til Jaktloggen" 
-                       FontSize="Large"
-                       HorizontalTextAlignment="Center"
-                       />
+                    Margin="5"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    />
                 <Label Text="Den beste måten å loggføre dine jaktturer. Håper du får mye glede av den." 
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource MediumGrayTextColor}"
-                       FontSize="Small"
-                       Margin="5"
-                       />
+                        HorizontalTextAlignment="Center"
+                        TextColor="{StaticResource MediumGrayTextColor}"
+                        FontSize="Small"
+                        />
                 <Button Text="Opprett første jakt" 
                         Command="{Binding AddCommand}" />
             </StackLayout>
+
+            <!--<Grid x:Name="bg"
+                  InputTransparent="True"
+                  BackgroundColor="{StaticResource Primary}" />
+            -->
+
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Image Source="logo_splash_screen" />
+            </StackLayout>
+            
+        </Grid>
     </ContentView.Content>
 </ContentView>

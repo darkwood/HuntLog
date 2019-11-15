@@ -4,6 +4,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using UIKit;
 using HuntLog.iOS.Renderers.Renderers;
+using System;
+using HuntLog.Styles;
 
 [assembly: ExportRenderer(typeof(ContentPage), typeof(ExtendedPageRenderer))]
 namespace HuntLog.iOS.Renderers.Renderers
@@ -14,6 +16,40 @@ namespace HuntLog.iOS.Renderers.Renderers
     /// </summary>
     public class ExtendedPageRenderer : PageRenderer
     {
+        protected override void OnElementChanged(VisualElementChangedEventArgs e)
+        {
+            base.OnElementChanged(e);
+
+            if (e.OldElement != null || Element == null)
+            {
+                return;
+            }
+
+            try
+            {
+                SetTheme();
+            }
+            catch (Exception) { }
+        }
+
+        public override void TraitCollectionDidChange(UITraitCollection previousTraitCollection)
+        {
+            base.TraitCollectionDidChange(previousTraitCollection);
+
+            if(TraitCollection.UserInterfaceStyle != previousTraitCollection.UserInterfaceStyle)
+            {
+                SetTheme();
+            }
+        }
+
+        private void SetTheme()
+        {
+            if (TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
+                Xamarin.Forms.Application.Current.Resources = new DarkTheme();
+            else
+                Xamarin.Forms.Application.Current.Resources = new LightTheme();
+        }
+
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
