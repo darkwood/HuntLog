@@ -195,6 +195,11 @@
       <Project>{7B5E3981-5343-4F87-976B-798A8F05BE39}</Project>
       <Name>HuntLog</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HuntLogWatch\HuntLogWatch.WatchOSApp\HuntLogWatch.WatchOSApp.csproj">
+      <IsWatchApp>true</IsWatchApp>
+      <Project>{30F5D174-874F-4F2C-A42D-4DCB9D25DA72}</Project>
+      <Name>HuntLogWatch.WatchOSApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
